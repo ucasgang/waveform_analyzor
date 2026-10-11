@@ -1,0 +1,4 @@
+﻿用例ID,名称,类型,通道,总体判定,指标,测量值,最小限值,最大限值,指标判定,说明
+RAW_NO_TRIP,原始保护通道禁止任何跳闸,digital_hold,d,FAIL,violating_samples,1,0,0,FAIL,超出限值
+RAW_PULSE,观察到的真实 1 ms 保护脉冲,digital_pulse,d,PASS,pulse_count,1,1,1,PASS,满足限值
+RAW_PULSE,观察到的真实 1 ms 保护脉冲,digital_pulse,d,PASS,pulse_1_width_s,0.0010000000000000009,0.0005,0.0015,PASS,满足限值

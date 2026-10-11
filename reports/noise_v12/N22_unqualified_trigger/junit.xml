@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="模拟触发只有短尖峰：无可信激励" tests="1" failures="0" errors="1"><properties><property name="config_sha256" value="c8ebfeaacf9d8c2a153fc2baa42f1f6e0b17bc7ae234ac400d0fde1040c1d352" /></properties><testcase name="ACK_AFTER_QUALIFIED_TRIGGER 经过滞回与持续确认的动作时延" classname="digital_edge"><error type="INCONCLUSIVE" message="未找到第 1 个指定触发事件；请确认试验激励是否执行">{}</error></testcase></testsuite>

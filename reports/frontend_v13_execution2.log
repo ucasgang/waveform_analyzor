@@ -1,0 +1,49 @@
+受管浏览器桥接真实本机API并装载批处理页 True
+文件夹选择保留子目录相对路径 True
+4组扫描含两组错误而非跳过 True
+实际批次PASS1/FAIL1/ERROR2 True
+错误记录没有被标记为可打开结果 True
+失败筛选只显示一组 True
+批次详情绑定保存的结果 True
+批量详情：放大缩小按钮可见 True
+批量详情：按钮放大改变真实时间范围 True
+批量详情：按钮缩小恢复 True
+批量详情：滚轮缩放 True
+批量详情：精确时间定位 True
+批量详情：幅值轴独立放大 True
+批量详情：Shift框选放大 True
+批量详情：拖动平移 True
+批量详情：双击复位 True
+查看不改变批次快照 True
+录波预览：放大缩小按钮可见 True
+录波预览：按钮放大改变真实时间范围 True
+录波预览：按钮缩小恢复 True
+录波预览：滚轮缩放 True
+录波预览：精确时间定位 True
+录波预览：幅值轴独立放大 True
+录波预览：Shift框选放大 True
+录波预览：拖动平移 True
+录波预览：双击复位 True
+实际导出ZIP包含索引且无原始DAT重复副本 True
+下载报告离线打开内嵌完整窗口采样 True
+离线HTML报告：放大缩小按钮可见 True
+离线HTML报告：按钮放大改变真实时间范围 True
+离线HTML报告：按钮缩小恢复 True
+离线HTML报告：滚轮缩放 True
+离线HTML报告：精确时间定位 True
+离线HTML报告：幅值轴独立放大 True
+离线HTML报告：Shift框选放大 True
+离线HTML报告：拖动平移 True
+离线HTML报告：双击复位 False
+Traceback (most recent call last):
+  File "/mnt/data/ESS_WaveTest_v1.3.0/tools/frontend_check_v13.py", line 134, in <module>
+    zoom_checks(standalone,selector,'离线HTML报告')
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/ESS_WaveTest_v1.3.0/tools/frontend_check_v13.py", line 52, in zoom_checks
+    frame.dblclick();settled(page,selector);check(label+'：双击复位',abs(rng(page,selector)[0]-full[0])<1e-8)
+                                            ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/ESS_WaveTest_v1.3.0/tools/frontend_check_v13.py", line 26, in check
+    if not value:raise AssertionError(name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 离线HTML报告：双击复位
+TOTAL 36 / 38

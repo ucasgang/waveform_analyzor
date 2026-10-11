@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="16 模拟 + 512 数字通道：多通道噪声隔离" tests="1" failures="0" errors="0"><properties><property name="config_sha256" value="ee62821134e2aa14b7b881ab64a2568b0f2d6db77f87b8d52d8b88b739a40737" /></properties><testcase name="ROBUST_STEP 抗噪性能 + 原始硬限值 + 质量预算" classname="analog_step" /></testsuite>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="窗尾去抖未完成：不能借用未来证据" tests="1" failures="0" errors="1"><properties><property name="config_sha256" value="cc7f8409249f5802faba5fdb5ef83be959fabba0b40501590a3ebaa419cd63f4" /></properties><testcase name="QUALIFIED_HOLD QUALIFIED_HOLD" classname="digital_hold"><error type="INCONCLUSIVE" message="窗口末端存在尚未满足去抖保持时间的数字量变位">{}</error></testcase></testsuite>

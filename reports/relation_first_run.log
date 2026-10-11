@@ -1,0 +1,34 @@
+test_alias_maps_to_same_raw_channel_rejected (test_relation_v13.RelationTests.test_alias_maps_to_same_raw_channel_rejected) ... ok
+test_bound_does_not_hide_large_fault (test_relation_v13.RelationTests.test_bound_does_not_hide_large_fault) ... ok
+test_constant_bias_failure (test_relation_v13.RelationTests.test_constant_bias_failure) ... ok
+test_duplicate_references_rejected (test_relation_v13.RelationTests.test_duplicate_references_rejected) ... ok
+test_explicit_offset (test_relation_v13.RelationTests.test_explicit_offset) ... ok
+test_gap_before_window_does_not_taint_window (test_relation_v13.RelationTests.test_gap_before_window_does_not_taint_window) ... ok
+test_gap_inside_window_is_inconclusive (test_relation_v13.RelationTests.test_gap_inside_window_is_inconclusive) ... ok
+test_inputs_immutable (test_relation_v13.RelationTests.test_inputs_immutable) ... ok
+test_invalid_alignment_budget (test_relation_v13.RelationTests.test_invalid_alignment_budget) ... ok
+test_linear_gain_pass (test_relation_v13.RelationTests.test_linear_gain_pass) ... ok
+test_missing_reference_not_ignored (test_relation_v13.RelationTests.test_missing_reference_not_ignored) ... ok
+test_nonfinite_gain (test_relation_v13.RelationTests.test_nonfinite_gain) ... ok
+test_nonuniform_triangle_duration (test_relation_v13.RelationTests.test_nonuniform_triangle_duration) ... ok
+test_reference_only_peak_on_union_grid (test_relation_v13.RelationTests.test_reference_only_peak_on_union_grid) ... ok
+test_self_alias_rejected (test_relation_v13.RelationTests.test_self_alias_rejected) ... ok
+test_signed_crossing_duration (test_relation_v13.RelationTests.test_signed_crossing_duration) ... ok
+test_skewed_linear_reference_aligned (test_relation_v13.RelationTests.test_skewed_linear_reference_aligned) ... ok
+test_small_bound_can_prove_pass (test_relation_v13.RelationTests.test_small_bound_can_prove_pass) ... ok
+test_touch_boundary_no_violation (test_relation_v13.RelationTests.test_touch_boundary_no_violation) ... ok
+test_triangle_duration_independent_golden (test_relation_v13.RelationTests.test_triangle_duration_independent_golden) ... ok
+test_uncertainty_must_not_force_pass_or_fail (test_relation_v13.RelationTests.test_uncertainty_must_not_force_pass_or_fail) ... ok
+test_units_must_be_explicit (test_relation_v13.RelationTests.test_units_must_be_explicit) ... ok
+test_zero_tolerance_exact_equality (test_relation_v13.RelationTests.test_zero_tolerance_exact_equality) ... ok
+test_append_future_missing_analog_does_not_change_trigger (test_relation_v13.TriggerPrefixTests.test_append_future_missing_analog_does_not_change_trigger) ... ok
+test_event_confirmation_crossing_gap_rejected (test_relation_v13.TriggerPrefixTests.test_event_confirmation_crossing_gap_rejected) ... ok
+test_future_trigger_chatter_not_used_to_reject_prefix (test_relation_v13.TriggerPrefixTests.test_future_trigger_chatter_not_used_to_reject_prefix) ... ok
+test_gap_before_occurrence_still_rejected (test_relation_v13.TriggerPrefixTests.test_gap_before_occurrence_still_rejected) ... ok
+test_later_gap_no_longer_invalidates_earlier_trigger (test_relation_v13.TriggerPrefixTests.test_later_gap_no_longer_invalidates_earlier_trigger) ... ok
+test_second_occurrence_cannot_skip_missing_history (test_relation_v13.TriggerPrefixTests.test_second_occurrence_cannot_skip_missing_history) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.036s
+
+OK

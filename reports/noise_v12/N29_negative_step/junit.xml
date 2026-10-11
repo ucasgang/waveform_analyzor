@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="充放电反向阶跃：负目标与噪声" tests="1" failures="0" errors="0"><properties><property name="config_sha256" value="44d99f390a344da63ac77dfec8fad74b589a3db7dff8dcb4d69d63fb4dfb6b1f" /></properties><testcase name="ROBUST_STEP 抗噪性能 + 原始硬限值 + 质量预算" classname="analog_step" /></testsuite>

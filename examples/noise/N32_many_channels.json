@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "name": "16 模拟 + 512 数字通道：多通道噪声隔离",
+  "description": "合成噪声工程回归；预期来自注入模型与显式限值，不是厂家现场验证。",
+  "standard": {
+    "reference": "噪声算法工程示例；非国标条款",
+    "reviewed": false,
+    "note": "所有容限必须由项目审核后替换。"
+  },
+  "channels": {
+    "p": {
+      "kind": "analog",
+      "index": 1,
+      "unit": "kW"
+    }
+  },
+  "tests": [
+    {
+      "id": "ROBUST_STEP",
+      "name": "抗噪性能 + 原始硬限值 + 质量预算",
+      "type": "analog_step",
+      "channel": "p",
+      "trigger": {
+        "type": "time",
+        "at": 0.25
+      },
+      "window": [
+        0,
+        1.75
+      ],
+      "baseline_window": [
+        -0.2,
+        -0.03
+      ],
+      "target": 100.0,
+      "normalization": "step",
+      "steady_last_s": 0.5,
+      "settle_band_pct": 2.0,
+      "settle_hold_s": 0.15,
+      "limits": {
+        "overshoot_pct_max": 5.0,
+        "response_s_max": 0.28,
+        "rise_s_max": 0.23,
+        "latency_s_max": 0.08,
+        "settling_s_max": 0.6,
+        "steady_error_pct_max": 0.8,
+        "steady_ripple_pp_max": 3.0
+      },
+      "robust": {
+        "hampel_window_s": 0.012,
+        "hampel_sigma": 4.5,
+        "hampel_floor": 0.9,
+        "max_spike_s": 0.0031,
+        "smooth_window_s": 0.003,
+        "crossing_hold_s": 0.008,
+        "crossing_hysteresis_fraction": 0.004,
+        "settle_occupancy": 0.995,
+        "max_excursion_s": 0.003,
+        "max_replaced_fraction": 0.015,
+        "max_noise_sigma": 1.0,
+        "max_baseline_drift": 1.0,
+        "max_steady_drift": 1.2,
+        "raw_min": -20.0,
+        "raw_max": 160.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "product": "ESS WaveTest",
+  "version": "1.2.0",
+  "generated_utc": "2026-10-11T08:37:52.911948+00:00",
+  "suite": "窗尾去抖未完成：不能借用未来证据",
+  "status": "INCONCLUSIVE",
+  "counts": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 1,
+    "ERROR": 0
+  },
+  "record": {
+    "station": "ESS LAB",
+    "device": "SIMULATOR",
+    "revision": 2013,
+    "format": "FLOAT32",
+    "analog_count": 1,
+    "digital_count": 1,
+    "frequency_hz": 50.0,
+    "sample_rates": [
+      [
+        1000.0,
+        1001
+      ]
+    ],
+    "trigger_s": 0.25,
+    "timemult": 1.0,
+    "start_timestamp": "01/01/2026,00:00:00.000000",
+    "trigger_timestamp": "01/01/2026,00:00:00.250000",
+    "encoding": "utf-8-sig",
+    "time_metadata": [
+      [
+        "+00:00",
+        "+00:00"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "cfg_file": "N20_unfinished_dwell.cfg",
+    "dat_file": "N20_unfinished_dwell.dat",
+    "time_source": "dat_timestamps",
+    "max_sample_interval_s": 0.0010000000000000009,
+    "samples": 1001,
+    "start_s": 0.0,
+    "end_s": 1.0,
+    "channels": [
+      {
+        "key": "A1",
+        "index": 1,
+        "kind": "analog",
+        "name": "母线背景噪声",
+        "unit": "V",
+        "phase": "",
+        "circuit": "PCS",
+        "a": 0.001,
+        "b": 0.0,
+        "skew_us": 0.0,
+        "primary": 1.0,
+        "secondary": 1.0,
+        "side": "P",
+        "normal": 0,
+        "raw_min": -1e+30,
+        "raw_max": 1e+30
+      },
+      {
+        "key": "D1",
+        "index": 1,
+        "kind": "digital",
+        "name": "接点反馈",
+        "unit": "",
+        "phase": "",
+        "circuit": "PCS",
+        "a": 1.0,
+        "b": 0.0,
+        "skew_us": 0.0,
+        "primary": 1.0,
+        "secondary": 1.0,
+        "side": "P",
+        "normal": 0,
+        "raw_min": 0.0,
+        "raw_max": 0.0
+      }
+    ],
+    "warnings": [],
+    "gap_count": 0,
+    "hashes": {
+      "cfg_sha256": "e32ad38618c32bddc77cc809a6f4dd1b22e7784e7de1014905af664bb109f7e7",
+      "dat_sha256": "bbb0ec5810ab11db0d238e1e4d432f2eb78044d5a786ea9b0fe390360d6058b7"
+    }
+  },
+  "configuration": {
+    "schema_version": 1,
+    "name": "窗尾去抖未完成：不能借用未来证据",
+    "description": "合成噪声工程回归；预期来自注入模型与显式限值，不是厂家现场验证。",
+    "standard": {
+      "reference": "噪声算法工程示例；非国标条款",
+      "reviewed": false,
+      "note": "所有容限必须由项目审核后替换。"
+    },
+    "channels": {
+      "d": {
+        "kind": "digital",
+        "index": 1
+      }
+    },
+    "tests": [
+      {
+        "id": "QUALIFIED_HOLD",
+        "type": "digital_hold",
+        "channel": "d",
+        "window": [
+          0.35,
+          1.0
+        ],
+        "value": 0,
+        "noise": {
+          "rise_s": 0.003,
+          "fall_s": 0.005,
+          "max_rejected_edges": 24,
+          "max_chatter_s": 0.025,
+          "merge_gap_s": 0.006,
+          "timing_guard": true
+        }
+      }
+    ]
+  },
+  "config_sha256": "cc7f8409249f5802faba5fdb5ef83be959fabba0b40501590a3ebaa419cd63f4",
+  "results": [
+    {
+      "id": "QUALIFIED_HOLD",
+      "name": "QUALIFIED_HOLD",
+      "type": "digital_hold",
+      "channel": "d",
+      "standard": {
+        "reference": "噪声算法工程示例；非国标条款",
+        "reviewed": false,
+        "note": "所有容限必须由项目审核后替换。"
+      },
+      "metrics": {},
+      "checks": [],
+      "evidence": {},
+      "status": "INCONCLUSIVE",
+      "reason": "窗口末端存在尚未满足去抖保持时间的数字量变位"
+    }
+  ],
+  "notice": "结果仅表示满足当前配置断言，不代表已取得国标符合性认证。示例阈值不属于标准原文。"
+}

@@ -1,0 +1,379 @@
+{
+  "name": "v1.1 复杂联动工况回归",
+  "notice": "阈值为教学配置。匹配预期包括正确检出 FAIL 和 INCONCLUSIVE；不表示被测设备全部合格。",
+  "cases": [
+    {
+      "id": "C01_cycle_pass",
+      "name": "充电—放电—归零：三段闭环与反馈握手",
+      "cfg": "C01_cycle_pass.cfg",
+      "case": "C01_cycle_pass.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "P1": "PASS",
+        "ACK1": "PASS",
+        "PULSE1": "PASS",
+        "DC1": "PASS",
+        "P2": "PASS",
+        "ACK2": "PASS",
+        "PULSE2": "PASS",
+        "DC2": "PASS",
+        "P3": "PASS",
+        "ACK3": "PASS",
+        "PULSE3": "PASS",
+        "DC3": "PASS",
+        "CMD_COUNT": "PASS",
+        "PRECHARGE_WIDTH": "PASS",
+        "CLOSE_ORDER": "PASS",
+        "NO_ALARM": "PASS",
+        "LOW_RESET": "PASS",
+        "HEARTBEAT": "PASS"
+      },
+      "metric_oracles": {},
+      "samples": 10001,
+      "analog_channels": 12,
+      "digital_channels": 32,
+      "format": "FLOAT32",
+      "seed": 2718
+    },
+    {
+      "id": "C02_cycle_race",
+      "name": "第二段反馈迟到 + 预充/合闸次序颠倒",
+      "cfg": "C02_cycle_race.cfg",
+      "case": "C02_cycle_race.json",
+      "expected": "FAIL",
+      "expected_assertions": {
+        "P1": "PASS",
+        "ACK1": "PASS",
+        "PULSE1": "PASS",
+        "DC1": "PASS",
+        "P2": "PASS",
+        "ACK2": "FAIL",
+        "PULSE2": "PASS",
+        "DC2": "PASS",
+        "P3": "PASS",
+        "ACK3": "PASS",
+        "PULSE3": "PASS",
+        "DC3": "PASS",
+        "CMD_COUNT": "PASS",
+        "PRECHARGE_WIDTH": "PASS",
+        "CLOSE_ORDER": "FAIL",
+        "NO_ALARM": "PASS",
+        "LOW_RESET": "PASS",
+        "HEARTBEAT": "PASS"
+      },
+      "metric_oracles": {},
+      "samples": 10001,
+      "analog_channels": 12,
+      "digital_channels": 32,
+      "format": "FLOAT32",
+      "seed": 2718
+    },
+    {
+      "id": "C03_cycle_oscillation",
+      "name": "中段反复出带，均值正常但调节失败",
+      "cfg": "C03_cycle_oscillation.cfg",
+      "case": "C03_cycle_oscillation.json",
+      "expected": "FAIL",
+      "expected_assertions": {
+        "P1": "PASS",
+        "ACK1": "PASS",
+        "PULSE1": "PASS",
+        "DC1": "PASS",
+        "P2": "FAIL",
+        "ACK2": "PASS",
+        "PULSE2": "PASS",
+        "DC2": "PASS",
+        "P3": "PASS",
+        "ACK3": "PASS",
+        "PULSE3": "PASS",
+        "DC3": "PASS",
+        "CMD_COUNT": "PASS",
+        "PRECHARGE_WIDTH": "PASS",
+        "CLOSE_ORDER": "PASS",
+        "NO_ALARM": "PASS",
+        "LOW_RESET": "PASS",
+        "HEARTBEAT": "PASS"
+      },
+      "metric_oracles": {},
+      "samples": 10001,
+      "analog_channels": 12,
+      "digital_channels": 32,
+      "format": "FLOAT32",
+      "seed": 2718
+    },
+    {
+      "id": "C04_sag_pass",
+      "name": "三相跌落、谐波、闭锁与恢复联动",
+      "cfg": "C04_sag_pass.cfg",
+      "case": "C04_sag_pass.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "RMS_0_PRE": "PASS",
+        "RMS_0_SAG": "PASS",
+        "RMS_0_POST": "PASS",
+        "RMS_1_PRE": "PASS",
+        "RMS_1_SAG": "PASS",
+        "RMS_1_POST": "PASS",
+        "RMS_2_PRE": "PASS",
+        "RMS_2_SAG": "PASS",
+        "RMS_2_POST": "PASS",
+        "BLOCK_WIDTH": "PASS",
+        "NO_TRIP": "PASS",
+        "KEEP_GRID": "PASS",
+        "LOW_ALARM": "PASS",
+        "P_RECOVERY": "PASS"
+      },
+      "metric_oracles": {},
+      "samples": 25001,
+      "analog_channels": 6,
+      "digital_channels": 20,
+      "format": "FLOAT32",
+      "seed": 2718
+    },
+    {
+      "id": "C05_sag_trip",
+      "name": "跌落中插入 1 ms 非预期跳闸",
+      "cfg": "C05_sag_trip.cfg",
+      "case": "C05_sag_trip.json",
+      "expected": "FAIL",
+      "expected_assertions": {
+        "RMS_0_PRE": "PASS",
+        "RMS_0_SAG": "PASS",
+        "RMS_0_POST": "PASS",
+        "RMS_1_PRE": "PASS",
+        "RMS_1_SAG": "PASS",
+        "RMS_1_POST": "PASS",
+        "RMS_2_PRE": "PASS",
+        "RMS_2_SAG": "PASS",
+        "RMS_2_POST": "PASS",
+        "BLOCK_WIDTH": "PASS",
+        "NO_TRIP": "FAIL",
+        "KEEP_GRID": "PASS",
+        "LOW_ALARM": "PASS",
+        "P_RECOVERY": "PASS"
+      },
+      "metric_oracles": {},
+      "samples": 25001,
+      "analog_channels": 6,
+      "digital_channels": 20,
+      "format": "FLOAT32",
+      "seed": 2718
+    },
+    {
+      "id": "C06_multirate_skew",
+      "name": "三段采样率 + 750 us 偏移 + 变比/单位换算",
+      "cfg": "C06_multirate_skew.cfg",
+      "case": "C06_multirate_skew.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "SKEW_STEP": "PASS",
+        "BOUNCED_ACK": "PASS",
+        "POST_BAND": "PASS"
+      },
+      "metric_oracles": {
+        "SKEW_STEP": {
+          "response_s": [
+            0.21229388197455343,
+            0.21309388197455345
+          ],
+          "rise_s": [
+            0.16439184330021644,
+            0.16519184330021647
+          ]
+        },
+        "BOUNCED_ACK": {
+          "edge_count": [
+            1,
+            1
+          ]
+        }
+      },
+      "samples": 5001,
+      "analog_channels": 3,
+      "digital_channels": 2,
+      "format": "BINARY32",
+      "seed": 2718
+    },
+    {
+      "id": "C07_fault_reset_pass",
+      "name": "两次保护动作、复归及功率归零",
+      "cfg": "C07_fault_reset_pass.cfg",
+      "case": "C07_fault_reset_pass.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "BLOCK_1": "PASS",
+        "OPEN_1": "PASS",
+        "TRIP_1": "PASS",
+        "LATCH_1": "PASS",
+        "NOT_READY_1": "PASS",
+        "POWER_ZERO_1": "PASS",
+        "BLOCK_2": "PASS",
+        "OPEN_2": "PASS",
+        "TRIP_2": "PASS",
+        "LATCH_2": "PASS",
+        "NOT_READY_2": "PASS",
+        "POWER_ZERO_2": "PASS",
+        "CLEAR_LATCH": "PASS",
+        "READY_AFTER_CLEAR": "PASS",
+        "BUS_RANGE": "PASS"
+      },
+      "metric_oracles": {},
+      "samples": 6001,
+      "analog_channels": 2,
+      "digital_channels": 40,
+      "format": "FLOAT32",
+      "seed": 2718
+    },
+    {
+      "id": "C08_fault_reset_race",
+      "name": "故障尚未复归就提前发出就绪反馈",
+      "cfg": "C08_fault_reset_race.cfg",
+      "case": "C08_fault_reset_race.json",
+      "expected": "FAIL",
+      "expected_assertions": {
+        "BLOCK_1": "PASS",
+        "OPEN_1": "PASS",
+        "TRIP_1": "PASS",
+        "LATCH_1": "PASS",
+        "NOT_READY_1": "PASS",
+        "POWER_ZERO_1": "PASS",
+        "BLOCK_2": "PASS",
+        "OPEN_2": "PASS",
+        "TRIP_2": "PASS",
+        "LATCH_2": "PASS",
+        "NOT_READY_2": "PASS",
+        "POWER_ZERO_2": "PASS",
+        "CLEAR_LATCH": "PASS",
+        "READY_AFTER_CLEAR": "FAIL",
+        "BUS_RANGE": "PASS"
+      },
+      "metric_oracles": {},
+      "samples": 6001,
+      "analog_channels": 2,
+      "digital_channels": 40,
+      "format": "FLOAT32",
+      "seed": 2718
+    },
+    {
+      "id": "C09_dense_512",
+      "name": "512 通道 + 单采样尖峰 + 过密数字变位",
+      "cfg": "C09_dense_512.cfg",
+      "case": "C09_dense_512.json",
+      "expected": "FAIL",
+      "expected_assertions": {
+        "SINGLE_SPIKE": "FAIL",
+        "OTHER_CHANNEL": "PASS",
+        "SINGLE_SAMPLE_PULSE": "PASS",
+        "WORD_BIT_16": "PASS",
+        "WORD_BIT_17": "PASS",
+        "WORD_BIT_32": "PASS",
+        "WORD_BIT_33": "PASS",
+        "WORD_BIT_255": "PASS",
+        "WORD_BIT_256": "PASS",
+        "WORD_BIT_257": "PASS",
+        "HIGH_FREQUENCY": "PASS"
+      },
+      "metric_oracles": {
+        "SINGLE_SPIKE": {
+          "max": [
+            125,
+            125
+          ]
+        },
+        "SINGLE_SAMPLE_PULSE": {
+          "pulse_count": [
+            1,
+            1
+          ]
+        }
+      },
+      "samples": 20001,
+      "analog_channels": 128,
+      "digital_channels": 384,
+      "format": "BINARY32",
+      "seed": 2718
+    },
+    {
+      "id": "C10_target_drift",
+      "name": "第二段目标窗口漂移，不能定义恒定目标",
+      "cfg": "C10_target_drift.cfg",
+      "case": "C10_target_drift.json",
+      "expected": "INCONCLUSIVE",
+      "expected_assertions": {
+        "P1": "PASS",
+        "ACK1": "PASS",
+        "PULSE1": "PASS",
+        "DC1": "PASS",
+        "P2": "INCONCLUSIVE",
+        "ACK2": "PASS",
+        "PULSE2": "PASS",
+        "DC2": "PASS",
+        "P3": "PASS",
+        "ACK3": "PASS",
+        "PULSE3": "PASS",
+        "DC3": "PASS",
+        "CMD_COUNT": "PASS",
+        "PRECHARGE_WIDTH": "PASS",
+        "CLOSE_ORDER": "PASS",
+        "NO_ALARM": "PASS",
+        "LOW_RESET": "PASS",
+        "HEARTBEAT": "PASS"
+      },
+      "metric_oracles": {},
+      "samples": 10001,
+      "analog_channels": 12,
+      "digital_channels": 32,
+      "format": "FLOAT32",
+      "seed": 2718
+    },
+    {
+      "id": "C11_selected_missing",
+      "name": "三相跌落中单相关键窗口缺失样本",
+      "cfg": "C11_selected_missing.cfg",
+      "case": "C11_selected_missing.json",
+      "expected": "INCONCLUSIVE",
+      "expected_assertions": {
+        "RMS_0_PRE": "PASS",
+        "RMS_0_SAG": "PASS",
+        "RMS_0_POST": "PASS",
+        "RMS_1_PRE": "PASS",
+        "RMS_1_SAG": "INCONCLUSIVE",
+        "RMS_1_POST": "PASS",
+        "RMS_2_PRE": "PASS",
+        "RMS_2_SAG": "PASS",
+        "RMS_2_POST": "PASS",
+        "BLOCK_WIDTH": "PASS",
+        "NO_TRIP": "PASS",
+        "KEEP_GRID": "PASS",
+        "LOW_ALARM": "PASS",
+        "P_RECOVERY": "PASS"
+      },
+      "metric_oracles": {},
+      "samples": 25001,
+      "analog_channels": 6,
+      "digital_channels": 20,
+      "format": "FLOAT32",
+      "seed": 2718
+    },
+    {
+      "id": "C12_causal_debounce",
+      "name": "末端去抖未结束，后续复位不能倒推通过",
+      "cfg": "C12_causal_debounce.cfg",
+      "case": "C12_causal_debounce.json",
+      "expected": "FAIL",
+      "expected_assertions": {
+        "END_UNRESOLVED": "INCONCLUSIVE",
+        "RAW_GLITCH": "FAIL",
+        "FULLY_OBSERVED_FILTER": "PASS",
+        "ACK": "PASS",
+        "DC": "PASS"
+      },
+      "metric_oracles": {},
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 3,
+      "format": "FLOAT32",
+      "seed": 2718
+    }
+  ]
+}

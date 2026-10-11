@@ -1,0 +1,100 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>噪声叠加关键缺失样本：禁止插补验收 - ESS WaveTest</title>
+    <style>
+    :root{--ink:#172b45;--muted:#66788c;--line:#dce5ed}*{box-sizing:border-box}body{margin:0;background:#edf2f6;color:var(--ink);font:15px/1.65 "Segoe UI","Microsoft YaHei",sans-serif}.wrap{max-width:1160px;margin:auto;padding:36px 26px}header{background:#142a43;color:#fff;padding:40px;border-radius:18px}.brand{font-size:12px;letter-spacing:3px;color:#79d3c1}h1{font-size:30px;line-height:1.4;margin:18px 0}h2{font-size:20px;margin:5px 0}header p{color:#bed0e2}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}.stat,.test,.notice{background:white;border:1px solid var(--line);border-radius:13px;padding:23px}.stat span{font-size:13px;color:var(--muted)}.stat strong{display:block;font-size:34px;line-height:1.5}.test{margin:20px 0;break-inside:avoid}.testhead{display:flex;justify-content:space-between;align-items:center;gap:16px}.badge{font-size:14px;font-weight:700;border:1px solid;padding:5px 12px;border-radius:24px}small,.meta{font-size:12px;color:var(--muted)}.notice{background:#fff9ee;border-color:#e6d7b9}table{border-collapse:collapse;width:100%;margin-top:16px;font-size:13px}th,td{padding:11px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f3f7fa}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f7fa;padding:18px;font:12px/1.6 Consolas,monospace}.mono{font-family:Consolas,monospace}details{margin-top:12px}summary{cursor:pointer;color:#2367cc}footer{font-size:12px;color:var(--muted);padding:25px 0;overflow-wrap:anywhere}.actions{text-align:right;margin:0 0 15px}button{border:0;border-radius:7px;padding:10px 18px;color:white;background:#2367cc;cursor:pointer}svg{display:block;width:100%;margin-top:18px}@media(max-width:650px){.stats{grid-template-columns:repeat(2,1fr)}.wrap{padding:12px}header{padding:23px}.test{padding:15px}h1{font-size:23px}table{font-size:11px}}@media print{body{background:white}.wrap{padding:0;max-width:none}.actions,details{display:none}header{border-radius:0;print-color-adjust:exact}.test{break-inside:auto}table,svg{break-inside:avoid}}
+    </style></head><body><main class="wrap"><div class="actions"><button onclick="window.print()">打印 / 保存 PDF</button></div><header><div class="brand">ESS WAVETEST / FACTORY ACCEPTANCE</div><h1>噪声叠加关键缺失样本：禁止插补验收</h1><p>总体结果：数据不足 / 待复核 · 2026-10-11T08:37:52.986547+00:00</p><p>N26_noise_with_missing.cfg / FLOAT32 · 2,001 点 · 1 模拟通道 + 1 数字通道</p></header><div class="stats"><div class="stat"><span>通过</span><strong style="color:#087f68">0</strong></div><div class="stat"><span>失败</span><strong style="color:#c23e48">0</strong></div><div class="stat"><span>数据不足 / 待复核</span><strong style="color:#aa6b00">1</strong></div><div class="stat"><span>配置或执行错误</span><strong style="color:#7544ba">0</strong></div></div>
+    <div class="notice"><b>验收边界</b><p>结果仅表示满足当前配置断言，不代表已取得国标符合性认证。示例阈值不属于标准原文。</p><p>所有时间以本文件录波起点为参考；模拟 skew 已按 CFG 单独应用。没有自动对齐多文件时钟、自动修复缺点或默认标准限值。</p></div>
+    <section class="test"><div class="testhead"><div><small>ROBUST_STEP · analog_step · p</small><h2>抗噪性能 + 原始硬限值 + 质量预算</h2></div><span class="badge" style="color:#aa6b00">数据不足 / 待复核</span></div>
+        <p>分析窗口包含缺失或非有限采样值</p><p class="meta">依据：噪声算法工程示例；非国标条款 / 未指定条款 / 未审核或演示阈值</p>
+        
+        
+        
+        <p class="meta">通道映射：{}<br>最大局部采样间隔：未取得 s。图形可抽稀显示；断言使用完整采样及显式处理分支，不使用显示抽稀数据。时间指标不是高于采样精度的硬件测量保证。</p>
+        <details><summary>查看完整测量指标与证据元数据</summary><pre>{
+  &quot;metrics&quot;: {},
+  &quot;evidence&quot;: {}
+}</pre></details></section><section class="test"><h2>数据质量与可追溯性</h2><p>• A1 含缺失值；涉及缺失值的窗口将标记数据不足</p><pre>{
+  &quot;software_version&quot;: &quot;1.2.0&quot;,
+  &quot;hashes&quot;: {
+    &quot;cfg_sha256&quot;: &quot;f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d2630&quot;,
+    &quot;dat_sha256&quot;: &quot;cb60a0ed5f2f064684063ab34297214b2500a145cec1f32b52b599b4974d5be2&quot;
+  },
+  &quot;config_sha256&quot;: &quot;4029e49f85d3aa541eb8d0eae241ea75d193f8b4cb8a0712e3283994f804db78&quot;,
+  &quot;time_source&quot;: &quot;dat_timestamps&quot;,
+  &quot;time_metadata&quot;: [
+    [
+      &quot;+00:00&quot;,
+      &quot;+00:00&quot;
+    ],
+    [
+      &quot;0&quot;,
+      &quot;0&quot;
+    ]
+  ]
+}</pre><details><summary>展开本次完整配置快照</summary><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;name&quot;: &quot;噪声叠加关键缺失样本：禁止插补验收&quot;,
+  &quot;description&quot;: &quot;合成噪声工程回归；预期来自注入模型与显式限值，不是厂家现场验证。&quot;,
+  &quot;standard&quot;: {
+    &quot;reference&quot;: &quot;噪声算法工程示例；非国标条款&quot;,
+    &quot;reviewed&quot;: false,
+    &quot;note&quot;: &quot;所有容限必须由项目审核后替换。&quot;
+  },
+  &quot;channels&quot;: {
+    &quot;p&quot;: {
+      &quot;kind&quot;: &quot;analog&quot;,
+      &quot;index&quot;: 1,
+      &quot;unit&quot;: &quot;kW&quot;
+    }
+  },
+  &quot;tests&quot;: [
+    {
+      &quot;id&quot;: &quot;ROBUST_STEP&quot;,
+      &quot;name&quot;: &quot;抗噪性能 + 原始硬限值 + 质量预算&quot;,
+      &quot;type&quot;: &quot;analog_step&quot;,
+      &quot;channel&quot;: &quot;p&quot;,
+      &quot;trigger&quot;: {
+        &quot;type&quot;: &quot;time&quot;,
+        &quot;at&quot;: 0.25
+      },
+      &quot;window&quot;: [
+        0,
+        1.75
+      ],
+      &quot;baseline_window&quot;: [
+        -0.2,
+        -0.03
+      ],
+      &quot;target&quot;: 100.0,
+      &quot;normalization&quot;: &quot;step&quot;,
+      &quot;steady_last_s&quot;: 0.5,
+      &quot;settle_band_pct&quot;: 2.0,
+      &quot;settle_hold_s&quot;: 0.15,
+      &quot;limits&quot;: {
+        &quot;overshoot_pct_max&quot;: 5.0,
+        &quot;response_s_max&quot;: 0.28,
+        &quot;rise_s_max&quot;: 0.23,
+        &quot;latency_s_max&quot;: 0.08,
+        &quot;settling_s_max&quot;: 0.6,
+        &quot;steady_error_pct_max&quot;: 0.8,
+        &quot;steady_ripple_pp_max&quot;: 3.0
+      },
+      &quot;robust&quot;: {
+        &quot;hampel_window_s&quot;: 0.012,
+        &quot;hampel_sigma&quot;: 4.5,
+        &quot;hampel_floor&quot;: 0.9,
+        &quot;max_spike_s&quot;: 0.0031,
+        &quot;smooth_window_s&quot;: 0.003,
+        &quot;crossing_hold_s&quot;: 0.008,
+        &quot;crossing_hysteresis_fraction&quot;: 0.004,
+        &quot;settle_occupancy&quot;: 0.995,
+        &quot;max_excursion_s&quot;: 0.003,
+        &quot;max_replaced_fraction&quot;: 0.015,
+        &quot;max_noise_sigma&quot;: 1.0,
+        &quot;max_baseline_drift&quot;: 1.0,
+        &quot;max_steady_drift&quot;: 1.2,
+        &quot;raw_min&quot;: -20.0,
+        &quot;raw_max&quot;: 160.0
+      }
+    }
+  ]
+}</pre></details></section><footer>ESS WaveTest 1.2.0 · 离线分析 · SHA-256 用于文件一致性核对，不是数字签名。请结合原始录波、测量系统校准和适用标准审核结论。</footer></main><p style="font:12px sans-serif;color:#687b90">交互查看器 v1.3.0；历史判定版本以结果正文为准。图中明确标注完整窗口采样或证据摘要；缩放不是重新验收。</p></body></html>

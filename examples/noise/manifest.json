@@ -1,0 +1,1289 @@
+{
+  "name": "v1.2 噪声与扰动回归",
+  "notice": "全部为合成注入；预期包括 FAIL、INCONCLUSIVE 和 ERROR。不是现场故障检出率。",
+  "cases": [
+    {
+      "id": "N01_white_noise",
+      "name": "白噪声叠加工频纹波：健康响应",
+      "cfg": "N01_white_noise.cfg",
+      "case": "N01_white_noise.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {
+          "ROBUST_STEP": {
+            "response_s": [
+              0.19069388197455342,
+              0.21469388197455344
+            ],
+            "rise_s": [
+              0.14979184330021644,
+              0.17979184330021647
+            ]
+          }
+        },
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {
+        "ROBUST_STEP": {
+          "response_s": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "rise_s": [
+            0.14979184330021644,
+            0.17979184330021647
+          ]
+        }
+      }
+    },
+    {
+      "id": "N02_emi_impulses",
+      "name": "EMI 孤立尖峰：原始峰值冲突待复核",
+      "cfg": "N02_emi_impulses.cfg",
+      "case": "N02_emi_impulses.json",
+      "expected": "INCONCLUSIVE",
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [
+          {
+            "type": "injected_impulse",
+            "start_s": 0.36,
+            "samples": 1,
+            "amplitude": 65
+          },
+          {
+            "type": "injected_impulse",
+            "start_s": 0.83,
+            "samples": 2,
+            "amplitude": 24
+          },
+          {
+            "type": "injected_impulse",
+            "start_s": 1.1,
+            "samples": 1,
+            "amplitude": -18
+          }
+        ],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N03_baseline_impulse",
+      "name": "基线孤立污染：稳健基线不被拉偏",
+      "cfg": "N03_baseline_impulse.cfg",
+      "case": "N03_baseline_impulse.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [
+          {
+            "type": "injected_impulse",
+            "start_s": 0.12,
+            "samples": 1,
+            "amplitude": -8
+          }
+        ],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N04_pwm_ripple",
+      "name": "开关纹波与量化噪声：固定容限",
+      "cfg": "N04_pwm_ripple.cfg",
+      "case": "N04_pwm_ripple.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N05_colored_noise",
+      "name": "AR(1) 有色噪声：健康响应",
+      "cfg": "N05_colored_noise.cfg",
+      "case": "N05_colored_noise.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {
+          "ROBUST_STEP": {
+            "response_s": [
+              0.19069388197455342,
+              0.21469388197455344
+            ],
+            "rise_s": [
+              0.14979184330021644,
+              0.17979184330021647
+            ]
+          }
+        },
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {
+        "ROBUST_STEP": {
+          "response_s": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "rise_s": [
+            0.14979184330021644,
+            0.17979184330021647
+          ]
+        }
+      }
+    },
+    {
+      "id": "N06_burst_noise",
+      "name": "成片强噪声：拒绝自动给出性能结论",
+      "cfg": "N06_burst_noise.cfg",
+      "case": "N06_burst_noise.json",
+      "expected": "INCONCLUSIVE",
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N07_sustained_overshoot",
+      "name": "持续真实超调：不能被当作毛刺消除",
+      "cfg": "N07_sustained_overshoot.cfg",
+      "case": "N07_sustained_overshoot.json",
+      "expected": "FAIL",
+      "expected_assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N08_damped_ringing",
+      "name": "衰减振铃与噪声：正常恢复",
+      "cfg": "N08_damped_ringing.cfg",
+      "case": "N08_damped_ringing.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N09_persistent_oscillation",
+      "name": "持续振荡：均值正确也不合格",
+      "cfg": "N09_persistent_oscillation.cfg",
+      "case": "N09_persistent_oscillation.json",
+      "expected": "FAIL",
+      "expected_assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N10_short_real_transient",
+      "name": "8 ms 真实短时超调：保留峰值",
+      "cfg": "N10_short_real_transient.cfg",
+      "case": "N10_short_real_transient.json",
+      "expected": "FAIL",
+      "expected_assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N11_raw_safety_spike",
+      "name": "单采样安全越限：原始硬限值否决",
+      "cfg": "N11_raw_safety_spike.cfg",
+      "case": "N11_raw_safety_spike.json",
+      "expected": "FAIL",
+      "expected_assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [
+          {
+            "type": "injected_impulse",
+            "start_s": 0.8,
+            "samples": 1,
+            "amplitude": 25.0
+          }
+        ],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N12_ambiguous_spike",
+      "name": "同形短尖峰：不能仅凭外形区分噪声和故障",
+      "cfg": "N12_ambiguous_spike.cfg",
+      "case": "N12_ambiguous_spike.json",
+      "expected": "INCONCLUSIVE",
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [
+          {
+            "type": "injected_impulse",
+            "start_s": 0.8,
+            "samples": 1,
+            "amplitude": 25.0
+          }
+        ],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N13_slow_drift",
+      "name": "稳态缓慢漂移：禁止去趋势掩盖异常",
+      "cfg": "N13_slow_drift.cfg",
+      "case": "N13_slow_drift.json",
+      "expected": "FAIL",
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE",
+        "RAW_DRIFT": "FAIL"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N14_quantized_highrate",
+      "name": "5 kHz 量化噪声：按实际时间计算",
+      "cfg": "N14_quantized_highrate.cfg",
+      "case": "N14_quantized_highrate.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 10001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {
+          "ROBUST_STEP": {
+            "response_s": [
+              0.19069388197455342,
+              0.21469388197455344
+            ],
+            "rise_s": [
+              0.14979184330021644,
+              0.17979184330021647
+            ]
+          }
+        },
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {
+        "ROBUST_STEP": {
+          "response_s": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "rise_s": [
+            0.14979184330021644,
+            0.17979184330021647
+          ]
+        }
+      }
+    },
+    {
+      "id": "N15_contact_bounce",
+      "name": "接点吸合及释放抖动：非对称去抖",
+      "cfg": "N15_contact_bounce.cfg",
+      "case": "N15_contact_bounce.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "QUALIFIED_PULSE": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 1001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [
+          [
+            0.5,
+            0.501
+          ],
+          [
+            0.503,
+            0.504
+          ],
+          [
+            0.509,
+            0.7
+          ],
+          [
+            0.701,
+            0.703
+          ]
+        ],
+        "metric_oracles": {}
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N16_chatter_storm",
+      "name": "接点密集抖动风暴：质量预算拒绝",
+      "cfg": "N16_chatter_storm.cfg",
+      "case": "N16_chatter_storm.json",
+      "expected": "INCONCLUSIVE",
+      "expected_assertions": {
+        "QUALIFIED_HOLD": "INCONCLUSIVE"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 1001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [
+          [
+            0.4,
+            0.401
+          ],
+          [
+            0.402,
+            0.403
+          ],
+          [
+            0.404,
+            0.405
+          ],
+          [
+            0.406,
+            0.407
+          ],
+          [
+            0.408,
+            0.409
+          ],
+          [
+            0.41,
+            0.411
+          ],
+          [
+            0.412,
+            0.413
+          ],
+          [
+            0.414,
+            0.415
+          ],
+          [
+            0.416,
+            0.417
+          ],
+          [
+            0.418,
+            0.419
+          ],
+          [
+            0.42,
+            0.421
+          ],
+          [
+            0.422,
+            0.423
+          ],
+          [
+            0.424,
+            0.425
+          ],
+          [
+            0.426,
+            0.427
+          ],
+          [
+            0.428,
+            0.429
+          ],
+          [
+            0.43,
+            0.431
+          ],
+          [
+            0.432,
+            0.433
+          ],
+          [
+            0.434,
+            0.435
+          ],
+          [
+            0.436,
+            0.437
+          ],
+          [
+            0.438,
+            0.439
+          ],
+          [
+            0.44,
+            0.441
+          ],
+          [
+            0.442,
+            0.443
+          ],
+          [
+            0.444,
+            0.445
+          ],
+          [
+            0.446,
+            0.447
+          ],
+          [
+            0.448,
+            0.449
+          ],
+          [
+            0.45,
+            0.451
+          ],
+          [
+            0.452,
+            0.453
+          ],
+          [
+            0.454,
+            0.455
+          ],
+          [
+            0.456,
+            0.457
+          ],
+          [
+            0.458,
+            0.459
+          ],
+          [
+            0.46,
+            0.461
+          ],
+          [
+            0.462,
+            0.463
+          ],
+          [
+            0.464,
+            0.465
+          ],
+          [
+            0.466,
+            0.467
+          ],
+          [
+            0.468,
+            0.469
+          ],
+          [
+            0.47,
+            0.471
+          ],
+          [
+            0.472,
+            0.473
+          ],
+          [
+            0.474,
+            0.475
+          ],
+          [
+            0.476,
+            0.477
+          ],
+          [
+            0.478,
+            0.479
+          ],
+          [
+            0.48,
+            0.481
+          ],
+          [
+            0.482,
+            0.483
+          ],
+          [
+            0.484,
+            0.485
+          ],
+          [
+            0.486,
+            0.487
+          ],
+          [
+            0.488,
+            0.489
+          ],
+          [
+            0.49,
+            0.491
+          ],
+          [
+            0.492,
+            0.493
+          ],
+          [
+            0.494,
+            0.495
+          ],
+          [
+            0.496,
+            0.497
+          ],
+          [
+            0.498,
+            0.499
+          ],
+          [
+            0.5,
+            0.501
+          ],
+          [
+            0.502,
+            0.503
+          ],
+          [
+            0.504,
+            0.505
+          ],
+          [
+            0.506,
+            0.507
+          ],
+          [
+            0.508,
+            0.509
+          ],
+          [
+            0.51,
+            0.511
+          ],
+          [
+            0.512,
+            0.513
+          ],
+          [
+            0.514,
+            0.515
+          ],
+          [
+            0.516,
+            0.517
+          ],
+          [
+            0.518,
+            0.519
+          ],
+          [
+            0.52,
+            0.521
+          ],
+          [
+            0.522,
+            0.523
+          ],
+          [
+            0.524,
+            0.525
+          ],
+          [
+            0.526,
+            0.527
+          ],
+          [
+            0.528,
+            0.529
+          ],
+          [
+            0.53,
+            0.531
+          ],
+          [
+            0.532,
+            0.533
+          ],
+          [
+            0.534,
+            0.535
+          ],
+          [
+            0.536,
+            0.537
+          ],
+          [
+            0.538,
+            0.539
+          ],
+          [
+            0.54,
+            0.541
+          ],
+          [
+            0.542,
+            0.543
+          ],
+          [
+            0.544,
+            0.545
+          ],
+          [
+            0.546,
+            0.547
+          ],
+          [
+            0.548,
+            0.549
+          ],
+          [
+            0.55,
+            0.551
+          ],
+          [
+            0.552,
+            0.553
+          ],
+          [
+            0.554,
+            0.555
+          ],
+          [
+            0.556,
+            0.557
+          ],
+          [
+            0.558,
+            0.559
+          ]
+        ],
+        "metric_oracles": {}
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N17_protection_pulse",
+      "name": "1 ms 真实保护脉冲：原始通道保留",
+      "cfg": "N17_protection_pulse.cfg",
+      "case": "N17_protection_pulse.json",
+      "expected": "FAIL",
+      "expected_assertions": {
+        "RAW_NO_TRIP": "FAIL",
+        "RAW_PULSE": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 1001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [
+          [
+            0.5,
+            0.501
+          ]
+        ],
+        "metric_oracles": {}
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N18_invalid_debounce",
+      "name": "错误去抖配置：会吞掉合法保护脉冲",
+      "cfg": "N18_invalid_debounce.cfg",
+      "case": "N18_invalid_debounce.json",
+      "expected": "ERROR",
+      "expected_assertions": {
+        "CONFIGURATION": "ERROR"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 1001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [
+          [
+            0.5,
+            0.501
+          ]
+        ],
+        "metric_oracles": {}
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N19_active_low_bounce",
+      "name": "低有效脉冲：非对称吸合释放抖动",
+      "cfg": "N19_active_low_bounce.cfg",
+      "case": "N19_active_low_bounce.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "QUALIFIED_PULSE": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 1001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [
+          [
+            0.5,
+            0.501
+          ],
+          [
+            0.503,
+            0.504
+          ],
+          [
+            0.507,
+            0.55
+          ],
+          [
+            0.552,
+            0.554
+          ]
+        ],
+        "metric_oracles": {}
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N20_unfinished_dwell",
+      "name": "窗尾去抖未完成：不能借用未来证据",
+      "cfg": "N20_unfinished_dwell.cfg",
+      "case": "N20_unfinished_dwell.json",
+      "expected": "INCONCLUSIVE",
+      "expected_assertions": {
+        "QUALIFIED_HOLD": "INCONCLUSIVE"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 1001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [
+          [
+            0.998,
+            1.1
+          ]
+        ],
+        "metric_oracles": {}
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N21_noisy_analog_trigger",
+      "name": "模拟触发噪声、提前尖峰和多次重穿越",
+      "cfg": "N21_noisy_analog_trigger.cfg",
+      "case": "N21_noisy_analog_trigger.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "ACK_AFTER_QUALIFIED_TRIGGER": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {}
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N22_unqualified_trigger",
+      "name": "模拟触发只有短尖峰：无可信激励",
+      "cfg": "N22_unqualified_trigger.cfg",
+      "case": "N22_unqualified_trigger.json",
+      "expected": "INCONCLUSIVE",
+      "expected_assertions": {
+        "ACK_AFTER_QUALIFIED_TRIGGER": "INCONCLUSIVE"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {}
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N23_multirate_noise",
+      "name": "500/4000/1000 Hz 多采样率加噪",
+      "cfg": "N23_multirate_noise.cfg",
+      "case": "N23_multirate_noise.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 3351,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {
+          "ROBUST_STEP": {
+            "response_s": [
+              0.19069388197455342,
+              0.21469388197455344
+            ],
+            "rise_s": [
+              0.14979184330021644,
+              0.17979184330021647
+            ]
+          }
+        },
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {
+        "ROBUST_STEP": {
+          "response_s": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "rise_s": [
+            0.14979184330021644,
+            0.17979184330021647
+          ]
+        }
+      }
+    },
+    {
+      "id": "N24_timestamp_jitter",
+      "name": "采样时间抖动：用真实时间而非点数",
+      "cfg": "N24_timestamp_jitter.cfg",
+      "case": "N24_timestamp_jitter.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {
+          "ROBUST_STEP": {
+            "response_s": [
+              0.19069388197455342,
+              0.21469388197455344
+            ],
+            "rise_s": [
+              0.14979184330021644,
+              0.17979184330021647
+            ]
+          }
+        },
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {
+        "ROBUST_STEP": {
+          "response_s": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "rise_s": [
+            0.14979184330021644,
+            0.17979184330021647
+          ]
+        }
+      }
+    },
+    {
+      "id": "N25_noise_with_gap",
+      "name": "噪声叠加数据间隙：禁止跨缺口平滑",
+      "cfg": "N25_noise_with_gap.cfg",
+      "case": "N25_noise_with_gap.json",
+      "expected": "INCONCLUSIVE",
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 1991,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N26_noise_with_missing",
+      "name": "噪声叠加关键缺失样本：禁止插补验收",
+      "cfg": "N26_noise_with_missing.cfg",
+      "case": "N26_noise_with_missing.json",
+      "expected": "INCONCLUSIVE",
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N27_sensor_clipping",
+      "name": "传感器饱和削顶：测量失真待复核",
+      "cfg": "N27_sensor_clipping.cfg",
+      "case": "N27_sensor_clipping.json",
+      "expected": "INCONCLUSIVE",
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N28_sensor_stuck",
+      "name": "反馈持续不响应：充分观察后失败",
+      "cfg": "N28_sensor_stuck.cfg",
+      "case": "N28_sensor_stuck.json",
+      "expected": "FAIL",
+      "expected_assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N29_negative_step",
+      "name": "充放电反向阶跃：负目标与噪声",
+      "cfg": "N29_negative_step.cfg",
+      "case": "N29_negative_step.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {
+          "ROBUST_STEP": {
+            "response_s": [
+              0.19069388197455342,
+              0.21469388197455344
+            ],
+            "rise_s": [
+              0.14979184330021644,
+              0.17979184330021647
+            ]
+          }
+        },
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {
+        "ROBUST_STEP": {
+          "response_s": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "rise_s": [
+            0.14979184330021644,
+            0.17979184330021647
+          ]
+        }
+      }
+    },
+    {
+      "id": "N30_zero_target",
+      "name": "零目标阶跃：不使用目标值作分母",
+      "cfg": "N30_zero_target.cfg",
+      "case": "N30_zero_target.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {
+          "ROBUST_STEP": {
+            "response_s": [
+              0.19069388197455342,
+              0.21469388197455344
+            ],
+            "rise_s": [
+              0.14979184330021644,
+              0.17979184330021647
+            ]
+          }
+        },
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {
+        "ROBUST_STEP": {
+          "response_s": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "rise_s": [
+            0.14979184330021644,
+            0.17979184330021647
+          ]
+        }
+      }
+    },
+    {
+      "id": "N31_timing_boundary",
+      "name": "性能限值附近：时间支持保护带复核",
+      "cfg": "N31_timing_boundary.cfg",
+      "case": "N31_timing_boundary.json",
+      "expected": "INCONCLUSIVE",
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "truth_model": {
+        "injections": [],
+        "metric_oracles": {},
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {}
+    },
+    {
+      "id": "N32_many_channels",
+      "name": "16 模拟 + 512 数字通道：多通道噪声隔离",
+      "cfg": "N32_many_channels.cfg",
+      "case": "N32_many_channels.json",
+      "expected": "PASS",
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "seed": 20261011,
+      "format": "FLOAT32",
+      "samples": 4001,
+      "analog_channels": 16,
+      "digital_channels": 512,
+      "truth_model": {
+        "injections": [
+          {
+            "type": "injected_impulse",
+            "start_s": 0.7,
+            "samples": 1,
+            "amplitude": 2.0
+          }
+        ],
+        "metric_oracles": {
+          "ROBUST_STEP": {
+            "response_s": [
+              0.19069388197455342,
+              0.21469388197455344
+            ],
+            "rise_s": [
+              0.14979184330021644,
+              0.17979184330021647
+            ]
+          }
+        },
+        "ideal_response_s": 0.20269388197455343,
+        "ideal_rise_s": 0.16479184330021646
+      },
+      "metric_oracles": {
+        "ROBUST_STEP": {
+          "response_s": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "rise_s": [
+            0.14979184330021644,
+            0.17979184330021647
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+def trigger_time(record,config,test,cache):
+    tr=test.get("trigger",{"type":"time","at":0})
+    if tr["type"]=="time": return float(tr["at"]),{"type":"time","at":tr["at"]}
+    alias=tr["channel"]; sig=cache.get(alias)
+    if sig is None: sig=resolve(record,alias,config);cache[alias]=sig
+    start,end=tr.get("search",[sig.time[0],sig.time[-1]])
+    coverage(record,sig,start,end,test.get("max_gap_s"))
+    hits=[];qualified=[];metadata={}
+    if tr["type"]=="digital_edge":
+        if "noise" in tr:
+            _,events,pending,rejected=digital_qualify(sig.time,sig.values,tr["noise"],end)
+            qa=digital_audit(sig.time,sig.values,events,rejected,start,end,tr["noise"])
+            if qa["rejected_edges"]>tr["noise"].get("max_rejected_edges",20) or qa["longest_chatter_s"]>tr["noise"]["max_chatter_s"]+1e-12:
+                raise InsufficientData("数字触发通道噪声预算超限；不能可靠定位试验激励")
+            metadata["digital_noise"]=qa
+        else:
+            _,events,pending=debounced(sig.time,sig.values,tr.get("debounce_s",0),until=end)
+        desired=1 if tr.get("edge","rising")=="rising" else 0
+        for e in events:
+            if e["to"]==desired and start-1e-12<=e["time_s"]<=end+1e-12 and e["confirmed_s"]<=end+1e-12:
+                event_support(record,sig,e,test.get("max_gap_s"))
+                hits.append(e["time_s"]);qualified.append(e)
+    elif "hysteresis" in tr or "hold_s" in tr:
+        direction=1 if tr.get("edge","rising")=="rising" else -1
+        events,metadata=trigger_crossings(sig.time,sig.values,start,end,tr["threshold"],direction,tr.get("hysteresis",0),tr.get("hold_s",0))
+        for e in events:
+            event_support(record,sig,e,test.get("max_gap_s"))
+            hits.append(e["time_s"]);qualified.append(e)
+    else:
+        direction=1 if tr.get("edge","rising")=="rising" else -1; threshold=tr["threshold"]
+        # Search is inclusive: retain the predecessor of its left boundary.
+        # A sample already at threshold is not a new crossing without that proof.
+        t,y=sig.time,sig.values
+        for i in range(max(1,bisect_left(t,start-1e-12)),min(len(t),bisect_right(t,end+1e-12)+1)):
+            v0,v1=direction*(y[i-1]-threshold),direction*(y[i]-threshold)
+            if v0<0<=v1:
+                hit=t[i-1]+(t[i]-t[i-1])*(-v0)/(v1-v0)
+                if start-1e-12<=hit<=end+1e-12:
+                    coverage(record,sig,t[i-1],t[i],test.get("max_gap_s"))
+                    hits.append(hit);qualified.append({"support_s":[t[i-1],t[i]],"time_s":hit,"confirmed_s":hit})
+    occurrence=tr.get("occurrence",1)
+    if len(hits)<occurrence: raise InsufficientData(f"未找到第 {occurrence} 个指定触发事件；请确认试验激励是否执行")
+    event=qualified[occurrence-1]
+    idx=bisect_left(sig.time,event["time_s"])
+    support=event.get("support_s",[sig.time[max(0,idx-1)],sig.time[min(len(sig.time)-1,idx)]])
+    return hits[occurrence-1],{"type":tr["type"],"channel":alias,"occurrence":occurrence,"hits":len(hits),"at":hits[occurrence-1],
+                              "support_s":support,"uncertainty_s":support[1]-support[0],"qualified_event":event,**metadata}
+

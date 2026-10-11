@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="衰减振铃与噪声：正常恢复" tests="1" failures="0" errors="0"><properties><property name="config_sha256" value="4ecf505fd3cc2bfc6dac673df2b73d2e96415c6c1a3847a9f79f4358910b29a9" /></properties><testcase name="ROBUST_STEP 抗噪性能 + 原始硬限值 + 质量预算" classname="analog_step" /></testsuite>

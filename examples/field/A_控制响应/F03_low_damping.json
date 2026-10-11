@@ -1,0 +1,1063 @@
+{
+  "schema_version": 1,
+  "name": "低阻尼闭环与相关测量噪声：真实超调",
+  "description": "分层约束合成；不是现场录波或经过校准的EMT。先定义工况真值，再独立执行断言。",
+  "standard": {
+    "reference": "工程回归 / 非国标限值",
+    "clause": "合成数据验证",
+    "reviewed": false
+  },
+  "channels": {
+    "p": {
+      "kind": "analog",
+      "name": "并网总表有功",
+      "unit": "kW"
+    },
+    "p1": {
+      "kind": "analog",
+      "name": "PCS1有功",
+      "unit": "kW"
+    },
+    "p2": {
+      "kind": "analog",
+      "name": "PCS2有功",
+      "unit": "kW"
+    },
+    "set": {
+      "kind": "analog",
+      "name": "EMS有功设定",
+      "unit": "kW"
+    },
+    "q": {
+      "kind": "analog",
+      "name": "并网无功",
+      "unit": "kvar"
+    },
+    "dc": {
+      "kind": "analog",
+      "name": "直流母线电压",
+      "unit": "V"
+    },
+    "vbat": {
+      "kind": "analog",
+      "name": "电池簇端电压",
+      "unit": "V"
+    },
+    "ibat": {
+      "kind": "analog",
+      "name": "电池簇电流",
+      "unit": "A"
+    },
+    "soc": {
+      "kind": "analog",
+      "name": "电池簇SOC",
+      "unit": "%"
+    },
+    "f": {
+      "kind": "analog",
+      "name": "PLL频率",
+      "unit": "Hz"
+    },
+    "ua": {
+      "kind": "analog",
+      "name": "并网Ua",
+      "unit": "V"
+    },
+    "ub": {
+      "kind": "analog",
+      "name": "并网Ub",
+      "unit": "V"
+    },
+    "uc": {
+      "kind": "analog",
+      "name": "并网Uc",
+      "unit": "V"
+    },
+    "ia": {
+      "kind": "analog",
+      "name": "并网Ia",
+      "unit": "A"
+    },
+    "ib": {
+      "kind": "analog",
+      "name": "并网Ib",
+      "unit": "A"
+    },
+    "ic": {
+      "kind": "analog",
+      "name": "并网Ic",
+      "unit": "A"
+    },
+    "irms": {
+      "kind": "analog",
+      "name": "并网电流包络",
+      "unit": "A"
+    },
+    "ub_ref": {
+      "kind": "analog",
+      "name": "B相独立测量",
+      "unit": "V"
+    },
+    "temp": {
+      "kind": "analog",
+      "name": "PCS散热器温度",
+      "unit": "degC"
+    },
+    "limit": {
+      "kind": "analog",
+      "name": "有功限幅边界",
+      "unit": "kW"
+    },
+    "cell20": {
+      "kind": "analog",
+      "name": "电池簇01_单体04",
+      "unit": "V"
+    },
+    "cell21": {
+      "kind": "analog",
+      "name": "电池簇01_单体05",
+      "unit": "V"
+    },
+    "cell22": {
+      "kind": "analog",
+      "name": "电池簇01_单体06",
+      "unit": "V"
+    },
+    "cell23": {
+      "kind": "analog",
+      "name": "电池簇01_单体07",
+      "unit": "V"
+    },
+    "cmd": {
+      "kind": "digital",
+      "name": "EMS命令脉冲"
+    },
+    "ack": {
+      "kind": "digital",
+      "name": "PCS执行确认"
+    },
+    "pre": {
+      "kind": "digital",
+      "name": "预充完成"
+    },
+    "closed": {
+      "kind": "digital",
+      "name": "主接触器反馈"
+    },
+    "trip": {
+      "kind": "digital",
+      "name": "保护跳闸原始位"
+    },
+    "uv": {
+      "kind": "digital",
+      "name": "电网低压检测"
+    },
+    "limit_active": {
+      "kind": "digital",
+      "name": "电流限幅状态"
+    },
+    "heartbeat": {
+      "kind": "digital",
+      "name": "站控心跳"
+    },
+    "bms_ready": {
+      "kind": "digital",
+      "name": "BMS允许"
+    },
+    "reset": {
+      "kind": "digital",
+      "name": "复归命令"
+    },
+    "aux10": {
+      "kind": "digital",
+      "name": "机柜00_遥信10"
+    },
+    "aux11": {
+      "kind": "digital",
+      "name": "机柜00_遥信11"
+    },
+    "aux12": {
+      "kind": "digital",
+      "name": "机柜00_遥信12"
+    },
+    "aux13": {
+      "kind": "digital",
+      "name": "机柜00_遥信13"
+    },
+    "aux14": {
+      "kind": "digital",
+      "name": "机柜00_遥信14"
+    },
+    "aux15": {
+      "kind": "digital",
+      "name": "机柜00_遥信15"
+    },
+    "aux16": {
+      "kind": "digital",
+      "name": "机柜00_遥信16"
+    },
+    "aux17": {
+      "kind": "digital",
+      "name": "机柜00_遥信17"
+    },
+    "aux18": {
+      "kind": "digital",
+      "name": "机柜00_遥信18"
+    },
+    "aux19": {
+      "kind": "digital",
+      "name": "机柜00_遥信19"
+    },
+    "aux20": {
+      "kind": "digital",
+      "name": "机柜00_遥信20"
+    },
+    "aux21": {
+      "kind": "digital",
+      "name": "机柜00_遥信21"
+    },
+    "aux22": {
+      "kind": "digital",
+      "name": "机柜00_遥信22"
+    },
+    "aux23": {
+      "kind": "digital",
+      "name": "机柜00_遥信23"
+    },
+    "aux24": {
+      "kind": "digital",
+      "name": "机柜00_遥信24"
+    },
+    "aux25": {
+      "kind": "digital",
+      "name": "机柜00_遥信25"
+    },
+    "aux26": {
+      "kind": "digital",
+      "name": "机柜00_遥信26"
+    },
+    "aux27": {
+      "kind": "digital",
+      "name": "机柜00_遥信27"
+    },
+    "aux28": {
+      "kind": "digital",
+      "name": "机柜00_遥信28"
+    },
+    "aux29": {
+      "kind": "digital",
+      "name": "机柜00_遥信29"
+    },
+    "aux30": {
+      "kind": "digital",
+      "name": "机柜00_遥信30"
+    },
+    "aux31": {
+      "kind": "digital",
+      "name": "机柜00_遥信31"
+    },
+    "aux32": {
+      "kind": "digital",
+      "name": "机柜01_遥信00"
+    },
+    "aux33": {
+      "kind": "digital",
+      "name": "机柜01_遥信01"
+    },
+    "aux34": {
+      "kind": "digital",
+      "name": "机柜01_遥信02"
+    },
+    "aux35": {
+      "kind": "digital",
+      "name": "机柜01_遥信03"
+    },
+    "aux36": {
+      "kind": "digital",
+      "name": "机柜01_遥信04"
+    },
+    "aux37": {
+      "kind": "digital",
+      "name": "机柜01_遥信05"
+    },
+    "aux38": {
+      "kind": "digital",
+      "name": "机柜01_遥信06"
+    },
+    "aux39": {
+      "kind": "digital",
+      "name": "机柜01_遥信07"
+    },
+    "aux40": {
+      "kind": "digital",
+      "name": "机柜01_遥信08"
+    },
+    "aux41": {
+      "kind": "digital",
+      "name": "机柜01_遥信09"
+    },
+    "aux42": {
+      "kind": "digital",
+      "name": "机柜01_遥信10"
+    },
+    "aux43": {
+      "kind": "digital",
+      "name": "机柜01_遥信11"
+    },
+    "aux44": {
+      "kind": "digital",
+      "name": "机柜01_遥信12"
+    },
+    "aux45": {
+      "kind": "digital",
+      "name": "机柜01_遥信13"
+    },
+    "aux46": {
+      "kind": "digital",
+      "name": "机柜01_遥信14"
+    },
+    "aux47": {
+      "kind": "digital",
+      "name": "机柜01_遥信15"
+    },
+    "aux48": {
+      "kind": "digital",
+      "name": "机柜01_遥信16"
+    },
+    "aux49": {
+      "kind": "digital",
+      "name": "机柜01_遥信17"
+    },
+    "aux50": {
+      "kind": "digital",
+      "name": "机柜01_遥信18"
+    },
+    "aux51": {
+      "kind": "digital",
+      "name": "机柜01_遥信19"
+    },
+    "aux52": {
+      "kind": "digital",
+      "name": "机柜01_遥信20"
+    },
+    "aux53": {
+      "kind": "digital",
+      "name": "机柜01_遥信21"
+    },
+    "aux54": {
+      "kind": "digital",
+      "name": "机柜01_遥信22"
+    },
+    "aux55": {
+      "kind": "digital",
+      "name": "机柜01_遥信23"
+    },
+    "aux56": {
+      "kind": "digital",
+      "name": "机柜01_遥信24"
+    },
+    "aux57": {
+      "kind": "digital",
+      "name": "机柜01_遥信25"
+    },
+    "aux58": {
+      "kind": "digital",
+      "name": "机柜01_遥信26"
+    },
+    "aux59": {
+      "kind": "digital",
+      "name": "机柜01_遥信27"
+    },
+    "aux60": {
+      "kind": "digital",
+      "name": "机柜01_遥信28"
+    },
+    "aux61": {
+      "kind": "digital",
+      "name": "机柜01_遥信29"
+    },
+    "aux62": {
+      "kind": "digital",
+      "name": "机柜01_遥信30"
+    },
+    "aux63": {
+      "kind": "digital",
+      "name": "机柜01_遥信31"
+    },
+    "aux64": {
+      "kind": "digital",
+      "name": "机柜02_遥信00"
+    },
+    "aux65": {
+      "kind": "digital",
+      "name": "机柜02_遥信01"
+    },
+    "aux66": {
+      "kind": "digital",
+      "name": "机柜02_遥信02"
+    },
+    "aux67": {
+      "kind": "digital",
+      "name": "机柜02_遥信03"
+    },
+    "aux68": {
+      "kind": "digital",
+      "name": "机柜02_遥信04"
+    },
+    "aux69": {
+      "kind": "digital",
+      "name": "机柜02_遥信05"
+    },
+    "aux70": {
+      "kind": "digital",
+      "name": "机柜02_遥信06"
+    },
+    "aux71": {
+      "kind": "digital",
+      "name": "机柜02_遥信07"
+    },
+    "aux72": {
+      "kind": "digital",
+      "name": "机柜02_遥信08"
+    },
+    "aux73": {
+      "kind": "digital",
+      "name": "机柜02_遥信09"
+    },
+    "aux74": {
+      "kind": "digital",
+      "name": "机柜02_遥信10"
+    },
+    "aux75": {
+      "kind": "digital",
+      "name": "机柜02_遥信11"
+    },
+    "aux76": {
+      "kind": "digital",
+      "name": "机柜02_遥信12"
+    },
+    "aux77": {
+      "kind": "digital",
+      "name": "机柜02_遥信13"
+    },
+    "aux78": {
+      "kind": "digital",
+      "name": "机柜02_遥信14"
+    },
+    "aux79": {
+      "kind": "digital",
+      "name": "机柜02_遥信15"
+    },
+    "aux80": {
+      "kind": "digital",
+      "name": "机柜02_遥信16"
+    },
+    "aux81": {
+      "kind": "digital",
+      "name": "机柜02_遥信17"
+    },
+    "aux82": {
+      "kind": "digital",
+      "name": "机柜02_遥信18"
+    },
+    "aux83": {
+      "kind": "digital",
+      "name": "机柜02_遥信19"
+    },
+    "aux84": {
+      "kind": "digital",
+      "name": "机柜02_遥信20"
+    },
+    "aux85": {
+      "kind": "digital",
+      "name": "机柜02_遥信21"
+    },
+    "aux86": {
+      "kind": "digital",
+      "name": "机柜02_遥信22"
+    },
+    "aux87": {
+      "kind": "digital",
+      "name": "机柜02_遥信23"
+    },
+    "aux88": {
+      "kind": "digital",
+      "name": "机柜02_遥信24"
+    },
+    "aux89": {
+      "kind": "digital",
+      "name": "机柜02_遥信25"
+    },
+    "aux90": {
+      "kind": "digital",
+      "name": "机柜02_遥信26"
+    },
+    "aux91": {
+      "kind": "digital",
+      "name": "机柜02_遥信27"
+    },
+    "aux92": {
+      "kind": "digital",
+      "name": "机柜02_遥信28"
+    },
+    "aux93": {
+      "kind": "digital",
+      "name": "机柜02_遥信29"
+    },
+    "aux94": {
+      "kind": "digital",
+      "name": "机柜02_遥信30"
+    },
+    "aux95": {
+      "kind": "digital",
+      "name": "机柜02_遥信31"
+    },
+    "aux96": {
+      "kind": "digital",
+      "name": "机柜03_遥信00"
+    },
+    "aux97": {
+      "kind": "digital",
+      "name": "机柜03_遥信01"
+    },
+    "aux98": {
+      "kind": "digital",
+      "name": "机柜03_遥信02"
+    },
+    "aux99": {
+      "kind": "digital",
+      "name": "机柜03_遥信03"
+    },
+    "aux100": {
+      "kind": "digital",
+      "name": "机柜03_遥信04"
+    },
+    "aux101": {
+      "kind": "digital",
+      "name": "机柜03_遥信05"
+    },
+    "aux102": {
+      "kind": "digital",
+      "name": "机柜03_遥信06"
+    },
+    "aux103": {
+      "kind": "digital",
+      "name": "机柜03_遥信07"
+    }
+  },
+  "tests": [
+    {
+      "id": "P1",
+      "name": "P1",
+      "type": "analog_step",
+      "channel": "p",
+      "window": [
+        0,
+        1.4
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 1,
+        "search": [
+          0,
+          5.7
+        ]
+      },
+      "target": 80.0,
+      "baseline_window": [
+        -0.18,
+        -0.04
+      ],
+      "steady_last_s": 0.25,
+      "normalization": "rated",
+      "rated": 100,
+      "settle_band_pct": 2,
+      "settle_hold_s": 0.12,
+      "robust": {
+        "hampel_window_s": 0.007,
+        "hampel_sigma": 4.5,
+        "hampel_floor": 0.35,
+        "max_spike_s": 0.0015,
+        "smooth_window_s": 0.002,
+        "crossing_hold_s": 0.008,
+        "crossing_hysteresis_fraction": 0.005,
+        "settle_occupancy": 0.99,
+        "max_excursion_s": 0.004,
+        "max_replaced_fraction": 0.015,
+        "max_noise_sigma": 0.7,
+        "max_baseline_drift": 0.5,
+        "max_steady_drift": 0.5,
+        "raw_min": -150,
+        "raw_max": 150
+      },
+      "limits": {
+        "overshoot_pct_max": 4,
+        "response_s_max": 0.55,
+        "rise_s_max": 0.5,
+        "settling_s_max": 0.85,
+        "steady_error_pct_max": 0.5,
+        "steady_ripple_pp_max": 1.5
+      }
+    },
+    {
+      "id": "P2",
+      "name": "P2",
+      "type": "analog_step",
+      "channel": "p",
+      "window": [
+        0,
+        1.4
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 2,
+        "search": [
+          0,
+          5.7
+        ]
+      },
+      "target": -60.0,
+      "baseline_window": [
+        -0.18,
+        -0.04
+      ],
+      "steady_last_s": 0.25,
+      "normalization": "rated",
+      "rated": 100,
+      "settle_band_pct": 2,
+      "settle_hold_s": 0.12,
+      "robust": {
+        "hampel_window_s": 0.007,
+        "hampel_sigma": 4.5,
+        "hampel_floor": 0.35,
+        "max_spike_s": 0.0015,
+        "smooth_window_s": 0.002,
+        "crossing_hold_s": 0.008,
+        "crossing_hysteresis_fraction": 0.005,
+        "settle_occupancy": 0.99,
+        "max_excursion_s": 0.004,
+        "max_replaced_fraction": 0.015,
+        "max_noise_sigma": 0.7,
+        "max_baseline_drift": 0.5,
+        "max_steady_drift": 0.5,
+        "raw_min": -150,
+        "raw_max": 150
+      },
+      "limits": {
+        "overshoot_pct_max": 4,
+        "response_s_max": 0.55,
+        "rise_s_max": 0.5,
+        "settling_s_max": 0.85,
+        "steady_error_pct_max": 0.5,
+        "steady_ripple_pp_max": 1.5
+      }
+    },
+    {
+      "id": "P3",
+      "name": "P3",
+      "type": "analog_step",
+      "channel": "p",
+      "window": [
+        0,
+        1.4
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 3,
+        "search": [
+          0,
+          5.7
+        ]
+      },
+      "target": 0.0,
+      "baseline_window": [
+        -0.18,
+        -0.04
+      ],
+      "steady_last_s": 0.25,
+      "normalization": "rated",
+      "rated": 100,
+      "settle_band_pct": 2,
+      "settle_hold_s": 0.12,
+      "robust": {
+        "hampel_window_s": 0.007,
+        "hampel_sigma": 4.5,
+        "hampel_floor": 0.35,
+        "max_spike_s": 0.0015,
+        "smooth_window_s": 0.002,
+        "crossing_hold_s": 0.008,
+        "crossing_hysteresis_fraction": 0.005,
+        "settle_occupancy": 0.99,
+        "max_excursion_s": 0.004,
+        "max_replaced_fraction": 0.015,
+        "max_noise_sigma": 0.7,
+        "max_baseline_drift": 0.5,
+        "max_steady_drift": 0.5,
+        "raw_min": -150,
+        "raw_max": 150
+      },
+      "limits": {
+        "overshoot_pct_max": 4,
+        "response_s_max": 0.55,
+        "rise_s_max": 0.5,
+        "settling_s_max": 0.85,
+        "steady_error_pct_max": 0.5,
+        "steady_ripple_pp_max": 1.5
+      }
+    },
+    {
+      "id": "ACK1",
+      "name": "ACK1",
+      "type": "digital_edge",
+      "channel": "ack",
+      "window": [
+        0,
+        0.18
+      ],
+      "trigger": {
+        "type": "time",
+        "at": 0.6
+      },
+      "edge": "rising",
+      "count": 1,
+      "latency_min_s": 0.03,
+      "latency_max_s": 0.09,
+      "noise": {
+        "rise_s": 0.002,
+        "fall_s": 0.002,
+        "max_rejected_edges": 8,
+        "max_chatter_s": 0.01,
+        "timing_guard": true
+      }
+    },
+    {
+      "id": "ACK2",
+      "name": "ACK2",
+      "type": "digital_edge",
+      "channel": "ack",
+      "window": [
+        0,
+        0.18
+      ],
+      "trigger": {
+        "type": "time",
+        "at": 2.5
+      },
+      "edge": "rising",
+      "count": 1,
+      "latency_min_s": 0.03,
+      "latency_max_s": 0.09,
+      "noise": {
+        "rise_s": 0.002,
+        "fall_s": 0.002,
+        "max_rejected_edges": 8,
+        "max_chatter_s": 0.01,
+        "timing_guard": true
+      }
+    },
+    {
+      "id": "ACK3",
+      "name": "ACK3",
+      "type": "digital_edge",
+      "channel": "ack",
+      "window": [
+        0,
+        0.18
+      ],
+      "trigger": {
+        "type": "time",
+        "at": 4.4
+      },
+      "edge": "rising",
+      "count": 1,
+      "latency_min_s": 0.03,
+      "latency_max_s": 0.09,
+      "noise": {
+        "rise_s": 0.002,
+        "fall_s": 0.002,
+        "max_rejected_edges": 8,
+        "max_chatter_s": 0.01,
+        "timing_guard": true
+      }
+    },
+    {
+      "id": "ACK4",
+      "name": "ACK4",
+      "type": "digital_edge",
+      "channel": "ack",
+      "window": [
+        0,
+        0.18
+      ],
+      "trigger": {
+        "type": "time",
+        "at": 5.8
+      },
+      "edge": "rising",
+      "count": 1,
+      "latency_min_s": 0.03,
+      "latency_max_s": 0.09,
+      "noise": {
+        "rise_s": 0.002,
+        "fall_s": 0.002,
+        "max_rejected_edges": 8,
+        "max_chatter_s": 0.01,
+        "timing_guard": true
+      }
+    },
+    {
+      "id": "ACK5",
+      "name": "ACK5",
+      "type": "digital_edge",
+      "channel": "ack",
+      "window": [
+        0,
+        0.18
+      ],
+      "trigger": {
+        "type": "time",
+        "at": 7.4
+      },
+      "edge": "rising",
+      "count": 1,
+      "latency_min_s": 0.03,
+      "latency_max_s": 0.09,
+      "noise": {
+        "rise_s": 0.002,
+        "fall_s": 0.002,
+        "max_rejected_edges": 8,
+        "max_chatter_s": 0.01,
+        "timing_guard": true
+      }
+    },
+    {
+      "id": "ACK6",
+      "name": "ACK6",
+      "type": "digital_edge",
+      "channel": "ack",
+      "window": [
+        0,
+        0.18
+      ],
+      "trigger": {
+        "type": "time",
+        "at": 8.6
+      },
+      "edge": "rising",
+      "count": 1,
+      "latency_min_s": 0.03,
+      "latency_max_s": 0.09,
+      "noise": {
+        "rise_s": 0.002,
+        "fall_s": 0.002,
+        "max_rejected_edges": 8,
+        "max_chatter_s": 0.01,
+        "timing_guard": true
+      }
+    },
+    {
+      "id": "CLOSE",
+      "name": "CLOSE",
+      "type": "digital_edge",
+      "channel": "closed",
+      "window": [
+        0,
+        0.12
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "pre",
+        "edge": "rising"
+      },
+      "edge": "rising",
+      "count": 1,
+      "latency_min_s": 0.02,
+      "latency_max_s": 0.09,
+      "noise": {
+        "rise_s": 0.002,
+        "fall_s": 0.002,
+        "max_rejected_edges": 8,
+        "max_chatter_s": 0.01,
+        "timing_guard": true
+      }
+    },
+    {
+      "id": "NO_TRIP",
+      "name": "NO_TRIP",
+      "type": "digital_hold",
+      "channel": "trip",
+      "window": [
+        0.2,
+        9.8
+      ],
+      "value": 0
+    },
+    {
+      "id": "UA",
+      "name": "UA",
+      "type": "analog_rms",
+      "channel": "ua",
+      "window": [
+        1.08,
+        1.48
+      ],
+      "min": 218,
+      "max": 245
+    },
+    {
+      "id": "UB",
+      "name": "UB",
+      "type": "analog_rms",
+      "channel": "ub",
+      "window": [
+        1.08,
+        1.48
+      ],
+      "min": 218,
+      "max": 245
+    },
+    {
+      "id": "UC",
+      "name": "UC",
+      "type": "analog_rms",
+      "channel": "uc",
+      "window": [
+        1.08,
+        1.48
+      ],
+      "min": 218,
+      "max": 245
+    },
+    {
+      "id": "DC",
+      "name": "DC",
+      "type": "analog_range",
+      "channel": "dc",
+      "window": [
+        0.3,
+        9.5
+      ],
+      "min": 690,
+      "max": 810
+    },
+    {
+      "id": "I_LIMIT",
+      "name": "I_LIMIT",
+      "type": "analog_range",
+      "channel": "irms",
+      "window": [
+        6.4,
+        7.15
+      ],
+      "min": 0,
+      "max": 161
+    },
+    {
+      "id": "FREQ",
+      "name": "FREQ",
+      "type": "analog_range",
+      "channel": "f",
+      "window": [
+        5.5,
+        8
+      ],
+      "min": 49,
+      "max": 51
+    },
+    {
+      "id": "SUM_EARLY",
+      "name": "SUM_EARLY",
+      "type": "analog_relation",
+      "channel": "p",
+      "window": [
+        0.4,
+        5.7
+      ],
+      "references": [
+        {
+          "channel": "p1",
+          "gain": 1
+        },
+        {
+          "channel": "p2",
+          "gain": 1
+        }
+      ],
+      "tolerance": 0.4,
+      "max_violation_s": 0.002,
+      "hard_max_error": 1.0
+    },
+    {
+      "id": "SUM_SAG",
+      "name": "SUM_SAG",
+      "type": "analog_relation",
+      "channel": "p",
+      "window": [
+        6.3,
+        7.2
+      ],
+      "references": [
+        {
+          "channel": "p1",
+          "gain": 1
+        },
+        {
+          "channel": "p2",
+          "gain": 1
+        }
+      ],
+      "tolerance": 0.4,
+      "max_violation_s": 0.002,
+      "hard_max_error": 1.0
+    },
+    {
+      "id": "SUM_LATE",
+      "name": "SUM_LATE",
+      "type": "analog_relation",
+      "channel": "p",
+      "window": [
+        7.5,
+        9.7
+      ],
+      "references": [
+        {
+          "channel": "p1",
+          "gain": 1
+        },
+        {
+          "channel": "p2",
+          "gain": 1
+        }
+      ],
+      "tolerance": 0.4,
+      "max_violation_s": 0.002,
+      "hard_max_error": 1.0
+    },
+    {
+      "id": "VT_REDUNDANT",
+      "name": "VT_REDUNDANT",
+      "type": "analog_relation",
+      "channel": "ub",
+      "window": [
+        1.05,
+        1.5
+      ],
+      "references": [
+        {
+          "channel": "ub_ref",
+          "gain": 1
+        }
+      ],
+      "tolerance": 0.4,
+      "max_violation_s": 0.002,
+      "hard_max_error": 1.0,
+      "alignment_error_bound": 0
+    }
+  ]
+}

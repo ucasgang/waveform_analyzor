@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "name": "教学：100 kW 功率阶跃",
+  "channels": {
+    "cmd": {
+      "kind": "digital",
+      "name": "启动命令"
+    },
+    "power": {
+      "kind": "analog",
+      "name": "有功功率",
+      "unit": "kW"
+    }
+  },
+  "tests": [
+    {
+      "id": "P01",
+      "type": "analog_step",
+      "channel": "power",
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "search": [
+          0,
+          1
+        ]
+      },
+      "window": [
+        0,
+        1.5
+      ],
+      "baseline_window": [
+        -0.15,
+        -0.01
+      ],
+      "target": 100,
+      "normalization": "rated",
+      "rated": 100,
+      "steady_last_s": 0.25,
+      "settle_band_pct": 2,
+      "settle_hold_s": 0.1,
+      "limits": {
+        "overshoot_pct_max": 5,
+        "response_s_max": 0.4,
+        "steady_error_pct_max": 1
+      }
+    }
+  ]
+}

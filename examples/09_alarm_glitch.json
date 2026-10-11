@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "name": "储能 PCS 厂内功能与阶跃响应验收 · 演示 / 09_alarm_glitch",
+  "description": "所有阈值为教学示例，不是国标条款的默认值。时间单位统一为秒。",
+  "standard": {
+    "reference": "DEMO / 项目自定义验收配置",
+    "clause": "教学示例，非规范条款",
+    "reviewed": false,
+    "note": "正式验收需按适用标准及合同逐条复核阈值、基准与测量方法。"
+  },
+  "channels": {
+    "command": {
+      "kind": "digital",
+      "name": "启动命令"
+    },
+    "ready": {
+      "kind": "digital",
+      "name": "运行反馈"
+    },
+    "pulse": {
+      "kind": "digital",
+      "name": "合闸脉冲"
+    },
+    "alarm": {
+      "kind": "digital",
+      "name": "故障告警"
+    },
+    "power": {
+      "kind": "analog",
+      "name": "有功功率",
+      "unit": "kW"
+    },
+    "dc": {
+      "kind": "analog",
+      "name": "直流母线电压",
+      "unit": "V"
+    },
+    "voltage": {
+      "kind": "analog",
+      "name": "交流电压Ua",
+      "unit": "V"
+    }
+  },
+  "tests": [
+    {
+      "id": "D01",
+      "name": "运行反馈正确置位",
+      "type": "digital_edge",
+      "channel": "ready",
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "command",
+        "edge": "rising",
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          1
+        ]
+      },
+      "window": [
+        0,
+        0.4
+      ],
+      "edge": "rising",
+      "count": 1,
+      "debounce_s": 0.003,
+      "latency_min_s": 0.01,
+      "latency_max_s": 0.1
+    },
+    {
+      "id": "D02",
+      "name": "合闸脉冲宽度",
+      "type": "digital_pulse",
+      "channel": "pulse",
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "command",
+        "edge": "rising",
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          1
+        ]
+      },
+      "window": [
+        0,
+        0.4
+      ],
+      "active": 1,
+      "count": 1,
+      "min_width_s": 0.03,
+      "max_width_s": 0.08
+    },
+    {
+      "id": "D03",
+      "name": "试验期间无故障告警",
+      "type": "digital_hold",
+      "channel": "alarm",
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "command",
+        "edge": "rising",
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          1
+        ]
+      },
+      "window": [
+        0,
+        1.5
+      ],
+      "value": 0
+    },
+    {
+      "id": "A01",
+      "name": "有功功率阶跃响应",
+      "type": "analog_step",
+      "channel": "power",
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "command",
+        "edge": "rising",
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          1
+        ]
+      },
+      "window": [
+        0,
+        1.5
+      ],
+      "baseline_window": [
+        -0.15,
+        -0.02
+      ],
+      "target": 100,
+      "normalization": "rated",
+      "rated": 100,
+      "settle_band_pct": 2,
+      "settle_hold_s": 0.1,
+      "steady_last_s": 0.25,
+      "limits": {
+        "overshoot_pct_max": 5,
+        "response_s_max": 0.4,
+        "rise_s_max": 0.4,
+        "settling_s_max": 0.7,
+        "steady_error_pct_max": 1
+      }
+    },
+    {
+      "id": "A02",
+      "name": "直流母线电压范围",
+      "type": "analog_range",
+      "channel": "dc",
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "command",
+        "edge": "rising",
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          1
+        ]
+      },
+      "window": [
+        0,
+        1.5
+      ],
+      "min": 680,
+      "max": 720
+    },
+    {
+      "id": "A03",
+      "name": "交流电压有效值",
+      "type": "analog_rms",
+      "channel": "voltage",
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "command",
+        "edge": "rising",
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          1
+        ]
+      },
+      "window": [
+        0.8,
+        1.2
+      ],
+      "min": 215,
+      "max": 225
+    }
+  ]
+}

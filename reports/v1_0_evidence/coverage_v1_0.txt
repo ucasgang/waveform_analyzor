@@ -1,0 +1,12 @@
+Name                  Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------
+esswave/__init__.py       1      0      0      0   100%
+esswave/__main__.py       2      2      0      0     0%   1-2
+esswave/cli.py           79      1     26      3    96%   19->exit, 38->39, 92
+esswave/comtrade.py     256     21    124     25    88%   61-62, 74, 79, 86, 94, 107, 113, 122, 124, 134, 137, 140->173, 142->173, 147, 153, 155, 157->173, 163, 165, 167, 175, 189, 211, 234->250, 237->250, 253->exit
+esswave/engine.py       373      0    246     27    96%   50->exit, 56->exit, 64->exit, 66->exit, 75->exit, 76->exit, 77->exit, 79->exit, 81->exit, 92->exit, 100->exit, 119->exit, 123->exit, 124->exit, 127->exit, 134->exit, 137->exit, 143->exit, 146->exit, 151->exit, 158->exit, 161->exit, 213->exit, 360->358, 380->exit, 385->exit, 413->exit
+esswave/generate.py     120      0     34      5    97%   23->exit, 25->exit, 26->exit, 44->exit, 45->exit
+esswave/report.py       104      2     42      2    97%   26, 35
+esswave/server.py       138     17     56     11    86%   33, 56->exit, 58, 59->exit, 61->exit, 76->94, 79->94, 86->94, 96->exit, 102->127, 104->127, 121->127, 126, 131-133, 138-148
+-----------------------------------------------------------------
+TOTAL                  1073     43    528     73    93%

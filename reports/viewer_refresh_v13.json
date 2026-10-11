@@ -1,0 +1,732 @@
+{
+  "reports": 121,
+  "with_matching_sources": 120,
+  "rows": [
+    {
+      "file": "reports/complex_regression/001_C01_cycle_pass/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/complex_regression/002_C02_cycle_race/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/complex_regression/003_C03_cycle_oscillation/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/complex_regression/004_C04_sag_pass/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/complex_regression/005_C05_sag_trip/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/complex_regression/006_C06_multirate_skew/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/complex_regression/007_C07_fault_reset_pass/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/complex_regression/008_C08_fault_reset_race/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/complex_regression/009_C09_dense_512/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/complex_regression/010_C10_target_drift/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/complex_regression/011_C11_selected_missing/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/complex_regression/012_C12_causal_debounce/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/data_gap/report.html",
+      "original_result_version": "1.1.0",
+      "source_pair_hash_matched": true,
+      "interactive": false
+    },
+    {
+      "file": "reports/field_v13/F01_coupled_nominal/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F02_dispatch_delay/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F03_low_damping/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F04_deep_sag/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F05_trip_1ms/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F06_stale_telemetry/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F07_ct_vt_clipping/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F08_common_mode_emi/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F09_clock_jitter/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F10_multirate_skew/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F11_acquisition_gap/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F12_selected_dropout/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F13_sensor_gain_drift/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F14_handshake_loss/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F15_limiter_disabled/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F16_compound_faults/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F17_512_channel_rack/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/field_v13/F18_colored_burst/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/frontend_v13/downloaded_reports/items/r00001/out/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/frontend_v13/downloaded_reports/items/r00002/out/report.html",
+      "original_result_version": "1.3.0",
+      "source_pair_hash_matched": false,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/001_N01_white_noise/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/002_N02_emi_impulses/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/003_N03_baseline_impulse/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/004_N04_pwm_ripple/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/005_N05_colored_noise/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/006_N06_burst_noise/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/007_N07_sustained_overshoot/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/008_N08_damped_ringing/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/009_N09_persistent_oscillation/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/010_N10_short_real_transient/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/011_N11_raw_safety_spike/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/012_N12_ambiguous_spike/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/013_N13_slow_drift/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/014_N14_quantized_highrate/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/015_N15_contact_bounce/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/016_N16_chatter_storm/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/017_N17_protection_pulse/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/019_N19_active_low_bounce/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/020_N20_unfinished_dwell/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": false
+    },
+    {
+      "file": "reports/noise_batch/021_N21_noisy_analog_trigger/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/022_N22_unqualified_trigger/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": false
+    },
+    {
+      "file": "reports/noise_batch/023_N23_multirate_noise/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/024_N24_timestamp_jitter/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/025_N25_noise_with_gap/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": false
+    },
+    {
+      "file": "reports/noise_batch/026_N26_noise_with_missing/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": false
+    },
+    {
+      "file": "reports/noise_batch/027_N27_sensor_clipping/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/028_N28_sensor_stuck/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/029_N29_negative_step/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/030_N30_zero_target/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/031_N31_timing_boundary/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_batch/032_N32_many_channels/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N01_white_noise/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N02_emi_impulses/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N03_baseline_impulse/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N04_pwm_ripple/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N05_colored_noise/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N06_burst_noise/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N07_sustained_overshoot/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N08_damped_ringing/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N09_persistent_oscillation/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N10_short_real_transient/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N11_raw_safety_spike/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N12_ambiguous_spike/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N13_slow_drift/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N14_quantized_highrate/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N15_contact_bounce/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N16_chatter_storm/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N17_protection_pulse/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N19_active_low_bounce/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N20_unfinished_dwell/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": false
+    },
+    {
+      "file": "reports/noise_v12/N21_noisy_analog_trigger/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N22_unqualified_trigger/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": false
+    },
+    {
+      "file": "reports/noise_v12/N23_multirate_noise/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N24_timestamp_jitter/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N25_noise_with_gap/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": false
+    },
+    {
+      "file": "reports/noise_v12/N26_noise_with_missing/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": false
+    },
+    {
+      "file": "reports/noise_v12/N27_sensor_clipping/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N28_sensor_stuck/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N29_negative_step/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N30_zero_target/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N31_timing_boundary/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/noise_v12/N32_many_channels/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/normal_pass/report.html",
+      "original_result_version": "1.1.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/overshoot_fail/report.html",
+      "original_result_version": "1.1.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/001_01_pass_binary/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/002_02_pass_ascii/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/003_03_pass_binary32/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/004_04_pass_float32/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/005_05_slow_response/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/006_06_overshoot/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/007_07_steady_error/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/008_08_wide_pulse/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/009_09_alarm_glitch/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/010_10_no_trigger/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": false
+    },
+    {
+      "file": "reports/regression/011_11_missing_value/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/012_12_sampling_gap/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": false
+    },
+    {
+      "file": "reports/regression/013_13_falling_step/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/014_14_zero_target/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/015_15_contact_bounce/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/016_16_open_pulse/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/017_17_never_response/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/018_18_oscillation/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/019_19_measurement_noise/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/020_20_chinese_gbk/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/021_21_missing_edge/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/022_22_512_channels/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/regression/023_23_rebuilt_time/report.html",
+      "original_result_version": "1.2.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    },
+    {
+      "file": "reports/v1_0_evidence/manual_minimal/report.html",
+      "original_result_version": "1.0.0",
+      "source_pair_hash_matched": true,
+      "interactive": true
+    }
+  ]
+}

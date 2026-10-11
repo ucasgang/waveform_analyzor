@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="教学：100 kW 功率阶跃" tests="1" failures="0" errors="0"><properties><property name="config_sha256" value="f3d33d85d9de0225720e7739eab809332c3e608d2a22405492f2a573cfe50472" /></properties><testcase name="P01 P01" classname="analog_step" /></testsuite>

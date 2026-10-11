@@ -1,0 +1,39 @@
+test_F01_coupled_nominal (test_field_v13.FieldSceneTests.test_F01_coupled_nominal) ... ok
+test_F02_dispatch_delay (test_field_v13.FieldSceneTests.test_F02_dispatch_delay) ... ok
+test_F03_low_damping (test_field_v13.FieldSceneTests.test_F03_low_damping) ... ok
+test_F04_deep_sag (test_field_v13.FieldSceneTests.test_F04_deep_sag) ... ok
+test_F05_trip_1ms (test_field_v13.FieldSceneTests.test_F05_trip_1ms) ... ok
+test_F06_stale_telemetry (test_field_v13.FieldSceneTests.test_F06_stale_telemetry) ... ok
+test_F07_ct_vt_clipping (test_field_v13.FieldSceneTests.test_F07_ct_vt_clipping) ... ok
+test_F08_common_mode_emi (test_field_v13.FieldSceneTests.test_F08_common_mode_emi) ... ok
+test_F09_clock_jitter (test_field_v13.FieldSceneTests.test_F09_clock_jitter) ... ok
+test_F10_multirate_skew (test_field_v13.FieldSceneTests.test_F10_multirate_skew) ... ok
+test_F11_acquisition_gap (test_field_v13.FieldSceneTests.test_F11_acquisition_gap) ... ok
+test_F12_selected_dropout (test_field_v13.FieldSceneTests.test_F12_selected_dropout) ... ok
+test_F13_sensor_gain_drift (test_field_v13.FieldSceneTests.test_F13_sensor_gain_drift) ... ok
+test_F14_handshake_loss (test_field_v13.FieldSceneTests.test_F14_handshake_loss) ... ok
+test_F15_limiter_disabled (test_field_v13.FieldSceneTests.test_F15_limiter_disabled) ... ok
+test_F16_compound_faults (test_field_v13.FieldSceneTests.test_F16_compound_faults) ... ok
+test_F17_512_channel_rack (test_field_v13.FieldSceneTests.test_F17_512_channel_rack) ... ok
+test_F18_colored_burst (test_field_v13.FieldSceneTests.test_F18_colored_burst) ... ok
+test_F01_coupled_nominal_seed_1 (test_field_v13.FieldSeedTests.test_F01_coupled_nominal_seed_1) ... ok
+test_F01_coupled_nominal_seed_17 (test_field_v13.FieldSeedTests.test_F01_coupled_nominal_seed_17) ... ok
+test_F01_coupled_nominal_seed_65537 (test_field_v13.FieldSeedTests.test_F01_coupled_nominal_seed_65537) ... ok
+test_F01_coupled_nominal_seed_90210 (test_field_v13.FieldSeedTests.test_F01_coupled_nominal_seed_90210) ... ok
+test_F05_trip_1ms_seed_1 (test_field_v13.FieldSeedTests.test_F05_trip_1ms_seed_1) ... ok
+test_F05_trip_1ms_seed_17 (test_field_v13.FieldSeedTests.test_F05_trip_1ms_seed_17) ... ok
+test_F05_trip_1ms_seed_65537 (test_field_v13.FieldSeedTests.test_F05_trip_1ms_seed_65537) ... ok
+test_F05_trip_1ms_seed_90210 (test_field_v13.FieldSeedTests.test_F05_trip_1ms_seed_90210) ... ok
+test_F08_common_mode_emi_seed_1 (test_field_v13.FieldSeedTests.test_F08_common_mode_emi_seed_1) ... ok
+test_F08_common_mode_emi_seed_17 (test_field_v13.FieldSeedTests.test_F08_common_mode_emi_seed_17) ... ok
+test_F08_common_mode_emi_seed_65537 (test_field_v13.FieldSeedTests.test_F08_common_mode_emi_seed_65537) ... ok
+test_F08_common_mode_emi_seed_90210 (test_field_v13.FieldSeedTests.test_F08_common_mode_emi_seed_90210) ... ok
+test_fault_outcome_not_read_from_sidecar (test_field_v13.FieldTruthTests.test_fault_outcome_not_read_from_sidecar) ... ok
+test_generator_repeatability_and_seed_diversity (test_field_v13.FieldTruthTests.test_generator_repeatability_and_seed_diversity) ... ok
+test_saved_files_hashes_match_all_injections (test_field_v13.FieldTruthTests.test_saved_files_hashes_match_all_injections) ... ok
+test_unsafe_undersampling_rejected (test_field_v13.FieldTruthTests.test_unsafe_undersampling_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 37.741s
+
+OK

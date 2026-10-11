@@ -1,0 +1,2 @@
+﻿用例ID,名称,类型,通道,总体判定,指标,测量值,最小限值,最大限值,指标判定,说明
+ACK_AFTER_QUALIFIED_TRIGGER,经过滞回与持续确认的动作时延,digital_edge,ack,INCONCLUSIVE,,,,,INCONCLUSIVE,未找到第 1 个指定触发事件；请确认试验激励是否执行

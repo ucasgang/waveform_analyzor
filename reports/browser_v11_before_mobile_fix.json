@@ -1,0 +1,445 @@
+{
+  "mode": "Chromium DOM interactions + Python transport bridge to real loopback HTTP server",
+  "direct_navigation": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:41687/",
+  "limitations": "未验证浏览器直接连接localhost及操作系统级下载；没有更改浏览器管理策略。",
+  "total": 23,
+  "passed": 21,
+  "checks": [
+    {
+      "check": "复杂演示载入：12模拟+32数字+10001样本",
+      "passed": true
+    },
+    {
+      "check": "输入范围定位并重新读取601个左右原始采样",
+      "passed": true
+    },
+    {
+      "check": "滚轮以光标为锚点缩放",
+      "passed": true
+    },
+    {
+      "check": "拖动平移保持视窗跨度",
+      "passed": true
+    },
+    {
+      "check": "Shift框选缩小时间范围",
+      "passed": true
+    },
+    {
+      "check": "双击复位完整10秒记录",
+      "passed": true
+    },
+    {
+      "check": "放大按钮将跨度减半",
+      "passed": true
+    },
+    {
+      "check": "概览点击定位并限制在记录内",
+      "passed": true
+    },
+    {
+      "check": "键盘Home复位",
+      "passed": true
+    },
+    {
+      "check": "拒绝颠倒时间范围且保留原视窗",
+      "passed": true
+    },
+    {
+      "check": "乱序旧请求不能覆盖新窗口",
+      "passed": true
+    },
+    {
+      "check": "切换通道时取消旧视图与旧请求",
+      "passed": true
+    },
+    {
+      "check": "复杂C01在界面执行18项断言且每张证据图可缩放",
+      "passed": true
+    },
+    {
+      "check": "结果证据图缩放不改变分析结果与配置快照",
+      "passed": true
+    },
+    {
+      "check": "结果图正确显示一次侧换算后的kW而非原始W",
+      "passed": true,
+      "measurement": {
+        "unit": "kW",
+        "max": 100
+      }
+    },
+    {
+      "check": "512通道全览对密集数字变位显示密度包络",
+      "passed": true
+    },
+    {
+      "check": "放大后从包络恢复数字原始边沿",
+      "passed": true
+    },
+    {
+      "check": "放大后显示1.2345s的125V单采样尖峰",
+      "passed": true
+    },
+    {
+      "check": "一万脉冲检查限制界面行数但保留全部结果",
+      "passed": true
+    },
+    {
+      "check": "缺失样本断线而不跨缺失区间连线",
+      "passed": true
+    },
+    {
+      "check": "采样间隙显示灰色区域",
+      "passed": true
+    },
+    {
+      "check": "390px移动布局无横向溢出",
+      "passed": false
+    },
+    {
+      "check": "test_runner_completed",
+      "passed": false,
+      "error": "Traceback (most recent call last):\n  File \"/mnt/data/ESS_WaveTest_v1.2.0/tools/frontend_check_v11.py\", line 121, in <module>\n    check('390px移动布局无横向溢出',page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'))\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/data/ESS_WaveTest_v1.2.0/tools/frontend_check_v11.py\", line 46, in check\n    if not passed:raise AssertionError(name)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 390px移动布局无横向溢出\n"
+    }
+  ],
+  "http_requests": 67,
+  "requests": [
+    {
+      "path": "/api/template",
+      "status": 200,
+      "elapsed_ms": 8.858
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 214.359
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0&end=10&limit=1800",
+      "status": 200,
+      "elapsed_ms": 8.434
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.29999999999999993&end=0.9&limit=1800",
+      "status": 200,
+      "elapsed_ms": 2.394
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.3888185911650235&end=0.632760387009383&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.097
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.36233196838061965&end=0.6062737642249791&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.315
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.4121268192152989&end=0.5445599331373181&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.242
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.4121268192152989&end=0.5445599331373181&limit=1800",
+      "status": 200,
+      "elapsed_ms": 2.562
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.4121268192152989&end=0.5445599331373181&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.086
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0&end=10&limit=1800",
+      "status": 200,
+      "elapsed_ms": 5.252
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=2.5&end=7.5&limit=1800",
+      "status": 200,
+      "elapsed_ms": 3.851
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=5&end=10&limit=1800",
+      "status": 200,
+      "elapsed_ms": 5.52
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0&end=10&limit=1800",
+      "status": 200,
+      "elapsed_ms": 7.202
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.10000000000000002&end=0.2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.005
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.5&end=0.51&limit=1800",
+      "status": 200,
+      "elapsed_ms": 0.872
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0&end=10&limit=1800",
+      "status": 200,
+      "elapsed_ms": 6.426
+    },
+    {
+      "path": "/api/trace?key=D1&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0&end=10&limit=1800",
+      "status": 200,
+      "elapsed_ms": 2.81
+    },
+    {
+      "path": "/api/run",
+      "status": 200,
+      "elapsed_ms": 52.734
+    },
+    {
+      "path": "/api/trace?key=A1&test_id=P1&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.5&end=3&limit=1800",
+      "status": 200,
+      "elapsed_ms": 4.834
+    },
+    {
+      "path": "/api/trace?key=D2&test_id=ACK1&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.5&end=0.73&limit=1800",
+      "status": 200,
+      "elapsed_ms": 0.853
+    },
+    {
+      "path": "/api/trace?key=D2&test_id=PULSE1&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.5&end=0.73&limit=1800",
+      "status": 200,
+      "elapsed_ms": 0.69
+    },
+    {
+      "path": "/api/trace?key=A3&test_id=DC1&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.5&end=3&limit=1800",
+      "status": 200,
+      "elapsed_ms": 2.327
+    },
+    {
+      "path": "/api/trace?key=A1&test_id=P2&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=3.3&end=5.8&limit=1800",
+      "status": 200,
+      "elapsed_ms": 3.234
+    },
+    {
+      "path": "/api/trace?key=D2&test_id=ACK2&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=3.3&end=3.53&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.714
+    },
+    {
+      "path": "/api/trace?key=D2&test_id=PULSE2&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=3.3&end=3.53&limit=1800",
+      "status": 200,
+      "elapsed_ms": 0.769
+    },
+    {
+      "path": "/api/trace?key=A3&test_id=DC2&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=3.3&end=5.8&limit=1800",
+      "status": 200,
+      "elapsed_ms": 2.669
+    },
+    {
+      "path": "/api/trace?key=A1&test_id=P3&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=6.199999999999999&end=8.7&limit=1800",
+      "status": 200,
+      "elapsed_ms": 4.232
+    },
+    {
+      "path": "/api/trace?key=D2&test_id=ACK3&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=6.199999999999999&end=6.43&limit=1800",
+      "status": 200,
+      "elapsed_ms": 0.833
+    },
+    {
+      "path": "/api/trace?key=D2&test_id=PULSE3&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=6.199999999999999&end=6.43&limit=1800",
+      "status": 200,
+      "elapsed_ms": 0.735
+    },
+    {
+      "path": "/api/trace?key=A3&test_id=DC3&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=6.199999999999999&end=8.7&limit=1800",
+      "status": 200,
+      "elapsed_ms": 2.575
+    },
+    {
+      "path": "/api/trace?key=D1&test_id=CMD_COUNT&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0&end=9.8&limit=1800",
+      "status": 200,
+      "elapsed_ms": 2.196
+    },
+    {
+      "path": "/api/trace?key=D3&test_id=PRECHARGE_WIDTH&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.45&end=0.7&limit=1800",
+      "status": 200,
+      "elapsed_ms": 0.947
+    },
+    {
+      "path": "/api/trace?key=D5&test_id=CLOSE_ORDER&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.56&end=0.76&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.067
+    },
+    {
+      "path": "/api/trace?key=D6&test_id=NO_ALARM&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0&end=9.8&limit=1800",
+      "status": 200,
+      "elapsed_ms": 2.018
+    },
+    {
+      "path": "/api/trace?key=D7&test_id=LOW_RESET&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=8&end=8.8&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.057
+    },
+    {
+      "path": "/api/trace?key=D8&test_id=HEARTBEAT&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=1&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.854
+    },
+    {
+      "path": "/api/trace?key=A1&test_id=P1&config_hash=d81e819ab1d6aa715048f25b2fc3949b7f72dfe8a75475a873d79c158cc8b9ff&record_hash=5e2f65028be4b6411d7331803c1a4e7bb795c5b634ca379a9f5032f6a2691f3b3a9f432b276372d5f092e7fae7abc023568fb01eadca55cc0d7a193636916e7c&start=0.5&end=0.8&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.988
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 25.991
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=b2fe7c7c4b72745e550e2ebaa243b12357989712122957a838fb867a9d19743df77598bee837f806f5ab415e322bd365c3971d623f12496e47a56ff936744dbd&start=0.00075&end=3.50075&limit=1800",
+      "status": 200,
+      "elapsed_ms": 3.774
+    },
+    {
+      "path": "/api/run",
+      "status": 200,
+      "elapsed_ms": 10.077
+    },
+    {
+      "path": "/api/trace?key=A1&test_id=SKEW_STEP&config_hash=da9609d2fe1b5781ed28fc44f6a2e69af51aa2744c371829065ed20df200274a&record_hash=b2fe7c7c4b72745e550e2ebaa243b12357989712122957a838fb867a9d19743df77598bee837f806f5ab415e322bd365c3971d623f12496e47a56ff936744dbd&start=0.7&end=2.7&limit=1800",
+      "status": 200,
+      "elapsed_ms": 3.529
+    },
+    {
+      "path": "/api/trace?key=D2&test_id=BOUNCED_ACK&config_hash=da9609d2fe1b5781ed28fc44f6a2e69af51aa2744c371829065ed20df200274a&record_hash=b2fe7c7c4b72745e550e2ebaa243b12357989712122957a838fb867a9d19743df77598bee837f806f5ab415e322bd365c3971d623f12496e47a56ff936744dbd&start=0.7&end=0.8999999999999999&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.495
+    },
+    {
+      "path": "/api/trace?key=A1&test_id=POST_BAND&config_hash=da9609d2fe1b5781ed28fc44f6a2e69af51aa2744c371829065ed20df200274a&record_hash=b2fe7c7c4b72745e550e2ebaa243b12357989712122957a838fb867a9d19743df77598bee837f806f5ab415e322bd365c3971d623f12496e47a56ff936744dbd&start=1.5&end=2.5&limit=1800",
+      "status": 200,
+      "elapsed_ms": 2.313
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 3425.09
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=0&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 7.319
+    },
+    {
+      "path": "/api/trace?key=D300&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=0&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 8.801
+    },
+    {
+      "path": "/api/trace?key=D300&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=1.234&end=1.237&limit=1800",
+      "status": 200,
+      "elapsed_ms": 0.963
+    },
+    {
+      "path": "/api/trace?key=A128&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=0&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 8.173
+    },
+    {
+      "path": "/api/trace?key=A128&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=1.234&end=1.236&limit=1800",
+      "status": 200,
+      "elapsed_ms": 0.911
+    },
+    {
+      "path": "/api/run",
+      "status": 200,
+      "elapsed_ms": 156.22
+    },
+    {
+      "path": "/api/trace?key=A128&test_id=SINGLE_SPIKE&config_hash=2e4ab4b65e9aed5f2be069287e04170cc1a16942b64d9fa7091162daaae9710a&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=1.2&end=1.3&limit=1800",
+      "status": 200,
+      "elapsed_ms": 2.349
+    },
+    {
+      "path": "/api/trace?key=A1&test_id=OTHER_CHANNEL&config_hash=2e4ab4b65e9aed5f2be069287e04170cc1a16942b64d9fa7091162daaae9710a&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=0&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 11.927
+    },
+    {
+      "path": "/api/trace?key=D384&test_id=SINGLE_SAMPLE_PULSE&config_hash=2e4ab4b65e9aed5f2be069287e04170cc1a16942b64d9fa7091162daaae9710a&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=1.2&end=1.3&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.657
+    },
+    {
+      "path": "/api/trace?key=D16&test_id=WORD_BIT_16&config_hash=2e4ab4b65e9aed5f2be069287e04170cc1a16942b64d9fa7091162daaae9710a&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=0.7&end=1&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.262
+    },
+    {
+      "path": "/api/trace?key=D17&test_id=WORD_BIT_17&config_hash=2e4ab4b65e9aed5f2be069287e04170cc1a16942b64d9fa7091162daaae9710a&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=0.7&end=1&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.1
+    },
+    {
+      "path": "/api/trace?key=D32&test_id=WORD_BIT_32&config_hash=2e4ab4b65e9aed5f2be069287e04170cc1a16942b64d9fa7091162daaae9710a&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=0.7&end=1&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.462
+    },
+    {
+      "path": "/api/trace?key=D33&test_id=WORD_BIT_33&config_hash=2e4ab4b65e9aed5f2be069287e04170cc1a16942b64d9fa7091162daaae9710a&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=0.7&end=1&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.277
+    },
+    {
+      "path": "/api/trace?key=D255&test_id=WORD_BIT_255&config_hash=2e4ab4b65e9aed5f2be069287e04170cc1a16942b64d9fa7091162daaae9710a&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=0.7&end=1&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.182
+    },
+    {
+      "path": "/api/trace?key=D256&test_id=WORD_BIT_256&config_hash=2e4ab4b65e9aed5f2be069287e04170cc1a16942b64d9fa7091162daaae9710a&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=0.7&end=1&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.314
+    },
+    {
+      "path": "/api/trace?key=D257&test_id=WORD_BIT_257&config_hash=2e4ab4b65e9aed5f2be069287e04170cc1a16942b64d9fa7091162daaae9710a&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=0.7&end=1&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.217
+    },
+    {
+      "path": "/api/trace?key=D300&test_id=HIGH_FREQUENCY&config_hash=2e4ab4b65e9aed5f2be069287e04170cc1a16942b64d9fa7091162daaae9710a&record_hash=3398ef98150ec4d70994668a68adf893253dd7ce54a6449b37b16a21c7891b959e626ae84791e251a459f11a0e351b873109fd16e128b0e7a7a6e49ed185ad52&start=0&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 4.613
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 260.567
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=ffd2e0314e6e52fd5773ec662c20322782da1d141fb22aa606526305b5e0750bc3e6576ef288546dd9239cae66cc6b99e2283eb2ea7778d7a6a477977553c82f&start=0&end=2.5&limit=1800",
+      "status": 200,
+      "elapsed_ms": 9.076
+    },
+    {
+      "path": "/api/trace?key=A2&record_hash=ffd2e0314e6e52fd5773ec662c20322782da1d141fb22aa606526305b5e0750bc3e6576ef288546dd9239cae66cc6b99e2283eb2ea7778d7a6a477977553c82f&start=0&end=2.5&limit=1800",
+      "status": 200,
+      "elapsed_ms": 9.826
+    },
+    {
+      "path": "/api/trace?key=A2&record_hash=ffd2e0314e6e52fd5773ec662c20322782da1d141fb22aa606526305b5e0750bc3e6576ef288546dd9239cae66cc6b99e2283eb2ea7778d7a6a477977553c82f&start=0.8&end=0.804&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.078
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 12.544
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=7b2162c4c4afdefa8ba0655e51e129a1804cd2b8a615f85e0c30ffb41c2262a7eae10054491174f3803125ed93e2af424f12a6f8f3044aa686197c813e303983&start=0&end=2.01&limit=1800",
+      "status": 200,
+      "elapsed_ms": 2.089
+    }
+  ],
+  "errors": []
+}

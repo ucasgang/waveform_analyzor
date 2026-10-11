@@ -1,0 +1,38 @@
+{
+  "version": "1.2.0",
+  "passed": 4,
+  "checks": [
+    {
+      "case": "N01_white_noise",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched": true,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"counts\": {\n    \"PASS\": 1,\n    \"FAIL\": 0,\n    \"INCONCLUSIVE\": 0,\n    \"ERROR\": 0\n  },\n  \"elapsed_s\": 0.0197,\n  \"output\": \"/tmp/tmpczvsdkka/N01_white_noise\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "case": "N02_emi_impulses",
+      "expected_exit": 3,
+      "exit_code": 3,
+      "matched": true,
+      "stdout": "{\n  \"status\": \"INCONCLUSIVE\",\n  \"counts\": {\n    \"PASS\": 0,\n    \"FAIL\": 0,\n    \"INCONCLUSIVE\": 1,\n    \"ERROR\": 0\n  },\n  \"elapsed_s\": 0.0224,\n  \"output\": \"/tmp/tmpczvsdkka/N02_emi_impulses\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "case": "N11_raw_safety_spike",
+      "expected_exit": 1,
+      "exit_code": 1,
+      "matched": true,
+      "stdout": "{\n  \"status\": \"FAIL\",\n  \"counts\": {\n    \"PASS\": 0,\n    \"FAIL\": 1,\n    \"INCONCLUSIVE\": 0,\n    \"ERROR\": 0\n  },\n  \"elapsed_s\": 0.0202,\n  \"output\": \"/tmp/tmpczvsdkka/N11_raw_safety_spike\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "case": "N18_invalid_debounce",
+      "expected_exit": 2,
+      "exit_code": 2,
+      "matched": true,
+      "stdout": "",
+      "stderr": "ERROR: 有效电平去抖时间大于最小合法脉宽，会抹掉合法保护脉冲；请缩短去抖或使用原始分支\n"
+    }
+  ]
+}

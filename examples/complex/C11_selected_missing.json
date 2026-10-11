@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "name": "三相跌落中单相关键窗口缺失样本",
+  "description": "复合合成工况；每项预期结论独立列于 manifest。",
+  "standard": {
+    "reference": "工程回归 / 非国标限值",
+    "clause": "合成数据验证",
+    "reviewed": false
+  },
+  "channels": {
+    "u0": {
+      "kind": "analog",
+      "name": "相电压A",
+      "unit": "V"
+    },
+    "u1": {
+      "kind": "analog",
+      "name": "相电压B",
+      "unit": "V"
+    },
+    "u2": {
+      "kind": "analog",
+      "name": "相电压C",
+      "unit": "V"
+    },
+    "envelope": {
+      "kind": "analog",
+      "name": "电压包络指示_合成",
+      "unit": "V"
+    },
+    "power": {
+      "kind": "analog",
+      "name": "PCS有功功率",
+      "unit": "kW"
+    },
+    "block": {
+      "kind": "digital",
+      "name": "低电压闭锁"
+    },
+    "trip": {
+      "kind": "digital",
+      "name": "跳闸反馈"
+    },
+    "connected": {
+      "kind": "digital",
+      "name": "并网接触器"
+    },
+    "alarm_low": {
+      "kind": "digital",
+      "name": "低有效告警脉冲"
+    }
+  },
+  "tests": [
+    {
+      "id": "RMS_0_PRE",
+      "name": "RMS_0_PRE",
+      "type": "analog_rms",
+      "channel": "u0",
+      "window": [
+        0.35,
+        0.55
+      ],
+      "min": 226,
+      "max": 234
+    },
+    {
+      "id": "RMS_0_SAG",
+      "name": "RMS_0_SAG",
+      "type": "analog_rms",
+      "channel": "u0",
+      "window": [
+        0.7,
+        0.9
+      ],
+      "min": 45,
+      "max": 48
+    },
+    {
+      "id": "RMS_0_POST",
+      "name": "RMS_0_POST",
+      "type": "analog_rms",
+      "channel": "u0",
+      "window": [
+        1.4,
+        1.6
+      ],
+      "min": 226,
+      "max": 234
+    },
+    {
+      "id": "RMS_1_PRE",
+      "name": "RMS_1_PRE",
+      "type": "analog_rms",
+      "channel": "u1",
+      "window": [
+        0.35,
+        0.55
+      ],
+      "min": 226,
+      "max": 234
+    },
+    {
+      "id": "RMS_1_SAG",
+      "name": "RMS_1_SAG",
+      "type": "analog_rms",
+      "channel": "u1",
+      "window": [
+        0.7,
+        0.9
+      ],
+      "min": 45,
+      "max": 48
+    },
+    {
+      "id": "RMS_1_POST",
+      "name": "RMS_1_POST",
+      "type": "analog_rms",
+      "channel": "u1",
+      "window": [
+        1.4,
+        1.6
+      ],
+      "min": 226,
+      "max": 234
+    },
+    {
+      "id": "RMS_2_PRE",
+      "name": "RMS_2_PRE",
+      "type": "analog_rms",
+      "channel": "u2",
+      "window": [
+        0.35,
+        0.55
+      ],
+      "min": 226,
+      "max": 234
+    },
+    {
+      "id": "RMS_2_SAG",
+      "name": "RMS_2_SAG",
+      "type": "analog_rms",
+      "channel": "u2",
+      "window": [
+        0.7,
+        0.9
+      ],
+      "min": 45,
+      "max": 48
+    },
+    {
+      "id": "RMS_2_POST",
+      "name": "RMS_2_POST",
+      "type": "analog_rms",
+      "channel": "u2",
+      "window": [
+        1.4,
+        1.6
+      ],
+      "min": 226,
+      "max": 234
+    },
+    {
+      "id": "BLOCK_WIDTH",
+      "name": "BLOCK_WIDTH",
+      "type": "digital_pulse",
+      "channel": "block",
+      "window": [
+        0.6,
+        1.1
+      ],
+      "active": 1,
+      "count": 1,
+      "min_width_s": 0.297,
+      "max_width_s": 0.299
+    },
+    {
+      "id": "NO_TRIP",
+      "name": "NO_TRIP",
+      "type": "digital_hold",
+      "channel": "trip",
+      "window": [
+        0.6,
+        1.1
+      ],
+      "value": 0
+    },
+    {
+      "id": "KEEP_GRID",
+      "name": "KEEP_GRID",
+      "type": "digital_hold",
+      "channel": "connected",
+      "window": [
+        0.6,
+        1.1
+      ],
+      "value": 1
+    },
+    {
+      "id": "LOW_ALARM",
+      "name": "LOW_ALARM",
+      "type": "digital_pulse",
+      "channel": "alarm_low",
+      "window": [
+        0.6,
+        1.1
+      ],
+      "active": 0,
+      "count": 1,
+      "min_width_s": 0.029,
+      "max_width_s": 0.031
+    },
+    {
+      "id": "P_RECOVERY",
+      "name": "P_RECOVERY",
+      "type": "analog_step",
+      "channel": "power",
+      "window": [
+        0,
+        1.2
+      ],
+      "trigger": {
+        "type": "analog_crossing",
+        "channel": "envelope",
+        "threshold": 150,
+        "edge": "rising",
+        "search": [
+          0.9,
+          1.1
+        ]
+      },
+      "baseline_window": [
+        -0.18,
+        -0.03
+      ],
+      "normalization": "rated",
+      "rated": 100,
+      "steady_last_s": 0.25,
+      "settle_band_pct": 2,
+      "settle_hold_s": 0.1,
+      "limits": {
+        "overshoot_pct_max": 3,
+        "response_s_max": 0.35,
+        "rise_s_max": 0.3,
+        "settling_s_max": 0.6,
+        "steady_error_pct_max": 0.5,
+        "steady_ripple_pp_max": 1
+      },
+      "target": 100
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "mode": "expected_outcome_regression",
+  "status": "PASS",
+  "matched_all_expectations": true,
+  "records": 23,
+  "cases": [
+    {
+      "cfg": "examples/01_pass_binary.cfg",
+      "case": "examples/01_pass_binary.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/001_01_pass_binary"
+    },
+    {
+      "cfg": "examples/02_pass_ascii.cfg",
+      "case": "examples/02_pass_ascii.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/002_02_pass_ascii"
+    },
+    {
+      "cfg": "examples/03_pass_binary32.cfg",
+      "case": "examples/03_pass_binary32.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/003_03_pass_binary32"
+    },
+    {
+      "cfg": "examples/04_pass_float32.cfg",
+      "case": "examples/04_pass_float32.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/004_04_pass_float32"
+    },
+    {
+      "cfg": "examples/05_slow_response.cfg",
+      "case": "examples/05_slow_response.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/005_05_slow_response"
+    },
+    {
+      "cfg": "examples/06_overshoot.cfg",
+      "case": "examples/06_overshoot.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/006_06_overshoot"
+    },
+    {
+      "cfg": "examples/07_steady_error.cfg",
+      "case": "examples/07_steady_error.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/007_07_steady_error"
+    },
+    {
+      "cfg": "examples/08_wide_pulse.cfg",
+      "case": "examples/08_wide_pulse.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/008_08_wide_pulse"
+    },
+    {
+      "cfg": "examples/09_alarm_glitch.cfg",
+      "case": "examples/09_alarm_glitch.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/009_09_alarm_glitch"
+    },
+    {
+      "cfg": "examples/10_no_trigger.cfg",
+      "case": "examples/10_no_trigger.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/010_10_no_trigger"
+    },
+    {
+      "cfg": "examples/11_missing_value.cfg",
+      "case": "examples/11_missing_value.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/011_11_missing_value"
+    },
+    {
+      "cfg": "examples/12_sampling_gap.cfg",
+      "case": "examples/12_sampling_gap.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/012_12_sampling_gap"
+    },
+    {
+      "cfg": "examples/13_falling_step.cfg",
+      "case": "examples/13_falling_step.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/013_13_falling_step"
+    },
+    {
+      "cfg": "examples/14_zero_target.cfg",
+      "case": "examples/14_zero_target.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/014_14_zero_target"
+    },
+    {
+      "cfg": "examples/15_contact_bounce.cfg",
+      "case": "examples/15_contact_bounce.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/015_15_contact_bounce"
+    },
+    {
+      "cfg": "examples/16_open_pulse.cfg",
+      "case": "examples/16_open_pulse.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/016_16_open_pulse"
+    },
+    {
+      "cfg": "examples/17_never_response.cfg",
+      "case": "examples/17_never_response.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/017_17_never_response"
+    },
+    {
+      "cfg": "examples/18_oscillation.cfg",
+      "case": "examples/18_oscillation.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/018_18_oscillation"
+    },
+    {
+      "cfg": "examples/19_measurement_noise.cfg",
+      "case": "examples/19_measurement_noise.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/019_19_measurement_noise"
+    },
+    {
+      "cfg": "examples/20_chinese_gbk.cfg",
+      "case": "examples/20_chinese_gbk.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/020_20_chinese_gbk"
+    },
+    {
+      "cfg": "examples/21_missing_edge.cfg",
+      "case": "examples/21_missing_edge.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/021_21_missing_edge"
+    },
+    {
+      "cfg": "examples/22_512_channels.cfg",
+      "case": "examples/22_512_channels.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/022_22_512_channels"
+    },
+    {
+      "cfg": "examples/23_rebuilt_time.cfg",
+      "case": "examples/23_rebuilt_time.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/regression/023_23_rebuilt_time"
+    }
+  ],
+  "notice": "清单回归通过只表示实际判定符合预期；不是所有被测设备通过。"
+}

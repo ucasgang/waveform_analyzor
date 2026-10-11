@@ -1,0 +1,71 @@
+{
+  "mode": "single-file zipapp fresh subprocess real HTTP smoke test",
+  "checks": [
+    {
+      "check": "zipapp contains and serves HTML resources",
+      "passed": true
+    },
+    {
+      "check": "zipapp serves app.js",
+      "passed": true
+    },
+    {
+      "check": "zipapp serves timeline.js",
+      "passed": true
+    },
+    {
+      "check": "zipapp serves style.css",
+      "passed": true
+    },
+    {
+      "check": "packaged server runs normal demo through real loopback HTTP",
+      "passed": true
+    },
+    {
+      "check": "packaged HTTP export contains self-contained report",
+      "passed": true
+    },
+    {
+      "check": "packaged engine version is 1.2.0",
+      "passed": true
+    },
+    {
+      "check": "packaged composite cycle runs all 18 assertions",
+      "passed": true
+    },
+    {
+      "check": "packaged full overview reads 10001 samples",
+      "passed": true
+    },
+    {
+      "check": "packaged zoom fetches original local samples",
+      "passed": true
+    },
+    {
+      "check": "packaged noise N01_white_noise",
+      "passed": true
+    },
+    {
+      "check": "packaged noise N02_emi_impulses",
+      "passed": true
+    },
+    {
+      "check": "packaged noise N11_raw_safety_spike",
+      "passed": true
+    },
+    {
+      "check": "packaged noise N15_contact_bounce",
+      "passed": true
+    },
+    {
+      "check": "packaged comparison zoom preserves raw spike and processed samples",
+      "passed": true
+    },
+    {
+      "check": "packaged comparison has two repair markers",
+      "passed": true
+    }
+  ],
+  "passed": 16,
+  "total": 16
+}

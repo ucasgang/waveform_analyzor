@@ -1,0 +1,143 @@
+{
+  "description": "预期包含 FAIL / INCONCLUSIVE，它们被正确识别才表示回归通过。",
+  "cases": [
+    {
+      "cfg": "01_pass_binary.cfg",
+      "case": "01_pass_binary.json",
+      "expected": "PASS",
+      "variant": "pass"
+    },
+    {
+      "cfg": "02_pass_ascii.cfg",
+      "case": "02_pass_ascii.json",
+      "expected": "PASS",
+      "variant": "pass"
+    },
+    {
+      "cfg": "03_pass_binary32.cfg",
+      "case": "03_pass_binary32.json",
+      "expected": "PASS",
+      "variant": "pass"
+    },
+    {
+      "cfg": "04_pass_float32.cfg",
+      "case": "04_pass_float32.json",
+      "expected": "PASS",
+      "variant": "pass"
+    },
+    {
+      "cfg": "05_slow_response.cfg",
+      "case": "05_slow_response.json",
+      "expected": "FAIL",
+      "variant": "slow"
+    },
+    {
+      "cfg": "06_overshoot.cfg",
+      "case": "06_overshoot.json",
+      "expected": "FAIL",
+      "variant": "overshoot"
+    },
+    {
+      "cfg": "07_steady_error.cfg",
+      "case": "07_steady_error.json",
+      "expected": "FAIL",
+      "variant": "steady_error"
+    },
+    {
+      "cfg": "08_wide_pulse.cfg",
+      "case": "08_wide_pulse.json",
+      "expected": "FAIL",
+      "variant": "wide_pulse"
+    },
+    {
+      "cfg": "09_alarm_glitch.cfg",
+      "case": "09_alarm_glitch.json",
+      "expected": "FAIL",
+      "variant": "alarm"
+    },
+    {
+      "cfg": "10_no_trigger.cfg",
+      "case": "10_no_trigger.json",
+      "expected": "INCONCLUSIVE",
+      "variant": "no_trigger"
+    },
+    {
+      "cfg": "11_missing_value.cfg",
+      "case": "11_missing_value.json",
+      "expected": "INCONCLUSIVE",
+      "variant": "missing"
+    },
+    {
+      "cfg": "12_sampling_gap.cfg",
+      "case": "12_sampling_gap.json",
+      "expected": "INCONCLUSIVE",
+      "variant": "gap"
+    },
+    {
+      "cfg": "13_falling_step.cfg",
+      "case": "13_falling_step.json",
+      "expected": "PASS",
+      "variant": "falling"
+    },
+    {
+      "cfg": "14_zero_target.cfg",
+      "case": "14_zero_target.json",
+      "expected": "PASS",
+      "variant": "zero_target"
+    },
+    {
+      "cfg": "15_contact_bounce.cfg",
+      "case": "15_contact_bounce.json",
+      "expected": "PASS",
+      "variant": "bounce"
+    },
+    {
+      "cfg": "16_open_pulse.cfg",
+      "case": "16_open_pulse.json",
+      "expected": "INCONCLUSIVE",
+      "variant": "open_pulse"
+    },
+    {
+      "cfg": "17_never_response.cfg",
+      "case": "17_never_response.json",
+      "expected": "FAIL",
+      "variant": "never_response"
+    },
+    {
+      "cfg": "18_oscillation.cfg",
+      "case": "18_oscillation.json",
+      "expected": "FAIL",
+      "variant": "oscillation"
+    },
+    {
+      "cfg": "19_measurement_noise.cfg",
+      "case": "19_measurement_noise.json",
+      "expected": "PASS",
+      "variant": "noise"
+    },
+    {
+      "cfg": "20_chinese_gbk.cfg",
+      "case": "20_chinese_gbk.json",
+      "expected": "PASS",
+      "variant": "gbk"
+    },
+    {
+      "cfg": "21_missing_edge.cfg",
+      "case": "21_missing_edge.json",
+      "expected": "FAIL",
+      "variant": "missing_edge"
+    },
+    {
+      "cfg": "22_512_channels.cfg",
+      "case": "22_512_channels.json",
+      "expected": "PASS",
+      "variant": "512 channels / 128 analog + 384 digital"
+    },
+    {
+      "cfg": "23_rebuilt_time.cfg",
+      "case": "23_rebuilt_time.json",
+      "expected": "PASS",
+      "variant": "all-zero timestamps"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+﻿用例ID,名称,类型,通道,总体判定,指标,测量值,最小限值,最大限值,指标判定,说明
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,PASS,overshoot_pct,2.226826617655222,,5.0,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,PASS,response_s,0.2031246492465436,,0.28,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,PASS,rise_s,0.1650051188891728,,0.23,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,PASS,latency_s,0.03811953035737081,,0.08,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,PASS,settling_s,0.44989410390557005,,0.6,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,PASS,steady_error_pct,0.021082964567279372,,0.8,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,PASS,steady_ripple_pp,1.1829140625000036,,3.0,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,PASS,repair_fraction,0.0005714285714285719,,0.015,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,PASS,baseline_noise_sigma,0.3181919483699798,,1.0,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,PASS,steady_noise_sigma,0.26791045312501177,,1.0,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,PASS,baseline_drift,0.017903527975082396,,1.0,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,PASS,steady_drift,0.029570312499998863,,1.2,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,PASS,raw_minimum,-0.73597412109375,-20.0,,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,PASS,raw_maximum,102.2574140625,,160.0,PASS,满足限值

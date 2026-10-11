@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "name": "512 通道 + 单采样尖峰 + 过密数字变位",
+  "description": "复合合成工况；每项预期结论独立列于 manifest。",
+  "standard": {
+    "reference": "工程回归 / 非国标限值",
+    "clause": "合成数据验证",
+    "reviewed": false
+  },
+  "channels": {
+    "a1": {
+      "kind": "analog",
+      "name": "测量_001",
+      "unit": "V"
+    },
+    "a128": {
+      "kind": "analog",
+      "name": "测量_128",
+      "unit": "V"
+    },
+    "d16": {
+      "kind": "digital",
+      "name": "开关_016"
+    },
+    "d17": {
+      "kind": "digital",
+      "name": "开关_017"
+    },
+    "d32": {
+      "kind": "digital",
+      "name": "开关_032"
+    },
+    "d33": {
+      "kind": "digital",
+      "name": "开关_033"
+    },
+    "d255": {
+      "kind": "digital",
+      "name": "开关_255"
+    },
+    "d256": {
+      "kind": "digital",
+      "name": "开关_256"
+    },
+    "d257": {
+      "kind": "digital",
+      "name": "开关_257"
+    },
+    "d300": {
+      "kind": "digital",
+      "name": "开关_300"
+    },
+    "d384": {
+      "kind": "digital",
+      "name": "开关_384"
+    }
+  },
+  "tests": [
+    {
+      "id": "SINGLE_SPIKE",
+      "name": "SINGLE_SPIKE",
+      "type": "analog_range",
+      "channel": "a128",
+      "window": [
+        1.2,
+        1.3
+      ],
+      "min": 99,
+      "max": 103
+    },
+    {
+      "id": "OTHER_CHANNEL",
+      "name": "OTHER_CHANNEL",
+      "type": "analog_range",
+      "channel": "a1",
+      "window": [
+        0,
+        2
+      ],
+      "min": 100,
+      "max": 100
+    },
+    {
+      "id": "SINGLE_SAMPLE_PULSE",
+      "name": "SINGLE_SAMPLE_PULSE",
+      "type": "digital_pulse",
+      "channel": "d384",
+      "window": [
+        1.2,
+        1.3
+      ],
+      "active": 1,
+      "count": 1,
+      "min_width_s": 9e-05,
+      "max_width_s": 0.00011
+    },
+    {
+      "id": "WORD_BIT_16",
+      "name": "WORD_BIT_16",
+      "type": "digital_pulse",
+      "channel": "d16",
+      "window": [
+        0.7,
+        1
+      ],
+      "active": 1,
+      "count": 1,
+      "min_width_s": 0.00159,
+      "max_width_s": 0.00161
+    },
+    {
+      "id": "WORD_BIT_17",
+      "name": "WORD_BIT_17",
+      "type": "digital_pulse",
+      "channel": "d17",
+      "window": [
+        0.7,
+        1
+      ],
+      "active": 1,
+      "count": 1,
+      "min_width_s": 0.00169,
+      "max_width_s": 0.0017100000000000001
+    },
+    {
+      "id": "WORD_BIT_32",
+      "name": "WORD_BIT_32",
+      "type": "digital_pulse",
+      "channel": "d32",
+      "window": [
+        0.7,
+        1
+      ],
+      "active": 1,
+      "count": 1,
+      "min_width_s": 0.00319,
+      "max_width_s": 0.00321
+    },
+    {
+      "id": "WORD_BIT_33",
+      "name": "WORD_BIT_33",
+      "type": "digital_pulse",
+      "channel": "d33",
+      "window": [
+        0.7,
+        1
+      ],
+      "active": 1,
+      "count": 1,
+      "min_width_s": 0.00329,
+      "max_width_s": 0.00331
+    },
+    {
+      "id": "WORD_BIT_255",
+      "name": "WORD_BIT_255",
+      "type": "digital_pulse",
+      "channel": "d255",
+      "window": [
+        0.7,
+        1
+      ],
+      "active": 1,
+      "count": 1,
+      "min_width_s": 0.025490000000000002,
+      "max_width_s": 0.02551
+    },
+    {
+      "id": "WORD_BIT_256",
+      "name": "WORD_BIT_256",
+      "type": "digital_pulse",
+      "channel": "d256",
+      "window": [
+        0.7,
+        1
+      ],
+      "active": 1,
+      "count": 1,
+      "min_width_s": 0.02559,
+      "max_width_s": 0.02561
+    },
+    {
+      "id": "WORD_BIT_257",
+      "name": "WORD_BIT_257",
+      "type": "digital_pulse",
+      "channel": "d257",
+      "window": [
+        0.7,
+        1
+      ],
+      "active": 1,
+      "count": 1,
+      "min_width_s": 0.02569,
+      "max_width_s": 0.02571
+    },
+    {
+      "id": "HIGH_FREQUENCY",
+      "name": "HIGH_FREQUENCY",
+      "type": "digital_pulse",
+      "channel": "d300",
+      "window": [
+        0,
+        2
+      ],
+      "active": 1,
+      "count": 10000,
+      "min_width_s": 9e-05,
+      "max_width_s": 0.00011
+    }
+  ]
+}

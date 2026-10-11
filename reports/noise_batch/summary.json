@@ -1,0 +1,297 @@
+{
+  "mode": "expected_outcome_regression",
+  "status": "PASS",
+  "matched_all_expectations": true,
+  "records": 32,
+  "cases": [
+    {
+      "cfg": "examples/noise/N01_white_noise.cfg",
+      "case": "examples/noise/N01_white_noise.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/001_N01_white_noise"
+    },
+    {
+      "cfg": "examples/noise/N02_emi_impulses.cfg",
+      "case": "examples/noise/N02_emi_impulses.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/002_N02_emi_impulses"
+    },
+    {
+      "cfg": "examples/noise/N03_baseline_impulse.cfg",
+      "case": "examples/noise/N03_baseline_impulse.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/003_N03_baseline_impulse"
+    },
+    {
+      "cfg": "examples/noise/N04_pwm_ripple.cfg",
+      "case": "examples/noise/N04_pwm_ripple.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/004_N04_pwm_ripple"
+    },
+    {
+      "cfg": "examples/noise/N05_colored_noise.cfg",
+      "case": "examples/noise/N05_colored_noise.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/005_N05_colored_noise"
+    },
+    {
+      "cfg": "examples/noise/N06_burst_noise.cfg",
+      "case": "examples/noise/N06_burst_noise.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/006_N06_burst_noise"
+    },
+    {
+      "cfg": "examples/noise/N07_sustained_overshoot.cfg",
+      "case": "examples/noise/N07_sustained_overshoot.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/007_N07_sustained_overshoot"
+    },
+    {
+      "cfg": "examples/noise/N08_damped_ringing.cfg",
+      "case": "examples/noise/N08_damped_ringing.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/008_N08_damped_ringing"
+    },
+    {
+      "cfg": "examples/noise/N09_persistent_oscillation.cfg",
+      "case": "examples/noise/N09_persistent_oscillation.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/009_N09_persistent_oscillation"
+    },
+    {
+      "cfg": "examples/noise/N10_short_real_transient.cfg",
+      "case": "examples/noise/N10_short_real_transient.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/010_N10_short_real_transient"
+    },
+    {
+      "cfg": "examples/noise/N11_raw_safety_spike.cfg",
+      "case": "examples/noise/N11_raw_safety_spike.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/011_N11_raw_safety_spike"
+    },
+    {
+      "cfg": "examples/noise/N12_ambiguous_spike.cfg",
+      "case": "examples/noise/N12_ambiguous_spike.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/012_N12_ambiguous_spike"
+    },
+    {
+      "cfg": "examples/noise/N13_slow_drift.cfg",
+      "case": "examples/noise/N13_slow_drift.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/013_N13_slow_drift"
+    },
+    {
+      "cfg": "examples/noise/N14_quantized_highrate.cfg",
+      "case": "examples/noise/N14_quantized_highrate.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/014_N14_quantized_highrate"
+    },
+    {
+      "cfg": "examples/noise/N15_contact_bounce.cfg",
+      "case": "examples/noise/N15_contact_bounce.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/015_N15_contact_bounce"
+    },
+    {
+      "cfg": "examples/noise/N16_chatter_storm.cfg",
+      "case": "examples/noise/N16_chatter_storm.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/016_N16_chatter_storm"
+    },
+    {
+      "cfg": "examples/noise/N17_protection_pulse.cfg",
+      "case": "examples/noise/N17_protection_pulse.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/017_N17_protection_pulse"
+    },
+    {
+      "cfg": "examples/noise/N18_invalid_debounce.cfg",
+      "case": "examples/noise/N18_invalid_debounce.json",
+      "status": "ERROR",
+      "expected": "ERROR",
+      "matched_expectation": true,
+      "reason": "有效电平去抖时间大于最小合法脉宽，会抹掉合法保护脉冲；请缩短去抖或使用原始分支",
+      "report_dir": "reports/noise_batch/018_N18_invalid_debounce"
+    },
+    {
+      "cfg": "examples/noise/N19_active_low_bounce.cfg",
+      "case": "examples/noise/N19_active_low_bounce.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/019_N19_active_low_bounce"
+    },
+    {
+      "cfg": "examples/noise/N20_unfinished_dwell.cfg",
+      "case": "examples/noise/N20_unfinished_dwell.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/020_N20_unfinished_dwell"
+    },
+    {
+      "cfg": "examples/noise/N21_noisy_analog_trigger.cfg",
+      "case": "examples/noise/N21_noisy_analog_trigger.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/021_N21_noisy_analog_trigger"
+    },
+    {
+      "cfg": "examples/noise/N22_unqualified_trigger.cfg",
+      "case": "examples/noise/N22_unqualified_trigger.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/022_N22_unqualified_trigger"
+    },
+    {
+      "cfg": "examples/noise/N23_multirate_noise.cfg",
+      "case": "examples/noise/N23_multirate_noise.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/023_N23_multirate_noise"
+    },
+    {
+      "cfg": "examples/noise/N24_timestamp_jitter.cfg",
+      "case": "examples/noise/N24_timestamp_jitter.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/024_N24_timestamp_jitter"
+    },
+    {
+      "cfg": "examples/noise/N25_noise_with_gap.cfg",
+      "case": "examples/noise/N25_noise_with_gap.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/025_N25_noise_with_gap"
+    },
+    {
+      "cfg": "examples/noise/N26_noise_with_missing.cfg",
+      "case": "examples/noise/N26_noise_with_missing.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/026_N26_noise_with_missing"
+    },
+    {
+      "cfg": "examples/noise/N27_sensor_clipping.cfg",
+      "case": "examples/noise/N27_sensor_clipping.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/027_N27_sensor_clipping"
+    },
+    {
+      "cfg": "examples/noise/N28_sensor_stuck.cfg",
+      "case": "examples/noise/N28_sensor_stuck.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/028_N28_sensor_stuck"
+    },
+    {
+      "cfg": "examples/noise/N29_negative_step.cfg",
+      "case": "examples/noise/N29_negative_step.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/029_N29_negative_step"
+    },
+    {
+      "cfg": "examples/noise/N30_zero_target.cfg",
+      "case": "examples/noise/N30_zero_target.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/030_N30_zero_target"
+    },
+    {
+      "cfg": "examples/noise/N31_timing_boundary.cfg",
+      "case": "examples/noise/N31_timing_boundary.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/031_N31_timing_boundary"
+    },
+    {
+      "cfg": "examples/noise/N32_many_channels.cfg",
+      "case": "examples/noise/N32_many_channels.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/noise_batch/032_N32_many_channels"
+    }
+  ],
+  "notice": "清单回归通过只表示实际判定符合预期；不是所有被测设备通过。"
+}

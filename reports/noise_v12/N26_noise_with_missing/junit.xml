@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="噪声叠加关键缺失样本：禁止插补验收" tests="1" failures="0" errors="1"><properties><property name="config_sha256" value="4029e49f85d3aa541eb8d0eae241ea75d193f8b4cb8a0712e3283994f804db78" /></properties><testcase name="ROBUST_STEP 抗噪性能 + 原始硬限值 + 质量预算" classname="analog_step"><error type="INCONCLUSIVE" message="分析窗口包含缺失或非有限采样值">{}</error></testcase></testsuite>

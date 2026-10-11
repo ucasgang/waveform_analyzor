@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="开关纹波与量化噪声：固定容限" tests="1" failures="0" errors="0"><properties><property name="config_sha256" value="52f9b449f6f468d51f1aa73f9ed6817f7e86ede9ad85e247dd46694faa6aa581" /></properties><testcase name="ROBUST_STEP 抗噪性能 + 原始硬限值 + 质量预算" classname="analog_step" /></testsuite>

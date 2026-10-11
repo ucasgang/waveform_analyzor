@@ -1,0 +1,667 @@
+{
+  "version": "1.3.0",
+  "execution": "built zipapp, real loopback HTTP, no browser transport bridge",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "elapsed_s": 24.26263061999998,
+  "total": 17,
+  "passed": 17,
+  "checks": [
+    {
+      "name": "built_zipapp_version",
+      "passed": true
+    },
+    {
+      "name": "batch_folder_input_and_explicit_zoom_assets",
+      "passed": true
+    },
+    {
+      "name": "batch_token_gate",
+      "passed": true
+    },
+    {
+      "name": "bad_request_keeps_service_alive",
+      "passed": true
+    },
+    {
+      "name": "18_nested_recordings_pair_without_cross_directory_mix",
+      "passed": true
+    },
+    {
+      "name": "all_source_files_uploaded_and_hashed",
+      "passed": true
+    },
+    {
+      "name": "start_background_sequential_queue",
+      "passed": true
+    },
+    {
+      "name": "all_18_finished_not_cancelled",
+      "passed": true
+    },
+    {
+      "name": "actual_acceptance_not_inverted_by_expected_failures",
+      "passed": true
+    },
+    {
+      "name": "per_record_overall_status_matches_injection_truth",
+      "passed": true
+    },
+    {
+      "name": "actual_zip_download",
+      "passed": true
+    },
+    {
+      "name": "zip_crc_ok_and_no_copied_sources",
+      "passed": true
+    },
+    {
+      "name": "378_business_assertions_and_all_interactive_reports",
+      "passed": true
+    },
+    {
+      "name": "summary_counts_match_status",
+      "passed": true
+    },
+    {
+      "name": "open_saved_batch_result_without_rerun",
+      "passed": true
+    },
+    {
+      "name": "stale_trace_binding_rejected",
+      "passed": true
+    },
+    {
+      "name": "precise_zoom_reads_local_original_samples",
+      "passed": true
+    }
+  ],
+  "source_selected_bytes": 52914867,
+  "upload_s": 0.1721411440000793,
+  "parse_analyze_export_queue_s": 19.92615474099989,
+  "report_zip_bytes": 10934295,
+  "report_zip_sha256": "d24e43cd2292952ddd317e3438af7ea42e40affb68eee532e0972e1a4ceef3c7",
+  "batch": {
+    "id": "9bc28c30581b1d0e2afcc748",
+    "created_utc": "2026-10-11T11:20:20.585697+00:00",
+    "state": "COMPLETE",
+    "cancel_requested": false,
+    "rows": [
+      {
+        "id": "r00001",
+        "path": "A_控制响应/F01_coupled_nominal.cfg",
+        "cfg": "A_控制响应/F01_coupled_nominal.cfg",
+        "dat": "A_控制响应/F01_coupled_nominal.dat",
+        "case": "A_控制响应/F01_coupled_nominal.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21560
+        },
+        "status": "PASS",
+        "reason": "全部断言通过",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "fda6dddc02b540d20c23ef7a10c8f3ea867a04ff585f0b6662ca5ed722d0ac9f"
+        },
+        "counts": {
+          "PASS": 21,
+          "FAIL": 0,
+          "INCONCLUSIVE": 0,
+          "ERROR": 0
+        },
+        "config_sha256": "43289d7eb48281cf366bd320e24dd67cd15297d03d2a1f03af0c7e16b8d41760",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "fda6dddc02b540d20c23ef7a10c8f3ea867a04ff585f0b6662ca5ed722d0ac9f"
+        },
+        "has_result": true,
+        "elapsed_s": 1.069651
+      },
+      {
+        "id": "r00002",
+        "path": "A_控制响应/F02_dispatch_delay.cfg",
+        "cfg": "A_控制响应/F02_dispatch_delay.cfg",
+        "dat": "A_控制响应/F02_dispatch_delay.dat",
+        "case": "A_控制响应/F02_dispatch_delay.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21552
+        },
+        "status": "FAIL",
+        "reason": "超出限值",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "7ff90918426ad4637f749eaddc15f8ba6ccb614e6c78db1290ea3bfa223da5ee"
+        },
+        "counts": {
+          "PASS": 20,
+          "FAIL": 1,
+          "INCONCLUSIVE": 0,
+          "ERROR": 0
+        },
+        "config_sha256": "111345bd3631e105f2bab4b4304ab881128b7c02b66e6f496bd973a70953c69b",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "7ff90918426ad4637f749eaddc15f8ba6ccb614e6c78db1290ea3bfa223da5ee"
+        },
+        "has_result": true,
+        "elapsed_s": 1.225437
+      },
+      {
+        "id": "r00003",
+        "path": "A_控制响应/F03_low_damping.cfg",
+        "cfg": "A_控制响应/F03_low_damping.cfg",
+        "dat": "A_控制响应/F03_low_damping.dat",
+        "case": "A_控制响应/F03_low_damping.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21554
+        },
+        "status": "FAIL",
+        "reason": "超出限值",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "e3ba642f7eff10fe78dd0e9f4766e003f4a59c0151b77c846daca447a0a07959"
+        },
+        "counts": {
+          "PASS": 18,
+          "FAIL": 3,
+          "INCONCLUSIVE": 0,
+          "ERROR": 0
+        },
+        "config_sha256": "b374b8e7cee316e34934eea967593bf9f906315cb24899aebd079461430fd962",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "e3ba642f7eff10fe78dd0e9f4766e003f4a59c0151b77c846daca447a0a07959"
+        },
+        "has_result": true,
+        "elapsed_s": 1.018214
+      },
+      {
+        "id": "r00004",
+        "path": "A_控制响应/F04_deep_sag.cfg",
+        "cfg": "A_控制响应/F04_deep_sag.cfg",
+        "dat": "A_控制响应/F04_deep_sag.dat",
+        "case": "A_控制响应/F04_deep_sag.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21560
+        },
+        "status": "PASS",
+        "reason": "全部断言通过",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "a7546b5efe5f6d782634b42bc90b9b644887494752c63d63e1c2308bef8d9d50"
+        },
+        "counts": {
+          "PASS": 21,
+          "FAIL": 0,
+          "INCONCLUSIVE": 0,
+          "ERROR": 0
+        },
+        "config_sha256": "ac1aa7ab15ef0a2c9d1c8c455bf17de28830413812ceeec76679a7e33fc0b3c0",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "a7546b5efe5f6d782634b42bc90b9b644887494752c63d63e1c2308bef8d9d50"
+        },
+        "has_result": true,
+        "elapsed_s": 0.947304
+      },
+      {
+        "id": "r00005",
+        "path": "A_控制响应/F05_trip_1ms.cfg",
+        "cfg": "A_控制响应/F05_trip_1ms.cfg",
+        "dat": "A_控制响应/F05_trip_1ms.dat",
+        "case": "A_控制响应/F05_trip_1ms.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21543
+        },
+        "status": "FAIL",
+        "reason": "超出限值",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "a782c746f1a6c91d6e356b15be98eddfd21458d4883513d36178a2304140f102"
+        },
+        "counts": {
+          "PASS": 20,
+          "FAIL": 1,
+          "INCONCLUSIVE": 0,
+          "ERROR": 0
+        },
+        "config_sha256": "30dc8771008af444db1a3dbb7dc374f1b96a4939df9da9bd31e095c7ed8ddd91",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "a782c746f1a6c91d6e356b15be98eddfd21458d4883513d36178a2304140f102"
+        },
+        "has_result": true,
+        "elapsed_s": 0.962568
+      },
+      {
+        "id": "r00006",
+        "path": "A_控制响应/F06_stale_telemetry.cfg",
+        "cfg": "A_控制响应/F06_stale_telemetry.cfg",
+        "dat": "A_控制响应/F06_stale_telemetry.dat",
+        "case": "A_控制响应/F06_stale_telemetry.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21554
+        },
+        "status": "FAIL",
+        "reason": "计入显式插值误差预算后仍超限",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "3e806283686d7b8ed95a7eaccd2ea44742e616e959840b0fef6dfa62365a2f05"
+        },
+        "counts": {
+          "PASS": 20,
+          "FAIL": 1,
+          "INCONCLUSIVE": 0,
+          "ERROR": 0
+        },
+        "config_sha256": "45e1ae37c41c5e2a1406d0b9a61620ab2c2187c6570432f67627ff1a6ffaf992",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "3e806283686d7b8ed95a7eaccd2ea44742e616e959840b0fef6dfa62365a2f05"
+        },
+        "has_result": true,
+        "elapsed_s": 1.223549
+      },
+      {
+        "id": "r00007",
+        "path": "B_采集测量/F07_ct_vt_clipping.cfg",
+        "cfg": "B_采集测量/F07_ct_vt_clipping.cfg",
+        "dat": "B_采集测量/F07_ct_vt_clipping.dat",
+        "case": "B_采集测量/F07_ct_vt_clipping.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21549
+        },
+        "status": "FAIL",
+        "reason": "超出限值；计入显式插值误差预算后仍超限",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "49617d23c852eaeeaefa215cbe0af941836e03d8569b91e095d2cb4e4b677aa0"
+        },
+        "counts": {
+          "PASS": 19,
+          "FAIL": 2,
+          "INCONCLUSIVE": 0,
+          "ERROR": 0
+        },
+        "config_sha256": "08ceb7071ec005555e41fa0b702709dfcc98ca71f721b2494b1fd7c6152c8a03",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "49617d23c852eaeeaefa215cbe0af941836e03d8569b91e095d2cb4e4b677aa0"
+        },
+        "has_result": true,
+        "elapsed_s": 1.051185
+      },
+      {
+        "id": "r00008",
+        "path": "B_采集测量/F08_common_mode_emi.cfg",
+        "cfg": "B_采集测量/F08_common_mode_emi.cfg",
+        "dat": "B_采集测量/F08_common_mode_emi.dat",
+        "case": "B_采集测量/F08_common_mode_emi.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21563
+        },
+        "status": "INCONCLUSIVE",
+        "reason": "原始 overshoot_pct 越限被处理曲线消除；仅凭波形不能确认是采集毛刺，必须复核",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "af6293e87bb5b1d53e6e3b2acae5429a7a506ac02a0fd5308362a22b2bd8a3e0"
+        },
+        "counts": {
+          "PASS": 19,
+          "FAIL": 0,
+          "INCONCLUSIVE": 2,
+          "ERROR": 0
+        },
+        "config_sha256": "c8641e05481a7becc0e5062a5429e7e756f2fd5cf3d5e288e50234ac58eb10bb",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "af6293e87bb5b1d53e6e3b2acae5429a7a506ac02a0fd5308362a22b2bd8a3e0"
+        },
+        "has_result": true,
+        "elapsed_s": 1.009755
+      },
+      {
+        "id": "r00009",
+        "path": "B_采集测量/F09_clock_jitter.cfg",
+        "cfg": "B_采集测量/F09_clock_jitter.cfg",
+        "dat": "B_采集测量/F09_clock_jitter.dat",
+        "case": "B_采集测量/F09_clock_jitter.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21550
+        },
+        "status": "PASS",
+        "reason": "全部断言通过",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "2305b2c31185fe1659aa3f8be3746e15ba0c405db4385520027d426da271e12f"
+        },
+        "counts": {
+          "PASS": 21,
+          "FAIL": 0,
+          "INCONCLUSIVE": 0,
+          "ERROR": 0
+        },
+        "config_sha256": "27ec957b93a9aba2feb9080dcb2591eb918cd4e36c12b4d0495f5d475f482079",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "2305b2c31185fe1659aa3f8be3746e15ba0c405db4385520027d426da271e12f"
+        },
+        "has_result": true,
+        "elapsed_s": 0.915382
+      },
+      {
+        "id": "r00010",
+        "path": "B_采集测量/F10_multirate_skew.cfg",
+        "cfg": "B_采集测量/F10_multirate_skew.cfg",
+        "dat": "B_采集测量/F10_multirate_skew.dat",
+        "case": "B_采集测量/F10_multirate_skew.json",
+        "sizes": {
+          "cfg": 4490,
+          "dat": 3280518,
+          "case": 21560
+        },
+        "status": "INCONCLUSIVE",
+        "reason": "插值/同步误差预算覆盖判定边界；需要更高采样率或经审核的误差预算",
+        "uploaded_hashes": {
+          "cfg_sha256": "96b8a9b89caf66eae20d9985dd018780ff678fcdabd8cb521fe0a23cebdf4861",
+          "dat_sha256": "67f87abe0ca8ded9a774798af7d81ef987849506ddc3000d37033d440dbd9683"
+        },
+        "counts": {
+          "PASS": 20,
+          "FAIL": 0,
+          "INCONCLUSIVE": 1,
+          "ERROR": 0
+        },
+        "config_sha256": "7f977a1e6d284ad9678738737ced5d2b43ad72f89d0f7eb7f5a35b32c1200ae4",
+        "hashes": {
+          "cfg_sha256": "96b8a9b89caf66eae20d9985dd018780ff678fcdabd8cb521fe0a23cebdf4861",
+          "dat_sha256": "67f87abe0ca8ded9a774798af7d81ef987849506ddc3000d37033d440dbd9683"
+        },
+        "has_result": true,
+        "elapsed_s": 1.461719
+      },
+      {
+        "id": "r00011",
+        "path": "B_采集测量/F11_acquisition_gap.cfg",
+        "cfg": "B_采集测量/F11_acquisition_gap.cfg",
+        "dat": "B_采集测量/F11_acquisition_gap.dat",
+        "case": "B_采集测量/F11_acquisition_gap.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2355398,
+          "case": 21541
+        },
+        "status": "INCONCLUSIVE",
+        "reason": "分析窗口跨越疑似采样间隙",
+        "uploaded_hashes": {
+          "cfg_sha256": "a0af80cfa15570a27edd24e1bac01c3096fef01d9a57484e49f7067eb3b6e5b0",
+          "dat_sha256": "8fe619af593c04a0538f97c4f173df06865357136caaa7da248e88244fbda6aa"
+        },
+        "counts": {
+          "PASS": 16,
+          "FAIL": 0,
+          "INCONCLUSIVE": 5,
+          "ERROR": 0
+        },
+        "config_sha256": "a56ce7bcc4309882f5cef65bae1533eac6cbd5c8dae0c539fffe2fb1684a991e",
+        "hashes": {
+          "cfg_sha256": "a0af80cfa15570a27edd24e1bac01c3096fef01d9a57484e49f7067eb3b6e5b0",
+          "dat_sha256": "8fe619af593c04a0538f97c4f173df06865357136caaa7da248e88244fbda6aa"
+        },
+        "has_result": true,
+        "elapsed_s": 0.813655
+      },
+      {
+        "id": "r00012",
+        "path": "B_采集测量/F12_selected_dropout.cfg",
+        "cfg": "B_采集测量/F12_selected_dropout.cfg",
+        "dat": "B_采集测量/F12_selected_dropout.dat",
+        "case": "B_采集测量/F12_selected_dropout.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21558
+        },
+        "status": "INCONCLUSIVE",
+        "reason": "分析窗口包含缺失或非有限采样值",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "f8eb328e4b35cae49e561451114163a95db7a251dc071fd98a9bf112e67ed147"
+        },
+        "counts": {
+          "PASS": 20,
+          "FAIL": 0,
+          "INCONCLUSIVE": 1,
+          "ERROR": 0
+        },
+        "config_sha256": "2e9ba66a49a48ca7ca38d2c550ed581c102980b490243dcd2eaa588a9365a162",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "f8eb328e4b35cae49e561451114163a95db7a251dc071fd98a9bf112e67ed147"
+        },
+        "has_result": true,
+        "elapsed_s": 0.911554
+      },
+      {
+        "id": "r00013",
+        "path": "C_复合工况/F13_sensor_gain_drift.cfg",
+        "cfg": "C_复合工况/F13_sensor_gain_drift.cfg",
+        "dat": "C_复合工况/F13_sensor_gain_drift.dat",
+        "case": "C_复合工况/F13_sensor_gain_drift.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21551
+        },
+        "status": "FAIL",
+        "reason": "计入显式插值误差预算后仍超限",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "207ea5eed2ffc930dc37ac07b95654cb839d4f14974867d4ed8b785bd1c417d6"
+        },
+        "counts": {
+          "PASS": 20,
+          "FAIL": 1,
+          "INCONCLUSIVE": 0,
+          "ERROR": 0
+        },
+        "config_sha256": "2fcef16500dfb9d60c2bf38b55269919e0115268154fae7556611c8c5189d538",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "207ea5eed2ffc930dc37ac07b95654cb839d4f14974867d4ed8b785bd1c417d6"
+        },
+        "has_result": true,
+        "elapsed_s": 0.961412
+      },
+      {
+        "id": "r00014",
+        "path": "C_复合工况/F14_handshake_loss.cfg",
+        "cfg": "C_复合工况/F14_handshake_loss.cfg",
+        "dat": "C_复合工况/F14_handshake_loss.dat",
+        "case": "C_复合工况/F14_handshake_loss.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21551
+        },
+        "status": "FAIL",
+        "reason": "超出限值",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "5761ad17d6a7c8d83426b5020a22e994062135941d1855ab3c752f593bf85620"
+        },
+        "counts": {
+          "PASS": 20,
+          "FAIL": 1,
+          "INCONCLUSIVE": 0,
+          "ERROR": 0
+        },
+        "config_sha256": "a3e9f6e906ba204468a3fa247abb4db51e03f194b219fde8f54432d175c79df3",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "5761ad17d6a7c8d83426b5020a22e994062135941d1855ab3c752f593bf85620"
+        },
+        "has_result": true,
+        "elapsed_s": 0.837202
+      },
+      {
+        "id": "r00015",
+        "path": "C_复合工况/F15_limiter_disabled.cfg",
+        "cfg": "C_复合工况/F15_limiter_disabled.cfg",
+        "dat": "C_复合工况/F15_limiter_disabled.dat",
+        "case": "C_复合工况/F15_limiter_disabled.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21545
+        },
+        "status": "FAIL",
+        "reason": "超出限值",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "e882c0c54bc62a7b7c3304b1c2209805f58d53db16fee5c2fdb8eb3b34eb7792"
+        },
+        "counts": {
+          "PASS": 20,
+          "FAIL": 1,
+          "INCONCLUSIVE": 0,
+          "ERROR": 0
+        },
+        "config_sha256": "886c995bc4e36d31dab4b88bc8ec686d4222ebd6bb40f8bd35d6df14af0043e0",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "e882c0c54bc62a7b7c3304b1c2209805f58d53db16fee5c2fdb8eb3b34eb7792"
+        },
+        "has_result": true,
+        "elapsed_s": 0.778494
+      },
+      {
+        "id": "r00016",
+        "path": "C_复合工况/F16_compound_faults.cfg",
+        "cfg": "C_复合工况/F16_compound_faults.cfg",
+        "dat": "C_复合工况/F16_compound_faults.dat",
+        "case": "C_复合工况/F16_compound_faults.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21563
+        },
+        "status": "FAIL",
+        "reason": "原始 overshoot_pct 越限被处理曲线消除；仅凭波形不能确认是采集毛刺，必须复核；超出限值；计入显式插值误差预算后仍超限",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "ed0d0a275cbaab95225340d03d8d9a8971838af5c9aedd9feb606e057f4a3af3"
+        },
+        "counts": {
+          "PASS": 16,
+          "FAIL": 3,
+          "INCONCLUSIVE": 2,
+          "ERROR": 0
+        },
+        "config_sha256": "732e75e0e6376495cf3a44b7ecce98503b476c3d2ecdbf6a643a1d4190c0044e",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "ed0d0a275cbaab95225340d03d8d9a8971838af5c9aedd9feb606e057f4a3af3"
+        },
+        "has_result": true,
+        "elapsed_s": 0.978284
+      },
+      {
+        "id": "r00017",
+        "path": "C_复合工况/F17_512_channel_rack.cfg",
+        "cfg": "C_复合工况/F17_512_channel_rack.cfg",
+        "dat": "C_复合工况/F17_512_channel_rack.dat",
+        "case": "C_复合工况/F17_512_channel_rack.json",
+        "sizes": {
+          "cfg": 19323,
+          "dat": 11360568,
+          "case": 55260
+        },
+        "status": "PASS",
+        "reason": "全部断言通过",
+        "uploaded_hashes": {
+          "cfg_sha256": "5d129d1f2a52da281128fb1e92867df7e67fcccb69e91be7e2ea1ce904929aef",
+          "dat_sha256": "e5823428b057afca93ec4ca6d70bc72d64c04f0552dfe7a729b8a9a15e0263be"
+        },
+        "counts": {
+          "PASS": 21,
+          "FAIL": 0,
+          "INCONCLUSIVE": 0,
+          "ERROR": 0
+        },
+        "config_sha256": "e7d43a36a33da2d1ea845abcae8bf1deb163705a4c72ce6b68b4a33e516fad77",
+        "hashes": {
+          "cfg_sha256": "5d129d1f2a52da281128fb1e92867df7e67fcccb69e91be7e2ea1ce904929aef",
+          "dat_sha256": "e5823428b057afca93ec4ca6d70bc72d64c04f0552dfe7a729b8a9a15e0263be"
+        },
+        "has_result": true,
+        "elapsed_s": 2.519504
+      },
+      {
+        "id": "r00018",
+        "path": "C_复合工况/F18_colored_burst.cfg",
+        "cfg": "C_复合工况/F18_colored_burst.cfg",
+        "dat": "C_复合工况/F18_colored_burst.dat",
+        "case": "C_复合工况/F18_colored_burst.json",
+        "sizes": {
+          "cfg": 4445,
+          "dat": 2360118,
+          "case": 21566
+        },
+        "status": "INCONCLUSIVE",
+        "reason": "数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论；超过预先配置的数据质量预算；禁止扩大误差带或自动提高降噪强度",
+        "uploaded_hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "ac01ca56d6d1fac0ec391a55f861b41d0fbb1d912c61639421ce1179fa8add41"
+        },
+        "counts": {
+          "PASS": 20,
+          "FAIL": 0,
+          "INCONCLUSIVE": 1,
+          "ERROR": 0
+        },
+        "config_sha256": "0d6f2dcaf866e4d62bc1ed9f7bddca4916d27dc10749326d127a237928c2e942",
+        "hashes": {
+          "cfg_sha256": "00d5bd9d971b121536195be467e72cbd4432a06a357e6918c31e299dab60bc50",
+          "dat_sha256": "ac01ca56d6d1fac0ec391a55f861b41d0fbb1d912c61639421ce1179fa8add41"
+        },
+        "has_result": true,
+        "elapsed_s": 1.092564
+      }
+    ],
+    "selected_files": 54,
+    "selected_bytes": 52914867,
+    "ignored_files": 0,
+    "mode": "sibling",
+    "finished_utc": "2026-10-11T11:20:40.537307+00:00",
+    "counts": {
+      "PASS": 4,
+      "FAIL": 9,
+      "INCONCLUSIVE": 5,
+      "ERROR": 0,
+      "CANCELLED": 0,
+      "WAITING": 0,
+      "READY": 0,
+      "RUNNING": 0
+    },
+    "total": 18,
+    "done": 18,
+    "verdict": "FAIL"
+  }
+}

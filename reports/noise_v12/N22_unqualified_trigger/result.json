@@ -1,0 +1,170 @@
+{
+  "product": "ESS WaveTest",
+  "version": "1.2.0",
+  "generated_utc": "2026-10-11T08:37:52.922222+00:00",
+  "suite": "模拟触发只有短尖峰：无可信激励",
+  "status": "INCONCLUSIVE",
+  "counts": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 1,
+    "ERROR": 0
+  },
+  "record": {
+    "station": "ESS LAB",
+    "device": "SIMULATOR",
+    "revision": 2013,
+    "format": "FLOAT32",
+    "analog_count": 1,
+    "digital_count": 1,
+    "frequency_hz": 50.0,
+    "sample_rates": [
+      [
+        2000.0,
+        2001
+      ]
+    ],
+    "trigger_s": 0.25,
+    "timemult": 1.0,
+    "start_timestamp": "01/01/2026,00:00:00.000000",
+    "trigger_timestamp": "01/01/2026,00:00:00.250000",
+    "encoding": "utf-8-sig",
+    "time_metadata": [
+      [
+        "+00:00",
+        "+00:00"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "cfg_file": "N22_unqualified_trigger.cfg",
+    "dat_file": "N22_unqualified_trigger.dat",
+    "time_source": "dat_timestamps",
+    "max_sample_interval_s": 0.000500000000000056,
+    "samples": 2001,
+    "start_s": 0.0,
+    "end_s": 1.0,
+    "channels": [
+      {
+        "key": "A1",
+        "index": 1,
+        "kind": "analog",
+        "name": "含噪声模拟激励",
+        "unit": "V",
+        "phase": "",
+        "circuit": "PCS",
+        "a": 0.0001,
+        "b": 0.0,
+        "skew_us": 0.0,
+        "primary": 1.0,
+        "secondary": 1.0,
+        "side": "P",
+        "normal": 0,
+        "raw_min": -1e+30,
+        "raw_max": 1e+30
+      },
+      {
+        "key": "D1",
+        "index": 1,
+        "kind": "digital",
+        "name": "动作反馈",
+        "unit": "",
+        "phase": "",
+        "circuit": "PCS",
+        "a": 1.0,
+        "b": 0.0,
+        "skew_us": 0.0,
+        "primary": 1.0,
+        "secondary": 1.0,
+        "side": "P",
+        "normal": 0,
+        "raw_min": 0.0,
+        "raw_max": 0.0
+      }
+    ],
+    "warnings": [],
+    "gap_count": 0,
+    "hashes": {
+      "cfg_sha256": "f2945643172dd93c3999699b8adbfbbb0a753557299d9c07c1da3a1d234cbe0a",
+      "dat_sha256": "b4f8a73c14d4d33ecc9f28b8e7852acf0235d5114cb1f9880eb4acf67f71ee5e"
+    }
+  },
+  "configuration": {
+    "schema_version": 1,
+    "name": "模拟触发只有短尖峰：无可信激励",
+    "description": "合成噪声工程回归；预期来自注入模型与显式限值，不是厂家现场验证。",
+    "standard": {
+      "reference": "噪声算法工程示例；非国标条款",
+      "reviewed": false,
+      "note": "所有容限必须由项目审核后替换。"
+    },
+    "channels": {
+      "cmd": {
+        "kind": "analog",
+        "index": 1
+      },
+      "ack": {
+        "kind": "digital",
+        "index": 1
+      }
+    },
+    "tests": [
+      {
+        "id": "ACK_AFTER_QUALIFIED_TRIGGER",
+        "name": "经过滞回与持续确认的动作时延",
+        "type": "digital_edge",
+        "channel": "ack",
+        "trigger": {
+          "type": "analog_crossing",
+          "channel": "cmd",
+          "threshold": 0.5,
+          "hysteresis": 0.15,
+          "hold_s": 0.006,
+          "edge": "rising",
+          "search": [
+            0.1,
+            0.6
+          ]
+        },
+        "window": [
+          0,
+          0.08
+        ],
+        "edge": "rising",
+        "count": 1,
+        "latency_min_s": 0.01,
+        "latency_max_s": 0.03,
+        "noise": {
+          "rise_s": 0.003,
+          "fall_s": 0.005,
+          "max_rejected_edges": 24,
+          "max_chatter_s": 0.025,
+          "merge_gap_s": 0.006,
+          "timing_guard": true
+        }
+      }
+    ]
+  },
+  "config_sha256": "c8ebfeaacf9d8c2a153fc2baa42f1f6e0b17bc7ae234ac400d0fde1040c1d352",
+  "results": [
+    {
+      "id": "ACK_AFTER_QUALIFIED_TRIGGER",
+      "name": "经过滞回与持续确认的动作时延",
+      "type": "digital_edge",
+      "channel": "ack",
+      "standard": {
+        "reference": "噪声算法工程示例；非国标条款",
+        "reviewed": false,
+        "note": "所有容限必须由项目审核后替换。"
+      },
+      "metrics": {},
+      "checks": [],
+      "evidence": {},
+      "status": "INCONCLUSIVE",
+      "reason": "未找到第 1 个指定触发事件；请确认试验激励是否执行"
+    }
+  ],
+  "notice": "结果仅表示满足当前配置断言，不代表已取得国标符合性认证。示例阈值不属于标准原文。"
+}

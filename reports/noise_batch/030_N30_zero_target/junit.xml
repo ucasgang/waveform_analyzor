@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="零目标阶跃：不使用目标值作分母" tests="1" failures="0" errors="0"><properties><property name="config_sha256" value="edada20586556c41d2ba9bfb8b57d5553d1e4ca86dc9fb1d254da7232d75c971" /></properties><testcase name="ROBUST_STEP 抗噪性能 + 原始硬限值 + 质量预算" classname="analog_step" /></testsuite>

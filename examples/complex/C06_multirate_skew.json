@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "name": "三段采样率 + 750 us 偏移 + 变比/单位换算",
+  "description": "复合合成工况；每项预期结论独立列于 manifest。",
+  "standard": {
+    "reference": "工程回归 / 非国标限值",
+    "clause": "合成数据验证",
+    "reviewed": false
+  },
+  "channels": {
+    "power": {
+      "kind": "analog",
+      "name": "功率二次测量",
+      "unit": "W",
+      "side": "primary",
+      "scale": 0.001,
+      "output_unit": "kW"
+    },
+    "target": {
+      "kind": "analog",
+      "name": "功率一次指令",
+      "unit": "W",
+      "scale": 0.001,
+      "output_unit": "kW"
+    },
+    "cmd": {
+      "kind": "digital",
+      "name": "启动激励"
+    },
+    "ack": {
+      "kind": "digital",
+      "name": "完成反馈"
+    }
+  },
+  "tests": [
+    {
+      "id": "SKEW_STEP",
+      "name": "SKEW_STEP",
+      "type": "analog_step",
+      "channel": "power",
+      "window": [
+        0,
+        2
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.002,
+        "search": [
+          0.6,
+          0.9
+        ]
+      },
+      "baseline_window": [
+        -0.18,
+        -0.03
+      ],
+      "normalization": "rated",
+      "rated": 100,
+      "steady_last_s": 0.25,
+      "settle_band_pct": 2,
+      "settle_hold_s": 0.1,
+      "limits": {
+        "overshoot_pct_max": 3,
+        "response_s_max": 0.35,
+        "rise_s_max": 0.3,
+        "settling_s_max": 0.6,
+        "steady_error_pct_max": 0.5,
+        "steady_ripple_pp_max": 1
+      },
+      "target_channel": "target",
+      "target_window": [
+        0.03,
+        0.1
+      ],
+      "target_tolerance": 0
+    },
+    {
+      "id": "BOUNCED_ACK",
+      "name": "BOUNCED_ACK",
+      "type": "digital_edge",
+      "channel": "ack",
+      "window": [
+        0,
+        0.2
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.002,
+        "search": [
+          0.6,
+          0.9
+        ]
+      },
+      "count": 1,
+      "edge": "rising",
+      "debounce_s": 0.003,
+      "latency_min_s": 0.029,
+      "latency_max_s": 0.031
+    },
+    {
+      "id": "POST_BAND",
+      "name": "POST_BAND",
+      "type": "analog_range",
+      "channel": "power",
+      "window": [
+        1.5,
+        2.5
+      ],
+      "min": 99.9,
+      "max": 100.1
+    }
+  ]
+}

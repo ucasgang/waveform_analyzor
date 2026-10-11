@@ -1,0 +1,29 @@
+test_array_payload_400 (test_batch_http_v13.BatchHTTPTests.test_array_payload_400) ... ok
+test_batch_error_does_not_clear_single_record (test_batch_http_v13.BatchHTTPTests.test_batch_error_does_not_clear_single_record) ... ok
+test_cancel_array_body_400 (test_batch_http_v13.BatchHTTPTests.test_cancel_array_body_400) ... ok
+test_cross_origin_cannot_create (test_batch_http_v13.BatchHTTPTests.test_cross_origin_cannot_create) ... ok
+test_duplicate_payload_keys_400 (test_batch_http_v13.BatchHTTPTests.test_duplicate_payload_keys_400) ... ok
+test_missing_action_404_not_server_crash (test_batch_http_v13.BatchHTTPTests.test_missing_action_404_not_server_crash) ... ok
+test_new_static_assets_present (test_batch_http_v13.BatchHTTPTests.test_new_static_assets_present) ... ok
+test_null_payload_400 (test_batch_http_v13.BatchHTTPTests.test_null_payload_400) ... ok
+test_pending_open_rejected (test_batch_http_v13.BatchHTTPTests.test_pending_open_rejected) ... ok
+test_start_nonempty_body_400 (test_batch_http_v13.BatchHTTPTests.test_start_nonempty_body_400) ... ok
+test_token_gate_applies_to_all_batch_reads (test_batch_http_v13.BatchHTTPTests.test_token_gate_applies_to_all_batch_reads) ... ok
+test_unknown_action_404 (test_batch_http_v13.BatchHTTPTests.test_unknown_action_404) ... ok
+test_unknown_id_400 (test_batch_http_v13.BatchHTTPTests.test_unknown_id_400) ... ok
+test_zip_repeated_download_stable_and_open_bound (test_batch_http_v13.BatchHTTPTests.test_zip_repeated_download_stable_and_open_bound) ... ok
+test_common_config_uppercase_dat (test_batch_http_v13.DirectoryCLITests.test_common_config_uppercase_dat) ... ok
+test_no_recursive_does_not_execute_nested (test_batch_http_v13.DirectoryCLITests.test_no_recursive_does_not_execute_nested) ... ok
+test_orphan_dat_included_error (test_batch_http_v13.DirectoryCLITests.test_orphan_dat_included_error) ... ok
+test_recursive_siblings_duplicate_stems_independent (test_batch_http_v13.DirectoryCLITests.test_recursive_siblings_duplicate_stems_independent) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.806s
+
+OK
+001 same.cfg: PASS
+001 root.cfg: PASS
+001 good.cfg: PASS
+002 orphan.dat: ERROR
+001 same.cfg: PASS
+002 same.cfg: FAIL

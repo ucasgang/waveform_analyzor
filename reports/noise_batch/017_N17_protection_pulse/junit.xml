@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="1 ms 真实保护脉冲：原始通道保留" tests="2" failures="1" errors="0"><properties><property name="config_sha256" value="a97084a614cec45c2c6acaf8846b52d8ccf4f3da524d3fc2e367628951c7bd95" /></properties><testcase name="RAW_NO_TRIP 原始保护通道禁止任何跳闸" classname="digital_hold"><failure type="FAIL" message="超出限值">{"expected": 0, "violating_samples": 1}</failure></testcase><testcase name="RAW_PULSE 观察到的真实 1 ms 保护脉冲" classname="digital_pulse" /></testsuite>

@@ -1,0 +1,1740 @@
+{
+  "version": "1.1.0",
+  "generated_utc": "2026-10-11T05:47:26.855713+00:00",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "test_count": 431,
+  "passed": 431,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_s": 12.431646749000038,
+  "successful": true,
+  "outcomes": [
+    {
+      "test": "test_cli.CliTests.test_acceptance_batch_fails",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_config_bom",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_config_rejects_nan_json",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_default_gui_calls_local_server",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_directory_without_case",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_directory_without_cfg",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_empty_manifest",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_error",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_expected_outcome_regression_not_acceptance",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_generate",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_gui_port_and_no_browser",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_inspect",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_mismatched_regression",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_missing_file_is_logged",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_run_fail",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_run_inconclusive",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_run_pass",
+      "status": "PASS"
+    },
+    {
+      "test": "test_cli.CliTests.test_version",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_00",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_01",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_02",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_03",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_04",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_05",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_06",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_07",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_08",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_09",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_10",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_11",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_12",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_13",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_14",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_15",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_16",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_17",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_18",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_19",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_20",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_21",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_22",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_analytic_signed_step_seed_23",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_00",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_01",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_02",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_03",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_04",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_05",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_06",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_07",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_08",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_09",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_10",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_11",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_12",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_13",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_14",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_15",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_16",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_17",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_18",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_19",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_20",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_21",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_22",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.AnalyticAndRandomizedOracles.test_random_low_high_pulse_train_seed_23",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.CompositeScenarios.test_C01_cycle_pass",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.CompositeScenarios.test_C02_cycle_race",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.CompositeScenarios.test_C03_cycle_oscillation",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.CompositeScenarios.test_C04_sag_pass",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.CompositeScenarios.test_C05_sag_trip",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.CompositeScenarios.test_C06_multirate_skew",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.CompositeScenarios.test_C07_fault_reset_pass",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.CompositeScenarios.test_C08_fault_reset_race",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.CompositeScenarios.test_C09_dense_512",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.CompositeScenarios.test_C10_target_drift",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.CompositeScenarios.test_C11_selected_missing",
+      "status": "PASS"
+    },
+    {
+      "test": "test_complex_v11.CompositeScenarios.test_C12_causal_debounce",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_analog_crossing_trigger",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_analog_falling_trigger",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_linear_rms_exact",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_max_gap_policy",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_mean_time_weighted_irregular",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_missing_selected_channel",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_missing_unused_channel_does_not_poison",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_oscillation_not_first_band_entry",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_out_of_record_window",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_pretrigger_response_inconclusive",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_range_fail",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_rms_constant",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_sampling_offset_window_interpolation",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_short_observation_never_response",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_target_from_channel",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_target_zero_denominator_error",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_varying_target_inconclusive",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.AnalogTests.test_zero_step_is_inconclusive",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_absence",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_both_edges",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_debounce_retains_real_event_onset",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_explicit_debounce_ignores_glitch",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_falling",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_hold_detects_single_sample_glitch",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_hold_high",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_hold_low",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_latency_exact_boundary",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_latency_guard_band",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_left_truncated_pulse",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_low_active_pulse",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_missing_edge_fails",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_narrow_pulse_fail",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_no_preceding_sample_no_invented_edge",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_open_pulse_inconclusive",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_pending_end_not_silent_pass",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_pending_transition_before_fractional_window",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_pulse_at_exact_window_start",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_pulse_width",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_rising",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_trigger_not_found",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.DigitalTests.test_trigger_occurrence",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_1991_ratio_conversion_not_inferred",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_alternative_names",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_changed_unit_without_scale_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_duplicate_name_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_empty_unit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_exact_name",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_explicit_output_unit_conversion",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_glob_unique",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_index",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_missing_channel_is_error",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_primary_conversion",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_scale_offset_explicit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_secondary_conversion",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_skew_applied",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.MappingTests.test_unit_mismatch",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_000",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_001",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_002",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_003",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_004",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_005",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_006",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_007",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_008",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_009",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_010",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_011",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_012",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_013",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_014",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_015",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_016",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_017",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_018",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_019",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_020",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_021",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_022",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_023",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_024",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_025",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_026",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_027",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_028",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_029",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_030",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_031",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_032",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_033",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_034",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_035",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_036",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_037",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_038",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_analytic_step_seed_039",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_format_1991_ascii",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_format_1991_binary",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_format_1999_ascii",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_format_1999_binary",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_format_2001_ascii",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_format_2001_binary",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_format_2013_ascii",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_format_2013_binary",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_format_2013_binary32",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_format_2013_float32",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_missing_sentinel_1991_ascii",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_missing_sentinel_1991_binary",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_missing_sentinel_1999_ascii",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_missing_sentinel_1999_binary",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_missing_sentinel_2001_ascii",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_missing_sentinel_2001_binary",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_missing_sentinel_2013_ascii",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_missing_sentinel_2013_binary",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_missing_sentinel_2013_binary32",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_missing_sentinel_2013_float32",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_000",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_001",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_002",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_003",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_004",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_005",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_006",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_007",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_008",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_009",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_010",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_011",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_012",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_013",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_014",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_015",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_016",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_017",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_018",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_019",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_020",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_021",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_022",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_023",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_024",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_025",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_026",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_027",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_028",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_029",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_030",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_031",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_032",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_033",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_034",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_035",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_036",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_037",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_038",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_random_pulse_seed_039",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_01_pass_binary",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_02_pass_ascii",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_03_pass_binary32",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_04_pass_float32",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_05_slow_response",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_06_overshoot",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_07_steady_error",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_08_wide_pulse",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_09_alarm_glitch",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_10_no_trigger",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_11_missing_value",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_12_sampling_gap",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_13_falling_step",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_14_zero_target",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_15_contact_bounce",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_16_open_pulse",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_17_never_response",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_18_oscillation",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_19_measurement_noise",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_20_chinese_gbk",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_21_missing_edge",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_22_512_channels",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParameterizedTests.test_scenario_23_rebuilt_time",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_all_missing_timestamps_reconstructed",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_analog_only",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_ascii_missing_column",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_ascii_nan_not_inferred_as_valid",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_bad_ascii_analog_value",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_case_insensitive_dat_extension",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_cff_explicit_rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_cfg_bad_count",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_cfg_bad_revision",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_cfg_nan_gain",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_cfg_truncation",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_cfg_unknown_extension",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_cfg_zero_gain",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_digital_only",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_duplicate_dat_match",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_duplicate_timestamps",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_empty_ascii_row",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_extra_sample_rows",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_fractional_sample_number",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_gain_and_offset",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_gap_detected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_gbk",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_handwritten_binary_golden_vector",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_invalid_date",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_invalid_digital_value",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_lsb_packing_across_word_boundaries",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_memory_guard",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_metadata_nano_fraction",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_no_rates_valid_dat",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_partially_missing_timestamps_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_rebuild_multi_rate",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_reverse_timestamps",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_sample_number_gap",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_time_multiplier",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_truncated_binary_record",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_truncated_complete_binary_row",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_utf8_bom",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_valid_multi_rate_timestamps",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ParserTests.test_zero_timestamps_no_rates",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ReportTests.test_cli_error_exit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ReportTests.test_cli_fail_exit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ReportTests.test_cli_inconclusive_exit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ReportTests.test_cli_pass_exit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ReportTests.test_config_change_changes_hash",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ReportTests.test_config_hash_stable_under_key_order",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ReportTests.test_csv_formula_injection",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ReportTests.test_html_escapes_untrusted_content",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ReportTests.test_junit_inconclusive_blocks_ci",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ReportTests.test_report_html_json_xml_exports",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ReportTests.test_status_priority",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ReportTests.test_trace_decimation_preserves_extreme",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_bad_hold_value",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_bad_trigger",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_bad_version",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_baseline_after_trigger",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_boolean_count",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_digital_scale",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_duplicate_id",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_empty_alternative_names",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_empty_limit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_empty_tests",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_infinite_limit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_invalid_fraction_order",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_mismatched_kind",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_missing_analog_threshold",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_missing_channel_alias",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_multiple_selectors",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_nan_limit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_negative_debounce",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_negative_window",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_noninteger_count",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_pulse_requires_limits",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_reversed_latency_limits",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_reviewed_standard_needs_reviewer",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_steady_window_too_long",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_step_window_must_start_at_trigger",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_string_limit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_trigger_wrong_kind",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_two_targets",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_unit_requires_string",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_unknown_assertion",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_unknown_limit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_unknown_root",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_unknown_test_field",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_valid_full_demo",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_zero_rated",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core.ValidationTests.test_zero_scale",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B01_enough_time_since_low_proves_rise_failure",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B01_late_low_crossing_does_not_prove_rise_failure",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B01_missing_low_crossing_is_not_a_rise_failure",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B01_response_limit_still_fails_without_any_motion",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B02_extending_record_cannot_change_a_closed_window",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B02_glitch_fully_observed_inside_window_can_be_filtered",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B02_no_future_information_for_debounce_at_window_end",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B03_crossing_at_inclusive_left_search_boundary",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B03_no_invented_crossing_for_threshold_plateau",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B04_asserted_edge_cannot_hide_gap_just_outside_window",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B04_trigger_predecessor_in_gap_is_not_usable_evidence",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B04_unrelated_earlier_gap_does_not_poison_stable_hold",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B05_engineering_scale_overflow_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B05_intermediate_nonfinite_mean_never_reports_pass",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B05_mapping_overflow_is_error_not_missing_data",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B05_time_multiplier_overflow_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B06_compact_trace_keeps_missing_as_breaks",
+      "status": "PASS"
+    },
+    {
+      "test": "test_regressions_v11.BoundaryRegressions.test_B06_dense_missing_sample_cannot_be_bridged",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_bad_run_clears_stale_result",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_bad_trace_key",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_bad_upload_clears_stale_record_and_results",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_cross_origin",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_demo_and_run",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_dns_rebinding_host",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_export_all_formats",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_inconclusive_through_api",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_index_contains_session_and_ui",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_invalid_cfg_length",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_invalid_json",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_invalid_variant",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_missing_token",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_no_cors_header",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_path_traversal_blocked",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_short_upload",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_static_assets",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_template",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_trace_endpoint",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_unknown_export",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_unknown_path",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_upload_binary",
+      "status": "PASS"
+    },
+    {
+      "test": "test_server.ServerTests.test_wrong_token",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_http_reject_bad_limit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_http_reject_duplicate",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_http_reject_empty",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_http_reject_empty_key",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_http_reject_infinite",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_http_reject_nan",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_http_reject_reverse",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_http_reject_too_large",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_http_reject_unknown",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_missing_record",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_narrow_http_window_has_real_local_samples",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_result_trace_requires_current_result",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_result_trace_uses_evidence_domain",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_stale_record_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_stale_result_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_timeline_asset",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_unchanged_server_result_after_many_zooms",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceHTTPTests.test_unknown_result_test",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_aggregated_missing_sample_remains_a_break",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_channel_skew_affects_time_axis",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_data_gap_breaks_line_in_local_view",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_dense_digital_is_not_faked_as_precise_edges",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_dense_digital_zoom_recovers_alternating_raw_samples",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_full_analog_keeps_single_sample_peak",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_many_gaps_respect_response_point_budget",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_missing_sample_is_null_and_valid_json",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_reject_boolean_time",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_reject_equal_times",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_reject_inf_end",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_reject_infinite_factor",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_reject_limit_fraction",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_reject_limit_large",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_reject_limit_zero",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_reject_nan_start",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_reject_negative_start",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_reject_reverse",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_reject_string_time",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_reject_too_late",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_result_window_is_enforced",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_side_scaling_and_offset_in_result_view",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_small_limit_never_breaks_bounds",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_sparse_digital_preserves_exact_transition_neighbours",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_timeline_queries_do_not_mutate_assertion_inputs",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_viewport_inside_one_sample_interval_has_brackets",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_whole_window_defaults_for_results",
+      "status": "PASS"
+    },
+    {
+      "test": "test_trace_v11.TraceViewportTests.test_zoom_rereads_original_samples",
+      "status": "PASS"
+    }
+  ],
+  "scope_note": "合成、解析、算法、接口与回归检查；不构成所有厂家设备或现场工况的证明。"
+}

@@ -1,0 +1,112 @@
+{
+  "id": "adcb2aa5283f2d86e40130f7",
+  "created_utc": "2026-10-11T11:16:45.684075+00:00",
+  "state": "COMPLETE",
+  "cancel_requested": false,
+  "rows": [
+    {
+      "id": "r00001",
+      "path": "批次样本/A_正常/录波.cfg",
+      "cfg": "批次样本/A_正常/录波.cfg",
+      "dat": "批次样本/A_正常/录波.dat",
+      "case": "批次样本/A_正常/录波.json",
+      "sizes": {
+        "cfg": 393,
+        "dat": 32016,
+        "case": 4071
+      },
+      "status": "PASS",
+      "reason": "全部断言通过",
+      "uploaded_hashes": {
+        "cfg_sha256": "7b2162c4c4afdefa8ba0655e51e129a1804cd2b8a615f85e0c30ffb41c2262a7",
+        "dat_sha256": "120783e1529faaf5106452f0141f9c652c7310f749a88b00e2af2463956daedc"
+      },
+      "counts": {
+        "PASS": 6,
+        "FAIL": 0,
+        "INCONCLUSIVE": 0,
+        "ERROR": 0
+      },
+      "config_sha256": "6f771714887ec507b933a92acc3a6db5c41d7d167af5950685a97930f2a9d2e1",
+      "hashes": {
+        "cfg_sha256": "7b2162c4c4afdefa8ba0655e51e129a1804cd2b8a615f85e0c30ffb41c2262a7",
+        "dat_sha256": "120783e1529faaf5106452f0141f9c652c7310f749a88b00e2af2463956daedc"
+      },
+      "has_result": true,
+      "elapsed_s": 0.029102
+    },
+    {
+      "id": "r00002",
+      "path": "批次样本/B_异常/录波.cfg",
+      "cfg": "批次样本/B_异常/录波.cfg",
+      "dat": "批次样本/B_异常/录波.dat",
+      "case": "批次样本/B_异常/录波.json",
+      "sizes": {
+        "cfg": 393,
+        "dat": 32016,
+        "case": 4071
+      },
+      "status": "FAIL",
+      "reason": "超出限值",
+      "uploaded_hashes": {
+        "cfg_sha256": "7b2162c4c4afdefa8ba0655e51e129a1804cd2b8a615f85e0c30ffb41c2262a7",
+        "dat_sha256": "051b9667909718ce79b60429c36c9ed9fc13439510cbe68af3bb984f0e894ea8"
+      },
+      "counts": {
+        "PASS": 5,
+        "FAIL": 1,
+        "INCONCLUSIVE": 0,
+        "ERROR": 0
+      },
+      "config_sha256": "6f771714887ec507b933a92acc3a6db5c41d7d167af5950685a97930f2a9d2e1",
+      "hashes": {
+        "cfg_sha256": "7b2162c4c4afdefa8ba0655e51e129a1804cd2b8a615f85e0c30ffb41c2262a7",
+        "dat_sha256": "051b9667909718ce79b60429c36c9ed9fc13439510cbe68af3bb984f0e894ea8"
+      },
+      "has_result": true,
+      "elapsed_s": 0.026558
+    },
+    {
+      "id": "r00003",
+      "path": "批次样本/孤立.DAT",
+      "cfg": null,
+      "dat": "批次样本/孤立.DAT",
+      "case": null,
+      "sizes": {
+        "dat": 6
+      },
+      "status": "ERROR",
+      "reason": "缺少同目录同名 .CFG；缺少同目录同名 .JSON"
+    },
+    {
+      "id": "r00004",
+      "path": "批次样本/缺文件.cfg",
+      "cfg": "批次样本/缺文件.cfg",
+      "dat": null,
+      "case": null,
+      "sizes": {
+        "cfg": 6
+      },
+      "status": "ERROR",
+      "reason": "缺少同目录同名 .DAT；缺少同目录同名 .JSON"
+    }
+  ],
+  "selected_files": 8,
+  "selected_bytes": 72972,
+  "ignored_files": 0,
+  "mode": "sibling",
+  "finished_utc": "2026-10-11T11:16:46.037320+00:00",
+  "counts": {
+    "PASS": 1,
+    "FAIL": 1,
+    "INCONCLUSIVE": 0,
+    "ERROR": 2,
+    "CANCELLED": 0,
+    "WAITING": 0,
+    "READY": 0,
+    "RUNNING": 0
+  },
+  "total": 4,
+  "done": 4,
+  "verdict": "ERROR"
+}

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="基线孤立污染：稳健基线不被拉偏" tests="1" failures="0" errors="0"><properties><property name="config_sha256" value="bb84828a42ef5b54f68f437fe5e41b1f851bf07f1e9e99e477ebccd04c90bbe4" /></properties><testcase name="ROBUST_STEP 抗噪性能 + 原始硬限值 + 质量预算" classname="analog_step" /></testsuite>

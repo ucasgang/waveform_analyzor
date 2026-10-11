@@ -1,0 +1,711 @@
+{
+  "version": "1.2.0",
+  "cases": 32,
+  "matched": 32,
+  "assertions": 34,
+  "elapsed_s": 0.8947361880000244,
+  "rows": [
+    {
+      "id": "N01_white_noise",
+      "name": "白噪声叠加工频纹波：健康响应",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "oracles": [
+        {
+          "metric": "ROBUST_STEP.response_s",
+          "actual": 0.2031246492465436,
+          "expected": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "matched": true
+        },
+        {
+          "metric": "ROBUST_STEP.rise_s",
+          "actual": 0.1650051188891728,
+          "expected": [
+            0.14979184330021644,
+            0.17979184330021647
+          ],
+          "matched": true
+        }
+      ],
+      "reasons": {
+        "ROBUST_STEP": "全部断言满足配置限值"
+      }
+    },
+    {
+      "id": "N02_emi_impulses",
+      "name": "EMI 孤立尖峰：原始峰值冲突待复核",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "原始 overshoot_pct 越限被处理曲线消除；仅凭波形不能确认是采集毛刺，必须复核"
+      }
+    },
+    {
+      "id": "N03_baseline_impulse",
+      "name": "基线孤立污染：稳健基线不被拉偏",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "全部断言满足配置限值"
+      }
+    },
+    {
+      "id": "N04_pwm_ripple",
+      "name": "开关纹波与量化噪声：固定容限",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "全部断言满足配置限值"
+      }
+    },
+    {
+      "id": "N05_colored_noise",
+      "name": "AR(1) 有色噪声：健康响应",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "oracles": [
+        {
+          "metric": "ROBUST_STEP.response_s",
+          "actual": 0.20357162800562512,
+          "expected": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "matched": true
+        },
+        {
+          "metric": "ROBUST_STEP.rise_s",
+          "actual": 0.16576042763174598,
+          "expected": [
+            0.14979184330021644,
+            0.17979184330021647
+          ],
+          "matched": true
+        }
+      ],
+      "reasons": {
+        "ROBUST_STEP": "全部断言满足配置限值"
+      }
+    },
+    {
+      "id": "N06_burst_noise",
+      "name": "成片强噪声：拒绝自动给出性能结论",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论；超过预先配置的数据质量预算；禁止扩大误差带或自动提高降噪强度"
+      }
+    },
+    {
+      "id": "N07_sustained_overshoot",
+      "name": "持续真实超调：不能被当作毛刺消除",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "超出限值"
+      }
+    },
+    {
+      "id": "N08_damped_ringing",
+      "name": "衰减振铃与噪声：正常恢复",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "全部断言满足配置限值"
+      }
+    },
+    {
+      "id": "N09_persistent_oscillation",
+      "name": "持续振荡：均值正确也不合格",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "超出限值；充分观察后仍未取得持续确认的响应/稳定状态"
+      }
+    },
+    {
+      "id": "N10_short_real_transient",
+      "name": "8 ms 真实短时超调：保留峰值",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "超出限值"
+      }
+    },
+    {
+      "id": "N11_raw_safety_spike",
+      "name": "单采样安全越限：原始硬限值否决",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "原始 overshoot_pct 越限被处理曲线消除；仅凭波形不能确认是采集毛刺，必须复核；未经滤波的原始样本超过硬限值；降噪不能解除此越限"
+      }
+    },
+    {
+      "id": "N12_ambiguous_spike",
+      "name": "同形短尖峰：不能仅凭外形区分噪声和故障",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "原始 overshoot_pct 越限被处理曲线消除；仅凭波形不能确认是采集毛刺，必须复核"
+      }
+    },
+    {
+      "id": "N13_slow_drift",
+      "name": "稳态缓慢漂移：禁止去趋势掩盖异常",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE",
+        "RAW_DRIFT": "FAIL"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE",
+        "RAW_DRIFT": "FAIL"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论；超过预先配置的数据质量预算；禁止扩大误差带或自动提高降噪强度",
+        "RAW_DRIFT": "超出限值"
+      }
+    },
+    {
+      "id": "N14_quantized_highrate",
+      "name": "5 kHz 量化噪声：按实际时间计算",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "oracles": [
+        {
+          "metric": "ROBUST_STEP.response_s",
+          "actual": 0.2032,
+          "expected": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "matched": true
+        },
+        {
+          "metric": "ROBUST_STEP.rise_s",
+          "actual": 0.16532000000000002,
+          "expected": [
+            0.14979184330021644,
+            0.17979184330021647
+          ],
+          "matched": true
+        }
+      ],
+      "reasons": {
+        "ROBUST_STEP": "全部断言满足配置限值"
+      }
+    },
+    {
+      "id": "N15_contact_bounce",
+      "name": "接点吸合及释放抖动：非对称去抖",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched": true,
+      "assertions": {
+        "QUALIFIED_PULSE": "PASS"
+      },
+      "expected_assertions": {
+        "QUALIFIED_PULSE": "PASS"
+      },
+      "oracles": [],
+      "reasons": {
+        "QUALIFIED_PULSE": "全部断言满足配置限值"
+      }
+    },
+    {
+      "id": "N16_chatter_storm",
+      "name": "接点密集抖动风暴：质量预算拒绝",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched": true,
+      "assertions": {
+        "QUALIFIED_HOLD": "INCONCLUSIVE"
+      },
+      "expected_assertions": {
+        "QUALIFIED_HOLD": "INCONCLUSIVE"
+      },
+      "oracles": [],
+      "reasons": {
+        "QUALIFIED_HOLD": "数字量抑制边沿或抖动时长超过预算；不能静默当作稳定状态"
+      }
+    },
+    {
+      "id": "N17_protection_pulse",
+      "name": "1 ms 真实保护脉冲：原始通道保留",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched": true,
+      "assertions": {
+        "RAW_NO_TRIP": "FAIL",
+        "RAW_PULSE": "PASS"
+      },
+      "expected_assertions": {
+        "RAW_NO_TRIP": "FAIL",
+        "RAW_PULSE": "PASS"
+      },
+      "oracles": [],
+      "reasons": {
+        "RAW_NO_TRIP": "超出限值",
+        "RAW_PULSE": "全部断言满足配置限值"
+      }
+    },
+    {
+      "id": "N18_invalid_debounce",
+      "name": "错误去抖配置：会吞掉合法保护脉冲",
+      "status": "ERROR",
+      "expected": "ERROR",
+      "matched": true,
+      "assertions": {
+        "CONFIGURATION": "ERROR"
+      },
+      "expected_assertions": {
+        "CONFIGURATION": "ERROR"
+      },
+      "oracles": [],
+      "reasons": {
+        "CONFIGURATION": "有效电平去抖时间大于最小合法脉宽，会抹掉合法保护脉冲；请缩短去抖或使用原始分支"
+      }
+    },
+    {
+      "id": "N19_active_low_bounce",
+      "name": "低有效脉冲：非对称吸合释放抖动",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched": true,
+      "assertions": {
+        "QUALIFIED_PULSE": "PASS"
+      },
+      "expected_assertions": {
+        "QUALIFIED_PULSE": "PASS"
+      },
+      "oracles": [],
+      "reasons": {
+        "QUALIFIED_PULSE": "全部断言满足配置限值"
+      }
+    },
+    {
+      "id": "N20_unfinished_dwell",
+      "name": "窗尾去抖未完成：不能借用未来证据",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched": true,
+      "assertions": {
+        "QUALIFIED_HOLD": "INCONCLUSIVE"
+      },
+      "expected_assertions": {
+        "QUALIFIED_HOLD": "INCONCLUSIVE"
+      },
+      "oracles": [],
+      "reasons": {
+        "QUALIFIED_HOLD": "窗口末端存在尚未满足去抖保持时间的数字量变位"
+      }
+    },
+    {
+      "id": "N21_noisy_analog_trigger",
+      "name": "模拟触发噪声、提前尖峰和多次重穿越",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched": true,
+      "assertions": {
+        "ACK_AFTER_QUALIFIED_TRIGGER": "PASS"
+      },
+      "expected_assertions": {
+        "ACK_AFTER_QUALIFIED_TRIGGER": "PASS"
+      },
+      "oracles": [],
+      "reasons": {
+        "ACK_AFTER_QUALIFIED_TRIGGER": "全部断言满足配置限值"
+      }
+    },
+    {
+      "id": "N22_unqualified_trigger",
+      "name": "模拟触发只有短尖峰：无可信激励",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched": true,
+      "assertions": {
+        "ACK_AFTER_QUALIFIED_TRIGGER": "INCONCLUSIVE"
+      },
+      "expected_assertions": {
+        "ACK_AFTER_QUALIFIED_TRIGGER": "INCONCLUSIVE"
+      },
+      "oracles": [],
+      "reasons": {
+        "ACK_AFTER_QUALIFIED_TRIGGER": "未找到第 1 个指定触发事件；请确认试验激励是否执行"
+      }
+    },
+    {
+      "id": "N23_multirate_noise",
+      "name": "500/4000/1000 Hz 多采样率加噪",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "oracles": [
+        {
+          "metric": "ROBUST_STEP.response_s",
+          "actual": 0.2026069846315699,
+          "expected": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "matched": true
+        },
+        {
+          "metric": "ROBUST_STEP.rise_s",
+          "actual": 0.16493988282053312,
+          "expected": [
+            0.14979184330021644,
+            0.17979184330021647
+          ],
+          "matched": true
+        }
+      ],
+      "reasons": {
+        "ROBUST_STEP": "全部断言满足配置限值"
+      }
+    },
+    {
+      "id": "N24_timestamp_jitter",
+      "name": "采样时间抖动：用真实时间而非点数",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "oracles": [
+        {
+          "metric": "ROBUST_STEP.response_s",
+          "actual": 0.20325164987404148,
+          "expected": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "matched": true
+        },
+        {
+          "metric": "ROBUST_STEP.rise_s",
+          "actual": 0.1654511704147616,
+          "expected": [
+            0.14979184330021644,
+            0.17979184330021647
+          ],
+          "matched": true
+        }
+      ],
+      "reasons": {
+        "ROBUST_STEP": "全部断言满足配置限值"
+      }
+    },
+    {
+      "id": "N25_noise_with_gap",
+      "name": "噪声叠加数据间隙：禁止跨缺口平滑",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "分析窗口跨越疑似采样间隙"
+      }
+    },
+    {
+      "id": "N26_noise_with_missing",
+      "name": "噪声叠加关键缺失样本：禁止插补验收",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "分析窗口包含缺失或非有限采样值"
+      }
+    },
+    {
+      "id": "N27_sensor_clipping",
+      "name": "传感器饱和削顶：测量失真待复核",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论；到达配置传感器量程边界的时间过多；削顶数据不能证明响应性能"
+      }
+    },
+    {
+      "id": "N28_sensor_stuck",
+      "name": "反馈持续不响应：充分观察后失败",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "FAIL"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "充分观察后仍未取得持续确认的响应/稳定状态；观察不足或已提前响应，无法给出可靠时间；超出限值"
+      }
+    },
+    {
+      "id": "N29_negative_step",
+      "name": "充放电反向阶跃：负目标与噪声",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "oracles": [
+        {
+          "metric": "ROBUST_STEP.response_s",
+          "actual": 0.20197488239921646,
+          "expected": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "matched": true
+        },
+        {
+          "metric": "ROBUST_STEP.rise_s",
+          "actual": 0.16418188750162638,
+          "expected": [
+            0.14979184330021644,
+            0.17979184330021647
+          ],
+          "matched": true
+        }
+      ],
+      "reasons": {
+        "ROBUST_STEP": "全部断言满足配置限值"
+      }
+    },
+    {
+      "id": "N30_zero_target",
+      "name": "零目标阶跃：不使用目标值作分母",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "oracles": [
+        {
+          "metric": "ROBUST_STEP.response_s",
+          "actual": 0.20342111302748067,
+          "expected": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "matched": true
+        },
+        {
+          "metric": "ROBUST_STEP.rise_s",
+          "actual": 0.16535954564469596,
+          "expected": [
+            0.14979184330021644,
+            0.17979184330021647
+          ],
+          "matched": true
+        }
+      ],
+      "reasons": {
+        "ROBUST_STEP": "全部断言满足配置限值"
+      }
+    },
+    {
+      "id": "N31_timing_boundary",
+      "name": "性能限值附近：时间支持保护带复核",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "INCONCLUSIVE"
+      },
+      "oracles": [],
+      "reasons": {
+        "ROBUST_STEP": "位于配置的测量保护带内，需人工复核"
+      }
+    },
+    {
+      "id": "N32_many_channels",
+      "name": "16 模拟 + 512 数字通道：多通道噪声隔离",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched": true,
+      "assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "expected_assertions": {
+        "ROBUST_STEP": "PASS"
+      },
+      "oracles": [
+        {
+          "metric": "ROBUST_STEP.response_s",
+          "actual": 0.20325113137877798,
+          "expected": [
+            0.19069388197455342,
+            0.21469388197455344
+          ],
+          "matched": true
+        },
+        {
+          "metric": "ROBUST_STEP.rise_s",
+          "actual": 0.1652225650038227,
+          "expected": [
+            0.14979184330021644,
+            0.17979184330021647
+          ],
+          "matched": true
+        }
+      ],
+      "reasons": {
+        "ROBUST_STEP": "全部断言满足配置限值"
+      }
+    }
+  ]
+}

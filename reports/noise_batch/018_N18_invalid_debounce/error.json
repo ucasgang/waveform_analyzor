@@ -1,0 +1,5 @@
+{
+  "status": "ERROR",
+  "error": "有效电平去抖时间大于最小合法脉宽，会抹掉合法保护脉冲；请缩短去抖或使用原始分支",
+  "cfg": "examples/noise/N18_invalid_debounce.cfg"
+}

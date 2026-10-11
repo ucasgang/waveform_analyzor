@@ -1,0 +1,12 @@
+C01_cycle_pass PASS 18 assertions True
+C02_cycle_race FAIL 18 assertions True
+C03_cycle_oscillation FAIL 18 assertions True
+C04_sag_pass PASS 14 assertions True
+C05_sag_trip FAIL 14 assertions True
+C06_multirate_skew PASS 3 assertions True
+C07_fault_reset_pass PASS 15 assertions True
+C08_fault_reset_race FAIL 15 assertions True
+C09_dense_512 FAIL 11 assertions True
+C10_target_drift INCONCLUSIVE 18 assertions True
+C11_selected_missing INCONCLUSIVE 14 assertions True
+C12_causal_debounce FAIL 5 assertions True

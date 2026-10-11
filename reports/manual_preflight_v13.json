@@ -1,0 +1,8 @@
+{
+  "pages": 8,
+  "has_text_each_page": true,
+  "rendered_dpi": 120,
+  "visually_reviewed": "All pages via contact sheet; final cover and final evidence page individually; no cropped text/blank overflow pages",
+  "method": "WeasyPrint -> PDF -> pdfium/poppler rendering",
+  "glyph_replacement_count": 0
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "name": "接点吸合及释放抖动：非对称去抖",
+  "description": "合成噪声工程回归；预期来自注入模型与显式限值，不是厂家现场验证。",
+  "standard": {
+    "reference": "噪声算法工程示例；非国标条款",
+    "reviewed": false,
+    "note": "所有容限必须由项目审核后替换。"
+  },
+  "channels": {
+    "d": {
+      "kind": "digital",
+      "index": 1
+    }
+  },
+  "tests": [
+    {
+      "id": "QUALIFIED_PULSE",
+      "name": "有效脉冲与去抖审计",
+      "type": "digital_pulse",
+      "channel": "d",
+      "window": [
+        0.4,
+        0.85
+      ],
+      "active": 1,
+      "count": 1,
+      "min_width_s": 0.19,
+      "max_width_s": 0.2,
+      "noise": {
+        "rise_s": 0.003,
+        "fall_s": 0.005,
+        "max_rejected_edges": 24,
+        "max_chatter_s": 0.025,
+        "merge_gap_s": 0.006,
+        "timing_guard": true
+      }
+    }
+  ]
+}

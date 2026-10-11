@@ -1,0 +1,105 @@
+{
+  "version": "1.2.0",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "repeats": 5,
+  "note": "Same-process five repeats; OS filesystem cache may be warm. Parsing covers all channels. Analysis and processed view cover the selected assertion, not all channels. Not a hardware guarantee.",
+  "rows": [
+    {
+      "case": "N01_white_noise",
+      "samples": 2001,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "assertions": 1,
+      "status": "PASS",
+      "parse_s": [
+        0.0035767970000506466,
+        0.004166154999893479,
+        0.007006972999988648,
+        0.003468553999937285,
+        0.003879804000007425
+      ],
+      "analysis_s": [
+        0.012399373999869567,
+        0.0131332889998248,
+        0.013104176000069856,
+        0.012725706000082937,
+        0.012602771000047142
+      ],
+      "full_processed_view_s": [
+        0.007109597999942707,
+        0.00642081999990296,
+        0.0061331560000326135,
+        0.006004212000107145,
+        0.00588955100010935
+      ],
+      "median_parse_s": 0.003879804000007425,
+      "median_analysis_s": 0.012725706000082937,
+      "median_full_processed_view_s": 0.0061331560000326135
+    },
+    {
+      "case": "N23_multirate_noise",
+      "samples": 3351,
+      "analog_channels": 1,
+      "digital_channels": 1,
+      "assertions": 1,
+      "status": "PASS",
+      "parse_s": [
+        0.005183407000004081,
+        0.005687946000080046,
+        0.005408955999882892,
+        0.0052194310001141275,
+        0.005459883000185073
+      ],
+      "analysis_s": [
+        0.028407985000058034,
+        0.030842662000168275,
+        0.02983454300010635,
+        0.02786265299982915,
+        0.027176970000027723
+      ],
+      "full_processed_view_s": [
+        0.020596089000036955,
+        0.021044444999915868,
+        0.018895838999924308,
+        0.03085291699994741,
+        0.01915960599990285
+      ],
+      "median_parse_s": 0.005408955999882892,
+      "median_analysis_s": 0.028407985000058034,
+      "median_full_processed_view_s": 0.020596089000036955
+    },
+    {
+      "case": "N32_many_channels",
+      "samples": 4001,
+      "analog_channels": 16,
+      "digital_channels": 512,
+      "assertions": 1,
+      "status": "PASS",
+      "parse_s": [
+        0.3116032969999196,
+        0.3112458959999458,
+        0.33095552800000405,
+        0.3104108200000155,
+        0.3330676880000283
+      ],
+      "analysis_s": [
+        0.030696195000018633,
+        0.0337985049998224,
+        0.02965880300007484,
+        0.0314618969998719,
+        0.03264059200000702
+      ],
+      "full_processed_view_s": [
+        0.017335423999838895,
+        0.016626386999860188,
+        0.016798606000065774,
+        0.01698396500000854,
+        0.016925026999842885
+      ],
+      "median_parse_s": 0.3116032969999196,
+      "median_analysis_s": 0.0314618969998719,
+      "median_full_processed_view_s": 0.016925026999842885
+    }
+  ]
+}

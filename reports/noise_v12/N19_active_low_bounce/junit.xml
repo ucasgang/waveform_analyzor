@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="低有效脉冲：非对称吸合释放抖动" tests="1" failures="0" errors="0"><properties><property name="config_sha256" value="57e49daaaf16218cfc4fb7a924828e0e3a5218871b900abe62381bbd2ac2d8e0" /></properties><testcase name="QUALIFIED_PULSE 有效脉冲与去抖审计" classname="digital_pulse" /></testsuite>

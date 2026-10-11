@@ -1,0 +1,489 @@
+{
+  "product": "ESS WaveTest",
+  "version": "1.2.0",
+  "generated_utc": "2026-10-11T08:46:53.657983+00:00",
+  "suite": "储能 PCS 厂内功能与阶跃响应验收 · 演示 / 12_sampling_gap",
+  "status": "INCONCLUSIVE",
+  "counts": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 6,
+    "ERROR": 0
+  },
+  "record": {
+    "station": "ESS LAB",
+    "device": "SIMULATOR",
+    "revision": 2013,
+    "format": "BINARY",
+    "analog_count": 3,
+    "digital_count": 4,
+    "frequency_hz": 50.0,
+    "sample_rates": [
+      [
+        1000.0,
+        2001
+      ]
+    ],
+    "trigger_s": 0.2,
+    "timemult": 1.0,
+    "start_timestamp": "01/01/2026,00:00:00.000000",
+    "trigger_timestamp": "01/01/2026,00:00:00.200000",
+    "encoding": "utf-8-sig",
+    "time_metadata": [
+      [
+        "+00:00",
+        "+00:00"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "cfg_file": "12_sampling_gap.cfg",
+    "dat_file": "12_sampling_gap.dat",
+    "time_source": "dat_timestamps",
+    "max_sample_interval_s": 0.01100000000000001,
+    "samples": 2001,
+    "start_s": 0.0,
+    "end_s": 2.01,
+    "channels": [
+      {
+        "key": "A1",
+        "index": 1,
+        "kind": "analog",
+        "name": "有功功率",
+        "unit": "kW",
+        "phase": "",
+        "circuit": "PCS",
+        "a": 0.01,
+        "b": 0.0,
+        "skew_us": 0.0,
+        "primary": 1.0,
+        "secondary": 1.0,
+        "side": "P",
+        "normal": 0,
+        "raw_min": -32767.0,
+        "raw_max": 32767.0
+      },
+      {
+        "key": "A2",
+        "index": 2,
+        "kind": "analog",
+        "name": "直流母线电压",
+        "unit": "V",
+        "phase": "",
+        "circuit": "PCS",
+        "a": 0.1,
+        "b": 0.0,
+        "skew_us": 0.0,
+        "primary": 1.0,
+        "secondary": 1.0,
+        "side": "P",
+        "normal": 0,
+        "raw_min": -32767.0,
+        "raw_max": 32767.0
+      },
+      {
+        "key": "A3",
+        "index": 3,
+        "kind": "analog",
+        "name": "交流电压Ua",
+        "unit": "V",
+        "phase": "",
+        "circuit": "PCS",
+        "a": 0.02,
+        "b": 0.0,
+        "skew_us": 0.0,
+        "primary": 1.0,
+        "secondary": 1.0,
+        "side": "P",
+        "normal": 0,
+        "raw_min": -32767.0,
+        "raw_max": 32767.0
+      },
+      {
+        "key": "D1",
+        "index": 1,
+        "kind": "digital",
+        "name": "启动命令",
+        "unit": "",
+        "phase": "",
+        "circuit": "PCS",
+        "a": 1.0,
+        "b": 0.0,
+        "skew_us": 0.0,
+        "primary": 1.0,
+        "secondary": 1.0,
+        "side": "P",
+        "normal": 0,
+        "raw_min": 0.0,
+        "raw_max": 0.0
+      },
+      {
+        "key": "D2",
+        "index": 2,
+        "kind": "digital",
+        "name": "运行反馈",
+        "unit": "",
+        "phase": "",
+        "circuit": "PCS",
+        "a": 1.0,
+        "b": 0.0,
+        "skew_us": 0.0,
+        "primary": 1.0,
+        "secondary": 1.0,
+        "side": "P",
+        "normal": 0,
+        "raw_min": 0.0,
+        "raw_max": 0.0
+      },
+      {
+        "key": "D3",
+        "index": 3,
+        "kind": "digital",
+        "name": "合闸脉冲",
+        "unit": "",
+        "phase": "",
+        "circuit": "PCS",
+        "a": 1.0,
+        "b": 0.0,
+        "skew_us": 0.0,
+        "primary": 1.0,
+        "secondary": 1.0,
+        "side": "P",
+        "normal": 0,
+        "raw_min": 0.0,
+        "raw_max": 0.0
+      },
+      {
+        "key": "D4",
+        "index": 4,
+        "kind": "digital",
+        "name": "故障告警",
+        "unit": "",
+        "phase": "",
+        "circuit": "PCS",
+        "a": 1.0,
+        "b": 0.0,
+        "skew_us": 0.0,
+        "primary": 1.0,
+        "secondary": 1.0,
+        "side": "P",
+        "normal": 0,
+        "raw_min": 0.0,
+        "raw_max": 0.0
+      }
+    ],
+    "warnings": [
+      "发现 1 个疑似采样间隙；涉及的分析窗口不得判为通过"
+    ],
+    "gap_count": 1,
+    "hashes": {
+      "cfg_sha256": "7b2162c4c4afdefa8ba0655e51e129a1804cd2b8a615f85e0c30ffb41c2262a7",
+      "dat_sha256": "eae10054491174f3803125ed93e2af424f12a6f8f3044aa686197c813e303983"
+    }
+  },
+  "configuration": {
+    "schema_version": 1,
+    "name": "储能 PCS 厂内功能与阶跃响应验收 · 演示 / 12_sampling_gap",
+    "description": "所有阈值为教学示例，不是国标条款的默认值。时间单位统一为秒。",
+    "standard": {
+      "reference": "DEMO / 项目自定义验收配置",
+      "clause": "教学示例，非规范条款",
+      "reviewed": false,
+      "note": "正式验收需按适用标准及合同逐条复核阈值、基准与测量方法。"
+    },
+    "channels": {
+      "command": {
+        "kind": "digital",
+        "name": "启动命令"
+      },
+      "ready": {
+        "kind": "digital",
+        "name": "运行反馈"
+      },
+      "pulse": {
+        "kind": "digital",
+        "name": "合闸脉冲"
+      },
+      "alarm": {
+        "kind": "digital",
+        "name": "故障告警"
+      },
+      "power": {
+        "kind": "analog",
+        "name": "有功功率",
+        "unit": "kW"
+      },
+      "dc": {
+        "kind": "analog",
+        "name": "直流母线电压",
+        "unit": "V"
+      },
+      "voltage": {
+        "kind": "analog",
+        "name": "交流电压Ua",
+        "unit": "V"
+      }
+    },
+    "tests": [
+      {
+        "id": "D01",
+        "name": "运行反馈正确置位",
+        "type": "digital_edge",
+        "channel": "ready",
+        "trigger": {
+          "type": "digital_edge",
+          "channel": "command",
+          "edge": "rising",
+          "debounce_s": 0.002,
+          "search": [
+            0,
+            1
+          ]
+        },
+        "window": [
+          0,
+          0.4
+        ],
+        "edge": "rising",
+        "count": 1,
+        "debounce_s": 0.003,
+        "latency_min_s": 0.01,
+        "latency_max_s": 0.1
+      },
+      {
+        "id": "D02",
+        "name": "合闸脉冲宽度",
+        "type": "digital_pulse",
+        "channel": "pulse",
+        "trigger": {
+          "type": "digital_edge",
+          "channel": "command",
+          "edge": "rising",
+          "debounce_s": 0.002,
+          "search": [
+            0,
+            1
+          ]
+        },
+        "window": [
+          0,
+          0.4
+        ],
+        "active": 1,
+        "count": 1,
+        "min_width_s": 0.03,
+        "max_width_s": 0.08
+      },
+      {
+        "id": "D03",
+        "name": "试验期间无故障告警",
+        "type": "digital_hold",
+        "channel": "alarm",
+        "trigger": {
+          "type": "digital_edge",
+          "channel": "command",
+          "edge": "rising",
+          "debounce_s": 0.002,
+          "search": [
+            0,
+            1
+          ]
+        },
+        "window": [
+          0,
+          1.5
+        ],
+        "value": 0
+      },
+      {
+        "id": "A01",
+        "name": "有功功率阶跃响应",
+        "type": "analog_step",
+        "channel": "power",
+        "trigger": {
+          "type": "digital_edge",
+          "channel": "command",
+          "edge": "rising",
+          "debounce_s": 0.002,
+          "search": [
+            0,
+            1
+          ]
+        },
+        "window": [
+          0,
+          1.5
+        ],
+        "baseline_window": [
+          -0.15,
+          -0.02
+        ],
+        "target": 100,
+        "normalization": "rated",
+        "rated": 100,
+        "settle_band_pct": 2,
+        "settle_hold_s": 0.1,
+        "steady_last_s": 0.25,
+        "limits": {
+          "overshoot_pct_max": 5,
+          "response_s_max": 0.4,
+          "rise_s_max": 0.4,
+          "settling_s_max": 0.7,
+          "steady_error_pct_max": 1
+        }
+      },
+      {
+        "id": "A02",
+        "name": "直流母线电压范围",
+        "type": "analog_range",
+        "channel": "dc",
+        "trigger": {
+          "type": "digital_edge",
+          "channel": "command",
+          "edge": "rising",
+          "debounce_s": 0.002,
+          "search": [
+            0,
+            1
+          ]
+        },
+        "window": [
+          0,
+          1.5
+        ],
+        "min": 680,
+        "max": 720
+      },
+      {
+        "id": "A03",
+        "name": "交流电压有效值",
+        "type": "analog_rms",
+        "channel": "voltage",
+        "trigger": {
+          "type": "digital_edge",
+          "channel": "command",
+          "edge": "rising",
+          "debounce_s": 0.002,
+          "search": [
+            0,
+            1
+          ]
+        },
+        "window": [
+          0.8,
+          1.2
+        ],
+        "min": 215,
+        "max": 225
+      }
+    ]
+  },
+  "config_sha256": "e6c2eb21a0e65a6203c01fc6abdb10b10ac97f9a163e6e07d9015ac2258322b2",
+  "results": [
+    {
+      "id": "D01",
+      "name": "运行反馈正确置位",
+      "type": "digital_edge",
+      "channel": "ready",
+      "standard": {
+        "reference": "DEMO / 项目自定义验收配置",
+        "clause": "教学示例，非规范条款",
+        "reviewed": false,
+        "note": "正式验收需按适用标准及合同逐条复核阈值、基准与测量方法。"
+      },
+      "metrics": {},
+      "checks": [],
+      "evidence": {},
+      "status": "INCONCLUSIVE",
+      "reason": "分析窗口跨越疑似采样间隙"
+    },
+    {
+      "id": "D02",
+      "name": "合闸脉冲宽度",
+      "type": "digital_pulse",
+      "channel": "pulse",
+      "standard": {
+        "reference": "DEMO / 项目自定义验收配置",
+        "clause": "教学示例，非规范条款",
+        "reviewed": false,
+        "note": "正式验收需按适用标准及合同逐条复核阈值、基准与测量方法。"
+      },
+      "metrics": {},
+      "checks": [],
+      "evidence": {},
+      "status": "INCONCLUSIVE",
+      "reason": "分析窗口跨越疑似采样间隙"
+    },
+    {
+      "id": "D03",
+      "name": "试验期间无故障告警",
+      "type": "digital_hold",
+      "channel": "alarm",
+      "standard": {
+        "reference": "DEMO / 项目自定义验收配置",
+        "clause": "教学示例，非规范条款",
+        "reviewed": false,
+        "note": "正式验收需按适用标准及合同逐条复核阈值、基准与测量方法。"
+      },
+      "metrics": {},
+      "checks": [],
+      "evidence": {},
+      "status": "INCONCLUSIVE",
+      "reason": "分析窗口跨越疑似采样间隙"
+    },
+    {
+      "id": "A01",
+      "name": "有功功率阶跃响应",
+      "type": "analog_step",
+      "channel": "power",
+      "standard": {
+        "reference": "DEMO / 项目自定义验收配置",
+        "clause": "教学示例，非规范条款",
+        "reviewed": false,
+        "note": "正式验收需按适用标准及合同逐条复核阈值、基准与测量方法。"
+      },
+      "metrics": {},
+      "checks": [],
+      "evidence": {},
+      "status": "INCONCLUSIVE",
+      "reason": "分析窗口跨越疑似采样间隙"
+    },
+    {
+      "id": "A02",
+      "name": "直流母线电压范围",
+      "type": "analog_range",
+      "channel": "dc",
+      "standard": {
+        "reference": "DEMO / 项目自定义验收配置",
+        "clause": "教学示例，非规范条款",
+        "reviewed": false,
+        "note": "正式验收需按适用标准及合同逐条复核阈值、基准与测量方法。"
+      },
+      "metrics": {},
+      "checks": [],
+      "evidence": {},
+      "status": "INCONCLUSIVE",
+      "reason": "分析窗口跨越疑似采样间隙"
+    },
+    {
+      "id": "A03",
+      "name": "交流电压有效值",
+      "type": "analog_rms",
+      "channel": "voltage",
+      "standard": {
+        "reference": "DEMO / 项目自定义验收配置",
+        "clause": "教学示例，非规范条款",
+        "reviewed": false,
+        "note": "正式验收需按适用标准及合同逐条复核阈值、基准与测量方法。"
+      },
+      "metrics": {},
+      "checks": [],
+      "evidence": {},
+      "status": "INCONCLUSIVE",
+      "reason": "分析窗口跨越疑似采样间隙"
+    }
+  ],
+  "notice": "结果仅表示满足当前配置断言，不代表已取得国标符合性认证。示例阈值不属于标准原文。"
+}

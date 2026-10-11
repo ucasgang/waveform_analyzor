@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="接点密集抖动风暴：质量预算拒绝" tests="1" failures="0" errors="1"><properties><property name="config_sha256" value="4113eb89aa2516991c3c1d6f07dc8f37f18501ec3ad34e5864f2f86c7495312b" /></properties><testcase name="QUALIFIED_HOLD QUALIFIED_HOLD" classname="digital_hold"><error type="INCONCLUSIVE" message="数字量抑制边沿或抖动时长超过预算；不能静默当作稳定状态">{"expected": 0, "violating_samples": 0}</error></testcase></testsuite>

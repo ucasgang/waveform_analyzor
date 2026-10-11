@@ -1,0 +1,23 @@
+{
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "processor": "",
+  "samples": 20001,
+  "analog_channels": 128,
+  "digital_channels": 384,
+  "total_channel_values": 10240512,
+  "dat_bytes": 6240312,
+  "parse_s": 1.6777281349998248,
+  "assertions_s": 0.025696150999920064,
+  "process_peak_rss_mib": 128.08984375,
+  "current_rss_mib": 128.08984375,
+  "ru_maxrss_mib_including_preexec": 352.265625,
+  "status": "PASS",
+  "assertion_counts": {
+    "PASS": 6,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "ERROR": 0
+  },
+  "measurement_note": "Fresh-process single run; includes reading/scaling all channels; assertion timing covers the six demo assertions, not 512 assertions. Peak RSS is whole process, not incremental allocation. On Linux VmHWM is used to exclude inherited pre-exec high-water history; ru_maxrss is retained separately. No hardware throughput guarantee."
+}

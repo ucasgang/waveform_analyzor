@@ -1,0 +1,53 @@
+{
+  "mode": "offline Chromium frontend/core integration using fixture transport; HTTP independently tested",
+  "limitation": "Managed Chromium prevents URL navigation. Direct browser-to-localhost navigation and OS download were not verified here.",
+  "checks": [
+    {
+      "check": "load normal demo + raw preview",
+      "passed": true
+    },
+    {
+      "check": "run normal demo produces 6 passing assertions",
+      "passed": true
+    },
+    {
+      "check": "export button produces real self-contained HTML content",
+      "passed": true
+    },
+    {
+      "check": "mapping table reflects seven business aliases",
+      "passed": true
+    },
+    {
+      "check": "visual assertion editor updates suite",
+      "passed": true
+    },
+    {
+      "check": "new wizard assertion actually runs in core engine",
+      "passed": true
+    },
+    {
+      "check": "slow produces FAIL through frontend/core fixture transport",
+      "passed": true
+    },
+    {
+      "check": "gap produces INCONCLUSIVE through frontend/core fixture transport",
+      "passed": true
+    },
+    {
+      "check": "browser file inputs form correct binary upload body",
+      "passed": true
+    },
+    {
+      "check": "mobile layout has no horizontal document overflow",
+      "passed": true
+    },
+    {
+      "check": "no unhandled JavaScript exceptions",
+      "passed": true,
+      "errors": []
+    }
+  ],
+  "passed": 11,
+  "total": 11
+}

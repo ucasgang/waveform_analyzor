@@ -1,0 +1,15 @@
+test_budget_zero_does_not_claim_raw_resolution (test_offline_report_v13.OfflineReportTests.test_budget_zero_does_not_claim_raw_resolution) ... ok
+test_gap_disconnected_in_full_trace (test_offline_report_v13.OfflineReportTests.test_gap_disconnected_in_full_trace) ... ok
+test_hundreds_of_view_changes_cannot_mutate_results (test_offline_report_v13.OfflineReportTests.test_hundreds_of_view_changes_cannot_mutate_results) ... ok
+test_js_injection_in_json_is_inert (test_offline_report_v13.OfflineReportTests.test_js_injection_in_json_is_inert) ... ok
+test_missing_values_embedded_as_null (test_offline_report_v13.OfflineReportTests.test_missing_values_embedded_as_null) ... ok
+test_no_nan_literal_allowed (test_offline_report_v13.OfflineReportTests.test_no_nan_literal_allowed) ... ok
+test_original_window_samples_embedded (test_offline_report_v13.OfflineReportTests.test_original_window_samples_embedded) ... ok
+test_scale_applied_to_full_data (test_offline_report_v13.OfflineReportTests.test_scale_applied_to_full_data) ... ok
+test_self_contained_assets_and_explicit_zoom (test_offline_report_v13.OfflineReportTests.test_self_contained_assets_and_explicit_zoom) ... ok
+test_summary_only_without_record_honest (test_offline_report_v13.OfflineReportTests.test_summary_only_without_record_honest) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.241s
+
+OK

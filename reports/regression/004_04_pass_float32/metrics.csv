@@ -1,0 +1,14 @@
+﻿用例ID,名称,类型,通道,总体判定,指标,测量值,最小限值,最大限值,指标判定,说明
+D01,运行反馈正确置位,digital_edge,ready,PASS,edge_count,1,1,1,PASS,满足限值
+D01,运行反馈正确置位,digital_edge,ready,PASS,latency_1_s,0.04100000000000001,0.01,0.1,PASS,满足限值
+D02,合闸脉冲宽度,digital_pulse,pulse,PASS,pulse_count,1,1,1,PASS,满足限值
+D02,合闸脉冲宽度,digital_pulse,pulse,PASS,pulse_1_width_s,0.05099999999999999,0.03,0.08,PASS,满足限值
+D03,试验期间无故障告警,digital_hold,alarm,PASS,violating_samples,0,0,0,PASS,满足限值
+A01,有功功率阶跃响应,analog_step,power,PASS,overshoot_pct,0.0,,5,PASS,满足限值
+A01,有功功率阶跃响应,analog_step,power,PASS,response_s,0.18420785635878942,,0.4,PASS,满足限值
+A01,有功功率阶跃响应,analog_step,power,PASS,rise_s,0.17577748351991743,,0.4,PASS,满足限值
+A01,有功功率阶跃响应,analog_step,power,PASS,settling_s,0.31300000000000006,,0.7,PASS,满足限值
+A01,有功功率阶跃响应,analog_step,power,PASS,steady_error_pct,4.101562495861799e-06,,1,PASS,满足限值
+A02,直流母线电压范围,analog_range,dc,PASS,minimum,698.0,680,,PASS,满足限值
+A02,直流母线电压范围,analog_range,dc,PASS,maximum,702.0,,720,PASS,满足限值
+A03,交流电压有效值,analog_rms,voltage,PASS,rms,218.19802436030673,215,225,PASS,满足限值

@@ -1,0 +1,11 @@
+﻿用例ID,名称,类型,通道,总体判定,指标,测量值,最小限值,最大限值,指标判定,说明
+SKEW_STEP,SKEW_STEP,analog_step,power,PASS,overshoot_pct,0.0,,3,PASS,满足限值
+SKEW_STEP,SKEW_STEP,analog_step,power,PASS,response_s,0.21269696969696972,,0.35,PASS,满足限值
+SKEW_STEP,SKEW_STEP,analog_step,power,PASS,rise_s,0.16479446969696965,,0.3,PASS,满足限值
+SKEW_STEP,SKEW_STEP,analog_step,power,PASS,settling_s,0.33350000000000013,,0.6,PASS,满足限值
+SKEW_STEP,SKEW_STEP,analog_step,power,PASS,steady_error_pct,0.0,,0.5,PASS,满足限值
+SKEW_STEP,SKEW_STEP,analog_step,power,PASS,steady_ripple_pp,0.0,,1,PASS,满足限值
+BOUNCED_ACK,BOUNCED_ACK,digital_edge,ack,PASS,edge_count,1,1,1,PASS,满足限值
+BOUNCED_ACK,BOUNCED_ACK,digital_edge,ack,PASS,latency_1_s,0.030000000000000027,0.029,0.031,PASS,满足限值
+POST_BAND,POST_BAND,analog_range,power,PASS,minimum,99.99600000000001,99.9,,PASS,满足限值
+POST_BAND,POST_BAND,analog_range,power,PASS,maximum,100.0,,100.1,PASS,满足限值

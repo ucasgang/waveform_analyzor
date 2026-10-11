@@ -1,0 +1,274 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>储能 PCS 厂内功能与阶跃响应验收 · 演示 / 12_sampling_gap - ESS WaveTest</title>
+    <style>
+    :root{--ink:#172b45;--muted:#66788c;--line:#dce5ed}*{box-sizing:border-box}body{margin:0;background:#edf2f6;color:var(--ink);font:15px/1.65 "Segoe UI","Microsoft YaHei",sans-serif}.wrap{max-width:1160px;margin:auto;padding:36px 26px}header{background:#142a43;color:#fff;padding:40px;border-radius:18px}.brand{font-size:12px;letter-spacing:3px;color:#79d3c1}h1{font-size:30px;line-height:1.4;margin:18px 0}h2{font-size:20px;margin:5px 0}header p{color:#bed0e2}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}.stat,.test,.notice{background:white;border:1px solid var(--line);border-radius:13px;padding:23px}.stat span{font-size:13px;color:var(--muted)}.stat strong{display:block;font-size:34px;line-height:1.5}.test{margin:20px 0;break-inside:avoid}.testhead{display:flex;justify-content:space-between;align-items:center;gap:16px}.badge{font-size:14px;font-weight:700;border:1px solid;padding:5px 12px;border-radius:24px}small,.meta{font-size:12px;color:var(--muted)}.notice{background:#fff9ee;border-color:#e6d7b9}table{border-collapse:collapse;width:100%;margin-top:16px;font-size:13px}th,td{padding:11px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f3f7fa}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f7fa;padding:18px;font:12px/1.6 Consolas,monospace}.mono{font-family:Consolas,monospace}details{margin-top:12px}summary{cursor:pointer;color:#2367cc}footer{font-size:12px;color:var(--muted);padding:25px 0;overflow-wrap:anywhere}.actions{text-align:right;margin:0 0 15px}button{border:0;border-radius:7px;padding:10px 18px;color:white;background:#2367cc;cursor:pointer}svg{display:block;width:100%;margin-top:18px}@media(max-width:650px){.stats{grid-template-columns:repeat(2,1fr)}.wrap{padding:12px}header{padding:23px}.test{padding:15px}h1{font-size:23px}table{font-size:11px}}@media print{body{background:white}.wrap{padding:0;max-width:none}.actions,details{display:none}header{border-radius:0;print-color-adjust:exact}.test{break-inside:auto}table,svg{break-inside:avoid}}
+    </style></head><body><main class="wrap"><div class="actions"><button onclick="window.print()">打印 / 保存 PDF</button></div><header><div class="brand">ESS WAVETEST / FACTORY ACCEPTANCE</div><h1>储能 PCS 厂内功能与阶跃响应验收 · 演示 / 12_sampling_gap</h1><p>总体结果：数据不足 / 待复核 · 2026-10-11T05:45:33.467164+00:00</p><p>12_sampling_gap.cfg / BINARY · 2,001 点 · 3 模拟通道 + 4 数字通道</p></header><div class="stats"><div class="stat"><span>通过</span><strong style="color:#087f68">0</strong></div><div class="stat"><span>失败</span><strong style="color:#c23e48">0</strong></div><div class="stat"><span>数据不足 / 待复核</span><strong style="color:#aa6b00">6</strong></div><div class="stat"><span>配置或执行错误</span><strong style="color:#7544ba">0</strong></div></div>
+    <div class="notice"><b>验收边界</b><p>结果仅表示满足当前配置断言，不代表已取得国标符合性认证。示例阈值不属于标准原文。</p><p>所有时间以本文件录波起点为参考；模拟 skew 已按 CFG 单独应用。没有自动对齐多文件时钟、自动修复缺点或默认标准限值。</p></div>
+    <section class="test"><div class="testhead"><div><small>D01 · digital_edge · ready</small><h2>运行反馈正确置位</h2></div><span class="badge" style="color:#aa6b00">数据不足 / 待复核</span></div>
+        <p>分析窗口跨越疑似采样间隙</p><p class="meta">依据：DEMO / 项目自定义验收配置 / 教学示例，非规范条款 / 未审核或演示阈值</p>
+        
+        
+        
+        <p class="meta">通道映射：{}<br>最大局部采样间隔：未取得 s。图形可抽稀显示；断言使用完整采样及显式处理分支，不使用显示抽稀数据。时间指标不是高于采样精度的硬件测量保证。</p>
+        <details><summary>查看完整测量指标与证据元数据</summary><pre>{
+  &quot;metrics&quot;: {},
+  &quot;evidence&quot;: {}
+}</pre></details></section><section class="test"><div class="testhead"><div><small>D02 · digital_pulse · pulse</small><h2>合闸脉冲宽度</h2></div><span class="badge" style="color:#aa6b00">数据不足 / 待复核</span></div>
+        <p>分析窗口跨越疑似采样间隙</p><p class="meta">依据：DEMO / 项目自定义验收配置 / 教学示例，非规范条款 / 未审核或演示阈值</p>
+        
+        
+        
+        <p class="meta">通道映射：{}<br>最大局部采样间隔：未取得 s。图形可抽稀显示；断言使用完整采样及显式处理分支，不使用显示抽稀数据。时间指标不是高于采样精度的硬件测量保证。</p>
+        <details><summary>查看完整测量指标与证据元数据</summary><pre>{
+  &quot;metrics&quot;: {},
+  &quot;evidence&quot;: {}
+}</pre></details></section><section class="test"><div class="testhead"><div><small>D03 · digital_hold · alarm</small><h2>试验期间无故障告警</h2></div><span class="badge" style="color:#aa6b00">数据不足 / 待复核</span></div>
+        <p>分析窗口跨越疑似采样间隙</p><p class="meta">依据：DEMO / 项目自定义验收配置 / 教学示例，非规范条款 / 未审核或演示阈值</p>
+        
+        
+        
+        <p class="meta">通道映射：{}<br>最大局部采样间隔：未取得 s。图形可抽稀显示；断言使用完整采样及显式处理分支，不使用显示抽稀数据。时间指标不是高于采样精度的硬件测量保证。</p>
+        <details><summary>查看完整测量指标与证据元数据</summary><pre>{
+  &quot;metrics&quot;: {},
+  &quot;evidence&quot;: {}
+}</pre></details></section><section class="test"><div class="testhead"><div><small>A01 · analog_step · power</small><h2>有功功率阶跃响应</h2></div><span class="badge" style="color:#aa6b00">数据不足 / 待复核</span></div>
+        <p>分析窗口跨越疑似采样间隙</p><p class="meta">依据：DEMO / 项目自定义验收配置 / 教学示例，非规范条款 / 未审核或演示阈值</p>
+        
+        
+        
+        <p class="meta">通道映射：{}<br>最大局部采样间隔：未取得 s。图形可抽稀显示；断言使用完整采样及显式处理分支，不使用显示抽稀数据。时间指标不是高于采样精度的硬件测量保证。</p>
+        <details><summary>查看完整测量指标与证据元数据</summary><pre>{
+  &quot;metrics&quot;: {},
+  &quot;evidence&quot;: {}
+}</pre></details></section><section class="test"><div class="testhead"><div><small>A02 · analog_range · dc</small><h2>直流母线电压范围</h2></div><span class="badge" style="color:#aa6b00">数据不足 / 待复核</span></div>
+        <p>分析窗口跨越疑似采样间隙</p><p class="meta">依据：DEMO / 项目自定义验收配置 / 教学示例，非规范条款 / 未审核或演示阈值</p>
+        
+        
+        
+        <p class="meta">通道映射：{}<br>最大局部采样间隔：未取得 s。图形可抽稀显示；断言使用完整采样及显式处理分支，不使用显示抽稀数据。时间指标不是高于采样精度的硬件测量保证。</p>
+        <details><summary>查看完整测量指标与证据元数据</summary><pre>{
+  &quot;metrics&quot;: {},
+  &quot;evidence&quot;: {}
+}</pre></details></section><section class="test"><div class="testhead"><div><small>A03 · analog_rms · voltage</small><h2>交流电压有效值</h2></div><span class="badge" style="color:#aa6b00">数据不足 / 待复核</span></div>
+        <p>分析窗口跨越疑似采样间隙</p><p class="meta">依据：DEMO / 项目自定义验收配置 / 教学示例，非规范条款 / 未审核或演示阈值</p>
+        
+        
+        
+        <p class="meta">通道映射：{}<br>最大局部采样间隔：未取得 s。图形可抽稀显示；断言使用完整采样及显式处理分支，不使用显示抽稀数据。时间指标不是高于采样精度的硬件测量保证。</p>
+        <details><summary>查看完整测量指标与证据元数据</summary><pre>{
+  &quot;metrics&quot;: {},
+  &quot;evidence&quot;: {}
+}</pre></details></section><section class="test"><h2>数据质量与可追溯性</h2><p>• 发现 1 个疑似采样间隙；涉及的分析窗口不得判为通过</p><pre>{
+  &quot;software_version&quot;: &quot;1.1.0&quot;,
+  &quot;hashes&quot;: {
+    &quot;cfg_sha256&quot;: &quot;7b2162c4c4afdefa8ba0655e51e129a1804cd2b8a615f85e0c30ffb41c2262a7&quot;,
+    &quot;dat_sha256&quot;: &quot;eae10054491174f3803125ed93e2af424f12a6f8f3044aa686197c813e303983&quot;
+  },
+  &quot;config_sha256&quot;: &quot;e6c2eb21a0e65a6203c01fc6abdb10b10ac97f9a163e6e07d9015ac2258322b2&quot;,
+  &quot;time_source&quot;: &quot;dat_timestamps&quot;,
+  &quot;time_metadata&quot;: [
+    [
+      &quot;+00:00&quot;,
+      &quot;+00:00&quot;
+    ],
+    [
+      &quot;0&quot;,
+      &quot;0&quot;
+    ]
+  ]
+}</pre><details><summary>展开本次完整配置快照</summary><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;name&quot;: &quot;储能 PCS 厂内功能与阶跃响应验收 · 演示 / 12_sampling_gap&quot;,
+  &quot;description&quot;: &quot;所有阈值为教学示例，不是国标条款的默认值。时间单位统一为秒。&quot;,
+  &quot;standard&quot;: {
+    &quot;reference&quot;: &quot;DEMO / 项目自定义验收配置&quot;,
+    &quot;clause&quot;: &quot;教学示例，非规范条款&quot;,
+    &quot;reviewed&quot;: false,
+    &quot;note&quot;: &quot;正式验收需按适用标准及合同逐条复核阈值、基准与测量方法。&quot;
+  },
+  &quot;channels&quot;: {
+    &quot;command&quot;: {
+      &quot;kind&quot;: &quot;digital&quot;,
+      &quot;name&quot;: &quot;启动命令&quot;
+    },
+    &quot;ready&quot;: {
+      &quot;kind&quot;: &quot;digital&quot;,
+      &quot;name&quot;: &quot;运行反馈&quot;
+    },
+    &quot;pulse&quot;: {
+      &quot;kind&quot;: &quot;digital&quot;,
+      &quot;name&quot;: &quot;合闸脉冲&quot;
+    },
+    &quot;alarm&quot;: {
+      &quot;kind&quot;: &quot;digital&quot;,
+      &quot;name&quot;: &quot;故障告警&quot;
+    },
+    &quot;power&quot;: {
+      &quot;kind&quot;: &quot;analog&quot;,
+      &quot;name&quot;: &quot;有功功率&quot;,
+      &quot;unit&quot;: &quot;kW&quot;
+    },
+    &quot;dc&quot;: {
+      &quot;kind&quot;: &quot;analog&quot;,
+      &quot;name&quot;: &quot;直流母线电压&quot;,
+      &quot;unit&quot;: &quot;V&quot;
+    },
+    &quot;voltage&quot;: {
+      &quot;kind&quot;: &quot;analog&quot;,
+      &quot;name&quot;: &quot;交流电压Ua&quot;,
+      &quot;unit&quot;: &quot;V&quot;
+    }
+  },
+  &quot;tests&quot;: [
+    {
+      &quot;id&quot;: &quot;D01&quot;,
+      &quot;name&quot;: &quot;运行反馈正确置位&quot;,
+      &quot;type&quot;: &quot;digital_edge&quot;,
+      &quot;channel&quot;: &quot;ready&quot;,
+      &quot;trigger&quot;: {
+        &quot;type&quot;: &quot;digital_edge&quot;,
+        &quot;channel&quot;: &quot;command&quot;,
+        &quot;edge&quot;: &quot;rising&quot;,
+        &quot;debounce_s&quot;: 0.002,
+        &quot;search&quot;: [
+          0,
+          1
+        ]
+      },
+      &quot;window&quot;: [
+        0,
+        0.4
+      ],
+      &quot;edge&quot;: &quot;rising&quot;,
+      &quot;count&quot;: 1,
+      &quot;debounce_s&quot;: 0.003,
+      &quot;latency_min_s&quot;: 0.01,
+      &quot;latency_max_s&quot;: 0.1
+    },
+    {
+      &quot;id&quot;: &quot;D02&quot;,
+      &quot;name&quot;: &quot;合闸脉冲宽度&quot;,
+      &quot;type&quot;: &quot;digital_pulse&quot;,
+      &quot;channel&quot;: &quot;pulse&quot;,
+      &quot;trigger&quot;: {
+        &quot;type&quot;: &quot;digital_edge&quot;,
+        &quot;channel&quot;: &quot;command&quot;,
+        &quot;edge&quot;: &quot;rising&quot;,
+        &quot;debounce_s&quot;: 0.002,
+        &quot;search&quot;: [
+          0,
+          1
+        ]
+      },
+      &quot;window&quot;: [
+        0,
+        0.4
+      ],
+      &quot;active&quot;: 1,
+      &quot;count&quot;: 1,
+      &quot;min_width_s&quot;: 0.03,
+      &quot;max_width_s&quot;: 0.08
+    },
+    {
+      &quot;id&quot;: &quot;D03&quot;,
+      &quot;name&quot;: &quot;试验期间无故障告警&quot;,
+      &quot;type&quot;: &quot;digital_hold&quot;,
+      &quot;channel&quot;: &quot;alarm&quot;,
+      &quot;trigger&quot;: {
+        &quot;type&quot;: &quot;digital_edge&quot;,
+        &quot;channel&quot;: &quot;command&quot;,
+        &quot;edge&quot;: &quot;rising&quot;,
+        &quot;debounce_s&quot;: 0.002,
+        &quot;search&quot;: [
+          0,
+          1
+        ]
+      },
+      &quot;window&quot;: [
+        0,
+        1.5
+      ],
+      &quot;value&quot;: 0
+    },
+    {
+      &quot;id&quot;: &quot;A01&quot;,
+      &quot;name&quot;: &quot;有功功率阶跃响应&quot;,
+      &quot;type&quot;: &quot;analog_step&quot;,
+      &quot;channel&quot;: &quot;power&quot;,
+      &quot;trigger&quot;: {
+        &quot;type&quot;: &quot;digital_edge&quot;,
+        &quot;channel&quot;: &quot;command&quot;,
+        &quot;edge&quot;: &quot;rising&quot;,
+        &quot;debounce_s&quot;: 0.002,
+        &quot;search&quot;: [
+          0,
+          1
+        ]
+      },
+      &quot;window&quot;: [
+        0,
+        1.5
+      ],
+      &quot;baseline_window&quot;: [
+        -0.15,
+        -0.02
+      ],
+      &quot;target&quot;: 100,
+      &quot;normalization&quot;: &quot;rated&quot;,
+      &quot;rated&quot;: 100,
+      &quot;settle_band_pct&quot;: 2,
+      &quot;settle_hold_s&quot;: 0.1,
+      &quot;steady_last_s&quot;: 0.25,
+      &quot;limits&quot;: {
+        &quot;overshoot_pct_max&quot;: 5,
+        &quot;response_s_max&quot;: 0.4,
+        &quot;rise_s_max&quot;: 0.4,
+        &quot;settling_s_max&quot;: 0.7,
+        &quot;steady_error_pct_max&quot;: 1
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A02&quot;,
+      &quot;name&quot;: &quot;直流母线电压范围&quot;,
+      &quot;type&quot;: &quot;analog_range&quot;,
+      &quot;channel&quot;: &quot;dc&quot;,
+      &quot;trigger&quot;: {
+        &quot;type&quot;: &quot;digital_edge&quot;,
+        &quot;channel&quot;: &quot;command&quot;,
+        &quot;edge&quot;: &quot;rising&quot;,
+        &quot;debounce_s&quot;: 0.002,
+        &quot;search&quot;: [
+          0,
+          1
+        ]
+      },
+      &quot;window&quot;: [
+        0,
+        1.5
+      ],
+      &quot;min&quot;: 680,
+      &quot;max&quot;: 720
+    },
+    {
+      &quot;id&quot;: &quot;A03&quot;,
+      &quot;name&quot;: &quot;交流电压有效值&quot;,
+      &quot;type&quot;: &quot;analog_rms&quot;,
+      &quot;channel&quot;: &quot;voltage&quot;,
+      &quot;trigger&quot;: {
+        &quot;type&quot;: &quot;digital_edge&quot;,
+        &quot;channel&quot;: &quot;command&quot;,
+        &quot;edge&quot;: &quot;rising&quot;,
+        &quot;debounce_s&quot;: 0.002,
+        &quot;search&quot;: [
+          0,
+          1
+        ]
+      },
+      &quot;window&quot;: [
+        0.8,
+        1.2
+      ],
+      &quot;min&quot;: 215,
+      &quot;max&quot;: 225
+    }
+  ]
+}</pre></details></section><footer>ESS WaveTest 1.1.0 · 离线分析 · SHA-256 用于文件一致性核对，不是数字签名。请结合原始录波、测量系统校准和适用标准审核结论。</footer></main><p style="font:12px sans-serif;color:#687b90">交互查看器 v1.3.0；历史判定版本以结果正文为准。图中明确标注完整窗口采样或证据摘要；缩放不是重新验收。</p></body></html>

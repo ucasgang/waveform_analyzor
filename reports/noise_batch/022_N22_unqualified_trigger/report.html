@@ -1,0 +1,88 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>模拟触发只有短尖峰：无可信激励 - ESS WaveTest</title>
+    <style>
+    :root{--ink:#172b45;--muted:#66788c;--line:#dce5ed}*{box-sizing:border-box}body{margin:0;background:#edf2f6;color:var(--ink);font:15px/1.65 "Segoe UI","Microsoft YaHei",sans-serif}.wrap{max-width:1160px;margin:auto;padding:36px 26px}header{background:#142a43;color:#fff;padding:40px;border-radius:18px}.brand{font-size:12px;letter-spacing:3px;color:#79d3c1}h1{font-size:30px;line-height:1.4;margin:18px 0}h2{font-size:20px;margin:5px 0}header p{color:#bed0e2}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}.stat,.test,.notice{background:white;border:1px solid var(--line);border-radius:13px;padding:23px}.stat span{font-size:13px;color:var(--muted)}.stat strong{display:block;font-size:34px;line-height:1.5}.test{margin:20px 0;break-inside:avoid}.testhead{display:flex;justify-content:space-between;align-items:center;gap:16px}.badge{font-size:14px;font-weight:700;border:1px solid;padding:5px 12px;border-radius:24px}small,.meta{font-size:12px;color:var(--muted)}.notice{background:#fff9ee;border-color:#e6d7b9}table{border-collapse:collapse;width:100%;margin-top:16px;font-size:13px}th,td{padding:11px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f3f7fa}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f7fa;padding:18px;font:12px/1.6 Consolas,monospace}.mono{font-family:Consolas,monospace}details{margin-top:12px}summary{cursor:pointer;color:#2367cc}footer{font-size:12px;color:var(--muted);padding:25px 0;overflow-wrap:anywhere}.actions{text-align:right;margin:0 0 15px}button{border:0;border-radius:7px;padding:10px 18px;color:white;background:#2367cc;cursor:pointer}svg{display:block;width:100%;margin-top:18px}@media(max-width:650px){.stats{grid-template-columns:repeat(2,1fr)}.wrap{padding:12px}header{padding:23px}.test{padding:15px}h1{font-size:23px}table{font-size:11px}}@media print{body{background:white}.wrap{padding:0;max-width:none}.actions,details{display:none}header{border-radius:0;print-color-adjust:exact}.test{break-inside:auto}table,svg{break-inside:avoid}}
+    </style></head><body><main class="wrap"><div class="actions"><button onclick="window.print()">打印 / 保存 PDF</button></div><header><div class="brand">ESS WAVETEST / FACTORY ACCEPTANCE</div><h1>模拟触发只有短尖峰：无可信激励</h1><p>总体结果：数据不足 / 待复核 · 2026-10-11T08:46:55.049317+00:00</p><p>N22_unqualified_trigger.cfg / FLOAT32 · 2,001 点 · 1 模拟通道 + 1 数字通道</p></header><div class="stats"><div class="stat"><span>通过</span><strong style="color:#087f68">0</strong></div><div class="stat"><span>失败</span><strong style="color:#c23e48">0</strong></div><div class="stat"><span>数据不足 / 待复核</span><strong style="color:#aa6b00">1</strong></div><div class="stat"><span>配置或执行错误</span><strong style="color:#7544ba">0</strong></div></div>
+    <div class="notice"><b>验收边界</b><p>结果仅表示满足当前配置断言，不代表已取得国标符合性认证。示例阈值不属于标准原文。</p><p>所有时间以本文件录波起点为参考；模拟 skew 已按 CFG 单独应用。没有自动对齐多文件时钟、自动修复缺点或默认标准限值。</p></div>
+    <section class="test"><div class="testhead"><div><small>ACK_AFTER_QUALIFIED_TRIGGER · digital_edge · ack</small><h2>经过滞回与持续确认的动作时延</h2></div><span class="badge" style="color:#aa6b00">数据不足 / 待复核</span></div>
+        <p>未找到第 1 个指定触发事件；请确认试验激励是否执行</p><p class="meta">依据：噪声算法工程示例；非国标条款 / 未指定条款 / 未审核或演示阈值</p>
+        
+        
+        
+        <p class="meta">通道映射：{}<br>最大局部采样间隔：未取得 s。图形可抽稀显示；断言使用完整采样及显式处理分支，不使用显示抽稀数据。时间指标不是高于采样精度的硬件测量保证。</p>
+        <details><summary>查看完整测量指标与证据元数据</summary><pre>{
+  &quot;metrics&quot;: {},
+  &quot;evidence&quot;: {}
+}</pre></details></section><section class="test"><h2>数据质量与可追溯性</h2><p>解析器未发现已覆盖的数据质量异常；这不等同于现场采集质量认证。</p><pre>{
+  &quot;software_version&quot;: &quot;1.2.0&quot;,
+  &quot;hashes&quot;: {
+    &quot;cfg_sha256&quot;: &quot;f2945643172dd93c3999699b8adbfbbb0a753557299d9c07c1da3a1d234cbe0a&quot;,
+    &quot;dat_sha256&quot;: &quot;b4f8a73c14d4d33ecc9f28b8e7852acf0235d5114cb1f9880eb4acf67f71ee5e&quot;
+  },
+  &quot;config_sha256&quot;: &quot;c8ebfeaacf9d8c2a153fc2baa42f1f6e0b17bc7ae234ac400d0fde1040c1d352&quot;,
+  &quot;time_source&quot;: &quot;dat_timestamps&quot;,
+  &quot;time_metadata&quot;: [
+    [
+      &quot;+00:00&quot;,
+      &quot;+00:00&quot;
+    ],
+    [
+      &quot;0&quot;,
+      &quot;0&quot;
+    ]
+  ]
+}</pre><details><summary>展开本次完整配置快照</summary><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;name&quot;: &quot;模拟触发只有短尖峰：无可信激励&quot;,
+  &quot;description&quot;: &quot;合成噪声工程回归；预期来自注入模型与显式限值，不是厂家现场验证。&quot;,
+  &quot;standard&quot;: {
+    &quot;reference&quot;: &quot;噪声算法工程示例；非国标条款&quot;,
+    &quot;reviewed&quot;: false,
+    &quot;note&quot;: &quot;所有容限必须由项目审核后替换。&quot;
+  },
+  &quot;channels&quot;: {
+    &quot;cmd&quot;: {
+      &quot;kind&quot;: &quot;analog&quot;,
+      &quot;index&quot;: 1
+    },
+    &quot;ack&quot;: {
+      &quot;kind&quot;: &quot;digital&quot;,
+      &quot;index&quot;: 1
+    }
+  },
+  &quot;tests&quot;: [
+    {
+      &quot;id&quot;: &quot;ACK_AFTER_QUALIFIED_TRIGGER&quot;,
+      &quot;name&quot;: &quot;经过滞回与持续确认的动作时延&quot;,
+      &quot;type&quot;: &quot;digital_edge&quot;,
+      &quot;channel&quot;: &quot;ack&quot;,
+      &quot;trigger&quot;: {
+        &quot;type&quot;: &quot;analog_crossing&quot;,
+        &quot;channel&quot;: &quot;cmd&quot;,
+        &quot;threshold&quot;: 0.5,
+        &quot;hysteresis&quot;: 0.15,
+        &quot;hold_s&quot;: 0.006,
+        &quot;edge&quot;: &quot;rising&quot;,
+        &quot;search&quot;: [
+          0.1,
+          0.6
+        ]
+      },
+      &quot;window&quot;: [
+        0,
+        0.08
+      ],
+      &quot;edge&quot;: &quot;rising&quot;,
+      &quot;count&quot;: 1,
+      &quot;latency_min_s&quot;: 0.01,
+      &quot;latency_max_s&quot;: 0.03,
+      &quot;noise&quot;: {
+        &quot;rise_s&quot;: 0.003,
+        &quot;fall_s&quot;: 0.005,
+        &quot;max_rejected_edges&quot;: 24,
+        &quot;max_chatter_s&quot;: 0.025,
+        &quot;merge_gap_s&quot;: 0.006,
+        &quot;timing_guard&quot;: true
+      }
+    }
+  ]
+}</pre></details></section><footer>ESS WaveTest 1.2.0 · 离线分析 · SHA-256 用于文件一致性核对，不是数字签名。请结合原始录波、测量系统校准和适用标准审核结论。</footer></main><p style="font:12px sans-serif;color:#687b90">交互查看器 v1.3.0；历史判定版本以结果正文为准。图中明确标注完整窗口采样或证据摘要；缩放不是重新验收。</p></body></html>

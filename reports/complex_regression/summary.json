@@ -1,0 +1,117 @@
+{
+  "mode": "expected_outcome_regression",
+  "status": "PASS",
+  "matched_all_expectations": true,
+  "records": 12,
+  "cases": [
+    {
+      "cfg": "examples/complex/C01_cycle_pass.cfg",
+      "case": "examples/complex/C01_cycle_pass.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/complex_regression/001_C01_cycle_pass"
+    },
+    {
+      "cfg": "examples/complex/C02_cycle_race.cfg",
+      "case": "examples/complex/C02_cycle_race.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/complex_regression/002_C02_cycle_race"
+    },
+    {
+      "cfg": "examples/complex/C03_cycle_oscillation.cfg",
+      "case": "examples/complex/C03_cycle_oscillation.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/complex_regression/003_C03_cycle_oscillation"
+    },
+    {
+      "cfg": "examples/complex/C04_sag_pass.cfg",
+      "case": "examples/complex/C04_sag_pass.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/complex_regression/004_C04_sag_pass"
+    },
+    {
+      "cfg": "examples/complex/C05_sag_trip.cfg",
+      "case": "examples/complex/C05_sag_trip.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/complex_regression/005_C05_sag_trip"
+    },
+    {
+      "cfg": "examples/complex/C06_multirate_skew.cfg",
+      "case": "examples/complex/C06_multirate_skew.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/complex_regression/006_C06_multirate_skew"
+    },
+    {
+      "cfg": "examples/complex/C07_fault_reset_pass.cfg",
+      "case": "examples/complex/C07_fault_reset_pass.json",
+      "status": "PASS",
+      "expected": "PASS",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/complex_regression/007_C07_fault_reset_pass"
+    },
+    {
+      "cfg": "examples/complex/C08_fault_reset_race.cfg",
+      "case": "examples/complex/C08_fault_reset_race.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/complex_regression/008_C08_fault_reset_race"
+    },
+    {
+      "cfg": "examples/complex/C09_dense_512.cfg",
+      "case": "examples/complex/C09_dense_512.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/complex_regression/009_C09_dense_512"
+    },
+    {
+      "cfg": "examples/complex/C10_target_drift.cfg",
+      "case": "examples/complex/C10_target_drift.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/complex_regression/010_C10_target_drift"
+    },
+    {
+      "cfg": "examples/complex/C11_selected_missing.cfg",
+      "case": "examples/complex/C11_selected_missing.json",
+      "status": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/complex_regression/011_C11_selected_missing"
+    },
+    {
+      "cfg": "examples/complex/C12_causal_debounce.cfg",
+      "case": "examples/complex/C12_causal_debounce.json",
+      "status": "FAIL",
+      "expected": "FAIL",
+      "matched_expectation": true,
+      "reason": "",
+      "report_dir": "reports/complex_regression/012_C12_causal_debounce"
+    }
+  ],
+  "notice": "清单回归通过只表示实际判定符合预期；不是所有被测设备通过。"
+}

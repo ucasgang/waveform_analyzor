@@ -1,0 +1,15 @@
+﻿用例ID,名称,类型,通道,总体判定,指标,测量值,最小限值,最大限值,指标判定,说明
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,INCONCLUSIVE,overshoot_pct,9.703303954216375,,5.0,INCONCLUSIVE,数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,INCONCLUSIVE,response_s,0.2056301230659512,,0.28,INCONCLUSIVE,数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,INCONCLUSIVE,rise_s,0.16761149286307542,,0.23,INCONCLUSIVE,数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,INCONCLUSIVE,latency_s,0.03801863020287577,,0.08,INCONCLUSIVE,数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,INCONCLUSIVE,settling_s,,,0.6,INCONCLUSIVE,数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,INCONCLUSIVE,steady_error_pct,0.08074008277941945,,0.8,INCONCLUSIVE,数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,INCONCLUSIVE,steady_ripple_pp,18.507023437499996,,3.0,INCONCLUSIVE,数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,INCONCLUSIVE,repair_fraction,0.0022857142857142876,,0.015,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,INCONCLUSIVE,baseline_noise_sigma,5.8096867333374025,,1.0,INCONCLUSIVE,超过预先配置的数据质量预算；禁止扩大误差带或自动提高降噪强度
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,INCONCLUSIVE,steady_noise_sigma,5.104082156249998,,1.0,INCONCLUSIVE,超过预先配置的数据质量预算；禁止扩大误差带或自动提高降噪强度
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,INCONCLUSIVE,baseline_drift,0.7350997924804688,,1.0,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,INCONCLUSIVE,steady_drift,0.6163124999999923,,1.2,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,INCONCLUSIVE,raw_minimum,-12.9715166015625,-20.0,,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,INCONCLUSIVE,raw_maximum,112.4690546875,,160.0,PASS,满足限值

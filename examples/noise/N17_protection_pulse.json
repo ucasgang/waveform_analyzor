@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "name": "1 ms 真实保护脉冲：原始通道保留",
+  "description": "合成噪声工程回归；预期来自注入模型与显式限值，不是厂家现场验证。",
+  "standard": {
+    "reference": "噪声算法工程示例；非国标条款",
+    "reviewed": false,
+    "note": "所有容限必须由项目审核后替换。"
+  },
+  "channels": {
+    "d": {
+      "kind": "digital",
+      "index": 1
+    }
+  },
+  "tests": [
+    {
+      "id": "RAW_NO_TRIP",
+      "name": "原始保护通道禁止任何跳闸",
+      "type": "digital_hold",
+      "channel": "d",
+      "window": [
+        0.4,
+        0.6
+      ],
+      "value": 0
+    },
+    {
+      "id": "RAW_PULSE",
+      "name": "观察到的真实 1 ms 保护脉冲",
+      "type": "digital_pulse",
+      "channel": "d",
+      "window": [
+        0.4,
+        0.6
+      ],
+      "active": 1,
+      "count": 1,
+      "min_width_s": 0.0005,
+      "max_width_s": 0.0015
+    }
+  ]
+}

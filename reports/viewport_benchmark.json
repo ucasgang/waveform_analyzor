@@ -1,0 +1,49 @@
+{
+  "version": "1.1.0",
+  "generated_utc": "2026-10-11T05:47:12.071452+00:00",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "samples": 20001,
+  "analog_channels": 128,
+  "digital_channels": 384,
+  "parse_s": 2.1425119559999075,
+  "benchmarks": [
+    {
+      "name": "analog_overview",
+      "mode": "minmax",
+      "source_samples": 20001,
+      "display_points": 891,
+      "repetitions": 15,
+      "p50_ms": 5.981517999998687,
+      "p95_ms": 7.3667569999997795
+    },
+    {
+      "name": "analog_2ms_window",
+      "mode": "samples",
+      "source_samples": 21,
+      "display_points": 21,
+      "repetitions": 15,
+      "p50_ms": 0.010299999985363684,
+      "p95_ms": 0.0721499998235231
+    },
+    {
+      "name": "digital_dense_overview",
+      "mode": "digital_envelope",
+      "source_samples": 20001,
+      "display_points": 0,
+      "repetitions": 15,
+      "p50_ms": 3.283161000126711,
+      "p95_ms": 4.493933000048855
+    },
+    {
+      "name": "digital_3ms_window",
+      "mode": "samples",
+      "source_samples": 32,
+      "display_points": 32,
+      "repetitions": 15,
+      "p50_ms": 0.01746099997035344,
+      "p95_ms": 0.0923230002172204
+    }
+  ],
+  "scope": "当前运行环境实测。仅解析和视窗数据生成，不含浏览器渲染、HTTP往返、网络或工控机性能保证。"
+}

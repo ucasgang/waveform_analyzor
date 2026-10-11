@@ -1,0 +1,16 @@
+﻿用例ID,名称,类型,通道,总体判定,指标,测量值,最小限值,最大限值,指标判定,说明
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,overshoot_pct,0.5980641038030009,,5.0,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,response_s,0.2031246492465436,,0.28,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,rise_s,0.1650051188891728,,0.23,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,latency_s,0.03811953035737081,,0.08,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,settling_s,0.3272965695884408,,0.6,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,steady_error_pct,0.021145455755324654,,0.8,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,steady_ripple_pp,1.193140624999998,,3.0,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,repair_fraction,0.0005714285714285719,,0.015,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,baseline_noise_sigma,0.3181919483699798,,1.0,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,steady_noise_sigma,0.2721729281249953,,1.0,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,baseline_drift,0.017903527975082396,,1.0,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,steady_drift,0.029328124999992156,,1.2,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,raw_peak_review,1,0,0,INCONCLUSIVE,原始 overshoot_pct 越限被处理曲线消除；仅凭波形不能确认是采集毛刺，必须复核
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,raw_minimum,-0.73597412109375,-20.0,,PASS,满足限值
+ROBUST_STEP,抗噪性能 + 原始硬限值 + 质量预算,analog_step,p,FAIL,raw_maximum,124.48459375,,120.0,FAIL,未经滤波的原始样本超过硬限值；降噪不能解除此越限

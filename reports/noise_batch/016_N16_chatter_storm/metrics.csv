@@ -1,0 +1,4 @@
+﻿用例ID,名称,类型,通道,总体判定,指标,测量值,最小限值,最大限值,指标判定,说明
+QUALIFIED_HOLD,QUALIFIED_HOLD,digital_hold,d,INCONCLUSIVE,violating_samples,0,0,0,PASS,满足限值
+QUALIFIED_HOLD,QUALIFIED_HOLD,digital_hold,d,INCONCLUSIVE,rejected_edges,160,,24,INCONCLUSIVE,数字量抑制边沿或抖动时长超过预算；不能静默当作稳定状态
+QUALIFIED_HOLD,QUALIFIED_HOLD,digital_hold,d,INCONCLUSIVE,longest_chatter_s,0.15899999999999997,,0.025,INCONCLUSIVE,数字量抑制边沿或抖动时长超过预算；不能静默当作稳定状态

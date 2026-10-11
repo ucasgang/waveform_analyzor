@@ -1,0 +1,7994 @@
+{
+  "method": "Isolated original v1.2 trigger_time function replayed against same synthetic F11 data and current dependency functions; not a full v1.2 binary claim",
+  "old_status": "INCONCLUSIVE",
+  "new_status": "PASS",
+  "old": {
+    "product": "ESS WaveTest",
+    "version": "1.3.0",
+    "generated_utc": "2026-10-11T11:27:35.063234+00:00",
+    "suite": "关键跌落窗口缺失20 ms数据块",
+    "status": "INCONCLUSIVE",
+    "counts": {
+      "PASS": 0,
+      "FAIL": 0,
+      "INCONCLUSIVE": 1,
+      "ERROR": 0
+    },
+    "record": {
+      "station": "ESS LAB",
+      "device": "SIMULATOR",
+      "revision": 2013,
+      "format": "FLOAT32",
+      "analog_count": 24,
+      "digital_count": 104,
+      "frequency_hz": 50.0,
+      "sample_rates": [
+        [
+          2000.0,
+          19961
+        ]
+      ],
+      "trigger_s": 0.6,
+      "timemult": 1.0,
+      "start_timestamp": "01/01/2026,00:00:00.000000",
+      "trigger_timestamp": "01/01/2026,00:00:00.600000",
+      "encoding": "utf-8-sig",
+      "time_metadata": [
+        [
+          "+00:00",
+          "+00:00"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "cfg_file": "F11_acquisition_gap.cfg",
+      "dat_file": "F11_acquisition_gap.dat",
+      "time_source": "dat_timestamps",
+      "max_sample_interval_s": 0.020500000000000185,
+      "samples": 19961,
+      "start_s": 0.0,
+      "end_s": 10.0,
+      "channels": [
+        {
+          "key": "A1",
+          "index": 1,
+          "kind": "analog",
+          "name": "并网总表有功",
+          "unit": "kW",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A2",
+          "index": 2,
+          "kind": "analog",
+          "name": "PCS1有功",
+          "unit": "kW",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A3",
+          "index": 3,
+          "kind": "analog",
+          "name": "PCS2有功",
+          "unit": "kW",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A4",
+          "index": 4,
+          "kind": "analog",
+          "name": "EMS有功设定",
+          "unit": "kW",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A5",
+          "index": 5,
+          "kind": "analog",
+          "name": "并网无功",
+          "unit": "kvar",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A6",
+          "index": 6,
+          "kind": "analog",
+          "name": "直流母线电压",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A7",
+          "index": 7,
+          "kind": "analog",
+          "name": "电池簇端电压",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A8",
+          "index": 8,
+          "kind": "analog",
+          "name": "电池簇电流",
+          "unit": "A",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A9",
+          "index": 9,
+          "kind": "analog",
+          "name": "电池簇SOC",
+          "unit": "%",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A10",
+          "index": 10,
+          "kind": "analog",
+          "name": "PLL频率",
+          "unit": "Hz",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A11",
+          "index": 11,
+          "kind": "analog",
+          "name": "并网Ua",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A12",
+          "index": 12,
+          "kind": "analog",
+          "name": "并网Ub",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A13",
+          "index": 13,
+          "kind": "analog",
+          "name": "并网Uc",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A14",
+          "index": 14,
+          "kind": "analog",
+          "name": "并网Ia",
+          "unit": "A",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A15",
+          "index": 15,
+          "kind": "analog",
+          "name": "并网Ib",
+          "unit": "A",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A16",
+          "index": 16,
+          "kind": "analog",
+          "name": "并网Ic",
+          "unit": "A",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A17",
+          "index": 17,
+          "kind": "analog",
+          "name": "并网电流包络",
+          "unit": "A",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A18",
+          "index": 18,
+          "kind": "analog",
+          "name": "B相独立测量",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A19",
+          "index": 19,
+          "kind": "analog",
+          "name": "PCS散热器温度",
+          "unit": "degC",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A20",
+          "index": 20,
+          "kind": "analog",
+          "name": "有功限幅边界",
+          "unit": "kW",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A21",
+          "index": 21,
+          "kind": "analog",
+          "name": "电池簇01_单体04",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.0001,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A22",
+          "index": 22,
+          "kind": "analog",
+          "name": "电池簇01_单体05",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.0001,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A23",
+          "index": 23,
+          "kind": "analog",
+          "name": "电池簇01_单体06",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.0001,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A24",
+          "index": 24,
+          "kind": "analog",
+          "name": "电池簇01_单体07",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.0001,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "D1",
+          "index": 1,
+          "kind": "digital",
+          "name": "EMS命令脉冲",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D2",
+          "index": 2,
+          "kind": "digital",
+          "name": "PCS执行确认",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D3",
+          "index": 3,
+          "kind": "digital",
+          "name": "预充完成",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D4",
+          "index": 4,
+          "kind": "digital",
+          "name": "主接触器反馈",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D5",
+          "index": 5,
+          "kind": "digital",
+          "name": "保护跳闸原始位",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D6",
+          "index": 6,
+          "kind": "digital",
+          "name": "电网低压检测",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D7",
+          "index": 7,
+          "kind": "digital",
+          "name": "电流限幅状态",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D8",
+          "index": 8,
+          "kind": "digital",
+          "name": "站控心跳",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D9",
+          "index": 9,
+          "kind": "digital",
+          "name": "BMS允许",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D10",
+          "index": 10,
+          "kind": "digital",
+          "name": "复归命令",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D11",
+          "index": 11,
+          "kind": "digital",
+          "name": "机柜00_遥信10",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D12",
+          "index": 12,
+          "kind": "digital",
+          "name": "机柜00_遥信11",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D13",
+          "index": 13,
+          "kind": "digital",
+          "name": "机柜00_遥信12",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D14",
+          "index": 14,
+          "kind": "digital",
+          "name": "机柜00_遥信13",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D15",
+          "index": 15,
+          "kind": "digital",
+          "name": "机柜00_遥信14",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D16",
+          "index": 16,
+          "kind": "digital",
+          "name": "机柜00_遥信15",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D17",
+          "index": 17,
+          "kind": "digital",
+          "name": "机柜00_遥信16",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D18",
+          "index": 18,
+          "kind": "digital",
+          "name": "机柜00_遥信17",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D19",
+          "index": 19,
+          "kind": "digital",
+          "name": "机柜00_遥信18",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D20",
+          "index": 20,
+          "kind": "digital",
+          "name": "机柜00_遥信19",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D21",
+          "index": 21,
+          "kind": "digital",
+          "name": "机柜00_遥信20",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D22",
+          "index": 22,
+          "kind": "digital",
+          "name": "机柜00_遥信21",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D23",
+          "index": 23,
+          "kind": "digital",
+          "name": "机柜00_遥信22",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D24",
+          "index": 24,
+          "kind": "digital",
+          "name": "机柜00_遥信23",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D25",
+          "index": 25,
+          "kind": "digital",
+          "name": "机柜00_遥信24",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D26",
+          "index": 26,
+          "kind": "digital",
+          "name": "机柜00_遥信25",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D27",
+          "index": 27,
+          "kind": "digital",
+          "name": "机柜00_遥信26",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D28",
+          "index": 28,
+          "kind": "digital",
+          "name": "机柜00_遥信27",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D29",
+          "index": 29,
+          "kind": "digital",
+          "name": "机柜00_遥信28",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D30",
+          "index": 30,
+          "kind": "digital",
+          "name": "机柜00_遥信29",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D31",
+          "index": 31,
+          "kind": "digital",
+          "name": "机柜00_遥信30",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D32",
+          "index": 32,
+          "kind": "digital",
+          "name": "机柜00_遥信31",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D33",
+          "index": 33,
+          "kind": "digital",
+          "name": "机柜01_遥信00",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D34",
+          "index": 34,
+          "kind": "digital",
+          "name": "机柜01_遥信01",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D35",
+          "index": 35,
+          "kind": "digital",
+          "name": "机柜01_遥信02",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D36",
+          "index": 36,
+          "kind": "digital",
+          "name": "机柜01_遥信03",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D37",
+          "index": 37,
+          "kind": "digital",
+          "name": "机柜01_遥信04",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D38",
+          "index": 38,
+          "kind": "digital",
+          "name": "机柜01_遥信05",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D39",
+          "index": 39,
+          "kind": "digital",
+          "name": "机柜01_遥信06",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D40",
+          "index": 40,
+          "kind": "digital",
+          "name": "机柜01_遥信07",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D41",
+          "index": 41,
+          "kind": "digital",
+          "name": "机柜01_遥信08",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D42",
+          "index": 42,
+          "kind": "digital",
+          "name": "机柜01_遥信09",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D43",
+          "index": 43,
+          "kind": "digital",
+          "name": "机柜01_遥信10",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D44",
+          "index": 44,
+          "kind": "digital",
+          "name": "机柜01_遥信11",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D45",
+          "index": 45,
+          "kind": "digital",
+          "name": "机柜01_遥信12",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D46",
+          "index": 46,
+          "kind": "digital",
+          "name": "机柜01_遥信13",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D47",
+          "index": 47,
+          "kind": "digital",
+          "name": "机柜01_遥信14",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D48",
+          "index": 48,
+          "kind": "digital",
+          "name": "机柜01_遥信15",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D49",
+          "index": 49,
+          "kind": "digital",
+          "name": "机柜01_遥信16",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D50",
+          "index": 50,
+          "kind": "digital",
+          "name": "机柜01_遥信17",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D51",
+          "index": 51,
+          "kind": "digital",
+          "name": "机柜01_遥信18",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D52",
+          "index": 52,
+          "kind": "digital",
+          "name": "机柜01_遥信19",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D53",
+          "index": 53,
+          "kind": "digital",
+          "name": "机柜01_遥信20",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D54",
+          "index": 54,
+          "kind": "digital",
+          "name": "机柜01_遥信21",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D55",
+          "index": 55,
+          "kind": "digital",
+          "name": "机柜01_遥信22",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D56",
+          "index": 56,
+          "kind": "digital",
+          "name": "机柜01_遥信23",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D57",
+          "index": 57,
+          "kind": "digital",
+          "name": "机柜01_遥信24",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D58",
+          "index": 58,
+          "kind": "digital",
+          "name": "机柜01_遥信25",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D59",
+          "index": 59,
+          "kind": "digital",
+          "name": "机柜01_遥信26",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D60",
+          "index": 60,
+          "kind": "digital",
+          "name": "机柜01_遥信27",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D61",
+          "index": 61,
+          "kind": "digital",
+          "name": "机柜01_遥信28",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D62",
+          "index": 62,
+          "kind": "digital",
+          "name": "机柜01_遥信29",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D63",
+          "index": 63,
+          "kind": "digital",
+          "name": "机柜01_遥信30",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D64",
+          "index": 64,
+          "kind": "digital",
+          "name": "机柜01_遥信31",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D65",
+          "index": 65,
+          "kind": "digital",
+          "name": "机柜02_遥信00",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D66",
+          "index": 66,
+          "kind": "digital",
+          "name": "机柜02_遥信01",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D67",
+          "index": 67,
+          "kind": "digital",
+          "name": "机柜02_遥信02",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D68",
+          "index": 68,
+          "kind": "digital",
+          "name": "机柜02_遥信03",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D69",
+          "index": 69,
+          "kind": "digital",
+          "name": "机柜02_遥信04",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D70",
+          "index": 70,
+          "kind": "digital",
+          "name": "机柜02_遥信05",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D71",
+          "index": 71,
+          "kind": "digital",
+          "name": "机柜02_遥信06",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D72",
+          "index": 72,
+          "kind": "digital",
+          "name": "机柜02_遥信07",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D73",
+          "index": 73,
+          "kind": "digital",
+          "name": "机柜02_遥信08",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D74",
+          "index": 74,
+          "kind": "digital",
+          "name": "机柜02_遥信09",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D75",
+          "index": 75,
+          "kind": "digital",
+          "name": "机柜02_遥信10",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D76",
+          "index": 76,
+          "kind": "digital",
+          "name": "机柜02_遥信11",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D77",
+          "index": 77,
+          "kind": "digital",
+          "name": "机柜02_遥信12",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D78",
+          "index": 78,
+          "kind": "digital",
+          "name": "机柜02_遥信13",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D79",
+          "index": 79,
+          "kind": "digital",
+          "name": "机柜02_遥信14",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D80",
+          "index": 80,
+          "kind": "digital",
+          "name": "机柜02_遥信15",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D81",
+          "index": 81,
+          "kind": "digital",
+          "name": "机柜02_遥信16",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D82",
+          "index": 82,
+          "kind": "digital",
+          "name": "机柜02_遥信17",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D83",
+          "index": 83,
+          "kind": "digital",
+          "name": "机柜02_遥信18",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D84",
+          "index": 84,
+          "kind": "digital",
+          "name": "机柜02_遥信19",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D85",
+          "index": 85,
+          "kind": "digital",
+          "name": "机柜02_遥信20",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D86",
+          "index": 86,
+          "kind": "digital",
+          "name": "机柜02_遥信21",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D87",
+          "index": 87,
+          "kind": "digital",
+          "name": "机柜02_遥信22",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D88",
+          "index": 88,
+          "kind": "digital",
+          "name": "机柜02_遥信23",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D89",
+          "index": 89,
+          "kind": "digital",
+          "name": "机柜02_遥信24",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D90",
+          "index": 90,
+          "kind": "digital",
+          "name": "机柜02_遥信25",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D91",
+          "index": 91,
+          "kind": "digital",
+          "name": "机柜02_遥信26",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D92",
+          "index": 92,
+          "kind": "digital",
+          "name": "机柜02_遥信27",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D93",
+          "index": 93,
+          "kind": "digital",
+          "name": "机柜02_遥信28",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D94",
+          "index": 94,
+          "kind": "digital",
+          "name": "机柜02_遥信29",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D95",
+          "index": 95,
+          "kind": "digital",
+          "name": "机柜02_遥信30",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D96",
+          "index": 96,
+          "kind": "digital",
+          "name": "机柜02_遥信31",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D97",
+          "index": 97,
+          "kind": "digital",
+          "name": "机柜03_遥信00",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D98",
+          "index": 98,
+          "kind": "digital",
+          "name": "机柜03_遥信01",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D99",
+          "index": 99,
+          "kind": "digital",
+          "name": "机柜03_遥信02",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D100",
+          "index": 100,
+          "kind": "digital",
+          "name": "机柜03_遥信03",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D101",
+          "index": 101,
+          "kind": "digital",
+          "name": "机柜03_遥信04",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D102",
+          "index": 102,
+          "kind": "digital",
+          "name": "机柜03_遥信05",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D103",
+          "index": 103,
+          "kind": "digital",
+          "name": "机柜03_遥信06",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D104",
+          "index": 104,
+          "kind": "digital",
+          "name": "机柜03_遥信07",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        }
+      ],
+      "warnings": [
+        "发现 1 个疑似采样间隙；涉及的分析窗口不得判为通过"
+      ],
+      "gap_count": 1,
+      "hashes": {
+        "cfg_sha256": "a0af80cfa15570a27edd24e1bac01c3096fef01d9a57484e49f7067eb3b6e5b0",
+        "dat_sha256": "8fe619af593c04a0538f97c4f173df06865357136caaa7da248e88244fbda6aa"
+      }
+    },
+    "configuration": {
+      "schema_version": 1,
+      "name": "关键跌落窗口缺失20 ms数据块",
+      "description": "分层约束合成；不是现场录波或经过校准的EMT。先定义工况真值，再独立执行断言。",
+      "standard": {
+        "reference": "工程回归 / 非国标限值",
+        "clause": "合成数据验证",
+        "reviewed": false
+      },
+      "channels": {
+        "p": {
+          "kind": "analog",
+          "name": "并网总表有功",
+          "unit": "kW"
+        },
+        "p1": {
+          "kind": "analog",
+          "name": "PCS1有功",
+          "unit": "kW"
+        },
+        "p2": {
+          "kind": "analog",
+          "name": "PCS2有功",
+          "unit": "kW"
+        },
+        "set": {
+          "kind": "analog",
+          "name": "EMS有功设定",
+          "unit": "kW"
+        },
+        "q": {
+          "kind": "analog",
+          "name": "并网无功",
+          "unit": "kvar"
+        },
+        "dc": {
+          "kind": "analog",
+          "name": "直流母线电压",
+          "unit": "V"
+        },
+        "vbat": {
+          "kind": "analog",
+          "name": "电池簇端电压",
+          "unit": "V"
+        },
+        "ibat": {
+          "kind": "analog",
+          "name": "电池簇电流",
+          "unit": "A"
+        },
+        "soc": {
+          "kind": "analog",
+          "name": "电池簇SOC",
+          "unit": "%"
+        },
+        "f": {
+          "kind": "analog",
+          "name": "PLL频率",
+          "unit": "Hz"
+        },
+        "ua": {
+          "kind": "analog",
+          "name": "并网Ua",
+          "unit": "V"
+        },
+        "ub": {
+          "kind": "analog",
+          "name": "并网Ub",
+          "unit": "V"
+        },
+        "uc": {
+          "kind": "analog",
+          "name": "并网Uc",
+          "unit": "V"
+        },
+        "ia": {
+          "kind": "analog",
+          "name": "并网Ia",
+          "unit": "A"
+        },
+        "ib": {
+          "kind": "analog",
+          "name": "并网Ib",
+          "unit": "A"
+        },
+        "ic": {
+          "kind": "analog",
+          "name": "并网Ic",
+          "unit": "A"
+        },
+        "irms": {
+          "kind": "analog",
+          "name": "并网电流包络",
+          "unit": "A"
+        },
+        "ub_ref": {
+          "kind": "analog",
+          "name": "B相独立测量",
+          "unit": "V"
+        },
+        "temp": {
+          "kind": "analog",
+          "name": "PCS散热器温度",
+          "unit": "degC"
+        },
+        "limit": {
+          "kind": "analog",
+          "name": "有功限幅边界",
+          "unit": "kW"
+        },
+        "cell20": {
+          "kind": "analog",
+          "name": "电池簇01_单体04",
+          "unit": "V"
+        },
+        "cell21": {
+          "kind": "analog",
+          "name": "电池簇01_单体05",
+          "unit": "V"
+        },
+        "cell22": {
+          "kind": "analog",
+          "name": "电池簇01_单体06",
+          "unit": "V"
+        },
+        "cell23": {
+          "kind": "analog",
+          "name": "电池簇01_单体07",
+          "unit": "V"
+        },
+        "cmd": {
+          "kind": "digital",
+          "name": "EMS命令脉冲"
+        },
+        "ack": {
+          "kind": "digital",
+          "name": "PCS执行确认"
+        },
+        "pre": {
+          "kind": "digital",
+          "name": "预充完成"
+        },
+        "closed": {
+          "kind": "digital",
+          "name": "主接触器反馈"
+        },
+        "trip": {
+          "kind": "digital",
+          "name": "保护跳闸原始位"
+        },
+        "uv": {
+          "kind": "digital",
+          "name": "电网低压检测"
+        },
+        "limit_active": {
+          "kind": "digital",
+          "name": "电流限幅状态"
+        },
+        "heartbeat": {
+          "kind": "digital",
+          "name": "站控心跳"
+        },
+        "bms_ready": {
+          "kind": "digital",
+          "name": "BMS允许"
+        },
+        "reset": {
+          "kind": "digital",
+          "name": "复归命令"
+        },
+        "aux10": {
+          "kind": "digital",
+          "name": "机柜00_遥信10"
+        },
+        "aux11": {
+          "kind": "digital",
+          "name": "机柜00_遥信11"
+        },
+        "aux12": {
+          "kind": "digital",
+          "name": "机柜00_遥信12"
+        },
+        "aux13": {
+          "kind": "digital",
+          "name": "机柜00_遥信13"
+        },
+        "aux14": {
+          "kind": "digital",
+          "name": "机柜00_遥信14"
+        },
+        "aux15": {
+          "kind": "digital",
+          "name": "机柜00_遥信15"
+        },
+        "aux16": {
+          "kind": "digital",
+          "name": "机柜00_遥信16"
+        },
+        "aux17": {
+          "kind": "digital",
+          "name": "机柜00_遥信17"
+        },
+        "aux18": {
+          "kind": "digital",
+          "name": "机柜00_遥信18"
+        },
+        "aux19": {
+          "kind": "digital",
+          "name": "机柜00_遥信19"
+        },
+        "aux20": {
+          "kind": "digital",
+          "name": "机柜00_遥信20"
+        },
+        "aux21": {
+          "kind": "digital",
+          "name": "机柜00_遥信21"
+        },
+        "aux22": {
+          "kind": "digital",
+          "name": "机柜00_遥信22"
+        },
+        "aux23": {
+          "kind": "digital",
+          "name": "机柜00_遥信23"
+        },
+        "aux24": {
+          "kind": "digital",
+          "name": "机柜00_遥信24"
+        },
+        "aux25": {
+          "kind": "digital",
+          "name": "机柜00_遥信25"
+        },
+        "aux26": {
+          "kind": "digital",
+          "name": "机柜00_遥信26"
+        },
+        "aux27": {
+          "kind": "digital",
+          "name": "机柜00_遥信27"
+        },
+        "aux28": {
+          "kind": "digital",
+          "name": "机柜00_遥信28"
+        },
+        "aux29": {
+          "kind": "digital",
+          "name": "机柜00_遥信29"
+        },
+        "aux30": {
+          "kind": "digital",
+          "name": "机柜00_遥信30"
+        },
+        "aux31": {
+          "kind": "digital",
+          "name": "机柜00_遥信31"
+        },
+        "aux32": {
+          "kind": "digital",
+          "name": "机柜01_遥信00"
+        },
+        "aux33": {
+          "kind": "digital",
+          "name": "机柜01_遥信01"
+        },
+        "aux34": {
+          "kind": "digital",
+          "name": "机柜01_遥信02"
+        },
+        "aux35": {
+          "kind": "digital",
+          "name": "机柜01_遥信03"
+        },
+        "aux36": {
+          "kind": "digital",
+          "name": "机柜01_遥信04"
+        },
+        "aux37": {
+          "kind": "digital",
+          "name": "机柜01_遥信05"
+        },
+        "aux38": {
+          "kind": "digital",
+          "name": "机柜01_遥信06"
+        },
+        "aux39": {
+          "kind": "digital",
+          "name": "机柜01_遥信07"
+        },
+        "aux40": {
+          "kind": "digital",
+          "name": "机柜01_遥信08"
+        },
+        "aux41": {
+          "kind": "digital",
+          "name": "机柜01_遥信09"
+        },
+        "aux42": {
+          "kind": "digital",
+          "name": "机柜01_遥信10"
+        },
+        "aux43": {
+          "kind": "digital",
+          "name": "机柜01_遥信11"
+        },
+        "aux44": {
+          "kind": "digital",
+          "name": "机柜01_遥信12"
+        },
+        "aux45": {
+          "kind": "digital",
+          "name": "机柜01_遥信13"
+        },
+        "aux46": {
+          "kind": "digital",
+          "name": "机柜01_遥信14"
+        },
+        "aux47": {
+          "kind": "digital",
+          "name": "机柜01_遥信15"
+        },
+        "aux48": {
+          "kind": "digital",
+          "name": "机柜01_遥信16"
+        },
+        "aux49": {
+          "kind": "digital",
+          "name": "机柜01_遥信17"
+        },
+        "aux50": {
+          "kind": "digital",
+          "name": "机柜01_遥信18"
+        },
+        "aux51": {
+          "kind": "digital",
+          "name": "机柜01_遥信19"
+        },
+        "aux52": {
+          "kind": "digital",
+          "name": "机柜01_遥信20"
+        },
+        "aux53": {
+          "kind": "digital",
+          "name": "机柜01_遥信21"
+        },
+        "aux54": {
+          "kind": "digital",
+          "name": "机柜01_遥信22"
+        },
+        "aux55": {
+          "kind": "digital",
+          "name": "机柜01_遥信23"
+        },
+        "aux56": {
+          "kind": "digital",
+          "name": "机柜01_遥信24"
+        },
+        "aux57": {
+          "kind": "digital",
+          "name": "机柜01_遥信25"
+        },
+        "aux58": {
+          "kind": "digital",
+          "name": "机柜01_遥信26"
+        },
+        "aux59": {
+          "kind": "digital",
+          "name": "机柜01_遥信27"
+        },
+        "aux60": {
+          "kind": "digital",
+          "name": "机柜01_遥信28"
+        },
+        "aux61": {
+          "kind": "digital",
+          "name": "机柜01_遥信29"
+        },
+        "aux62": {
+          "kind": "digital",
+          "name": "机柜01_遥信30"
+        },
+        "aux63": {
+          "kind": "digital",
+          "name": "机柜01_遥信31"
+        },
+        "aux64": {
+          "kind": "digital",
+          "name": "机柜02_遥信00"
+        },
+        "aux65": {
+          "kind": "digital",
+          "name": "机柜02_遥信01"
+        },
+        "aux66": {
+          "kind": "digital",
+          "name": "机柜02_遥信02"
+        },
+        "aux67": {
+          "kind": "digital",
+          "name": "机柜02_遥信03"
+        },
+        "aux68": {
+          "kind": "digital",
+          "name": "机柜02_遥信04"
+        },
+        "aux69": {
+          "kind": "digital",
+          "name": "机柜02_遥信05"
+        },
+        "aux70": {
+          "kind": "digital",
+          "name": "机柜02_遥信06"
+        },
+        "aux71": {
+          "kind": "digital",
+          "name": "机柜02_遥信07"
+        },
+        "aux72": {
+          "kind": "digital",
+          "name": "机柜02_遥信08"
+        },
+        "aux73": {
+          "kind": "digital",
+          "name": "机柜02_遥信09"
+        },
+        "aux74": {
+          "kind": "digital",
+          "name": "机柜02_遥信10"
+        },
+        "aux75": {
+          "kind": "digital",
+          "name": "机柜02_遥信11"
+        },
+        "aux76": {
+          "kind": "digital",
+          "name": "机柜02_遥信12"
+        },
+        "aux77": {
+          "kind": "digital",
+          "name": "机柜02_遥信13"
+        },
+        "aux78": {
+          "kind": "digital",
+          "name": "机柜02_遥信14"
+        },
+        "aux79": {
+          "kind": "digital",
+          "name": "机柜02_遥信15"
+        },
+        "aux80": {
+          "kind": "digital",
+          "name": "机柜02_遥信16"
+        },
+        "aux81": {
+          "kind": "digital",
+          "name": "机柜02_遥信17"
+        },
+        "aux82": {
+          "kind": "digital",
+          "name": "机柜02_遥信18"
+        },
+        "aux83": {
+          "kind": "digital",
+          "name": "机柜02_遥信19"
+        },
+        "aux84": {
+          "kind": "digital",
+          "name": "机柜02_遥信20"
+        },
+        "aux85": {
+          "kind": "digital",
+          "name": "机柜02_遥信21"
+        },
+        "aux86": {
+          "kind": "digital",
+          "name": "机柜02_遥信22"
+        },
+        "aux87": {
+          "kind": "digital",
+          "name": "机柜02_遥信23"
+        },
+        "aux88": {
+          "kind": "digital",
+          "name": "机柜02_遥信24"
+        },
+        "aux89": {
+          "kind": "digital",
+          "name": "机柜02_遥信25"
+        },
+        "aux90": {
+          "kind": "digital",
+          "name": "机柜02_遥信26"
+        },
+        "aux91": {
+          "kind": "digital",
+          "name": "机柜02_遥信27"
+        },
+        "aux92": {
+          "kind": "digital",
+          "name": "机柜02_遥信28"
+        },
+        "aux93": {
+          "kind": "digital",
+          "name": "机柜02_遥信29"
+        },
+        "aux94": {
+          "kind": "digital",
+          "name": "机柜02_遥信30"
+        },
+        "aux95": {
+          "kind": "digital",
+          "name": "机柜02_遥信31"
+        },
+        "aux96": {
+          "kind": "digital",
+          "name": "机柜03_遥信00"
+        },
+        "aux97": {
+          "kind": "digital",
+          "name": "机柜03_遥信01"
+        },
+        "aux98": {
+          "kind": "digital",
+          "name": "机柜03_遥信02"
+        },
+        "aux99": {
+          "kind": "digital",
+          "name": "机柜03_遥信03"
+        },
+        "aux100": {
+          "kind": "digital",
+          "name": "机柜03_遥信04"
+        },
+        "aux101": {
+          "kind": "digital",
+          "name": "机柜03_遥信05"
+        },
+        "aux102": {
+          "kind": "digital",
+          "name": "机柜03_遥信06"
+        },
+        "aux103": {
+          "kind": "digital",
+          "name": "机柜03_遥信07"
+        }
+      },
+      "tests": [
+        {
+          "id": "CLOSE",
+          "name": "CLOSE",
+          "type": "digital_edge",
+          "channel": "closed",
+          "window": [
+            0,
+            0.12
+          ],
+          "trigger": {
+            "type": "digital_edge",
+            "channel": "pre",
+            "edge": "rising"
+          },
+          "edge": "rising",
+          "count": 1,
+          "latency_min_s": 0.02,
+          "latency_max_s": 0.09,
+          "noise": {
+            "rise_s": 0.002,
+            "fall_s": 0.002,
+            "max_rejected_edges": 8,
+            "max_chatter_s": 0.01,
+            "timing_guard": true
+          }
+        }
+      ]
+    },
+    "config_sha256": "f05fabd344793f936251b66d57aed559dfd3b625c9d1d7d1fa022fe30f1acf60",
+    "results": [
+      {
+        "id": "CLOSE",
+        "name": "CLOSE",
+        "type": "digital_edge",
+        "channel": "closed",
+        "standard": {
+          "reference": "工程回归 / 非国标限值",
+          "clause": "合成数据验证",
+          "reviewed": false
+        },
+        "metrics": {},
+        "checks": [],
+        "evidence": {},
+        "status": "INCONCLUSIVE",
+        "reason": "分析窗口跨越疑似采样间隙"
+      }
+    ],
+    "notice": "结果仅表示满足当前配置断言，不代表已取得国标符合性认证。示例阈值不属于标准原文。"
+  },
+  "new": {
+    "product": "ESS WaveTest",
+    "version": "1.3.0",
+    "generated_utc": "2026-10-11T11:27:35.066707+00:00",
+    "suite": "关键跌落窗口缺失20 ms数据块",
+    "status": "PASS",
+    "counts": {
+      "PASS": 1,
+      "FAIL": 0,
+      "INCONCLUSIVE": 0,
+      "ERROR": 0
+    },
+    "record": {
+      "station": "ESS LAB",
+      "device": "SIMULATOR",
+      "revision": 2013,
+      "format": "FLOAT32",
+      "analog_count": 24,
+      "digital_count": 104,
+      "frequency_hz": 50.0,
+      "sample_rates": [
+        [
+          2000.0,
+          19961
+        ]
+      ],
+      "trigger_s": 0.6,
+      "timemult": 1.0,
+      "start_timestamp": "01/01/2026,00:00:00.000000",
+      "trigger_timestamp": "01/01/2026,00:00:00.600000",
+      "encoding": "utf-8-sig",
+      "time_metadata": [
+        [
+          "+00:00",
+          "+00:00"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "cfg_file": "F11_acquisition_gap.cfg",
+      "dat_file": "F11_acquisition_gap.dat",
+      "time_source": "dat_timestamps",
+      "max_sample_interval_s": 0.020500000000000185,
+      "samples": 19961,
+      "start_s": 0.0,
+      "end_s": 10.0,
+      "channels": [
+        {
+          "key": "A1",
+          "index": 1,
+          "kind": "analog",
+          "name": "并网总表有功",
+          "unit": "kW",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A2",
+          "index": 2,
+          "kind": "analog",
+          "name": "PCS1有功",
+          "unit": "kW",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A3",
+          "index": 3,
+          "kind": "analog",
+          "name": "PCS2有功",
+          "unit": "kW",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A4",
+          "index": 4,
+          "kind": "analog",
+          "name": "EMS有功设定",
+          "unit": "kW",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A5",
+          "index": 5,
+          "kind": "analog",
+          "name": "并网无功",
+          "unit": "kvar",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A6",
+          "index": 6,
+          "kind": "analog",
+          "name": "直流母线电压",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A7",
+          "index": 7,
+          "kind": "analog",
+          "name": "电池簇端电压",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A8",
+          "index": 8,
+          "kind": "analog",
+          "name": "电池簇电流",
+          "unit": "A",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A9",
+          "index": 9,
+          "kind": "analog",
+          "name": "电池簇SOC",
+          "unit": "%",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A10",
+          "index": 10,
+          "kind": "analog",
+          "name": "PLL频率",
+          "unit": "Hz",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A11",
+          "index": 11,
+          "kind": "analog",
+          "name": "并网Ua",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A12",
+          "index": 12,
+          "kind": "analog",
+          "name": "并网Ub",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A13",
+          "index": 13,
+          "kind": "analog",
+          "name": "并网Uc",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A14",
+          "index": 14,
+          "kind": "analog",
+          "name": "并网Ia",
+          "unit": "A",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A15",
+          "index": 15,
+          "kind": "analog",
+          "name": "并网Ib",
+          "unit": "A",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A16",
+          "index": 16,
+          "kind": "analog",
+          "name": "并网Ic",
+          "unit": "A",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A17",
+          "index": 17,
+          "kind": "analog",
+          "name": "并网电流包络",
+          "unit": "A",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A18",
+          "index": 18,
+          "kind": "analog",
+          "name": "B相独立测量",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A19",
+          "index": 19,
+          "kind": "analog",
+          "name": "PCS散热器温度",
+          "unit": "degC",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A20",
+          "index": 20,
+          "kind": "analog",
+          "name": "有功限幅边界",
+          "unit": "kW",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.01,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A21",
+          "index": 21,
+          "kind": "analog",
+          "name": "电池簇01_单体04",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.0001,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A22",
+          "index": 22,
+          "kind": "analog",
+          "name": "电池簇01_单体05",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.0001,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A23",
+          "index": 23,
+          "kind": "analog",
+          "name": "电池簇01_单体06",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.0001,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "A24",
+          "index": 24,
+          "kind": "analog",
+          "name": "电池簇01_单体07",
+          "unit": "V",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 0.0001,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": -1e+30,
+          "raw_max": 1e+30
+        },
+        {
+          "key": "D1",
+          "index": 1,
+          "kind": "digital",
+          "name": "EMS命令脉冲",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D2",
+          "index": 2,
+          "kind": "digital",
+          "name": "PCS执行确认",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D3",
+          "index": 3,
+          "kind": "digital",
+          "name": "预充完成",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D4",
+          "index": 4,
+          "kind": "digital",
+          "name": "主接触器反馈",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D5",
+          "index": 5,
+          "kind": "digital",
+          "name": "保护跳闸原始位",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D6",
+          "index": 6,
+          "kind": "digital",
+          "name": "电网低压检测",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D7",
+          "index": 7,
+          "kind": "digital",
+          "name": "电流限幅状态",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D8",
+          "index": 8,
+          "kind": "digital",
+          "name": "站控心跳",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D9",
+          "index": 9,
+          "kind": "digital",
+          "name": "BMS允许",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D10",
+          "index": 10,
+          "kind": "digital",
+          "name": "复归命令",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D11",
+          "index": 11,
+          "kind": "digital",
+          "name": "机柜00_遥信10",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D12",
+          "index": 12,
+          "kind": "digital",
+          "name": "机柜00_遥信11",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D13",
+          "index": 13,
+          "kind": "digital",
+          "name": "机柜00_遥信12",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D14",
+          "index": 14,
+          "kind": "digital",
+          "name": "机柜00_遥信13",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D15",
+          "index": 15,
+          "kind": "digital",
+          "name": "机柜00_遥信14",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D16",
+          "index": 16,
+          "kind": "digital",
+          "name": "机柜00_遥信15",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D17",
+          "index": 17,
+          "kind": "digital",
+          "name": "机柜00_遥信16",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D18",
+          "index": 18,
+          "kind": "digital",
+          "name": "机柜00_遥信17",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D19",
+          "index": 19,
+          "kind": "digital",
+          "name": "机柜00_遥信18",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D20",
+          "index": 20,
+          "kind": "digital",
+          "name": "机柜00_遥信19",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D21",
+          "index": 21,
+          "kind": "digital",
+          "name": "机柜00_遥信20",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D22",
+          "index": 22,
+          "kind": "digital",
+          "name": "机柜00_遥信21",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D23",
+          "index": 23,
+          "kind": "digital",
+          "name": "机柜00_遥信22",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D24",
+          "index": 24,
+          "kind": "digital",
+          "name": "机柜00_遥信23",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D25",
+          "index": 25,
+          "kind": "digital",
+          "name": "机柜00_遥信24",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D26",
+          "index": 26,
+          "kind": "digital",
+          "name": "机柜00_遥信25",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D27",
+          "index": 27,
+          "kind": "digital",
+          "name": "机柜00_遥信26",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D28",
+          "index": 28,
+          "kind": "digital",
+          "name": "机柜00_遥信27",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D29",
+          "index": 29,
+          "kind": "digital",
+          "name": "机柜00_遥信28",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D30",
+          "index": 30,
+          "kind": "digital",
+          "name": "机柜00_遥信29",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D31",
+          "index": 31,
+          "kind": "digital",
+          "name": "机柜00_遥信30",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D32",
+          "index": 32,
+          "kind": "digital",
+          "name": "机柜00_遥信31",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D33",
+          "index": 33,
+          "kind": "digital",
+          "name": "机柜01_遥信00",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D34",
+          "index": 34,
+          "kind": "digital",
+          "name": "机柜01_遥信01",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D35",
+          "index": 35,
+          "kind": "digital",
+          "name": "机柜01_遥信02",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D36",
+          "index": 36,
+          "kind": "digital",
+          "name": "机柜01_遥信03",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D37",
+          "index": 37,
+          "kind": "digital",
+          "name": "机柜01_遥信04",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D38",
+          "index": 38,
+          "kind": "digital",
+          "name": "机柜01_遥信05",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D39",
+          "index": 39,
+          "kind": "digital",
+          "name": "机柜01_遥信06",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D40",
+          "index": 40,
+          "kind": "digital",
+          "name": "机柜01_遥信07",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D41",
+          "index": 41,
+          "kind": "digital",
+          "name": "机柜01_遥信08",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D42",
+          "index": 42,
+          "kind": "digital",
+          "name": "机柜01_遥信09",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D43",
+          "index": 43,
+          "kind": "digital",
+          "name": "机柜01_遥信10",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D44",
+          "index": 44,
+          "kind": "digital",
+          "name": "机柜01_遥信11",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D45",
+          "index": 45,
+          "kind": "digital",
+          "name": "机柜01_遥信12",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D46",
+          "index": 46,
+          "kind": "digital",
+          "name": "机柜01_遥信13",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D47",
+          "index": 47,
+          "kind": "digital",
+          "name": "机柜01_遥信14",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D48",
+          "index": 48,
+          "kind": "digital",
+          "name": "机柜01_遥信15",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D49",
+          "index": 49,
+          "kind": "digital",
+          "name": "机柜01_遥信16",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D50",
+          "index": 50,
+          "kind": "digital",
+          "name": "机柜01_遥信17",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D51",
+          "index": 51,
+          "kind": "digital",
+          "name": "机柜01_遥信18",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D52",
+          "index": 52,
+          "kind": "digital",
+          "name": "机柜01_遥信19",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D53",
+          "index": 53,
+          "kind": "digital",
+          "name": "机柜01_遥信20",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D54",
+          "index": 54,
+          "kind": "digital",
+          "name": "机柜01_遥信21",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D55",
+          "index": 55,
+          "kind": "digital",
+          "name": "机柜01_遥信22",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D56",
+          "index": 56,
+          "kind": "digital",
+          "name": "机柜01_遥信23",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D57",
+          "index": 57,
+          "kind": "digital",
+          "name": "机柜01_遥信24",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D58",
+          "index": 58,
+          "kind": "digital",
+          "name": "机柜01_遥信25",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D59",
+          "index": 59,
+          "kind": "digital",
+          "name": "机柜01_遥信26",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D60",
+          "index": 60,
+          "kind": "digital",
+          "name": "机柜01_遥信27",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D61",
+          "index": 61,
+          "kind": "digital",
+          "name": "机柜01_遥信28",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D62",
+          "index": 62,
+          "kind": "digital",
+          "name": "机柜01_遥信29",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D63",
+          "index": 63,
+          "kind": "digital",
+          "name": "机柜01_遥信30",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D64",
+          "index": 64,
+          "kind": "digital",
+          "name": "机柜01_遥信31",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D65",
+          "index": 65,
+          "kind": "digital",
+          "name": "机柜02_遥信00",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D66",
+          "index": 66,
+          "kind": "digital",
+          "name": "机柜02_遥信01",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D67",
+          "index": 67,
+          "kind": "digital",
+          "name": "机柜02_遥信02",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D68",
+          "index": 68,
+          "kind": "digital",
+          "name": "机柜02_遥信03",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D69",
+          "index": 69,
+          "kind": "digital",
+          "name": "机柜02_遥信04",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D70",
+          "index": 70,
+          "kind": "digital",
+          "name": "机柜02_遥信05",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D71",
+          "index": 71,
+          "kind": "digital",
+          "name": "机柜02_遥信06",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D72",
+          "index": 72,
+          "kind": "digital",
+          "name": "机柜02_遥信07",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D73",
+          "index": 73,
+          "kind": "digital",
+          "name": "机柜02_遥信08",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D74",
+          "index": 74,
+          "kind": "digital",
+          "name": "机柜02_遥信09",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D75",
+          "index": 75,
+          "kind": "digital",
+          "name": "机柜02_遥信10",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D76",
+          "index": 76,
+          "kind": "digital",
+          "name": "机柜02_遥信11",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D77",
+          "index": 77,
+          "kind": "digital",
+          "name": "机柜02_遥信12",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D78",
+          "index": 78,
+          "kind": "digital",
+          "name": "机柜02_遥信13",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D79",
+          "index": 79,
+          "kind": "digital",
+          "name": "机柜02_遥信14",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D80",
+          "index": 80,
+          "kind": "digital",
+          "name": "机柜02_遥信15",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D81",
+          "index": 81,
+          "kind": "digital",
+          "name": "机柜02_遥信16",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D82",
+          "index": 82,
+          "kind": "digital",
+          "name": "机柜02_遥信17",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D83",
+          "index": 83,
+          "kind": "digital",
+          "name": "机柜02_遥信18",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D84",
+          "index": 84,
+          "kind": "digital",
+          "name": "机柜02_遥信19",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D85",
+          "index": 85,
+          "kind": "digital",
+          "name": "机柜02_遥信20",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D86",
+          "index": 86,
+          "kind": "digital",
+          "name": "机柜02_遥信21",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D87",
+          "index": 87,
+          "kind": "digital",
+          "name": "机柜02_遥信22",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D88",
+          "index": 88,
+          "kind": "digital",
+          "name": "机柜02_遥信23",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D89",
+          "index": 89,
+          "kind": "digital",
+          "name": "机柜02_遥信24",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D90",
+          "index": 90,
+          "kind": "digital",
+          "name": "机柜02_遥信25",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D91",
+          "index": 91,
+          "kind": "digital",
+          "name": "机柜02_遥信26",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D92",
+          "index": 92,
+          "kind": "digital",
+          "name": "机柜02_遥信27",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D93",
+          "index": 93,
+          "kind": "digital",
+          "name": "机柜02_遥信28",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D94",
+          "index": 94,
+          "kind": "digital",
+          "name": "机柜02_遥信29",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D95",
+          "index": 95,
+          "kind": "digital",
+          "name": "机柜02_遥信30",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D96",
+          "index": 96,
+          "kind": "digital",
+          "name": "机柜02_遥信31",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D97",
+          "index": 97,
+          "kind": "digital",
+          "name": "机柜03_遥信00",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D98",
+          "index": 98,
+          "kind": "digital",
+          "name": "机柜03_遥信01",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D99",
+          "index": 99,
+          "kind": "digital",
+          "name": "机柜03_遥信02",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D100",
+          "index": 100,
+          "kind": "digital",
+          "name": "机柜03_遥信03",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D101",
+          "index": 101,
+          "kind": "digital",
+          "name": "机柜03_遥信04",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D102",
+          "index": 102,
+          "kind": "digital",
+          "name": "机柜03_遥信05",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D103",
+          "index": 103,
+          "kind": "digital",
+          "name": "机柜03_遥信06",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        },
+        {
+          "key": "D104",
+          "index": 104,
+          "kind": "digital",
+          "name": "机柜03_遥信07",
+          "unit": "",
+          "phase": "",
+          "circuit": "PCS",
+          "a": 1.0,
+          "b": 0.0,
+          "skew_us": 0.0,
+          "primary": 1.0,
+          "secondary": 1.0,
+          "side": "P",
+          "normal": 0,
+          "raw_min": 0.0,
+          "raw_max": 0.0
+        }
+      ],
+      "warnings": [
+        "发现 1 个疑似采样间隙；涉及的分析窗口不得判为通过"
+      ],
+      "gap_count": 1,
+      "hashes": {
+        "cfg_sha256": "a0af80cfa15570a27edd24e1bac01c3096fef01d9a57484e49f7067eb3b6e5b0",
+        "dat_sha256": "8fe619af593c04a0538f97c4f173df06865357136caaa7da248e88244fbda6aa"
+      }
+    },
+    "configuration": {
+      "schema_version": 1,
+      "name": "关键跌落窗口缺失20 ms数据块",
+      "description": "分层约束合成；不是现场录波或经过校准的EMT。先定义工况真值，再独立执行断言。",
+      "standard": {
+        "reference": "工程回归 / 非国标限值",
+        "clause": "合成数据验证",
+        "reviewed": false
+      },
+      "channels": {
+        "p": {
+          "kind": "analog",
+          "name": "并网总表有功",
+          "unit": "kW"
+        },
+        "p1": {
+          "kind": "analog",
+          "name": "PCS1有功",
+          "unit": "kW"
+        },
+        "p2": {
+          "kind": "analog",
+          "name": "PCS2有功",
+          "unit": "kW"
+        },
+        "set": {
+          "kind": "analog",
+          "name": "EMS有功设定",
+          "unit": "kW"
+        },
+        "q": {
+          "kind": "analog",
+          "name": "并网无功",
+          "unit": "kvar"
+        },
+        "dc": {
+          "kind": "analog",
+          "name": "直流母线电压",
+          "unit": "V"
+        },
+        "vbat": {
+          "kind": "analog",
+          "name": "电池簇端电压",
+          "unit": "V"
+        },
+        "ibat": {
+          "kind": "analog",
+          "name": "电池簇电流",
+          "unit": "A"
+        },
+        "soc": {
+          "kind": "analog",
+          "name": "电池簇SOC",
+          "unit": "%"
+        },
+        "f": {
+          "kind": "analog",
+          "name": "PLL频率",
+          "unit": "Hz"
+        },
+        "ua": {
+          "kind": "analog",
+          "name": "并网Ua",
+          "unit": "V"
+        },
+        "ub": {
+          "kind": "analog",
+          "name": "并网Ub",
+          "unit": "V"
+        },
+        "uc": {
+          "kind": "analog",
+          "name": "并网Uc",
+          "unit": "V"
+        },
+        "ia": {
+          "kind": "analog",
+          "name": "并网Ia",
+          "unit": "A"
+        },
+        "ib": {
+          "kind": "analog",
+          "name": "并网Ib",
+          "unit": "A"
+        },
+        "ic": {
+          "kind": "analog",
+          "name": "并网Ic",
+          "unit": "A"
+        },
+        "irms": {
+          "kind": "analog",
+          "name": "并网电流包络",
+          "unit": "A"
+        },
+        "ub_ref": {
+          "kind": "analog",
+          "name": "B相独立测量",
+          "unit": "V"
+        },
+        "temp": {
+          "kind": "analog",
+          "name": "PCS散热器温度",
+          "unit": "degC"
+        },
+        "limit": {
+          "kind": "analog",
+          "name": "有功限幅边界",
+          "unit": "kW"
+        },
+        "cell20": {
+          "kind": "analog",
+          "name": "电池簇01_单体04",
+          "unit": "V"
+        },
+        "cell21": {
+          "kind": "analog",
+          "name": "电池簇01_单体05",
+          "unit": "V"
+        },
+        "cell22": {
+          "kind": "analog",
+          "name": "电池簇01_单体06",
+          "unit": "V"
+        },
+        "cell23": {
+          "kind": "analog",
+          "name": "电池簇01_单体07",
+          "unit": "V"
+        },
+        "cmd": {
+          "kind": "digital",
+          "name": "EMS命令脉冲"
+        },
+        "ack": {
+          "kind": "digital",
+          "name": "PCS执行确认"
+        },
+        "pre": {
+          "kind": "digital",
+          "name": "预充完成"
+        },
+        "closed": {
+          "kind": "digital",
+          "name": "主接触器反馈"
+        },
+        "trip": {
+          "kind": "digital",
+          "name": "保护跳闸原始位"
+        },
+        "uv": {
+          "kind": "digital",
+          "name": "电网低压检测"
+        },
+        "limit_active": {
+          "kind": "digital",
+          "name": "电流限幅状态"
+        },
+        "heartbeat": {
+          "kind": "digital",
+          "name": "站控心跳"
+        },
+        "bms_ready": {
+          "kind": "digital",
+          "name": "BMS允许"
+        },
+        "reset": {
+          "kind": "digital",
+          "name": "复归命令"
+        },
+        "aux10": {
+          "kind": "digital",
+          "name": "机柜00_遥信10"
+        },
+        "aux11": {
+          "kind": "digital",
+          "name": "机柜00_遥信11"
+        },
+        "aux12": {
+          "kind": "digital",
+          "name": "机柜00_遥信12"
+        },
+        "aux13": {
+          "kind": "digital",
+          "name": "机柜00_遥信13"
+        },
+        "aux14": {
+          "kind": "digital",
+          "name": "机柜00_遥信14"
+        },
+        "aux15": {
+          "kind": "digital",
+          "name": "机柜00_遥信15"
+        },
+        "aux16": {
+          "kind": "digital",
+          "name": "机柜00_遥信16"
+        },
+        "aux17": {
+          "kind": "digital",
+          "name": "机柜00_遥信17"
+        },
+        "aux18": {
+          "kind": "digital",
+          "name": "机柜00_遥信18"
+        },
+        "aux19": {
+          "kind": "digital",
+          "name": "机柜00_遥信19"
+        },
+        "aux20": {
+          "kind": "digital",
+          "name": "机柜00_遥信20"
+        },
+        "aux21": {
+          "kind": "digital",
+          "name": "机柜00_遥信21"
+        },
+        "aux22": {
+          "kind": "digital",
+          "name": "机柜00_遥信22"
+        },
+        "aux23": {
+          "kind": "digital",
+          "name": "机柜00_遥信23"
+        },
+        "aux24": {
+          "kind": "digital",
+          "name": "机柜00_遥信24"
+        },
+        "aux25": {
+          "kind": "digital",
+          "name": "机柜00_遥信25"
+        },
+        "aux26": {
+          "kind": "digital",
+          "name": "机柜00_遥信26"
+        },
+        "aux27": {
+          "kind": "digital",
+          "name": "机柜00_遥信27"
+        },
+        "aux28": {
+          "kind": "digital",
+          "name": "机柜00_遥信28"
+        },
+        "aux29": {
+          "kind": "digital",
+          "name": "机柜00_遥信29"
+        },
+        "aux30": {
+          "kind": "digital",
+          "name": "机柜00_遥信30"
+        },
+        "aux31": {
+          "kind": "digital",
+          "name": "机柜00_遥信31"
+        },
+        "aux32": {
+          "kind": "digital",
+          "name": "机柜01_遥信00"
+        },
+        "aux33": {
+          "kind": "digital",
+          "name": "机柜01_遥信01"
+        },
+        "aux34": {
+          "kind": "digital",
+          "name": "机柜01_遥信02"
+        },
+        "aux35": {
+          "kind": "digital",
+          "name": "机柜01_遥信03"
+        },
+        "aux36": {
+          "kind": "digital",
+          "name": "机柜01_遥信04"
+        },
+        "aux37": {
+          "kind": "digital",
+          "name": "机柜01_遥信05"
+        },
+        "aux38": {
+          "kind": "digital",
+          "name": "机柜01_遥信06"
+        },
+        "aux39": {
+          "kind": "digital",
+          "name": "机柜01_遥信07"
+        },
+        "aux40": {
+          "kind": "digital",
+          "name": "机柜01_遥信08"
+        },
+        "aux41": {
+          "kind": "digital",
+          "name": "机柜01_遥信09"
+        },
+        "aux42": {
+          "kind": "digital",
+          "name": "机柜01_遥信10"
+        },
+        "aux43": {
+          "kind": "digital",
+          "name": "机柜01_遥信11"
+        },
+        "aux44": {
+          "kind": "digital",
+          "name": "机柜01_遥信12"
+        },
+        "aux45": {
+          "kind": "digital",
+          "name": "机柜01_遥信13"
+        },
+        "aux46": {
+          "kind": "digital",
+          "name": "机柜01_遥信14"
+        },
+        "aux47": {
+          "kind": "digital",
+          "name": "机柜01_遥信15"
+        },
+        "aux48": {
+          "kind": "digital",
+          "name": "机柜01_遥信16"
+        },
+        "aux49": {
+          "kind": "digital",
+          "name": "机柜01_遥信17"
+        },
+        "aux50": {
+          "kind": "digital",
+          "name": "机柜01_遥信18"
+        },
+        "aux51": {
+          "kind": "digital",
+          "name": "机柜01_遥信19"
+        },
+        "aux52": {
+          "kind": "digital",
+          "name": "机柜01_遥信20"
+        },
+        "aux53": {
+          "kind": "digital",
+          "name": "机柜01_遥信21"
+        },
+        "aux54": {
+          "kind": "digital",
+          "name": "机柜01_遥信22"
+        },
+        "aux55": {
+          "kind": "digital",
+          "name": "机柜01_遥信23"
+        },
+        "aux56": {
+          "kind": "digital",
+          "name": "机柜01_遥信24"
+        },
+        "aux57": {
+          "kind": "digital",
+          "name": "机柜01_遥信25"
+        },
+        "aux58": {
+          "kind": "digital",
+          "name": "机柜01_遥信26"
+        },
+        "aux59": {
+          "kind": "digital",
+          "name": "机柜01_遥信27"
+        },
+        "aux60": {
+          "kind": "digital",
+          "name": "机柜01_遥信28"
+        },
+        "aux61": {
+          "kind": "digital",
+          "name": "机柜01_遥信29"
+        },
+        "aux62": {
+          "kind": "digital",
+          "name": "机柜01_遥信30"
+        },
+        "aux63": {
+          "kind": "digital",
+          "name": "机柜01_遥信31"
+        },
+        "aux64": {
+          "kind": "digital",
+          "name": "机柜02_遥信00"
+        },
+        "aux65": {
+          "kind": "digital",
+          "name": "机柜02_遥信01"
+        },
+        "aux66": {
+          "kind": "digital",
+          "name": "机柜02_遥信02"
+        },
+        "aux67": {
+          "kind": "digital",
+          "name": "机柜02_遥信03"
+        },
+        "aux68": {
+          "kind": "digital",
+          "name": "机柜02_遥信04"
+        },
+        "aux69": {
+          "kind": "digital",
+          "name": "机柜02_遥信05"
+        },
+        "aux70": {
+          "kind": "digital",
+          "name": "机柜02_遥信06"
+        },
+        "aux71": {
+          "kind": "digital",
+          "name": "机柜02_遥信07"
+        },
+        "aux72": {
+          "kind": "digital",
+          "name": "机柜02_遥信08"
+        },
+        "aux73": {
+          "kind": "digital",
+          "name": "机柜02_遥信09"
+        },
+        "aux74": {
+          "kind": "digital",
+          "name": "机柜02_遥信10"
+        },
+        "aux75": {
+          "kind": "digital",
+          "name": "机柜02_遥信11"
+        },
+        "aux76": {
+          "kind": "digital",
+          "name": "机柜02_遥信12"
+        },
+        "aux77": {
+          "kind": "digital",
+          "name": "机柜02_遥信13"
+        },
+        "aux78": {
+          "kind": "digital",
+          "name": "机柜02_遥信14"
+        },
+        "aux79": {
+          "kind": "digital",
+          "name": "机柜02_遥信15"
+        },
+        "aux80": {
+          "kind": "digital",
+          "name": "机柜02_遥信16"
+        },
+        "aux81": {
+          "kind": "digital",
+          "name": "机柜02_遥信17"
+        },
+        "aux82": {
+          "kind": "digital",
+          "name": "机柜02_遥信18"
+        },
+        "aux83": {
+          "kind": "digital",
+          "name": "机柜02_遥信19"
+        },
+        "aux84": {
+          "kind": "digital",
+          "name": "机柜02_遥信20"
+        },
+        "aux85": {
+          "kind": "digital",
+          "name": "机柜02_遥信21"
+        },
+        "aux86": {
+          "kind": "digital",
+          "name": "机柜02_遥信22"
+        },
+        "aux87": {
+          "kind": "digital",
+          "name": "机柜02_遥信23"
+        },
+        "aux88": {
+          "kind": "digital",
+          "name": "机柜02_遥信24"
+        },
+        "aux89": {
+          "kind": "digital",
+          "name": "机柜02_遥信25"
+        },
+        "aux90": {
+          "kind": "digital",
+          "name": "机柜02_遥信26"
+        },
+        "aux91": {
+          "kind": "digital",
+          "name": "机柜02_遥信27"
+        },
+        "aux92": {
+          "kind": "digital",
+          "name": "机柜02_遥信28"
+        },
+        "aux93": {
+          "kind": "digital",
+          "name": "机柜02_遥信29"
+        },
+        "aux94": {
+          "kind": "digital",
+          "name": "机柜02_遥信30"
+        },
+        "aux95": {
+          "kind": "digital",
+          "name": "机柜02_遥信31"
+        },
+        "aux96": {
+          "kind": "digital",
+          "name": "机柜03_遥信00"
+        },
+        "aux97": {
+          "kind": "digital",
+          "name": "机柜03_遥信01"
+        },
+        "aux98": {
+          "kind": "digital",
+          "name": "机柜03_遥信02"
+        },
+        "aux99": {
+          "kind": "digital",
+          "name": "机柜03_遥信03"
+        },
+        "aux100": {
+          "kind": "digital",
+          "name": "机柜03_遥信04"
+        },
+        "aux101": {
+          "kind": "digital",
+          "name": "机柜03_遥信05"
+        },
+        "aux102": {
+          "kind": "digital",
+          "name": "机柜03_遥信06"
+        },
+        "aux103": {
+          "kind": "digital",
+          "name": "机柜03_遥信07"
+        }
+      },
+      "tests": [
+        {
+          "id": "CLOSE",
+          "name": "CLOSE",
+          "type": "digital_edge",
+          "channel": "closed",
+          "window": [
+            0,
+            0.12
+          ],
+          "trigger": {
+            "type": "digital_edge",
+            "channel": "pre",
+            "edge": "rising"
+          },
+          "edge": "rising",
+          "count": 1,
+          "latency_min_s": 0.02,
+          "latency_max_s": 0.09,
+          "noise": {
+            "rise_s": 0.002,
+            "fall_s": 0.002,
+            "max_rejected_edges": 8,
+            "max_chatter_s": 0.01,
+            "timing_guard": true
+          }
+        }
+      ]
+    },
+    "config_sha256": "f05fabd344793f936251b66d57aed559dfd3b625c9d1d7d1fa022fe30f1acf60",
+    "results": [
+      {
+        "id": "CLOSE",
+        "name": "CLOSE",
+        "type": "digital_edge",
+        "channel": "closed",
+        "standard": {
+          "reference": "工程回归 / 非国标限值",
+          "clause": "合成数据验证",
+          "reviewed": false
+        },
+        "metrics": {
+          "edge_count": 1,
+          "latencies_s": [
+            0.044999999999999984
+          ]
+        },
+        "checks": [
+          {
+            "metric": "edge_count",
+            "value": 1,
+            "min": 1,
+            "max": 1,
+            "status": "PASS",
+            "reason": "满足限值"
+          },
+          {
+            "metric": "latency_1_s",
+            "value": 0.044999999999999984,
+            "min": 0.02,
+            "max": 0.09,
+            "status": "PASS",
+            "reason": "满足限值"
+          },
+          {
+            "metric": "rejected_edges",
+            "value": 4,
+            "min": null,
+            "max": 8,
+            "status": "PASS",
+            "reason": "满足限值"
+          },
+          {
+            "metric": "longest_chatter_s",
+            "value": 0.0040000000000000036,
+            "min": null,
+            "max": 0.01,
+            "status": "PASS",
+            "reason": "满足限值"
+          }
+        ],
+        "evidence": {
+          "trigger": {
+            "type": "digital_edge",
+            "channel": "pre",
+            "occurrence": 1,
+            "hits": 1,
+            "at": 0.36,
+            "support_s": [
+              0.3595,
+              0.36
+            ],
+            "uncertainty_s": 0.0005000000000000004,
+            "qualified_event": {
+              "time_s": 0.36,
+              "from": 0,
+              "to": 1,
+              "confirmed_s": 0.36
+            },
+            "validated_prefix_end_s": 0.36,
+            "hits_note": "hits 为整个搜索范围的候选数；仅所选 occurrence 及其之前证据已校验"
+          },
+          "window_absolute_s": [
+            0.36,
+            0.48
+          ],
+          "mapping": {
+            "alias": "closed",
+            "key": "D4",
+            "name": "主接触器反馈",
+            "native_unit": "",
+            "output_unit": "",
+            "side": "native",
+            "scale": 1,
+            "offset": 0.0,
+            "factor_including_ratio": 1.0,
+            "skew_us": 0.0
+          },
+          "max_sample_interval_s": 0.0005000000000000004,
+          "digital_noise": {
+            "raw_edges": 5,
+            "qualified_edges": 1,
+            "rejected_edges": 4,
+            "rejected_runs": [
+              {
+                "start_s": 0.39699999999999996,
+                "end_s": 0.39799999999999996,
+                "width_s": 0.0010000000000000009,
+                "level": 1,
+                "raw_edges": 2,
+                "support_s": [
+                  0.39649999999999996,
+                  0.39799999999999996
+                ]
+              },
+              {
+                "start_s": 0.39999999999999997,
+                "end_s": 0.40099999999999997,
+                "width_s": 0.0010000000000000009,
+                "level": 1,
+                "raw_edges": 2,
+                "support_s": [
+                  0.39949999999999997,
+                  0.40099999999999997
+                ]
+              }
+            ],
+            "burst_windows_s": [
+              [
+                0.39699999999999996,
+                0.40099999999999997
+              ]
+            ],
+            "longest_chatter_s": 0.0040000000000000036,
+            "audit_truncated": false,
+            "configuration": {
+              "rise_s": 0.002,
+              "fall_s": 0.002,
+              "max_rejected_edges": 8,
+              "max_chatter_s": 0.01,
+              "timing_guard": true
+            },
+            "note": "去抖只执行显式配置，不能证明被抑制的脉冲不是保护动作。保护通道请保留原始断言。"
+          },
+          "events": [
+            {
+              "time_s": 0.40499999999999997,
+              "from": 0,
+              "to": 1,
+              "confirmed_s": 0.407,
+              "support_s": [
+                0.40449999999999997,
+                0.40499999999999997
+              ],
+              "confirmation_sample_s": 0.407
+            }
+          ],
+          "processed_trace": [
+            [
+              0.36,
+              0.0
+            ],
+            [
+              0.3605,
+              0.0
+            ],
+            [
+              0.361,
+              0.0
+            ],
+            [
+              0.3615,
+              0.0
+            ],
+            [
+              0.362,
+              0.0
+            ],
+            [
+              0.3625,
+              0.0
+            ],
+            [
+              0.363,
+              0.0
+            ],
+            [
+              0.3635,
+              0.0
+            ],
+            [
+              0.364,
+              0.0
+            ],
+            [
+              0.3645,
+              0.0
+            ],
+            [
+              0.365,
+              0.0
+            ],
+            [
+              0.3655,
+              0.0
+            ],
+            [
+              0.366,
+              0.0
+            ],
+            [
+              0.3665,
+              0.0
+            ],
+            [
+              0.367,
+              0.0
+            ],
+            [
+              0.3675,
+              0.0
+            ],
+            [
+              0.368,
+              0.0
+            ],
+            [
+              0.3685,
+              0.0
+            ],
+            [
+              0.369,
+              0.0
+            ],
+            [
+              0.3695,
+              0.0
+            ],
+            [
+              0.37,
+              0.0
+            ],
+            [
+              0.3705,
+              0.0
+            ],
+            [
+              0.371,
+              0.0
+            ],
+            [
+              0.3715,
+              0.0
+            ],
+            [
+              0.372,
+              0.0
+            ],
+            [
+              0.3725,
+              0.0
+            ],
+            [
+              0.373,
+              0.0
+            ],
+            [
+              0.3735,
+              0.0
+            ],
+            [
+              0.374,
+              0.0
+            ],
+            [
+              0.3745,
+              0.0
+            ],
+            [
+              0.375,
+              0.0
+            ],
+            [
+              0.3755,
+              0.0
+            ],
+            [
+              0.376,
+              0.0
+            ],
+            [
+              0.3765,
+              0.0
+            ],
+            [
+              0.377,
+              0.0
+            ],
+            [
+              0.3775,
+              0.0
+            ],
+            [
+              0.378,
+              0.0
+            ],
+            [
+              0.3785,
+              0.0
+            ],
+            [
+              0.379,
+              0.0
+            ],
+            [
+              0.3795,
+              0.0
+            ],
+            [
+              0.38,
+              0.0
+            ],
+            [
+              0.3805,
+              0.0
+            ],
+            [
+              0.381,
+              0.0
+            ],
+            [
+              0.3815,
+              0.0
+            ],
+            [
+              0.382,
+              0.0
+            ],
+            [
+              0.3825,
+              0.0
+            ],
+            [
+              0.383,
+              0.0
+            ],
+            [
+              0.3835,
+              0.0
+            ],
+            [
+              0.384,
+              0.0
+            ],
+            [
+              0.3845,
+              0.0
+            ],
+            [
+              0.385,
+              0.0
+            ],
+            [
+              0.3855,
+              0.0
+            ],
+            [
+              0.386,
+              0.0
+            ],
+            [
+              0.3865,
+              0.0
+            ],
+            [
+              0.38699999999999996,
+              0.0
+            ],
+            [
+              0.38749999999999996,
+              0.0
+            ],
+            [
+              0.38799999999999996,
+              0.0
+            ],
+            [
+              0.38849999999999996,
+              0.0
+            ],
+            [
+              0.38899999999999996,
+              0.0
+            ],
+            [
+              0.38949999999999996,
+              0.0
+            ],
+            [
+              0.38999999999999996,
+              0.0
+            ],
+            [
+              0.39049999999999996,
+              0.0
+            ],
+            [
+              0.39099999999999996,
+              0.0
+            ],
+            [
+              0.39149999999999996,
+              0.0
+            ],
+            [
+              0.39199999999999996,
+              0.0
+            ],
+            [
+              0.39249999999999996,
+              0.0
+            ],
+            [
+              0.39299999999999996,
+              0.0
+            ],
+            [
+              0.39349999999999996,
+              0.0
+            ],
+            [
+              0.39399999999999996,
+              0.0
+            ],
+            [
+              0.39449999999999996,
+              0.0
+            ],
+            [
+              0.39499999999999996,
+              0.0
+            ],
+            [
+              0.39549999999999996,
+              0.0
+            ],
+            [
+              0.39599999999999996,
+              0.0
+            ],
+            [
+              0.39649999999999996,
+              0.0
+            ],
+            [
+              0.39699999999999996,
+              0.0
+            ],
+            [
+              0.39749999999999996,
+              0.0
+            ],
+            [
+              0.39799999999999996,
+              0.0
+            ],
+            [
+              0.39849999999999997,
+              0.0
+            ],
+            [
+              0.39899999999999997,
+              0.0
+            ],
+            [
+              0.39949999999999997,
+              0.0
+            ],
+            [
+              0.39999999999999997,
+              0.0
+            ],
+            [
+              0.40049999999999997,
+              0.0
+            ],
+            [
+              0.40099999999999997,
+              0.0
+            ],
+            [
+              0.40149999999999997,
+              0.0
+            ],
+            [
+              0.40199999999999997,
+              0.0
+            ],
+            [
+              0.40249999999999997,
+              0.0
+            ],
+            [
+              0.40299999999999997,
+              0.0
+            ],
+            [
+              0.40349999999999997,
+              0.0
+            ],
+            [
+              0.40399999999999997,
+              0.0
+            ],
+            [
+              0.40449999999999997,
+              0.0
+            ],
+            [
+              0.40499999999999997,
+              1.0
+            ],
+            [
+              0.40549999999999997,
+              1.0
+            ],
+            [
+              0.40599999999999997,
+              1.0
+            ],
+            [
+              0.4065,
+              1.0
+            ],
+            [
+              0.407,
+              1.0
+            ],
+            [
+              0.4075,
+              1.0
+            ],
+            [
+              0.408,
+              1.0
+            ],
+            [
+              0.4085,
+              1.0
+            ],
+            [
+              0.409,
+              1.0
+            ],
+            [
+              0.4095,
+              1.0
+            ],
+            [
+              0.41,
+              1.0
+            ],
+            [
+              0.4105,
+              1.0
+            ],
+            [
+              0.411,
+              1.0
+            ],
+            [
+              0.4115,
+              1.0
+            ],
+            [
+              0.412,
+              1.0
+            ],
+            [
+              0.4125,
+              1.0
+            ],
+            [
+              0.413,
+              1.0
+            ],
+            [
+              0.4135,
+              1.0
+            ],
+            [
+              0.414,
+              1.0
+            ],
+            [
+              0.4145,
+              1.0
+            ],
+            [
+              0.415,
+              1.0
+            ],
+            [
+              0.4155,
+              1.0
+            ],
+            [
+              0.416,
+              1.0
+            ],
+            [
+              0.4165,
+              1.0
+            ],
+            [
+              0.417,
+              1.0
+            ],
+            [
+              0.4175,
+              1.0
+            ],
+            [
+              0.418,
+              1.0
+            ],
+            [
+              0.4185,
+              1.0
+            ],
+            [
+              0.419,
+              1.0
+            ],
+            [
+              0.4195,
+              1.0
+            ],
+            [
+              0.42,
+              1.0
+            ],
+            [
+              0.4205,
+              1.0
+            ],
+            [
+              0.421,
+              1.0
+            ],
+            [
+              0.4215,
+              1.0
+            ],
+            [
+              0.422,
+              1.0
+            ],
+            [
+              0.4225,
+              1.0
+            ],
+            [
+              0.423,
+              1.0
+            ],
+            [
+              0.4235,
+              1.0
+            ],
+            [
+              0.424,
+              1.0
+            ],
+            [
+              0.4245,
+              1.0
+            ],
+            [
+              0.425,
+              1.0
+            ],
+            [
+              0.4255,
+              1.0
+            ],
+            [
+              0.426,
+              1.0
+            ],
+            [
+              0.4265,
+              1.0
+            ],
+            [
+              0.427,
+              1.0
+            ],
+            [
+              0.4275,
+              1.0
+            ],
+            [
+              0.428,
+              1.0
+            ],
+            [
+              0.4285,
+              1.0
+            ],
+            [
+              0.429,
+              1.0
+            ],
+            [
+              0.4295,
+              1.0
+            ],
+            [
+              0.43,
+              1.0
+            ],
+            [
+              0.4305,
+              1.0
+            ],
+            [
+              0.431,
+              1.0
+            ],
+            [
+              0.4315,
+              1.0
+            ],
+            [
+              0.432,
+              1.0
+            ],
+            [
+              0.4325,
+              1.0
+            ],
+            [
+              0.433,
+              1.0
+            ],
+            [
+              0.4335,
+              1.0
+            ],
+            [
+              0.434,
+              1.0
+            ],
+            [
+              0.4345,
+              1.0
+            ],
+            [
+              0.435,
+              1.0
+            ],
+            [
+              0.4355,
+              1.0
+            ],
+            [
+              0.436,
+              1.0
+            ],
+            [
+              0.4365,
+              1.0
+            ],
+            [
+              0.437,
+              1.0
+            ],
+            [
+              0.4375,
+              1.0
+            ],
+            [
+              0.438,
+              1.0
+            ],
+            [
+              0.4385,
+              1.0
+            ],
+            [
+              0.439,
+              1.0
+            ],
+            [
+              0.4395,
+              1.0
+            ],
+            [
+              0.44,
+              1.0
+            ],
+            [
+              0.4405,
+              1.0
+            ],
+            [
+              0.441,
+              1.0
+            ],
+            [
+              0.4415,
+              1.0
+            ],
+            [
+              0.442,
+              1.0
+            ],
+            [
+              0.4425,
+              1.0
+            ],
+            [
+              0.443,
+              1.0
+            ],
+            [
+              0.4435,
+              1.0
+            ],
+            [
+              0.444,
+              1.0
+            ],
+            [
+              0.4445,
+              1.0
+            ],
+            [
+              0.445,
+              1.0
+            ],
+            [
+              0.4455,
+              1.0
+            ],
+            [
+              0.446,
+              1.0
+            ],
+            [
+              0.44649999999999995,
+              1.0
+            ],
+            [
+              0.44699999999999995,
+              1.0
+            ],
+            [
+              0.44749999999999995,
+              1.0
+            ],
+            [
+              0.44799999999999995,
+              1.0
+            ],
+            [
+              0.44849999999999995,
+              1.0
+            ],
+            [
+              0.44899999999999995,
+              1.0
+            ],
+            [
+              0.44949999999999996,
+              1.0
+            ],
+            [
+              0.44999999999999996,
+              1.0
+            ],
+            [
+              0.45049999999999996,
+              1.0
+            ],
+            [
+              0.45099999999999996,
+              1.0
+            ],
+            [
+              0.45149999999999996,
+              1.0
+            ],
+            [
+              0.45199999999999996,
+              1.0
+            ],
+            [
+              0.45249999999999996,
+              1.0
+            ],
+            [
+              0.45299999999999996,
+              1.0
+            ],
+            [
+              0.45349999999999996,
+              1.0
+            ],
+            [
+              0.45399999999999996,
+              1.0
+            ],
+            [
+              0.45449999999999996,
+              1.0
+            ],
+            [
+              0.45499999999999996,
+              1.0
+            ],
+            [
+              0.45549999999999996,
+              1.0
+            ],
+            [
+              0.45599999999999996,
+              1.0
+            ],
+            [
+              0.45649999999999996,
+              1.0
+            ],
+            [
+              0.45699999999999996,
+              1.0
+            ],
+            [
+              0.45749999999999996,
+              1.0
+            ],
+            [
+              0.45799999999999996,
+              1.0
+            ],
+            [
+              0.45849999999999996,
+              1.0
+            ],
+            [
+              0.45899999999999996,
+              1.0
+            ],
+            [
+              0.45949999999999996,
+              1.0
+            ],
+            [
+              0.45999999999999996,
+              1.0
+            ],
+            [
+              0.46049999999999996,
+              1.0
+            ],
+            [
+              0.46099999999999997,
+              1.0
+            ],
+            [
+              0.46149999999999997,
+              1.0
+            ],
+            [
+              0.46199999999999997,
+              1.0
+            ],
+            [
+              0.46249999999999997,
+              1.0
+            ],
+            [
+              0.46299999999999997,
+              1.0
+            ],
+            [
+              0.46349999999999997,
+              1.0
+            ],
+            [
+              0.46399999999999997,
+              1.0
+            ],
+            [
+              0.46449999999999997,
+              1.0
+            ],
+            [
+              0.46499999999999997,
+              1.0
+            ],
+            [
+              0.46549999999999997,
+              1.0
+            ],
+            [
+              0.46599999999999997,
+              1.0
+            ],
+            [
+              0.46649999999999997,
+              1.0
+            ],
+            [
+              0.46699999999999997,
+              1.0
+            ],
+            [
+              0.46749999999999997,
+              1.0
+            ],
+            [
+              0.46799999999999997,
+              1.0
+            ],
+            [
+              0.46849999999999997,
+              1.0
+            ],
+            [
+              0.469,
+              1.0
+            ],
+            [
+              0.4695,
+              1.0
+            ],
+            [
+              0.47,
+              1.0
+            ],
+            [
+              0.4705,
+              1.0
+            ],
+            [
+              0.471,
+              1.0
+            ],
+            [
+              0.4715,
+              1.0
+            ],
+            [
+              0.472,
+              1.0
+            ],
+            [
+              0.4725,
+              1.0
+            ],
+            [
+              0.473,
+              1.0
+            ],
+            [
+              0.4735,
+              1.0
+            ],
+            [
+              0.474,
+              1.0
+            ],
+            [
+              0.4745,
+              1.0
+            ],
+            [
+              0.475,
+              1.0
+            ],
+            [
+              0.4755,
+              1.0
+            ],
+            [
+              0.476,
+              1.0
+            ],
+            [
+              0.4765,
+              1.0
+            ],
+            [
+              0.477,
+              1.0
+            ],
+            [
+              0.4775,
+              1.0
+            ],
+            [
+              0.478,
+              1.0
+            ],
+            [
+              0.4785,
+              1.0
+            ],
+            [
+              0.479,
+              1.0
+            ],
+            [
+              0.4795,
+              1.0
+            ],
+            [
+              0.48,
+              1.0
+            ]
+          ],
+          "timing_review_guard_s": 0.0010000000000000009,
+          "debounce_s": 0,
+          "raw_trace": [
+            [
+              0.36,
+              0.0
+            ],
+            [
+              0.3605,
+              0.0
+            ],
+            [
+              0.361,
+              0.0
+            ],
+            [
+              0.3615,
+              0.0
+            ],
+            [
+              0.362,
+              0.0
+            ],
+            [
+              0.3625,
+              0.0
+            ],
+            [
+              0.363,
+              0.0
+            ],
+            [
+              0.3635,
+              0.0
+            ],
+            [
+              0.364,
+              0.0
+            ],
+            [
+              0.3645,
+              0.0
+            ],
+            [
+              0.365,
+              0.0
+            ],
+            [
+              0.3655,
+              0.0
+            ],
+            [
+              0.366,
+              0.0
+            ],
+            [
+              0.3665,
+              0.0
+            ],
+            [
+              0.367,
+              0.0
+            ],
+            [
+              0.3675,
+              0.0
+            ],
+            [
+              0.368,
+              0.0
+            ],
+            [
+              0.3685,
+              0.0
+            ],
+            [
+              0.369,
+              0.0
+            ],
+            [
+              0.3695,
+              0.0
+            ],
+            [
+              0.37,
+              0.0
+            ],
+            [
+              0.3705,
+              0.0
+            ],
+            [
+              0.371,
+              0.0
+            ],
+            [
+              0.3715,
+              0.0
+            ],
+            [
+              0.372,
+              0.0
+            ],
+            [
+              0.3725,
+              0.0
+            ],
+            [
+              0.373,
+              0.0
+            ],
+            [
+              0.3735,
+              0.0
+            ],
+            [
+              0.374,
+              0.0
+            ],
+            [
+              0.3745,
+              0.0
+            ],
+            [
+              0.375,
+              0.0
+            ],
+            [
+              0.3755,
+              0.0
+            ],
+            [
+              0.376,
+              0.0
+            ],
+            [
+              0.3765,
+              0.0
+            ],
+            [
+              0.377,
+              0.0
+            ],
+            [
+              0.3775,
+              0.0
+            ],
+            [
+              0.378,
+              0.0
+            ],
+            [
+              0.3785,
+              0.0
+            ],
+            [
+              0.379,
+              0.0
+            ],
+            [
+              0.3795,
+              0.0
+            ],
+            [
+              0.38,
+              0.0
+            ],
+            [
+              0.3805,
+              0.0
+            ],
+            [
+              0.381,
+              0.0
+            ],
+            [
+              0.3815,
+              0.0
+            ],
+            [
+              0.382,
+              0.0
+            ],
+            [
+              0.3825,
+              0.0
+            ],
+            [
+              0.383,
+              0.0
+            ],
+            [
+              0.3835,
+              0.0
+            ],
+            [
+              0.384,
+              0.0
+            ],
+            [
+              0.3845,
+              0.0
+            ],
+            [
+              0.385,
+              0.0
+            ],
+            [
+              0.3855,
+              0.0
+            ],
+            [
+              0.386,
+              0.0
+            ],
+            [
+              0.3865,
+              0.0
+            ],
+            [
+              0.38699999999999996,
+              0.0
+            ],
+            [
+              0.38749999999999996,
+              0.0
+            ],
+            [
+              0.38799999999999996,
+              0.0
+            ],
+            [
+              0.38849999999999996,
+              0.0
+            ],
+            [
+              0.38899999999999996,
+              0.0
+            ],
+            [
+              0.38949999999999996,
+              0.0
+            ],
+            [
+              0.38999999999999996,
+              0.0
+            ],
+            [
+              0.39049999999999996,
+              0.0
+            ],
+            [
+              0.39099999999999996,
+              0.0
+            ],
+            [
+              0.39149999999999996,
+              0.0
+            ],
+            [
+              0.39199999999999996,
+              0.0
+            ],
+            [
+              0.39249999999999996,
+              0.0
+            ],
+            [
+              0.39299999999999996,
+              0.0
+            ],
+            [
+              0.39349999999999996,
+              0.0
+            ],
+            [
+              0.39399999999999996,
+              0.0
+            ],
+            [
+              0.39449999999999996,
+              0.0
+            ],
+            [
+              0.39499999999999996,
+              0.0
+            ],
+            [
+              0.39549999999999996,
+              0.0
+            ],
+            [
+              0.39599999999999996,
+              0.0
+            ],
+            [
+              0.39649999999999996,
+              0.0
+            ],
+            [
+              0.39699999999999996,
+              1.0
+            ],
+            [
+              0.39749999999999996,
+              1.0
+            ],
+            [
+              0.39799999999999996,
+              0.0
+            ],
+            [
+              0.39849999999999997,
+              0.0
+            ],
+            [
+              0.39899999999999997,
+              0.0
+            ],
+            [
+              0.39949999999999997,
+              0.0
+            ],
+            [
+              0.39999999999999997,
+              1.0
+            ],
+            [
+              0.40049999999999997,
+              1.0
+            ],
+            [
+              0.40099999999999997,
+              0.0
+            ],
+            [
+              0.40149999999999997,
+              0.0
+            ],
+            [
+              0.40199999999999997,
+              0.0
+            ],
+            [
+              0.40249999999999997,
+              0.0
+            ],
+            [
+              0.40299999999999997,
+              0.0
+            ],
+            [
+              0.40349999999999997,
+              0.0
+            ],
+            [
+              0.40399999999999997,
+              0.0
+            ],
+            [
+              0.40449999999999997,
+              0.0
+            ],
+            [
+              0.40499999999999997,
+              1.0
+            ],
+            [
+              0.40549999999999997,
+              1.0
+            ],
+            [
+              0.40599999999999997,
+              1.0
+            ],
+            [
+              0.4065,
+              1.0
+            ],
+            [
+              0.407,
+              1.0
+            ],
+            [
+              0.4075,
+              1.0
+            ],
+            [
+              0.408,
+              1.0
+            ],
+            [
+              0.4085,
+              1.0
+            ],
+            [
+              0.409,
+              1.0
+            ],
+            [
+              0.4095,
+              1.0
+            ],
+            [
+              0.41,
+              1.0
+            ],
+            [
+              0.4105,
+              1.0
+            ],
+            [
+              0.411,
+              1.0
+            ],
+            [
+              0.4115,
+              1.0
+            ],
+            [
+              0.412,
+              1.0
+            ],
+            [
+              0.4125,
+              1.0
+            ],
+            [
+              0.413,
+              1.0
+            ],
+            [
+              0.4135,
+              1.0
+            ],
+            [
+              0.414,
+              1.0
+            ],
+            [
+              0.4145,
+              1.0
+            ],
+            [
+              0.415,
+              1.0
+            ],
+            [
+              0.4155,
+              1.0
+            ],
+            [
+              0.416,
+              1.0
+            ],
+            [
+              0.4165,
+              1.0
+            ],
+            [
+              0.417,
+              1.0
+            ],
+            [
+              0.4175,
+              1.0
+            ],
+            [
+              0.418,
+              1.0
+            ],
+            [
+              0.4185,
+              1.0
+            ],
+            [
+              0.419,
+              1.0
+            ],
+            [
+              0.4195,
+              1.0
+            ],
+            [
+              0.42,
+              1.0
+            ],
+            [
+              0.4205,
+              1.0
+            ],
+            [
+              0.421,
+              1.0
+            ],
+            [
+              0.4215,
+              1.0
+            ],
+            [
+              0.422,
+              1.0
+            ],
+            [
+              0.4225,
+              1.0
+            ],
+            [
+              0.423,
+              1.0
+            ],
+            [
+              0.4235,
+              1.0
+            ],
+            [
+              0.424,
+              1.0
+            ],
+            [
+              0.4245,
+              1.0
+            ],
+            [
+              0.425,
+              1.0
+            ],
+            [
+              0.4255,
+              1.0
+            ],
+            [
+              0.426,
+              1.0
+            ],
+            [
+              0.4265,
+              1.0
+            ],
+            [
+              0.427,
+              1.0
+            ],
+            [
+              0.4275,
+              1.0
+            ],
+            [
+              0.428,
+              1.0
+            ],
+            [
+              0.4285,
+              1.0
+            ],
+            [
+              0.429,
+              1.0
+            ],
+            [
+              0.4295,
+              1.0
+            ],
+            [
+              0.43,
+              1.0
+            ],
+            [
+              0.4305,
+              1.0
+            ],
+            [
+              0.431,
+              1.0
+            ],
+            [
+              0.4315,
+              1.0
+            ],
+            [
+              0.432,
+              1.0
+            ],
+            [
+              0.4325,
+              1.0
+            ],
+            [
+              0.433,
+              1.0
+            ],
+            [
+              0.4335,
+              1.0
+            ],
+            [
+              0.434,
+              1.0
+            ],
+            [
+              0.4345,
+              1.0
+            ],
+            [
+              0.435,
+              1.0
+            ],
+            [
+              0.4355,
+              1.0
+            ],
+            [
+              0.436,
+              1.0
+            ],
+            [
+              0.4365,
+              1.0
+            ],
+            [
+              0.437,
+              1.0
+            ],
+            [
+              0.4375,
+              1.0
+            ],
+            [
+              0.438,
+              1.0
+            ],
+            [
+              0.4385,
+              1.0
+            ],
+            [
+              0.439,
+              1.0
+            ],
+            [
+              0.4395,
+              1.0
+            ],
+            [
+              0.44,
+              1.0
+            ],
+            [
+              0.4405,
+              1.0
+            ],
+            [
+              0.441,
+              1.0
+            ],
+            [
+              0.4415,
+              1.0
+            ],
+            [
+              0.442,
+              1.0
+            ],
+            [
+              0.4425,
+              1.0
+            ],
+            [
+              0.443,
+              1.0
+            ],
+            [
+              0.4435,
+              1.0
+            ],
+            [
+              0.444,
+              1.0
+            ],
+            [
+              0.4445,
+              1.0
+            ],
+            [
+              0.445,
+              1.0
+            ],
+            [
+              0.4455,
+              1.0
+            ],
+            [
+              0.446,
+              1.0
+            ],
+            [
+              0.44649999999999995,
+              1.0
+            ],
+            [
+              0.44699999999999995,
+              1.0
+            ],
+            [
+              0.44749999999999995,
+              1.0
+            ],
+            [
+              0.44799999999999995,
+              1.0
+            ],
+            [
+              0.44849999999999995,
+              1.0
+            ],
+            [
+              0.44899999999999995,
+              1.0
+            ],
+            [
+              0.44949999999999996,
+              1.0
+            ],
+            [
+              0.44999999999999996,
+              1.0
+            ],
+            [
+              0.45049999999999996,
+              1.0
+            ],
+            [
+              0.45099999999999996,
+              1.0
+            ],
+            [
+              0.45149999999999996,
+              1.0
+            ],
+            [
+              0.45199999999999996,
+              1.0
+            ],
+            [
+              0.45249999999999996,
+              1.0
+            ],
+            [
+              0.45299999999999996,
+              1.0
+            ],
+            [
+              0.45349999999999996,
+              1.0
+            ],
+            [
+              0.45399999999999996,
+              1.0
+            ],
+            [
+              0.45449999999999996,
+              1.0
+            ],
+            [
+              0.45499999999999996,
+              1.0
+            ],
+            [
+              0.45549999999999996,
+              1.0
+            ],
+            [
+              0.45599999999999996,
+              1.0
+            ],
+            [
+              0.45649999999999996,
+              1.0
+            ],
+            [
+              0.45699999999999996,
+              1.0
+            ],
+            [
+              0.45749999999999996,
+              1.0
+            ],
+            [
+              0.45799999999999996,
+              1.0
+            ],
+            [
+              0.45849999999999996,
+              1.0
+            ],
+            [
+              0.45899999999999996,
+              1.0
+            ],
+            [
+              0.45949999999999996,
+              1.0
+            ],
+            [
+              0.45999999999999996,
+              1.0
+            ],
+            [
+              0.46049999999999996,
+              1.0
+            ],
+            [
+              0.46099999999999997,
+              1.0
+            ],
+            [
+              0.46149999999999997,
+              1.0
+            ],
+            [
+              0.46199999999999997,
+              1.0
+            ],
+            [
+              0.46249999999999997,
+              1.0
+            ],
+            [
+              0.46299999999999997,
+              1.0
+            ],
+            [
+              0.46349999999999997,
+              1.0
+            ],
+            [
+              0.46399999999999997,
+              1.0
+            ],
+            [
+              0.46449999999999997,
+              1.0
+            ],
+            [
+              0.46499999999999997,
+              1.0
+            ],
+            [
+              0.46549999999999997,
+              1.0
+            ],
+            [
+              0.46599999999999997,
+              1.0
+            ],
+            [
+              0.46649999999999997,
+              1.0
+            ],
+            [
+              0.46699999999999997,
+              1.0
+            ],
+            [
+              0.46749999999999997,
+              1.0
+            ],
+            [
+              0.46799999999999997,
+              1.0
+            ],
+            [
+              0.46849999999999997,
+              1.0
+            ],
+            [
+              0.469,
+              1.0
+            ],
+            [
+              0.4695,
+              1.0
+            ],
+            [
+              0.47,
+              1.0
+            ],
+            [
+              0.4705,
+              1.0
+            ],
+            [
+              0.471,
+              1.0
+            ],
+            [
+              0.4715,
+              1.0
+            ],
+            [
+              0.472,
+              1.0
+            ],
+            [
+              0.4725,
+              1.0
+            ],
+            [
+              0.473,
+              1.0
+            ],
+            [
+              0.4735,
+              1.0
+            ],
+            [
+              0.474,
+              1.0
+            ],
+            [
+              0.4745,
+              1.0
+            ],
+            [
+              0.475,
+              1.0
+            ],
+            [
+              0.4755,
+              1.0
+            ],
+            [
+              0.476,
+              1.0
+            ],
+            [
+              0.4765,
+              1.0
+            ],
+            [
+              0.477,
+              1.0
+            ],
+            [
+              0.4775,
+              1.0
+            ],
+            [
+              0.478,
+              1.0
+            ],
+            [
+              0.4785,
+              1.0
+            ],
+            [
+              0.479,
+              1.0
+            ],
+            [
+              0.4795,
+              1.0
+            ],
+            [
+              0.48,
+              1.0
+            ]
+          ],
+          "trace_kind": "digital"
+        },
+        "status": "PASS",
+        "reason": "全部断言满足配置限值"
+      }
+    ],
+    "notice": "结果仅表示满足当前配置断言，不代表已取得国标符合性认证。示例阈值不属于标准原文。"
+  }
+}

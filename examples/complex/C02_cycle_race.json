@@ -1,0 +1,509 @@
+{
+  "schema_version": 1,
+  "name": "第二段反馈迟到 + 预充/合闸次序颠倒",
+  "description": "复合合成工况；每项预期结论独立列于 manifest。",
+  "standard": {
+    "reference": "工程回归 / 非国标限值",
+    "clause": "合成数据验证",
+    "reviewed": false
+  },
+  "channels": {
+    "power": {
+      "kind": "analog",
+      "name": "PCS有功功率",
+      "unit": "kW"
+    },
+    "target": {
+      "kind": "analog",
+      "name": "有功设定值",
+      "unit": "kW"
+    },
+    "dc": {
+      "kind": "analog",
+      "name": "直流母线",
+      "unit": "V"
+    },
+    "cmd": {
+      "kind": "digital",
+      "name": "调度命令脉冲"
+    },
+    "ack": {
+      "kind": "digital",
+      "name": "命令确认反馈"
+    },
+    "precharge": {
+      "kind": "digital",
+      "name": "预充脉冲"
+    },
+    "pre_done": {
+      "kind": "digital",
+      "name": "预充完成"
+    },
+    "closed": {
+      "kind": "digital",
+      "name": "主接触器闭合"
+    },
+    "alarm": {
+      "kind": "digital",
+      "name": "故障锁存"
+    },
+    "reset_low": {
+      "kind": "digital",
+      "name": "低有效复归脉冲"
+    },
+    "heartbeat": {
+      "kind": "digital",
+      "name": "心跳"
+    }
+  },
+  "tests": [
+    {
+      "id": "P1",
+      "name": "P1",
+      "type": "analog_step",
+      "channel": "power",
+      "window": [
+        0,
+        2.5
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          9.8
+        ]
+      },
+      "baseline_window": [
+        -0.18,
+        -0.03
+      ],
+      "normalization": "rated",
+      "rated": 100,
+      "steady_last_s": 0.25,
+      "settle_band_pct": 2,
+      "settle_hold_s": 0.1,
+      "limits": {
+        "overshoot_pct_max": 3,
+        "response_s_max": 0.35,
+        "rise_s_max": 0.3,
+        "settling_s_max": 0.6,
+        "steady_error_pct_max": 0.5,
+        "steady_ripple_pp_max": 1
+      },
+      "target_channel": "target",
+      "target_window": [
+        0.02,
+        0.06
+      ],
+      "target_tolerance": 0.01
+    },
+    {
+      "id": "ACK1",
+      "name": "ACK1",
+      "type": "digital_edge",
+      "channel": "ack",
+      "window": [
+        0,
+        0.23
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          9.8
+        ]
+      },
+      "edge": "rising",
+      "count": 1,
+      "debounce_s": 0.004,
+      "latency_min_s": 0.02,
+      "latency_max_s": 0.06
+    },
+    {
+      "id": "PULSE1",
+      "name": "PULSE1",
+      "type": "digital_pulse",
+      "channel": "ack",
+      "window": [
+        0,
+        0.23
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          9.8
+        ]
+      },
+      "active": 1,
+      "count": 1,
+      "debounce_s": 0.004,
+      "min_width_s": 0.034,
+      "max_width_s": 0.036
+    },
+    {
+      "id": "DC1",
+      "name": "DC1",
+      "type": "analog_range",
+      "channel": "dc",
+      "window": [
+        0,
+        2.5
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          9.8
+        ]
+      },
+      "min": 696,
+      "max": 704
+    },
+    {
+      "id": "P2",
+      "name": "P2",
+      "type": "analog_step",
+      "channel": "power",
+      "window": [
+        0,
+        2.5
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 2,
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          9.8
+        ]
+      },
+      "baseline_window": [
+        -0.18,
+        -0.03
+      ],
+      "normalization": "rated",
+      "rated": 100,
+      "steady_last_s": 0.25,
+      "settle_band_pct": 2,
+      "settle_hold_s": 0.1,
+      "limits": {
+        "overshoot_pct_max": 3,
+        "response_s_max": 0.35,
+        "rise_s_max": 0.3,
+        "settling_s_max": 0.6,
+        "steady_error_pct_max": 0.5,
+        "steady_ripple_pp_max": 1
+      },
+      "target_channel": "target",
+      "target_window": [
+        0.02,
+        0.06
+      ],
+      "target_tolerance": 0.01
+    },
+    {
+      "id": "ACK2",
+      "name": "ACK2",
+      "type": "digital_edge",
+      "channel": "ack",
+      "window": [
+        0,
+        0.23
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 2,
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          9.8
+        ]
+      },
+      "edge": "rising",
+      "count": 1,
+      "debounce_s": 0.004,
+      "latency_min_s": 0.02,
+      "latency_max_s": 0.06
+    },
+    {
+      "id": "PULSE2",
+      "name": "PULSE2",
+      "type": "digital_pulse",
+      "channel": "ack",
+      "window": [
+        0,
+        0.23
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 2,
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          9.8
+        ]
+      },
+      "active": 1,
+      "count": 1,
+      "debounce_s": 0.004,
+      "min_width_s": 0.034,
+      "max_width_s": 0.036
+    },
+    {
+      "id": "DC2",
+      "name": "DC2",
+      "type": "analog_range",
+      "channel": "dc",
+      "window": [
+        0,
+        2.5
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 2,
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          9.8
+        ]
+      },
+      "min": 696,
+      "max": 704
+    },
+    {
+      "id": "P3",
+      "name": "P3",
+      "type": "analog_step",
+      "channel": "power",
+      "window": [
+        0,
+        2.5
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 3,
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          9.8
+        ]
+      },
+      "baseline_window": [
+        -0.18,
+        -0.03
+      ],
+      "normalization": "rated",
+      "rated": 100,
+      "steady_last_s": 0.25,
+      "settle_band_pct": 2,
+      "settle_hold_s": 0.1,
+      "limits": {
+        "overshoot_pct_max": 3,
+        "response_s_max": 0.35,
+        "rise_s_max": 0.3,
+        "settling_s_max": 0.6,
+        "steady_error_pct_max": 0.5,
+        "steady_ripple_pp_max": 1
+      },
+      "target_channel": "target",
+      "target_window": [
+        0.02,
+        0.06
+      ],
+      "target_tolerance": 0.01
+    },
+    {
+      "id": "ACK3",
+      "name": "ACK3",
+      "type": "digital_edge",
+      "channel": "ack",
+      "window": [
+        0,
+        0.23
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 3,
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          9.8
+        ]
+      },
+      "edge": "rising",
+      "count": 1,
+      "debounce_s": 0.004,
+      "latency_min_s": 0.02,
+      "latency_max_s": 0.06
+    },
+    {
+      "id": "PULSE3",
+      "name": "PULSE3",
+      "type": "digital_pulse",
+      "channel": "ack",
+      "window": [
+        0,
+        0.23
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 3,
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          9.8
+        ]
+      },
+      "active": 1,
+      "count": 1,
+      "debounce_s": 0.004,
+      "min_width_s": 0.034,
+      "max_width_s": 0.036
+    },
+    {
+      "id": "DC3",
+      "name": "DC3",
+      "type": "analog_range",
+      "channel": "dc",
+      "window": [
+        0,
+        2.5
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 3,
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          9.8
+        ]
+      },
+      "min": 696,
+      "max": 704
+    },
+    {
+      "id": "CMD_COUNT",
+      "name": "CMD_COUNT",
+      "type": "digital_edge",
+      "channel": "cmd",
+      "window": [
+        0,
+        9.8
+      ],
+      "edge": "rising",
+      "count": 3,
+      "debounce_s": 0.003
+    },
+    {
+      "id": "PRECHARGE_WIDTH",
+      "name": "PRECHARGE_WIDTH",
+      "type": "digital_pulse",
+      "channel": "precharge",
+      "window": [
+        0.45,
+        0.7
+      ],
+      "active": 1,
+      "count": 1,
+      "min_width_s": 0.078,
+      "max_width_s": 0.082
+    },
+    {
+      "id": "CLOSE_ORDER",
+      "name": "CLOSE_ORDER",
+      "type": "digital_edge",
+      "channel": "closed",
+      "window": [
+        -0.08,
+        0.12
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "pre_done",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.002,
+        "search": [
+          0.4,
+          0.8
+        ]
+      },
+      "edge": "rising",
+      "count": 1,
+      "latency_min_s": 0.01,
+      "latency_max_s": 0.05
+    },
+    {
+      "id": "NO_ALARM",
+      "name": "NO_ALARM",
+      "type": "digital_hold",
+      "channel": "alarm",
+      "window": [
+        0,
+        9.8
+      ],
+      "value": 0
+    },
+    {
+      "id": "LOW_RESET",
+      "name": "LOW_RESET",
+      "type": "digital_pulse",
+      "channel": "reset_low",
+      "window": [
+        8,
+        8.8
+      ],
+      "active": 0,
+      "count": 2,
+      "min_width_s": 0.029,
+      "max_width_s": 0.031
+    },
+    {
+      "id": "HEARTBEAT",
+      "name": "HEARTBEAT",
+      "type": "digital_pulse",
+      "channel": "heartbeat",
+      "window": [
+        1,
+        2
+      ],
+      "active": 1,
+      "count": 20,
+      "min_width_s": 0.024,
+      "max_width_s": 0.026
+    }
+  ]
+}

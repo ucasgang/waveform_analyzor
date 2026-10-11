@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="三段采样率 + 750 us 偏移 + 变比/单位换算" tests="3" failures="0" errors="0"><properties><property name="config_sha256" value="da9609d2fe1b5781ed28fc44f6a2e69af51aa2744c371829065ed20df200274a" /></properties><testcase name="SKEW_STEP SKEW_STEP" classname="analog_step" /><testcase name="BOUNCED_ACK BOUNCED_ACK" classname="digital_edge" /><testcase name="POST_BAND POST_BAND" classname="analog_range" /></testsuite>

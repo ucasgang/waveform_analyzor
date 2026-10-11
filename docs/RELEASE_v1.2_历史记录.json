@@ -1,0 +1,75 @@
+{
+  "product": "ESS WaveTest",
+  "version": "1.2.0",
+  "release_date": "2026-10-11",
+  "runtime": "Python 3.10+; no third-party runtime dependencies",
+  "actually_executed": "Linux / Python 3.13.5",
+  "features": [
+    "Opt-in time-window Hampel bounded short-island repair and separate median smoothing",
+    "Sustained crossing qualification, fixed-band time occupancy and maximum excursions",
+    "Time-weighted median, MAD/drift/clip data-quality budgets",
+    "Unfiltered raw hard-limit veto and raw/processed peak-conflict review",
+    "Asymmetric digital dwell with suppression audit and chatter budgets",
+    "Schmitt-armed sustained analog triggers",
+    "Full-window processed trace hashing; raw/processed/candidate overlays with interactive time zoom"
+  ],
+  "tests": {
+    "standard_library": 756,
+    "passed": 756,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "new_algorithm_case_and_seeded_checks": 313,
+    "new_real_http_checks": 12,
+    "seeded_holdout_trials": 192,
+    "seeded_holdout_note": "64 disjoint seeds x 3 synthetic families, included in standard library total; not a field accuracy estimate",
+    "base_cases": 23,
+    "complex_cases": 12,
+    "complex_business_assertions": 163,
+    "noise_cases": 32,
+    "noise_cases_matched": 32,
+    "noise_business_assertions": 33,
+    "noise_configuration_rejections": 1,
+    "frontend_new_checks": 29,
+    "frontend_legacy_zoom_checks": 24,
+    "zipapp_real_http_smoke_checks": 16,
+    "zipapp_cli_exitcode_checks": 4,
+    "coverage_v12_pct": null,
+    "counting_note": "Verification layers overlap and must not be summed as independent tests. All expected statuses/metric ranges are predeclared."
+  },
+  "documentation": {
+    "v12_guide_pages": 9,
+    "formats": [
+      "PDF",
+      "HTML"
+    ],
+    "guide": "docs/ESS_WaveTest_v1.2_抗噪算法与复杂波形验证.pdf",
+    "configuration": "docs/CONFIG_REFERENCE.md",
+    "changelog": "docs/CHANGELOG_v1.2.md",
+    "case_dashboard": "reports/噪声工况回归总览.html",
+    "historical_manuals": "v1.0 PDF/DOCX and v1.1 PDF/HTML retained and labelled historical"
+  },
+  "evidence": {
+    "selftests": "reports/selftest_results.json",
+    "noise_cases": "reports/noise_v12/summary.json",
+    "complex_cases": "reports/complex_audit.json",
+    "browser_new": "reports/browser_results_v12.json",
+    "browser_legacy": "reports/browser_results_v11.json",
+    "packaged_http": "reports/release_smoke.json",
+    "packaged_cli": "reports/cli_noise_exitcodes.json",
+    "timing": "reports/benchmark_noise.json",
+    "initial_noise_failures": "reports/noise_adversarial_first.log"
+  },
+  "limits": [
+    "No actual customer/vendor field recording calibration or site acceptance.",
+    "Windows and macOS startup scripts supplied but not natively executed.",
+    "Managed browser blocks direct localhost navigation; UI tests use a Python transport bridge to the real loopback HTTP server. Packaged HTTP tested separately. OS-level downloads not verified.",
+    "All threshold examples are synthetic engineering choices, not an approved standards library.",
+    "Robust analog mode is offline centered and opt-in; it changes explicitly documented measurement definitions. Review guards are not metrological confidence intervals.",
+    "Candidate spikes/suppressed pulses are not proven measurement artifacts; preserve raw protective assertions and calibrate policy before acceptance.",
+    "Legacy segment endpoint interpolation may use bracketing native samples; no gap filling. Trigger/digital qualification uses strict end-of-window native samples.",
+    "Only supported CFG/DAT subset, not formal COMTRADE conformance. No CFF, GOOSE/SV validation, online controls, full harmonic/sequence/power reconstruction.",
+    "New robust fields edited through JSON, no complete graphical noise-parameter wizard.",
+    "No v1.2 coverage percent or field false-positive/false-negative rate claimed. Historical 93% belongs only to v1.0."
+  ]
+}

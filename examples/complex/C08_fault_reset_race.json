@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "name": "故障尚未复归就提前发出就绪反馈",
+  "description": "复合合成工况；每项预期结论独立列于 manifest。",
+  "standard": {
+    "reference": "工程回归 / 非国标限值",
+    "clause": "合成数据验证",
+    "reviewed": false
+  },
+  "channels": {
+    "power": {
+      "kind": "analog",
+      "name": "PCS功率",
+      "unit": "kW"
+    },
+    "dc": {
+      "kind": "analog",
+      "name": "直流电压",
+      "unit": "V"
+    },
+    "fault": {
+      "kind": "digital",
+      "name": "故障注入"
+    },
+    "block": {
+      "kind": "digital",
+      "name": "门极闭锁"
+    },
+    "trip_low": {
+      "kind": "digital",
+      "name": "低有效跳闸脉冲"
+    },
+    "latch": {
+      "kind": "digital",
+      "name": "故障锁存"
+    },
+    "reset": {
+      "kind": "digital",
+      "name": "复归命令"
+    },
+    "ready": {
+      "kind": "digital",
+      "name": "运行就绪"
+    },
+    "closed": {
+      "kind": "digital",
+      "name": "主回路闭合"
+    }
+  },
+  "tests": [
+    {
+      "id": "BLOCK_1",
+      "name": "BLOCK_1",
+      "type": "digital_edge",
+      "channel": "block",
+      "window": [
+        0,
+        0.05
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "fault",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.001,
+        "search": [
+          0.4,
+          2.5
+        ]
+      },
+      "count": 1,
+      "edge": "rising",
+      "latency_min_s": 0.002,
+      "latency_max_s": 0.004
+    },
+    {
+      "id": "OPEN_1",
+      "name": "OPEN_1",
+      "type": "digital_edge",
+      "channel": "closed",
+      "window": [
+        0,
+        0.08
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "fault",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.001,
+        "search": [
+          0.4,
+          2.5
+        ]
+      },
+      "count": 1,
+      "edge": "falling",
+      "latency_min_s": 0.01,
+      "latency_max_s": 0.03
+    },
+    {
+      "id": "TRIP_1",
+      "name": "TRIP_1",
+      "type": "digital_pulse",
+      "channel": "trip_low",
+      "window": [
+        0,
+        0.1
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "fault",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.001,
+        "search": [
+          0.4,
+          2.5
+        ]
+      },
+      "active": 0,
+      "count": 1,
+      "min_width_s": 0.039,
+      "max_width_s": 0.041
+    },
+    {
+      "id": "LATCH_1",
+      "name": "LATCH_1",
+      "type": "digital_hold",
+      "channel": "latch",
+      "window": [
+        0.04,
+        0.4
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "fault",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.001,
+        "search": [
+          0.4,
+          2.5
+        ]
+      },
+      "value": 1
+    },
+    {
+      "id": "NOT_READY_1",
+      "name": "NOT_READY_1",
+      "type": "digital_hold",
+      "channel": "ready",
+      "window": [
+        0.04,
+        0.4
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "fault",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.001,
+        "search": [
+          0.4,
+          2.5
+        ]
+      },
+      "value": 0
+    },
+    {
+      "id": "POWER_ZERO_1",
+      "name": "POWER_ZERO_1",
+      "type": "analog_step",
+      "channel": "power",
+      "window": [
+        0,
+        0.6
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "fault",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.001,
+        "search": [
+          0.4,
+          2.5
+        ]
+      },
+      "baseline_window": [
+        -0.08,
+        -0.015
+      ],
+      "normalization": "rated",
+      "rated": 100,
+      "steady_last_s": 0.1,
+      "settle_band_pct": 2,
+      "settle_hold_s": 0.1,
+      "limits": {
+        "response_s_max": 0.04,
+        "settling_s_max": 0.08,
+        "overshoot_pct_max": 1,
+        "steady_error_pct_max": 0.1
+      },
+      "target": 0
+    },
+    {
+      "id": "BLOCK_2",
+      "name": "BLOCK_2",
+      "type": "digital_edge",
+      "channel": "block",
+      "window": [
+        0,
+        0.05
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "fault",
+        "edge": "rising",
+        "occurrence": 2,
+        "debounce_s": 0.001,
+        "search": [
+          0.4,
+          2.5
+        ]
+      },
+      "count": 1,
+      "edge": "rising",
+      "latency_min_s": 0.002,
+      "latency_max_s": 0.004
+    },
+    {
+      "id": "OPEN_2",
+      "name": "OPEN_2",
+      "type": "digital_edge",
+      "channel": "closed",
+      "window": [
+        0,
+        0.08
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "fault",
+        "edge": "rising",
+        "occurrence": 2,
+        "debounce_s": 0.001,
+        "search": [
+          0.4,
+          2.5
+        ]
+      },
+      "count": 1,
+      "edge": "falling",
+      "latency_min_s": 0.01,
+      "latency_max_s": 0.03
+    },
+    {
+      "id": "TRIP_2",
+      "name": "TRIP_2",
+      "type": "digital_pulse",
+      "channel": "trip_low",
+      "window": [
+        0,
+        0.1
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "fault",
+        "edge": "rising",
+        "occurrence": 2,
+        "debounce_s": 0.001,
+        "search": [
+          0.4,
+          2.5
+        ]
+      },
+      "active": 0,
+      "count": 1,
+      "min_width_s": 0.039,
+      "max_width_s": 0.041
+    },
+    {
+      "id": "LATCH_2",
+      "name": "LATCH_2",
+      "type": "digital_hold",
+      "channel": "latch",
+      "window": [
+        0.04,
+        0.4
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "fault",
+        "edge": "rising",
+        "occurrence": 2,
+        "debounce_s": 0.001,
+        "search": [
+          0.4,
+          2.5
+        ]
+      },
+      "value": 1
+    },
+    {
+      "id": "NOT_READY_2",
+      "name": "NOT_READY_2",
+      "type": "digital_hold",
+      "channel": "ready",
+      "window": [
+        0.04,
+        0.4
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "fault",
+        "edge": "rising",
+        "occurrence": 2,
+        "debounce_s": 0.001,
+        "search": [
+          0.4,
+          2.5
+        ]
+      },
+      "value": 0
+    },
+    {
+      "id": "POWER_ZERO_2",
+      "name": "POWER_ZERO_2",
+      "type": "analog_step",
+      "channel": "power",
+      "window": [
+        0,
+        0.6
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "fault",
+        "edge": "rising",
+        "occurrence": 2,
+        "debounce_s": 0.001,
+        "search": [
+          0.4,
+          2.5
+        ]
+      },
+      "baseline_window": [
+        -0.08,
+        -0.015
+      ],
+      "normalization": "rated",
+      "rated": 100,
+      "steady_last_s": 0.1,
+      "settle_band_pct": 2,
+      "settle_hold_s": 0.1,
+      "limits": {
+        "response_s_max": 0.04,
+        "settling_s_max": 0.08,
+        "overshoot_pct_max": 1,
+        "steady_error_pct_max": 0.1
+      },
+      "target": 0
+    },
+    {
+      "id": "CLEAR_LATCH",
+      "name": "CLEAR_LATCH",
+      "type": "digital_edge",
+      "channel": "latch",
+      "window": [
+        0,
+        0.1
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "reset",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.002,
+        "search": [
+          1.4,
+          1.7
+        ]
+      },
+      "edge": "falling",
+      "count": 1,
+      "latency_min_s": 0.02,
+      "latency_max_s": 0.03
+    },
+    {
+      "id": "READY_AFTER_CLEAR",
+      "name": "READY_AFTER_CLEAR",
+      "type": "digital_edge",
+      "channel": "ready",
+      "window": [
+        -0.04,
+        0.08
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "latch",
+        "edge": "falling",
+        "occurrence": 1,
+        "debounce_s": 0.002,
+        "search": [
+          1.4,
+          1.7
+        ]
+      },
+      "edge": "rising",
+      "count": 1,
+      "latency_min_s": 0.005,
+      "latency_max_s": 0.03
+    },
+    {
+      "id": "BUS_RANGE",
+      "name": "BUS_RANGE",
+      "type": "analog_range",
+      "channel": "dc",
+      "window": [
+        0.1,
+        2.9
+      ],
+      "min": 680,
+      "max": 720
+    }
+  ]
+}

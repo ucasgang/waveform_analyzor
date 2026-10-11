@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="5 kHz 量化噪声：按实际时间计算" tests="1" failures="0" errors="0"><properties><property name="config_sha256" value="5707666009a3a79c466b7122f54410d4dd0bc873b191ab1f1def012441d7ab36" /></properties><testcase name="ROBUST_STEP 抗噪性能 + 原始硬限值 + 质量预算" classname="analog_step" /></testsuite>

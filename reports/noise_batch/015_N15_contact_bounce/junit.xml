@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="接点吸合及释放抖动：非对称去抖" tests="1" failures="0" errors="0"><properties><property name="config_sha256" value="a5305c7ffd82b5a1b7a9d2c191040c357817bd97f42e5cd76f3d25dd4ae85d72" /></properties><testcase name="QUALIFIED_PULSE 有效脉冲与去抖审计" classname="digital_pulse" /></testsuite>

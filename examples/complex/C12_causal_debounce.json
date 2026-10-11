@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "name": "末端去抖未结束，后续复位不能倒推通过",
+  "description": "复合合成工况；每项预期结论独立列于 manifest。",
+  "standard": {
+    "reference": "工程回归 / 非国标限值",
+    "clause": "合成数据验证",
+    "reviewed": false
+  },
+  "channels": {
+    "dc": {
+      "kind": "analog",
+      "name": "直流母线",
+      "unit": "V"
+    },
+    "alarm": {
+      "kind": "digital",
+      "name": "抖动告警"
+    },
+    "cmd": {
+      "kind": "digital",
+      "name": "启动指令"
+    },
+    "ack": {
+      "kind": "digital",
+      "name": "启动反馈"
+    }
+  },
+  "tests": [
+    {
+      "id": "END_UNRESOLVED",
+      "name": "END_UNRESOLVED",
+      "type": "digital_hold",
+      "channel": "alarm",
+      "window": [
+        0,
+        0.1
+      ],
+      "value": 0,
+      "debounce_s": 0.005
+    },
+    {
+      "id": "RAW_GLITCH",
+      "name": "RAW_GLITCH",
+      "type": "digital_hold",
+      "channel": "alarm",
+      "window": [
+        0,
+        0.11
+      ],
+      "value": 0
+    },
+    {
+      "id": "FULLY_OBSERVED_FILTER",
+      "name": "FULLY_OBSERVED_FILTER",
+      "type": "digital_hold",
+      "channel": "alarm",
+      "window": [
+        0,
+        0.11
+      ],
+      "value": 0,
+      "debounce_s": 0.005
+    },
+    {
+      "id": "ACK",
+      "name": "ACK",
+      "type": "digital_edge",
+      "channel": "ack",
+      "window": [
+        0,
+        0.06
+      ],
+      "trigger": {
+        "type": "digital_edge",
+        "channel": "cmd",
+        "edge": "rising",
+        "occurrence": 1,
+        "debounce_s": 0.002,
+        "search": [
+          0,
+          0.06
+        ]
+      },
+      "edge": "rising",
+      "count": 1,
+      "latency_min_s": 0.004,
+      "latency_max_s": 0.006
+    },
+    {
+      "id": "DC",
+      "name": "DC",
+      "type": "analog_range",
+      "channel": "dc",
+      "window": [
+        0,
+        0.1
+      ],
+      "min": 698,
+      "max": 702
+    }
+  ]
+}

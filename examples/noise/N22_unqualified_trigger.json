@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "name": "模拟触发只有短尖峰：无可信激励",
+  "description": "合成噪声工程回归；预期来自注入模型与显式限值，不是厂家现场验证。",
+  "standard": {
+    "reference": "噪声算法工程示例；非国标条款",
+    "reviewed": false,
+    "note": "所有容限必须由项目审核后替换。"
+  },
+  "channels": {
+    "cmd": {
+      "kind": "analog",
+      "index": 1
+    },
+    "ack": {
+      "kind": "digital",
+      "index": 1
+    }
+  },
+  "tests": [
+    {
+      "id": "ACK_AFTER_QUALIFIED_TRIGGER",
+      "name": "经过滞回与持续确认的动作时延",
+      "type": "digital_edge",
+      "channel": "ack",
+      "trigger": {
+        "type": "analog_crossing",
+        "channel": "cmd",
+        "threshold": 0.5,
+        "hysteresis": 0.15,
+        "hold_s": 0.006,
+        "edge": "rising",
+        "search": [
+          0.1,
+          0.6
+        ]
+      },
+      "window": [
+        0,
+        0.08
+      ],
+      "edge": "rising",
+      "count": 1,
+      "latency_min_s": 0.01,
+      "latency_max_s": 0.03,
+      "noise": {
+        "rise_s": 0.003,
+        "fall_s": 0.005,
+        "max_rejected_edges": 24,
+        "max_chatter_s": 0.025,
+        "merge_gap_s": 0.006,
+        "timing_guard": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "version": "1.3.0",
+  "mode": "Chromium DOM interactions + Python bridge to real loopback HTTP",
+  "direct_navigation": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:45709/",
+  "limitations": "浏览器页面装载和fetch由可审计转发桥接；未把该测试当作直接localhost导航或操作系统级下载测试。",
+  "total": 29,
+  "passed": 29,
+  "checks": [
+    {
+      "check": "32组噪声演示出现在下拉框",
+      "passed": true
+    },
+    {
+      "check": "页脚版本1.3.0",
+      "passed": true
+    },
+    {
+      "check": "健康噪声工况在界面通过",
+      "passed": true
+    },
+    {
+      "check": "结果卡包含双分支说明",
+      "passed": true
+    },
+    {
+      "check": "原始和处理曲线同时绘制",
+      "passed": true
+    },
+    {
+      "check": "EMI尖峰不能被静默判为PASS",
+      "passed": true
+    },
+    {
+      "check": "放大后读取局部完整原始/处理采样",
+      "passed": true
+    },
+    {
+      "check": "原始双点尖峰仍超过120kW",
+      "passed": true
+    },
+    {
+      "check": "处理曲线回到约100kW",
+      "passed": true
+    },
+    {
+      "check": "两个候选修复点可见",
+      "passed": true
+    },
+    {
+      "check": "可以隐藏处理曲线但保留原始曲线",
+      "passed": true
+    },
+    {
+      "check": "可以单独查看处理曲线",
+      "passed": true
+    },
+    {
+      "check": "候选标记可单独隐藏",
+      "passed": true
+    },
+    {
+      "check": "图层切换不修改任何判定或配置",
+      "passed": true
+    },
+    {
+      "check": "原始/处理指标对比表可展开",
+      "passed": true
+    },
+    {
+      "check": "非对称数字去抖通过",
+      "passed": true
+    },
+    {
+      "check": "被抑制的抖动区间仍被标出",
+      "passed": true
+    },
+    {
+      "check": "数字原始和处理两条阶梯线均显示",
+      "passed": true
+    },
+    {
+      "check": "抖动风暴质量预算阻止自动通过",
+      "passed": true
+    },
+    {
+      "check": "单采样原始硬限值在界面仍为FAIL",
+      "passed": true
+    },
+    {
+      "check": "强噪声工况不给出自动性能结论",
+      "passed": true
+    },
+    {
+      "check": "滞回与保持确认后的模拟触发工况通过",
+      "passed": true
+    },
+    {
+      "check": "吞保护脉冲的配置被拒绝且不保留旧报告",
+      "passed": true
+    },
+    {
+      "check": "导出HTML包含双分支审计与版本",
+      "passed": true
+    },
+    {
+      "check": "390px结果页无横向溢出",
+      "passed": true
+    },
+    {
+      "check": "390px长场景名不撑破录波页",
+      "passed": true
+    },
+    {
+      "check": "16模拟512数字的含噪场景通过",
+      "passed": true
+    },
+    {
+      "check": "抗噪配置提示可在界面找到",
+      "passed": true
+    },
+    {
+      "check": "没有未捕获的JavaScript异常",
+      "passed": true,
+      "errors": []
+    }
+  ],
+  "http_requests": 45,
+  "requests": [
+    {
+      "path": "/api/template",
+      "status": 200,
+      "elapsed_ms": 8.602
+    },
+    {
+      "path": "/api/batch/current",
+      "status": 200,
+      "elapsed_ms": 0.794
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 10.789
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d2630356264c1726558220ef42f5b63d3c4b5b19a73e9952f98c6b643583b57c275f3&start=0&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 4.779
+    },
+    {
+      "path": "/api/run",
+      "status": 200,
+      "elapsed_ms": 15.558
+    },
+    {
+      "path": "/api/trace?compare=1&key=A1&test_id=ROBUST_STEP&config_hash=3f45479d518656ac3b6219517a0c1b75492ac72ae23b643a44091482d4fc0ecd&record_hash=f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d2630356264c1726558220ef42f5b63d3c4b5b19a73e9952f98c6b643583b57c275f3&start=0.25&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 11.5
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 8.709
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d263050c0962e9bcf8757e3649d34b8486d45991a56f169aad16f83b64b2fa75ead30&start=0&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 3.125
+    },
+    {
+      "path": "/api/run",
+      "status": 200,
+      "elapsed_ms": 21.855
+    },
+    {
+      "path": "/api/trace?compare=1&key=A1&test_id=ROBUST_STEP&config_hash=e11d793b997292540197675f05ee9852ba629bde8c498be0bdba44b98cac7eac&record_hash=f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d263050c0962e9bcf8757e3649d34b8486d45991a56f169aad16f83b64b2fa75ead30&start=0.25&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 12.148
+    },
+    {
+      "path": "/api/trace?compare=1&key=A1&test_id=ROBUST_STEP&config_hash=e11d793b997292540197675f05ee9852ba629bde8c498be0bdba44b98cac7eac&record_hash=f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d263050c0962e9bcf8757e3649d34b8486d45991a56f169aad16f83b64b2fa75ead30&start=0.825&end=0.84&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.213
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 6.059
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=e32ad38618c32bddc77cc809a6f4dd1b22e7784e7de1014905af664bb109f7e7d647760c57e6c3b00b791f4414040ba8324b9291c4ef120fd7b5b59ecde1dffc&start=0&end=1&limit=1800",
+      "status": 200,
+      "elapsed_ms": 5.99
+    },
+    {
+      "path": "/api/run",
+      "status": 200,
+      "elapsed_ms": 2.315
+    },
+    {
+      "path": "/api/trace?compare=1&key=D1&test_id=QUALIFIED_PULSE&config_hash=a5305c7ffd82b5a1b7a9d2c191040c357817bd97f42e5cd76f3d25dd4ae85d72&record_hash=e32ad38618c32bddc77cc809a6f4dd1b22e7784e7de1014905af664bb109f7e7d647760c57e6c3b00b791f4414040ba8324b9291c4ef120fd7b5b59ecde1dffc&start=0.4&end=0.85&limit=1800",
+      "status": 200,
+      "elapsed_ms": 3.763
+    },
+    {
+      "path": "/api/trace?compare=1&key=D1&test_id=QUALIFIED_PULSE&config_hash=a5305c7ffd82b5a1b7a9d2c191040c357817bd97f42e5cd76f3d25dd4ae85d72&record_hash=e32ad38618c32bddc77cc809a6f4dd1b22e7784e7de1014905af664bb109f7e7d647760c57e6c3b00b791f4414040ba8324b9291c4ef120fd7b5b59ecde1dffc&start=0.49&end=0.53&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.165
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 21.665
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=e32ad38618c32bddc77cc809a6f4dd1b22e7784e7de1014905af664bb109f7e7c524ee922c7ebfbeb5506ae080d61d7ce4c7f932a931d719c4607576b61ef99f&start=0&end=1&limit=1800",
+      "status": 200,
+      "elapsed_ms": 2.393
+    },
+    {
+      "path": "/api/run",
+      "status": 200,
+      "elapsed_ms": 4.495
+    },
+    {
+      "path": "/api/trace?compare=1&key=D1&test_id=QUALIFIED_HOLD&config_hash=58f8987e97ab6d12e9209406b3e53a46581b87268125930711e6f6b677e33569&record_hash=e32ad38618c32bddc77cc809a6f4dd1b22e7784e7de1014905af664bb109f7e7c524ee922c7ebfbeb5506ae080d61d7ce4c7f932a931d719c4607576b61ef99f&start=0.35&end=1&limit=1800",
+      "status": 200,
+      "elapsed_ms": 2.985
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 8.766
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d26305862b0a508c61e20c58a78548ae6369696553f33287842fc7a4ad6563ef213ba&start=0&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 4.368
+    },
+    {
+      "path": "/api/run",
+      "status": 200,
+      "elapsed_ms": 15.301
+    },
+    {
+      "path": "/api/trace?compare=1&key=A1&test_id=ROBUST_STEP&config_hash=14d27c7cb0651b6232c22c0cf88f3c8bfef0dacd667542e4bfe9fcf1be6a604f&record_hash=f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d26305862b0a508c61e20c58a78548ae6369696553f33287842fc7a4ad6563ef213ba&start=0.25&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 17.8
+    },
+    {
+      "path": "/api/trace?compare=1&key=A1&test_id=ROBUST_STEP&config_hash=14d27c7cb0651b6232c22c0cf88f3c8bfef0dacd667542e4bfe9fcf1be6a604f&record_hash=f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d26305862b0a508c61e20c58a78548ae6369696553f33287842fc7a4ad6563ef213ba&start=0.79&end=0.81&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.198
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 19.675
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d2630b3481e3b5767879d2345aaf402f89b8bb089b9a4c3c772e1948642847dff4d30&start=0&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 5.161
+    },
+    {
+      "path": "/api/run",
+      "status": 200,
+      "elapsed_ms": 15.106
+    },
+    {
+      "path": "/api/trace?compare=1&key=A1&test_id=ROBUST_STEP&config_hash=d7991b036461100d8c22d4e2b3d6084ddc12a281a978db5626b3f4cadd67cd0f&record_hash=f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d2630b3481e3b5767879d2345aaf402f89b8bb089b9a4c3c772e1948642847dff4d30&start=0.25&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 13.679
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 9.194
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=f2945643172dd93c3999699b8adbfbbb0a753557299d9c07c1da3a1d234cbe0a2d4af0c4db0afdb6ceb9110793fc4de4b7114d96d5ac09dd0be2b91f8a7a91bc&start=0&end=1&limit=1800",
+      "status": 200,
+      "elapsed_ms": 3.837
+    },
+    {
+      "path": "/api/run",
+      "status": 200,
+      "elapsed_ms": 2.367
+    },
+    {
+      "path": "/api/trace?compare=1&key=D1&test_id=ACK_AFTER_QUALIFIED_TRIGGER&config_hash=f425a074014a86d20dfad650b8a8fc2a85450f1c968d509e9b3b486135641ead&record_hash=f2945643172dd93c3999699b8adbfbbb0a753557299d9c07c1da3a1d234cbe0a2d4af0c4db0afdb6ceb9110793fc4de4b7114d96d5ac09dd0be2b91f8a7a91bc&start=0.5068240998948331&end=0.5868240998948331&limit=1800",
+      "status": 200,
+      "elapsed_ms": 1.714
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 5.449
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=e32ad38618c32bddc77cc809a6f4dd1b22e7784e7de1014905af664bb109f7e7379894dfdf172038fdbdce4a5f911a0abbeb80bf6e81cb71ea6297f2f0291085&start=0&end=1&limit=1800",
+      "status": 200,
+      "elapsed_ms": 2.685
+    },
+    {
+      "path": "/api/run",
+      "status": 400,
+      "elapsed_ms": 2.332
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 19.69
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d263050c0962e9bcf8757e3649d34b8486d45991a56f169aad16f83b64b2fa75ead30&start=0&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 5.023
+    },
+    {
+      "path": "/api/run",
+      "status": 200,
+      "elapsed_ms": 15.515
+    },
+    {
+      "path": "/api/trace?compare=1&key=A1&test_id=ROBUST_STEP&config_hash=e11d793b997292540197675f05ee9852ba629bde8c498be0bdba44b98cac7eac&record_hash=f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d263050c0962e9bcf8757e3649d34b8486d45991a56f169aad16f83b64b2fa75ead30&start=0.25&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 15.51
+    },
+    {
+      "path": "/api/export/html",
+      "status": 200,
+      "elapsed_ms": 21.989
+    },
+    {
+      "path": "/api/demo",
+      "status": 200,
+      "elapsed_ms": 710.857
+    },
+    {
+      "path": "/api/trace?key=A1&record_hash=b3307ba8538e382fe98ae7050ab619559dff7c72e32f7b5de8b193b5880d47ab20319ff9881f447f492698b16cfa7303a7d9e91f1c1d546b1801e15f80147267&start=0&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 4.29
+    },
+    {
+      "path": "/api/run",
+      "status": 200,
+      "elapsed_ms": 36.695
+    },
+    {
+      "path": "/api/trace?compare=1&key=A1&test_id=ROBUST_STEP&config_hash=d476755b868c9e42777a19e06d460e101f114acdb252dcd89f8ff65d6761fb6c&record_hash=b3307ba8538e382fe98ae7050ab619559dff7c72e32f7b5de8b193b5880d47ab20319ff9881f447f492698b16cfa7303a7d9e91f1c1d546b1801e15f80147267&start=0.25&end=2&limit=1800",
+      "status": 200,
+      "elapsed_ms": 26.924
+    }
+  ],
+  "errors": []
+}

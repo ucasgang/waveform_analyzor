@@ -1,0 +1,184 @@
+{
+  "product": "ESS WaveTest",
+  "version": "1.2.0",
+  "generated_utc": "2026-10-11T08:37:52.986547+00:00",
+  "suite": "噪声叠加关键缺失样本：禁止插补验收",
+  "status": "INCONCLUSIVE",
+  "counts": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 1,
+    "ERROR": 0
+  },
+  "record": {
+    "station": "ESS LAB",
+    "device": "SIMULATOR",
+    "revision": 2013,
+    "format": "FLOAT32",
+    "analog_count": 1,
+    "digital_count": 1,
+    "frequency_hz": 50.0,
+    "sample_rates": [
+      [
+        1000.0,
+        2001
+      ]
+    ],
+    "trigger_s": 0.25,
+    "timemult": 1.0,
+    "start_timestamp": "01/01/2026,00:00:00.000000",
+    "trigger_timestamp": "01/01/2026,00:00:00.250000",
+    "encoding": "utf-8-sig",
+    "time_metadata": [
+      [
+        "+00:00",
+        "+00:00"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "cfg_file": "N26_noise_with_missing.cfg",
+    "dat_file": "N26_noise_with_missing.dat",
+    "time_source": "dat_timestamps",
+    "max_sample_interval_s": 0.001000000000000112,
+    "samples": 2001,
+    "start_s": 0.0,
+    "end_s": 2.0,
+    "channels": [
+      {
+        "key": "A1",
+        "index": 1,
+        "kind": "analog",
+        "name": "PCS有功功率_加噪",
+        "unit": "kW",
+        "phase": "",
+        "circuit": "PCS",
+        "a": 0.001,
+        "b": 0.0,
+        "skew_us": 0.0,
+        "primary": 1.0,
+        "secondary": 1.0,
+        "side": "P",
+        "normal": 0,
+        "raw_min": -1e+30,
+        "raw_max": 1e+30
+      },
+      {
+        "key": "D1",
+        "index": 1,
+        "kind": "digital",
+        "name": "调度激励",
+        "unit": "",
+        "phase": "",
+        "circuit": "PCS",
+        "a": 1.0,
+        "b": 0.0,
+        "skew_us": 0.0,
+        "primary": 1.0,
+        "secondary": 1.0,
+        "side": "P",
+        "normal": 0,
+        "raw_min": 0.0,
+        "raw_max": 0.0
+      }
+    ],
+    "warnings": [
+      "A1 含缺失值；涉及缺失值的窗口将标记数据不足"
+    ],
+    "gap_count": 0,
+    "hashes": {
+      "cfg_sha256": "f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d2630",
+      "dat_sha256": "cb60a0ed5f2f064684063ab34297214b2500a145cec1f32b52b599b4974d5be2"
+    }
+  },
+  "configuration": {
+    "schema_version": 1,
+    "name": "噪声叠加关键缺失样本：禁止插补验收",
+    "description": "合成噪声工程回归；预期来自注入模型与显式限值，不是厂家现场验证。",
+    "standard": {
+      "reference": "噪声算法工程示例；非国标条款",
+      "reviewed": false,
+      "note": "所有容限必须由项目审核后替换。"
+    },
+    "channels": {
+      "p": {
+        "kind": "analog",
+        "index": 1,
+        "unit": "kW"
+      }
+    },
+    "tests": [
+      {
+        "id": "ROBUST_STEP",
+        "name": "抗噪性能 + 原始硬限值 + 质量预算",
+        "type": "analog_step",
+        "channel": "p",
+        "trigger": {
+          "type": "time",
+          "at": 0.25
+        },
+        "window": [
+          0,
+          1.75
+        ],
+        "baseline_window": [
+          -0.2,
+          -0.03
+        ],
+        "target": 100.0,
+        "normalization": "step",
+        "steady_last_s": 0.5,
+        "settle_band_pct": 2.0,
+        "settle_hold_s": 0.15,
+        "limits": {
+          "overshoot_pct_max": 5.0,
+          "response_s_max": 0.28,
+          "rise_s_max": 0.23,
+          "latency_s_max": 0.08,
+          "settling_s_max": 0.6,
+          "steady_error_pct_max": 0.8,
+          "steady_ripple_pp_max": 3.0
+        },
+        "robust": {
+          "hampel_window_s": 0.012,
+          "hampel_sigma": 4.5,
+          "hampel_floor": 0.9,
+          "max_spike_s": 0.0031,
+          "smooth_window_s": 0.003,
+          "crossing_hold_s": 0.008,
+          "crossing_hysteresis_fraction": 0.004,
+          "settle_occupancy": 0.995,
+          "max_excursion_s": 0.003,
+          "max_replaced_fraction": 0.015,
+          "max_noise_sigma": 1.0,
+          "max_baseline_drift": 1.0,
+          "max_steady_drift": 1.2,
+          "raw_min": -20.0,
+          "raw_max": 160.0
+        }
+      }
+    ]
+  },
+  "config_sha256": "4029e49f85d3aa541eb8d0eae241ea75d193f8b4cb8a0712e3283994f804db78",
+  "results": [
+    {
+      "id": "ROBUST_STEP",
+      "name": "抗噪性能 + 原始硬限值 + 质量预算",
+      "type": "analog_step",
+      "channel": "p",
+      "standard": {
+        "reference": "噪声算法工程示例；非国标条款",
+        "reviewed": false,
+        "note": "所有容限必须由项目审核后替换。"
+      },
+      "metrics": {},
+      "checks": [],
+      "evidence": {},
+      "status": "INCONCLUSIVE",
+      "reason": "分析窗口包含缺失或非有限采样值"
+    }
+  ],
+  "notice": "结果仅表示满足当前配置断言，不代表已取得国标符合性认证。示例阈值不属于标准原文。"
+}

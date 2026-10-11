@@ -1,0 +1,72 @@
+{
+  "product": "ESS WaveTest",
+  "version": "1.3.0",
+  "release_date": "2026-10-11",
+  "runtime": "Python >=3.10; standard library only; no network dependency",
+  "tested_platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "tested_python": "3.13.5",
+  "features": [
+    "Folder picker, recursive same-directory pairing, common frozen or sibling JSON",
+    "Sequential disk-backed bounded batch queue, error isolation, cancellation and per-record drilldown",
+    "Live preview, result view and offline standalone HTML time/amplitude zoom",
+    "Original-sample embedding capped at 600000 points/report with explicit summary fallback",
+    "18 layered coupled reduced-order synthetic scenes, 378 business assertions",
+    "analog_relation union-grid alignment and explicit absolute error budget",
+    "Causal trigger-prefix validation; synchronous viewer double-click repair"
+  ],
+  "verification": {
+    "standard_library_tests": 892,
+    "passed": 892,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "field_cases": 18,
+    "field_assertions": 378,
+    "new_independent_seed_runs": 12,
+    "new_browser_checks": 41,
+    "new_browser_passed": 41,
+    "previous_zoom_browser_checks": 24,
+    "previous_noise_browser_checks": 29,
+    "built_zipapp_real_http_checks": 17,
+    "built_zipapp_real_http_passed": 17,
+    "full_batch_source_bytes": 52914867,
+    "full_batch_acceptance_counts": {
+      "PASS": 4,
+      "FAIL": 9,
+      "INCONCLUSIVE": 5,
+      "ERROR": 0,
+      "CANCELLED": 0,
+      "WAITING": 0,
+      "READY": 0,
+      "RUNNING": 0
+    },
+    "layers_overlap": true,
+    "coverage_percentage": null
+  },
+  "manual": {
+    "file": "docs/ESS_WaveTest_v1.3_文件夹批处理与复杂波形指南.pdf",
+    "pages": 8
+  },
+  "interactive_reports": {
+    "retained_reports_refreshed": 121,
+    "matching_source_pairs": 120,
+    "notice": "Historical verdicts retain original version; updated viewer embeds full samples only for exact hash matches and reports a summary otherwise."
+  },
+  "browser_execution": {
+    "mode": "Chromium DOM + binary-safe bridge to real loopback HTTP",
+    "navigation_limit": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:38337/",
+    "download": "real browser download",
+    "offline_html": "exact exported HTML loaded via set_content; file navigation blocked",
+    "policy_bypass": false
+  },
+  "limits": [
+    "No Windows/macOS host verification",
+    "No customer field recordings used; reduced-order synthetic model, not EMT/HIL or empirical realism guarantee",
+    "No standards threshold library or certification",
+    "No cross-file clock synchronization, directory watching or cross-restart resume",
+    "Single-user loopback tool; do not expose publicly",
+    "Browser folder batches bounded by source bytes and groups, memory depends on largest decoded recording; reports add disk use",
+    "Synthetic pass/fail matching is not a field accuracy estimate"
+  ],
+  "single_file_sha256": "f7a380ced6c6f61eb6c22ad6fb7a3dc4210b3a42f85dcac4d72cd818e1152ddf"
+}

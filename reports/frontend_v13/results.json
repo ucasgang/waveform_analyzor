@@ -1,0 +1,178 @@
+{
+  "version": "1.3.0",
+  "navigation": "Chromium DOM + binary-safe bridge to real loopback HTTP",
+  "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:38337/",
+  "download_mode": "real browser download",
+  "offline_mode": "exact exported HTML loaded via set_content; file navigation blocked",
+  "total": 41,
+  "passed": 41,
+  "checks": [
+    {
+      "name": "受管浏览器桥接真实本机API并装载批处理页",
+      "passed": true
+    },
+    {
+      "name": "文件夹选择保留子目录相对路径",
+      "passed": true
+    },
+    {
+      "name": "4组扫描含两组错误而非跳过",
+      "passed": true
+    },
+    {
+      "name": "实际批次PASS1/FAIL1/ERROR2",
+      "passed": true
+    },
+    {
+      "name": "错误记录没有被标记为可打开结果",
+      "passed": true
+    },
+    {
+      "name": "失败筛选只显示一组",
+      "passed": true
+    },
+    {
+      "name": "批次详情绑定保存的结果",
+      "passed": true
+    },
+    {
+      "name": "批量详情：放大缩小按钮可见",
+      "passed": true
+    },
+    {
+      "name": "批量详情：按钮放大改变真实时间范围",
+      "passed": true
+    },
+    {
+      "name": "批量详情：按钮缩小恢复",
+      "passed": true
+    },
+    {
+      "name": "批量详情：滚轮缩放",
+      "passed": true
+    },
+    {
+      "name": "批量详情：精确时间定位",
+      "passed": true
+    },
+    {
+      "name": "批量详情：幅值轴独立放大",
+      "passed": true
+    },
+    {
+      "name": "批量详情：Shift框选放大",
+      "passed": true
+    },
+    {
+      "name": "批量详情：拖动平移",
+      "passed": true
+    },
+    {
+      "name": "批量详情：双击复位",
+      "passed": true
+    },
+    {
+      "name": "查看不改变批次快照",
+      "passed": true
+    },
+    {
+      "name": "录波预览：放大缩小按钮可见",
+      "passed": true
+    },
+    {
+      "name": "录波预览：按钮放大改变真实时间范围",
+      "passed": true
+    },
+    {
+      "name": "录波预览：按钮缩小恢复",
+      "passed": true
+    },
+    {
+      "name": "录波预览：滚轮缩放",
+      "passed": true
+    },
+    {
+      "name": "录波预览：精确时间定位",
+      "passed": true
+    },
+    {
+      "name": "录波预览：幅值轴独立放大",
+      "passed": true
+    },
+    {
+      "name": "录波预览：Shift框选放大",
+      "passed": true
+    },
+    {
+      "name": "录波预览：拖动平移",
+      "passed": true
+    },
+    {
+      "name": "录波预览：双击复位",
+      "passed": true
+    },
+    {
+      "name": "实际导出ZIP包含索引且无原始DAT重复副本",
+      "passed": true
+    },
+    {
+      "name": "下载报告离线打开内嵌完整窗口采样",
+      "passed": true
+    },
+    {
+      "name": "离线HTML报告：放大缩小按钮可见",
+      "passed": true
+    },
+    {
+      "name": "离线HTML报告：按钮放大改变真实时间范围",
+      "passed": true
+    },
+    {
+      "name": "离线HTML报告：按钮缩小恢复",
+      "passed": true
+    },
+    {
+      "name": "离线HTML报告：滚轮缩放",
+      "passed": true
+    },
+    {
+      "name": "离线HTML报告：精确时间定位",
+      "passed": true
+    },
+    {
+      "name": "离线HTML报告：幅值轴独立放大",
+      "passed": true
+    },
+    {
+      "name": "离线HTML报告：Shift框选放大",
+      "passed": true
+    },
+    {
+      "name": "离线HTML报告：拖动平移",
+      "passed": true
+    },
+    {
+      "name": "离线HTML报告：双击复位",
+      "passed": true
+    },
+    {
+      "name": "离线HTML没有外部网络依赖",
+      "passed": true
+    },
+    {
+      "name": "复合背景下1ms保护脉冲可放大到原始采样",
+      "passed": true
+    },
+    {
+      "name": "移动窄屏批处理页不撑破视窗",
+      "passed": true
+    },
+    {
+      "name": "没有未捕获JavaScript异常",
+      "passed": true,
+      "errors": []
+    }
+  ],
+  "errors": [],
+  "requests": []
+}

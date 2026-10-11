@@ -1,0 +1,171 @@
+test_B01_enough_time_since_low_proves_rise_failure (test_regressions_v11.BoundaryRegressions.test_B01_enough_time_since_low_proves_rise_failure) ... ok
+test_B01_late_low_crossing_does_not_prove_rise_failure (test_regressions_v11.BoundaryRegressions.test_B01_late_low_crossing_does_not_prove_rise_failure) ... FAIL
+test_B01_missing_low_crossing_is_not_a_rise_failure (test_regressions_v11.BoundaryRegressions.test_B01_missing_low_crossing_is_not_a_rise_failure) ... FAIL
+test_B01_response_limit_still_fails_without_any_motion (test_regressions_v11.BoundaryRegressions.test_B01_response_limit_still_fails_without_any_motion) ... ok
+test_B02_extending_record_cannot_change_a_closed_window (test_regressions_v11.BoundaryRegressions.test_B02_extending_record_cannot_change_a_closed_window) ... FAIL
+test_B02_glitch_fully_observed_inside_window_can_be_filtered (test_regressions_v11.BoundaryRegressions.test_B02_glitch_fully_observed_inside_window_can_be_filtered) ... ok
+test_B02_no_future_information_for_debounce_at_window_end (test_regressions_v11.BoundaryRegressions.test_B02_no_future_information_for_debounce_at_window_end) ... FAIL
+test_B03_crossing_at_inclusive_left_search_boundary (test_regressions_v11.BoundaryRegressions.test_B03_crossing_at_inclusive_left_search_boundary) ... FAIL
+test_B03_no_invented_crossing_for_threshold_plateau (test_regressions_v11.BoundaryRegressions.test_B03_no_invented_crossing_for_threshold_plateau) ... ok
+test_B04_asserted_edge_cannot_hide_gap_just_outside_window (test_regressions_v11.BoundaryRegressions.test_B04_asserted_edge_cannot_hide_gap_just_outside_window) ... FAIL
+test_B04_trigger_predecessor_in_gap_is_not_usable_evidence (test_regressions_v11.BoundaryRegressions.test_B04_trigger_predecessor_in_gap_is_not_usable_evidence) ... FAIL
+test_B04_unrelated_earlier_gap_does_not_poison_stable_hold (test_regressions_v11.BoundaryRegressions.test_B04_unrelated_earlier_gap_does_not_poison_stable_hold) ... ok
+test_B05_engineering_scale_overflow_rejected (test_regressions_v11.BoundaryRegressions.test_B05_engineering_scale_overflow_rejected) ... FAIL
+test_B05_intermediate_nonfinite_mean_never_reports_pass (test_regressions_v11.BoundaryRegressions.test_B05_intermediate_nonfinite_mean_never_reports_pass) ... FAIL
+test_B05_mapping_overflow_is_error_not_missing_data (test_regressions_v11.BoundaryRegressions.test_B05_mapping_overflow_is_error_not_missing_data) ... FAIL
+test_B05_time_multiplier_overflow_rejected (test_regressions_v11.BoundaryRegressions.test_B05_time_multiplier_overflow_rejected) ... FAIL
+test_B06_compact_trace_keeps_missing_as_breaks (test_regressions_v11.BoundaryRegressions.test_B06_compact_trace_keeps_missing_as_breaks) ... FAIL
+test_B06_dense_missing_sample_cannot_be_bridged (test_regressions_v11.BoundaryRegressions.test_B06_dense_missing_sample_cannot_be_bridged) ... FAIL
+
+======================================================================
+FAIL: test_B01_late_low_crossing_does_not_prove_rise_failure (test_regressions_v11.BoundaryRegressions.test_B01_late_low_crossing_does_not_prove_rise_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/ESS_WaveTest_v1.1.0/tests/test_regressions_v11.py", line 30, in test_B01_late_low_crossing_does_not_prove_rise_failure
+    r=run(self.rec(t,y),suite(step()));self.assertEqual(r['status'],'INCONCLUSIVE')
+                                       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'FAIL' != 'INCONCLUSIVE'
+- FAIL
++ INCONCLUSIVE
+
+
+======================================================================
+FAIL: test_B01_missing_low_crossing_is_not_a_rise_failure (test_regressions_v11.BoundaryRegressions.test_B01_missing_low_crossing_is_not_a_rise_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/ESS_WaveTest_v1.1.0/tests/test_regressions_v11.py", line 34, in test_B01_missing_low_crossing_is_not_a_rise_failure
+    self.assertEqual(run(self.rec(t,[0]*len(t)),suite(step()))['status'],'INCONCLUSIVE')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'FAIL' != 'INCONCLUSIVE'
+- FAIL
++ INCONCLUSIVE
+
+
+======================================================================
+FAIL: test_B02_extending_record_cannot_change_a_closed_window (test_regressions_v11.BoundaryRegressions.test_B02_extending_record_cannot_change_a_closed_window)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/ESS_WaveTest_v1.1.0/tests/test_regressions_v11.py", line 51, in test_B02_extending_record_cannot_change_a_closed_window
+    self.assertEqual(states,['INCONCLUSIVE']*3)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['INCONCLUSIVE', 'PASS', 'PASS'] != ['INCONCLUSIVE', 'INCONCLUSIVE', 'INCONCLUSIVE']
+
+First differing element 1:
+'PASS'
+'INCONCLUSIVE'
+
+- ['INCONCLUSIVE', 'PASS', 'PASS']
++ ['INCONCLUSIVE', 'INCONCLUSIVE', 'INCONCLUSIVE']
+
+======================================================================
+FAIL: test_B02_no_future_information_for_debounce_at_window_end (test_regressions_v11.BoundaryRegressions.test_B02_no_future_information_for_debounce_at_window_end)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/ESS_WaveTest_v1.1.0/tests/test_regressions_v11.py", line 44, in test_B02_no_future_information_for_debounce_at_window_end
+    self.assertEqual(run(self.rec(t,d=d),suite(a))['status'],'INCONCLUSIVE')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'INCONCLUSIVE'
+- PASS
++ INCONCLUSIVE
+
+
+======================================================================
+FAIL: test_B03_crossing_at_inclusive_left_search_boundary (test_regressions_v11.BoundaryRegressions.test_B03_crossing_at_inclusive_left_search_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/ESS_WaveTest_v1.1.0/tests/test_regressions_v11.py", line 59, in test_B03_crossing_at_inclusive_left_search_boundary
+    r=run(self.rec(t,[x*100 for x in t]),suite(a));self.assertEqual(r['status'],'PASS')
+                                                   ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'INCONCLUSIVE' != 'PASS'
+- INCONCLUSIVE
++ PASS
+
+
+======================================================================
+FAIL: test_B04_asserted_edge_cannot_hide_gap_just_outside_window (test_regressions_v11.BoundaryRegressions.test_B04_asserted_edge_cannot_hide_gap_just_outside_window)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/ESS_WaveTest_v1.1.0/tests/test_regressions_v11.py", line 73, in test_B04_asserted_edge_cannot_hide_gap_just_outside_window
+    self.assertEqual(run(self.rec(t,d=[int(x>=.2) for x in t]),suite(a))['status'],'INCONCLUSIVE')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'INCONCLUSIVE'
+- PASS
++ INCONCLUSIVE
+
+
+======================================================================
+FAIL: test_B04_trigger_predecessor_in_gap_is_not_usable_evidence (test_regressions_v11.BoundaryRegressions.test_B04_trigger_predecessor_in_gap_is_not_usable_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/ESS_WaveTest_v1.1.0/tests/test_regressions_v11.py", line 69, in test_B04_trigger_predecessor_in_gap_is_not_usable_evidence
+    self.assertEqual(run(self.rec(t,d=[int(x>=.2) for x in t]),suite(a))['status'],'INCONCLUSIVE')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'INCONCLUSIVE'
+- PASS
++ INCONCLUSIVE
+
+
+======================================================================
+FAIL: test_B05_engineering_scale_overflow_rejected (test_regressions_v11.BoundaryRegressions.test_B05_engineering_scale_overflow_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/ESS_WaveTest_v1.1.0/tests/test_regressions_v11.py", line 83, in test_B05_engineering_scale_overflow_rejected
+    with self.assertRaises(ComtradeError):load(p)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: ComtradeError not raised
+
+======================================================================
+FAIL: test_B05_intermediate_nonfinite_mean_never_reports_pass (test_regressions_v11.BoundaryRegressions.test_B05_intermediate_nonfinite_mean_never_reports_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/ESS_WaveTest_v1.1.0/tests/test_regressions_v11.py", line 100, in test_B05_intermediate_nonfinite_mean_never_reports_pass
+    result=run(r,c);self.assertEqual(result['status'],'ERROR')
+                    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PASS' != 'ERROR'
+- PASS
++ ERROR
+
+
+======================================================================
+FAIL: test_B05_mapping_overflow_is_error_not_missing_data (test_regressions_v11.BoundaryRegressions.test_B05_mapping_overflow_is_error_not_missing_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/ESS_WaveTest_v1.1.0/tests/test_regressions_v11.py", line 96, in test_B05_mapping_overflow_is_error_not_missing_data
+    self.assertEqual(run(r,c)['status'],'ERROR')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'INCONCLUSIVE' != 'ERROR'
+- INCONCLUSIVE
++ ERROR
+
+
+======================================================================
+FAIL: test_B05_time_multiplier_overflow_rejected (test_regressions_v11.BoundaryRegressions.test_B05_time_multiplier_overflow_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/ESS_WaveTest_v1.1.0/tests/test_regressions_v11.py", line 80, in test_B05_time_multiplier_overflow_rejected
+    with self.assertRaises(ComtradeError):load(p)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: ComtradeError not raised
+
+======================================================================
+FAIL: test_B06_compact_trace_keeps_missing_as_breaks (test_regressions_v11.BoundaryRegressions.test_B06_compact_trace_keeps_missing_as_breaks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/ESS_WaveTest_v1.1.0/tests/test_regressions_v11.py", line 87, in test_B06_compact_trace_keeps_missing_as_breaks
+    self.assertTrue(any(p[1] is None for p in trace))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_B06_dense_missing_sample_cannot_be_bridged (test_regressions_v11.BoundaryRegressions.test_B06_dense_missing_sample_cannot_be_bridged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/ESS_WaveTest_v1.1.0/tests/test_regressions_v11.py", line 91, in test_B06_dense_missing_sample_cannot_be_bridged
+    self.assertTrue(any(p[1] is None for p in trace));self.assertLessEqual(len(trace),100)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.046s
+
+FAILED (failures=13)

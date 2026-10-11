@@ -1,0 +1,671 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>传感器饱和削顶：测量失真待复核 - ESS WaveTest</title>
+    <style>
+    :root{--ink:#172b45;--muted:#66788c;--line:#dce5ed}*{box-sizing:border-box}body{margin:0;background:#edf2f6;color:var(--ink);font:15px/1.65 "Segoe UI","Microsoft YaHei",sans-serif}.wrap{max-width:1160px;margin:auto;padding:36px 26px}header{background:#142a43;color:#fff;padding:40px;border-radius:18px}.brand{font-size:12px;letter-spacing:3px;color:#79d3c1}h1{font-size:30px;line-height:1.4;margin:18px 0}h2{font-size:20px;margin:5px 0}header p{color:#bed0e2}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}.stat,.test,.notice{background:white;border:1px solid var(--line);border-radius:13px;padding:23px}.stat span{font-size:13px;color:var(--muted)}.stat strong{display:block;font-size:34px;line-height:1.5}.test{margin:20px 0;break-inside:avoid}.testhead{display:flex;justify-content:space-between;align-items:center;gap:16px}.badge{font-size:14px;font-weight:700;border:1px solid;padding:5px 12px;border-radius:24px}small,.meta{font-size:12px;color:var(--muted)}.notice{background:#fff9ee;border-color:#e6d7b9}table{border-collapse:collapse;width:100%;margin-top:16px;font-size:13px}th,td{padding:11px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f3f7fa}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f7fa;padding:18px;font:12px/1.6 Consolas,monospace}.mono{font-family:Consolas,monospace}details{margin-top:12px}summary{cursor:pointer;color:#2367cc}footer{font-size:12px;color:var(--muted);padding:25px 0;overflow-wrap:anywhere}.actions{text-align:right;margin:0 0 15px}button{border:0;border-radius:7px;padding:10px 18px;color:white;background:#2367cc;cursor:pointer}svg{display:block;width:100%;margin-top:18px}@media(max-width:650px){.stats{grid-template-columns:repeat(2,1fr)}.wrap{padding:12px}header{padding:23px}.test{padding:15px}h1{font-size:23px}table{font-size:11px}}@media print{body{background:white}.wrap{padding:0;max-width:none}.actions,details{display:none}header{border-radius:0;print-color-adjust:exact}.test{break-inside:auto}table,svg{break-inside:avoid}}
+    </style><style>.timeline{min-width:0}.timeline-tools{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin:8px 0 10px}.timeline-buttons{display:flex;gap:5px;flex-wrap:wrap}.timeline button{border:1px solid #dbe4ee;background:#fff;color:#355577;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:12px;white-space:nowrap}.timeline button:hover{background:#edf4fb}.timeline button:focus-visible,.timeline input:focus-visible,.timeline-frame:focus-visible{outline:2px solid #4a78bf;outline-offset:2px}.timeline-range{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:11px;color:#62748a}.timeline-range label{display:flex;align-items:center;gap:4px}.timeline-range input{width:106px;min-width:0;padding:6px;border:1px solid #dbe4ee;border-radius:5px;background:#fff;font-size:12px}.timeline-gesture{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;color:#71849a;font-size:11px;margin-bottom:7px}.timeline-span{font-variant-numeric:tabular-nums;color:#396393}.timeline-frame{position:relative;cursor:grab;touch-action:none;user-select:none;border-radius:9px}.timeline-frame:active{cursor:grabbing}.timeline-svg svg{display:block;width:100%;height:auto;min-height:160px}.timeline-selection{position:absolute;top:23px;bottom:35px;background:#4a78bf30;border:1px solid #4a78bf;pointer-events:none}.timeline-cursor{position:absolute;top:27px;pointer-events:none;padding:4px 7px;background:#18344ae8;color:#fff;border-radius:4px;font-size:11px;max-width:160px}.timeline-nav{height:34px;margin:8px 17px 0 6.2%;background:#eef3f8;border:1px solid #dbe4ee;border-radius:5px;position:relative;touch-action:none;cursor:crosshair;overflow:hidden}.timeline-nav-bg{position:absolute;inset:0;pointer-events:none;opacity:.55}.timeline-nav-bg svg{width:100%;height:100%;display:block;preserve-aspect-ratio:none}.timeline-nav-bg text{display:none}.timeline-nav-window{position:absolute;top:0;bottom:0;min-width:3px;background:#4a78bf22;border:2px solid #4a78bf;border-radius:3px;cursor:grab;box-sizing:border-box}.timeline-nav-window:before,.timeline-nav-window:after{content:"";position:absolute;top:7px;bottom:7px;width:2px;background:#4a78bf}.timeline-nav-window:before{left:3px}.timeline-nav-window:after{right:3px}.timeline-nav-labels{display:flex;justify-content:space-between;margin:4px 17px 0 6.2%;font-size:10px;color:#75869a}.timeline-status{color:#677c92;font-size:11px;line-height:1.7;margin-top:10px;overflow-wrap:anywhere}.timeline-status.is-error{color:#bd4d47}.result-timeline{margin-top:16px}
+@media(max-width:600px){.timeline-tools{display:block}.timeline-range{margin-top:8px}.timeline-range input{width:83px}.timeline button{padding:7px 8px}.timeline-svg svg{min-height:150px}.timeline-gesture{font-size:10px}.timeline-status{font-size:10px}}
+
+/* v1.2 audit-first noise evidence */
+.timeline-layers{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:10px 12px;background:#f2f6fb;border-radius:8px;margin-bottom:8px;font-size:12px}.timeline-layers label{display:flex;gap:6px;align-items:center;cursor:pointer}.timeline-layers input{width:auto!important}.timeline-layers span{color:#5d7187;margin-left:auto}.noise-evidence{background:#f2f7fb;border-left:3px solid #c47a32;padding:13px 16px;margin:12px 0;border-radius:5px}.noise-evidence b{font-size:14px}.noise-evidence p{margin:5px 0;font-size:13px}.noise-evidence small{font-size:12px;color:#5f7185}.noise-comparison{margin:10px 0 16px}.noise-principles{display:flex;gap:10px;flex-wrap:wrap}.noise-principles span{border:1px solid #c9dbe8;border-radius:20px;padding:5px 12px;font-size:12px;background:#f2f7fb}
+/* Long scenario names must not set a grid/flex item's intrinsic minimum width. */
+.two-col>.panel,.formgrid>label,.panel{min-width:0}.demoline select,.searchline input{min-width:0;max-width:100%}.filedrop input{min-width:0;max-width:100%}.demoline .button{flex-shrink:0}.maprow select{min-width:0;max-width:100%}
+
+/* v1.3 explicit zoom and folder workflow */
+.timeline-tools{border:1px solid #c4d5e8;background:#eaf1fa;border-radius:9px;padding:9px}.timeline-buttons{flex-wrap:wrap}.timeline-buttons button[data-action="in"],.timeline-buttons button[data-action="out"]{font-weight:700;background:#245fa8;color:#fff}.timeline-tools button{min-height:34px}.batch-counts{display:flex;flex-wrap:wrap;gap:10px;margin:15px 0}.batch-count{padding:8px 13px;border:1px solid #d4dfeb;border-radius:8px;background:#f2f6fc;font-size:13px}.batch-count b{margin-left:8px;font-size:19px}.batch-tablewrap{overflow:auto}.batch-path{min-width:180px;max-width:330px;overflow-wrap:anywhere}#batchRows small{display:block;font-size:11px;color:#64758b;overflow-wrap:anywhere}#batchRows td{max-width:480px;overflow-wrap:anywhere}#batchProgress{width:100%;height:16px;accent-color:#3975bc}.status.CANCELLED,.status.WAITING,.status.READY,.status.RUNNING{color:#596c84;background:#edf1f7}.filelabel input{max-width:100%}@media(max-width:650px){.timeline-tools{display:block}.timeline-range{flex-wrap:wrap;margin-top:8px}.timeline-tools button{padding:5px 8px}.timeline-range input{width:95px}}
+
+.report-wave{margin:18px 0}.report-wave svg{margin:0}.report-wave .timeline-tools button{font-size:12px}.report-wave [hidden]{display:none!important}@media print{.timeline-tools,.timeline-gesture,.timeline-nav,.timeline-nav-labels,.timeline-layers,.timeline-status{display:none!important}.timeline-frame{break-inside:avoid}}</style></head><body><main class="wrap"><div class="actions"><button onclick="window.print()">打印 / 保存 PDF</button></div><header><div class="brand">ESS WAVETEST / FACTORY ACCEPTANCE</div><h1>传感器饱和削顶：测量失真待复核</h1><p>总体结果：数据不足 / 待复核 · 2026-10-11T08:46:55.129184+00:00</p><p>N27_sensor_clipping.cfg / FLOAT32 · 2,001 点 · 1 模拟通道 + 1 数字通道</p></header><div class="stats"><div class="stat"><span>通过</span><strong style="color:#087f68">0</strong></div><div class="stat"><span>失败</span><strong style="color:#c23e48">0</strong></div><div class="stat"><span>数据不足 / 待复核</span><strong style="color:#aa6b00">1</strong></div><div class="stat"><span>配置或执行错误</span><strong style="color:#7544ba">0</strong></div></div>
+    <div class="notice"><b>验收边界</b><p>结果仅表示满足当前配置断言，不代表已取得国标符合性认证。示例阈值不属于标准原文。</p><p>所有时间以本文件录波起点为参考；模拟 skew 已按 CFG 单独应用。没有自动对齐多文件时钟、自动修复缺点或默认标准限值。</p></div>
+    <section class="test"><div class="testhead"><div><small>ROBUST_STEP · analog_step · p</small><h2>抗噪性能 + 原始硬限值 + 质量预算</h2></div><span class="badge" style="color:#aa6b00">数据不足 / 待复核</span></div>
+        <p>数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论；到达配置传感器量程边界的时间过多；削顶数据不能证明响应性能</p><p class="meta">依据：噪声算法工程示例；非国标条款 / 未指定条款 / 未审核或演示阈值</p>
+        <div class="notice"><b>抗噪审计：原始与处理双分支</b><p>候选替换 0 个采样；时间权重占比 0%。原始硬限值永不滤波，峰值冲突需要复核。</p><p>稳态误差在抗噪分支使用时间加权中位数，响应使用持续确认，调节时间使用固定误差带与占用率；两分支定义并不完全相同。</p></div><table><thead><tr><th>指标</th><th>原始分支</th><th>抗噪分支</th></tr></thead><tbody><tr><td>超调量 (%)</td><td>0</td><td>0</td></tr><tr><td>响应时间 (s)</td><td>未取得</td><td>未取得</td></tr><tr><td>上升/下降时间 (s)</td><td>未取得</td><td>未取得</td></tr><tr><td>调节时间 (s)</td><td>未取得</td><td>未取得</td></tr><tr><td>稳态误差 (%)</td><td>14.99944</td><td>14.99789</td></tr><tr><td>稳态峰峰值</td><td>0</td><td>0</td></tr></tbody></table>
+        <div class="report-wave chartbox" data-wave-id="0" data-resolution="full"><svg viewBox="0 0 1050 230" role="img" aria-label="抗噪性能 + 原始硬限值 + 质量预算 证据波形" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#f7fafd" rx="10"/><path d="M72 24.0H1030" stroke="#dde5ed"/><text x="63" y="28.0" text-anchor="end" font-size="11" fill="#617388">114.33</text><path d="M72 66.0H1030" stroke="#dde5ed"/><text x="63" y="70.0" text-anchor="end" font-size="11" fill="#617388">82.48</text><path d="M72 108.0H1030" stroke="#dde5ed"/><text x="63" y="112.0" text-anchor="end" font-size="11" fill="#617388">50.632</text><path d="M72 150.0H1030" stroke="#dde5ed"/><text x="63" y="154.0" text-anchor="end" font-size="11" fill="#617388">18.784</text><path d="M72 192.0H1030" stroke="#dde5ed"/><text x="63" y="196.0" text-anchor="end" font-size="11" fill="#617388">-13.064</text><text x="72.0" y="217" text-anchor="middle" font-size="11" fill="#617388">0.25s</text><text x="263.6" y="217" text-anchor="middle" font-size="11" fill="#617388">0.6s</text><text x="455.2" y="217" text-anchor="middle" font-size="11" fill="#617388">0.95s</text><text x="646.8" y="217" text-anchor="middle" font-size="11" fill="#617388">1.3s</text><text x="838.4" y="217" text-anchor="middle" font-size="11" fill="#617388">1.65s</text><text x="1030.0" y="217" text-anchor="middle" font-size="11" fill="#617388">2s</text><rect x="72" y="40.258064516129025" width="958" height="5.275760701765627" fill="#d9f1e9"/><path d="M72 42.895944867011835H1030" stroke="#0e9b7e" stroke-dasharray="5 4"/><path d="M72.00,174.64 L74.19,175.74 L75.83,174.89 L76.38,174.36 L80.21,175.15 L80.76,174.12 L84.59,175.06 L85.14,174.17 L85.69,175.15 L88.97,173.08 L89.52,170.59 L93.35,159.38 L93.90,158.28 L97.73,147.94 L98.28,146.81 L102.11,137.36 L102.66,136.46 L106.49,128.18 L107.04,127.23 L110.87,118.95 L111.41,118.16 L115.25,111.74 L115.79,110.34 L119.63,104.96 L120.17,104.36 L124.01,98.28 L124.55,96.87 L125.10,97.11 L128.39,93.01 L128.93,92.60 L132.76,87.59 L133.31,87.02 L137.14,83.00 L137.69,82.45 L141.52,79.20 L142.07,78.84 L145.90,75.32 L146.45,74.94 L150.28,72.07 L150.83,71.63 L151.38,72.26 L154.11,69.20 L154.66,69.47 L155.21,69.02 L159.04,66.48 L159.59,66.64 L163.42,64.07 L163.97,64.00 L165.61,62.68 L167.80,62.68 L168.35,62.68 L172.18,62.68 L172.73,62.68 L176.56,62.68 L177.11,62.68 L180.94,62.68 L181.49,62.68 L185.32,62.68 L185.87,62.68 L189.70,62.68 L190.24,62.68 L194.08,62.68 L194.62,62.68 L198.46,62.68 L199.00,62.68 L202.84,62.68 L203.38,62.68 L207.21,62.68 L207.76,62.68 L211.59,62.68 L212.14,62.68 L215.97,62.68 L216.52,62.68 L220.35,62.68 L220.90,62.68 L224.73,62.68 L225.28,62.68 L229.11,62.68 L229.66,62.68 L233.49,62.68 L234.04,62.68 L237.87,62.68 L238.42,62.68 L242.25,62.68 L242.80,62.68 L246.63,62.68 L247.18,62.68 L251.01,62.68 L251.56,62.68 L255.39,62.68 L255.94,62.68 L259.77,62.68 L260.32,62.68 L264.15,62.68 L264.69,62.68 L268.53,62.68 L269.07,62.68 L272.91,62.68 L273.45,62.68 L277.29,62.68 L277.83,62.68 L281.67,62.68 L282.21,62.68 L286.04,62.68 L286.59,62.68 L290.42,62.68 L290.97,62.68 L294.80,62.68 L295.35,62.68 L299.18,62.68 L299.73,62.68 L303.56,62.68 L304.11,62.68 L307.94,62.68 L308.49,62.68 L312.32,62.68 L312.87,62.68 L316.70,62.68 L317.25,62.68 L321.08,62.68 L321.63,62.68 L325.46,62.68 L326.01,62.68 L329.84,62.68 L330.39,62.68 L334.22,62.68 L334.77,62.68 L338.60,62.68 L339.15,62.68 L342.98,62.68 L343.52,62.68 L347.36,62.68 L347.90,62.68 L351.74,62.68 L352.28,62.68 L356.12,62.68 L356.66,62.68 L360.49,62.68 L361.04,62.68 L364.87,62.68 L365.42,62.68 L369.25,62.68 L369.80,62.68 L373.63,62.68 L374.18,62.68 L378.01,62.68 L378.56,62.68 L382.39,62.68 L382.94,62.68 L386.77,62.68 L387.32,62.68 L391.15,62.68 L391.70,62.68 L395.53,62.68 L396.08,62.68 L399.91,62.68 L400.46,62.68 L404.29,62.68 L404.84,62.68 L408.67,62.68 L409.22,62.68 L413.05,62.68 L413.60,62.68 L417.43,62.68 L417.97,62.68 L421.81,62.68 L422.35,62.68 L426.19,62.68 L426.73,62.68 L430.57,62.68 L431.11,62.68 L434.95,62.68 L435.49,62.68 L439.32,62.68 L439.87,62.68 L443.70,62.68 L444.25,62.68 L448.08,62.68 L448.63,62.68 L452.46,62.68 L453.01,62.68 L456.84,62.68 L457.39,62.68 L461.22,62.68 L461.77,62.68 L465.60,62.68 L466.15,62.68 L469.98,62.68 L470.53,62.68 L474.36,62.68 L474.91,62.68 L478.74,62.68 L479.29,62.68 L483.12,62.68 L483.67,62.68 L487.50,62.68 L488.05,62.68 L491.88,62.68 L492.43,62.68 L496.26,62.68 L496.80,62.68 L500.64,62.68 L501.18,62.68 L505.02,62.68 L505.56,62.68 L509.40,62.68 L509.94,62.68 L513.77,62.68 L514.32,62.68 L518.15,62.68 L518.70,62.68 L522.53,62.68 L523.08,62.68 L526.91,62.68 L527.46,62.68 L531.29,62.68 L531.84,62.68 L535.67,62.68 L536.22,62.68 L540.05,62.68 L540.60,62.68 L544.43,62.68 L544.98,62.68 L548.81,62.68 L549.36,62.68 L553.19,62.68 L553.74,62.68 L557.57,62.68 L558.12,62.68 L561.95,62.68 L562.50,62.68 L566.33,62.68 L566.88,62.68 L570.71,62.68 L571.25,62.68 L575.09,62.68 L575.63,62.68 L579.47,62.68 L580.01,62.68 L583.85,62.68 L584.39,62.68 L588.23,62.68 L588.77,62.68 L592.60,62.68 L593.15,62.68 L596.98,62.68 L597.53,62.68 L601.36,62.68 L601.91,62.68 L605.74,62.68 L606.29,62.68 L610.12,62.68 L610.67,62.68 L614.50,62.68 L615.05,62.68 L618.88,62.68 L619.43,62.68 L623.26,62.68 L623.81,62.68 L627.64,62.68 L628.19,62.68 L632.02,62.68 L632.57,62.68 L636.40,62.68 L636.95,62.68 L640.78,62.68 L641.33,62.68 L645.16,62.68 L645.71,62.68 L649.54,62.68 L650.08,62.68 L653.92,62.68 L654.46,62.68 L658.30,62.68 L658.84,62.68 L662.68,62.68 L663.22,62.68 L667.05,62.68 L667.60,62.68 L671.43,62.68 L671.98,62.68 L675.81,62.68 L676.36,62.68 L680.19,62.68 L680.74,62.68 L684.57,62.68 L685.12,62.68 L688.95,62.68 L689.50,62.68 L693.33,62.68 L693.88,62.68 L697.71,62.68 L698.26,62.68 L702.09,62.68 L702.64,62.68 L706.47,62.68 L707.02,62.68 L710.85,62.68 L711.40,62.68 L715.23,62.68 L715.78,62.68 L719.61,62.68 L720.16,62.68 L723.99,62.68 L724.53,62.68 L728.37,62.68 L728.91,62.68 L732.75,62.68 L733.29,62.68 L737.13,62.68 L737.67,62.68 L741.51,62.68 L742.05,62.68 L745.88,62.68 L746.43,62.68 L750.26,62.68 L750.81,62.68 L754.64,62.68 L755.19,62.68 L759.02,62.68 L759.57,62.68 L763.40,62.68 L763.95,62.68 L767.78,62.68 L768.33,62.68 L772.16,62.68 L772.71,62.68 L776.54,62.68 L777.09,62.68 L780.92,62.68 L781.47,62.68 L785.30,62.68 L785.85,62.68 L789.68,62.68 L790.23,62.68 L794.06,62.68 L794.61,62.68 L798.44,62.68 L798.99,62.68 L802.82,62.68 L803.36,62.68 L807.20,62.68 L807.74,62.68 L811.58,62.68 L812.12,62.68 L815.96,62.68 L816.50,62.68 L820.33,62.68 L820.88,62.68 L824.71,62.68 L825.26,62.68 L829.09,62.68 L829.64,62.68 L833.47,62.68 L834.02,62.68 L837.85,62.68 L838.40,62.68 L842.23,62.68 L842.78,62.68 L846.61,62.68 L847.16,62.68 L850.99,62.68 L851.54,62.68 L855.37,62.68 L855.92,62.68 L859.75,62.68 L860.30,62.68 L864.13,62.68 L864.68,62.68 L868.51,62.68 L869.06,62.68 L872.89,62.68 L873.44,62.68 L877.27,62.68 L877.81,62.68 L881.65,62.68 L882.19,62.68 L886.03,62.68 L886.57,62.68 L890.41,62.68 L890.95,62.68 L894.79,62.68 L895.33,62.68 L899.16,62.68 L899.71,62.68 L903.54,62.68 L904.09,62.68 L907.92,62.68 L908.47,62.68 L912.30,62.68 L912.85,62.68 L916.68,62.68 L917.23,62.68 L921.06,62.68 L921.61,62.68 L925.44,62.68 L925.99,62.68 L929.82,62.68 L930.37,62.68 L934.20,62.68 L934.75,62.68 L938.58,62.68 L939.13,62.68 L942.96,62.68 L943.51,62.68 L947.34,62.68 L947.89,62.68 L951.72,62.68 L952.27,62.68 L956.10,62.68 L956.64,62.68 L960.48,62.68 L961.02,62.68 L964.86,62.68 L965.40,62.68 L969.24,62.68 L969.78,62.68 L973.61,62.68 L974.16,62.68 L977.99,62.68 L978.54,62.68 L982.37,62.68 L982.92,62.68 L986.75,62.68 L987.30,62.68 L991.13,62.68 L991.68,62.68 L995.51,62.68 L996.06,62.68 L999.89,62.68 L1000.44,62.68 L1004.27,62.68 L1004.82,62.68 L1008.65,62.68 L1009.20,62.68 L1013.03,62.68 L1013.58,62.68 L1017.41,62.68 L1017.96,62.68 L1021.79,62.68 L1022.34,62.68 L1026.17,62.68 L1026.72,62.68 L1030.00,62.68" fill="none" stroke="#2367cc" stroke-width="1.6"/><path class="processed" d="M72.00,174.64 L73.64,175.67 L75.83,174.89 L76.38,174.89 L79.12,174.62 L79.66,174.96 L80.21,174.62 L80.76,174.63 L82.95,174.74 L84.59,174.24 L85.14,175.06 L88.97,173.08 L89.52,170.59 L93.35,159.38 L93.90,158.28 L97.73,147.94 L98.28,146.81 L102.11,137.36 L102.66,136.46 L106.49,128.18 L107.04,127.23 L110.87,118.95 L111.41,118.16 L115.25,111.74 L115.79,110.34 L119.63,104.96 L120.17,104.36 L124.01,98.28 L124.55,97.11 L128.39,93.01 L128.93,92.60 L132.76,87.59 L133.31,87.02 L137.14,83.00 L137.69,82.45 L141.52,79.20 L142.07,78.84 L145.90,75.32 L146.45,74.94 L150.28,72.07 L150.83,72.07 L154.66,69.20 L155.21,69.02 L159.04,66.64 L159.59,66.48 L163.42,64.07 L163.97,64.00 L165.61,62.68 L167.80,62.68 L168.35,62.68 L172.18,62.68 L172.73,62.68 L176.56,62.68 L177.11,62.68 L180.94,62.68 L181.49,62.68 L185.32,62.68 L185.87,62.68 L189.70,62.68 L190.24,62.68 L194.08,62.68 L194.62,62.68 L198.46,62.68 L199.00,62.68 L202.84,62.68 L203.38,62.68 L207.21,62.68 L207.76,62.68 L211.59,62.68 L212.14,62.68 L215.97,62.68 L216.52,62.68 L220.35,62.68 L220.90,62.68 L224.73,62.68 L225.28,62.68 L229.11,62.68 L229.66,62.68 L233.49,62.68 L234.04,62.68 L237.87,62.68 L238.42,62.68 L242.25,62.68 L242.80,62.68 L246.63,62.68 L247.18,62.68 L251.01,62.68 L251.56,62.68 L255.39,62.68 L255.94,62.68 L259.77,62.68 L260.32,62.68 L264.15,62.68 L264.69,62.68 L268.53,62.68 L269.07,62.68 L272.91,62.68 L273.45,62.68 L277.29,62.68 L277.83,62.68 L281.67,62.68 L282.21,62.68 L286.04,62.68 L286.59,62.68 L290.42,62.68 L290.97,62.68 L294.80,62.68 L295.35,62.68 L299.18,62.68 L299.73,62.68 L303.56,62.68 L304.11,62.68 L307.94,62.68 L308.49,62.68 L312.32,62.68 L312.87,62.68 L316.70,62.68 L317.25,62.68 L321.08,62.68 L321.63,62.68 L325.46,62.68 L326.01,62.68 L329.84,62.68 L330.39,62.68 L334.22,62.68 L334.77,62.68 L338.60,62.68 L339.15,62.68 L342.98,62.68 L343.52,62.68 L347.36,62.68 L347.90,62.68 L351.74,62.68 L352.28,62.68 L356.12,62.68 L356.66,62.68 L360.49,62.68 L361.04,62.68 L364.87,62.68 L365.42,62.68 L369.25,62.68 L369.80,62.68 L373.63,62.68 L374.18,62.68 L378.01,62.68 L378.56,62.68 L382.39,62.68 L382.94,62.68 L386.77,62.68 L387.32,62.68 L391.15,62.68 L391.70,62.68 L395.53,62.68 L396.08,62.68 L399.91,62.68 L400.46,62.68 L404.29,62.68 L404.84,62.68 L408.67,62.68 L409.22,62.68 L413.05,62.68 L413.60,62.68 L417.43,62.68 L417.97,62.68 L421.81,62.68 L422.35,62.68 L426.19,62.68 L426.73,62.68 L430.57,62.68 L431.11,62.68 L434.95,62.68 L435.49,62.68 L439.32,62.68 L439.87,62.68 L443.70,62.68 L444.25,62.68 L448.08,62.68 L448.63,62.68 L452.46,62.68 L453.01,62.68 L456.84,62.68 L457.39,62.68 L461.22,62.68 L461.77,62.68 L465.60,62.68 L466.15,62.68 L469.98,62.68 L470.53,62.68 L474.36,62.68 L474.91,62.68 L478.74,62.68 L479.29,62.68 L483.12,62.68 L483.67,62.68 L487.50,62.68 L488.05,62.68 L491.88,62.68 L492.43,62.68 L496.26,62.68 L496.80,62.68 L500.64,62.68 L501.18,62.68 L505.02,62.68 L505.56,62.68 L509.40,62.68 L509.94,62.68 L513.77,62.68 L514.32,62.68 L518.15,62.68 L518.70,62.68 L522.53,62.68 L523.08,62.68 L526.91,62.68 L527.46,62.68 L531.29,62.68 L531.84,62.68 L535.67,62.68 L536.22,62.68 L540.05,62.68 L540.60,62.68 L544.43,62.68 L544.98,62.68 L548.81,62.68 L549.36,62.68 L553.19,62.68 L553.74,62.68 L557.57,62.68 L558.12,62.68 L561.95,62.68 L562.50,62.68 L566.33,62.68 L566.88,62.68 L570.71,62.68 L571.25,62.68 L575.09,62.68 L575.63,62.68 L579.47,62.68 L580.01,62.68 L583.85,62.68 L584.39,62.68 L588.23,62.68 L588.77,62.68 L592.60,62.68 L593.15,62.68 L596.98,62.68 L597.53,62.68 L601.36,62.68 L601.91,62.68 L605.74,62.68 L606.29,62.68 L610.12,62.68 L610.67,62.68 L614.50,62.68 L615.05,62.68 L618.88,62.68 L619.43,62.68 L623.26,62.68 L623.81,62.68 L627.64,62.68 L628.19,62.68 L632.02,62.68 L632.57,62.68 L636.40,62.68 L636.95,62.68 L640.78,62.68 L641.33,62.68 L645.16,62.68 L645.71,62.68 L649.54,62.68 L650.08,62.68 L653.92,62.68 L654.46,62.68 L658.30,62.68 L658.84,62.68 L662.68,62.68 L663.22,62.68 L667.05,62.68 L667.60,62.68 L671.43,62.68 L671.98,62.68 L675.81,62.68 L676.36,62.68 L680.19,62.68 L680.74,62.68 L684.57,62.68 L685.12,62.68 L688.95,62.68 L689.50,62.68 L693.33,62.68 L693.88,62.68 L697.71,62.68 L698.26,62.68 L702.09,62.68 L702.64,62.68 L706.47,62.68 L707.02,62.68 L710.85,62.68 L711.40,62.68 L715.23,62.68 L715.78,62.68 L719.61,62.68 L720.16,62.68 L723.99,62.68 L724.53,62.68 L728.37,62.68 L728.91,62.68 L732.75,62.68 L733.29,62.68 L737.13,62.68 L737.67,62.68 L741.51,62.68 L742.05,62.68 L745.88,62.68 L746.43,62.68 L750.26,62.68 L750.81,62.68 L754.64,62.68 L755.19,62.68 L759.02,62.68 L759.57,62.68 L763.40,62.68 L763.95,62.68 L767.78,62.68 L768.33,62.68 L772.16,62.68 L772.71,62.68 L776.54,62.68 L777.09,62.68 L780.92,62.68 L781.47,62.68 L785.30,62.68 L785.85,62.68 L789.68,62.68 L790.23,62.68 L794.06,62.68 L794.61,62.68 L798.44,62.68 L798.99,62.68 L802.82,62.68 L803.36,62.68 L807.20,62.68 L807.74,62.68 L811.58,62.68 L812.12,62.68 L815.96,62.68 L816.50,62.68 L820.33,62.68 L820.88,62.68 L824.71,62.68 L825.26,62.68 L829.09,62.68 L829.64,62.68 L833.47,62.68 L834.02,62.68 L837.85,62.68 L838.40,62.68 L842.23,62.68 L842.78,62.68 L846.61,62.68 L847.16,62.68 L850.99,62.68 L851.54,62.68 L855.37,62.68 L855.92,62.68 L859.75,62.68 L860.30,62.68 L864.13,62.68 L864.68,62.68 L868.51,62.68 L869.06,62.68 L872.89,62.68 L873.44,62.68 L877.27,62.68 L877.81,62.68 L881.65,62.68 L882.19,62.68 L886.03,62.68 L886.57,62.68 L890.41,62.68 L890.95,62.68 L894.79,62.68 L895.33,62.68 L899.16,62.68 L899.71,62.68 L903.54,62.68 L904.09,62.68 L907.92,62.68 L908.47,62.68 L912.30,62.68 L912.85,62.68 L916.68,62.68 L917.23,62.68 L921.06,62.68 L921.61,62.68 L925.44,62.68 L925.99,62.68 L929.82,62.68 L930.37,62.68 L934.20,62.68 L934.75,62.68 L938.58,62.68 L939.13,62.68 L942.96,62.68 L943.51,62.68 L947.34,62.68 L947.89,62.68 L951.72,62.68 L952.27,62.68 L956.10,62.68 L956.64,62.68 L960.48,62.68 L961.02,62.68 L964.86,62.68 L965.40,62.68 L969.24,62.68 L969.78,62.68 L973.61,62.68 L974.16,62.68 L977.99,62.68 L978.54,62.68 L982.37,62.68 L982.92,62.68 L986.75,62.68 L987.30,62.68 L991.13,62.68 L991.68,62.68 L995.51,62.68 L996.06,62.68 L999.89,62.68 L1000.44,62.68 L1004.27,62.68 L1004.82,62.68 L1008.65,62.68 L1009.20,62.68 L1013.03,62.68 L1013.58,62.68 L1017.41,62.68 L1017.96,62.68 L1021.79,62.68 L1022.34,62.68 L1026.17,62.68 L1026.72,62.68 L1030.00,62.68" fill="none" stroke="#ca6b16" stroke-width="1.8"/><path d="M72.0 24V192" stroke="#c08632" stroke-dasharray="4 4"/><text x="72" y="15" font-size="11" fill="#617388">kW · 录波起点相对时间；蓝线为原始测量；橙线为显式处理分支（如有）；圆点为候选修复</text></svg></div>
+        <table><thead><tr><th>指标</th><th>测量结果</th><th>配置限值</th><th>判定</th><th>说明</th></tr></thead><tbody><tr><td>超调量 (%)</td><td class="mono">0</td><td>≤ 5</td><td><b style="color:#aa6b00">数据不足 / 待复核</b></td><td>数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论</td></tr><tr><td>响应时间 (s)</td><td class="mono">未取得</td><td>≤ 0.28</td><td><b style="color:#aa6b00">数据不足 / 待复核</b></td><td>数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论</td></tr><tr><td>上升/下降时间 (s)</td><td class="mono">未取得</td><td>≤ 0.23</td><td><b style="color:#aa6b00">数据不足 / 待复核</b></td><td>数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论</td></tr><tr><td>低阈值延时 (s)</td><td class="mono">0.03811953</td><td>≤ 0.08</td><td><b style="color:#aa6b00">数据不足 / 待复核</b></td><td>数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论</td></tr><tr><td>调节时间 (s)</td><td class="mono">未取得</td><td>≤ 0.6</td><td><b style="color:#aa6b00">数据不足 / 待复核</b></td><td>数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论</td></tr><tr><td>稳态误差 (%)</td><td class="mono">14.99789</td><td>≤ 0.8</td><td><b style="color:#aa6b00">数据不足 / 待复核</b></td><td>数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论</td></tr><tr><td>稳态峰峰值</td><td class="mono">0</td><td>≤ 3</td><td><b style="color:#aa6b00">数据不足 / 待复核</b></td><td>数据质量门禁未通过；指标保留作诊断，不作为设备合格/不合格结论</td></tr><tr><td>修复时间占比</td><td class="mono">0</td><td>≤ 0.015</td><td><b style="color:#087f68">通过</b></td><td>满足限值</td></tr><tr><td>基线 MAD 尺度</td><td class="mono">0.3181919</td><td>≤ 1</td><td><b style="color:#087f68">通过</b></td><td>满足限值</td></tr><tr><td>稳态 MAD 尺度</td><td class="mono">0</td><td>≤ 1</td><td><b style="color:#087f68">通过</b></td><td>满足限值</td></tr><tr><td>基线漂移</td><td class="mono">0.01790353</td><td>≤ 1</td><td><b style="color:#087f68">通过</b></td><td>满足限值</td></tr><tr><td>稳态漂移</td><td class="mono">0</td><td>≤ 1.2</td><td><b style="color:#087f68">通过</b></td><td>满足限值</td></tr><tr><td>量程边界占比</td><td class="mono">0.9025714</td><td>≤ 0.02</td><td><b style="color:#aa6b00">数据不足 / 待复核</b></td><td>到达配置传感器量程边界的时间过多；削顶数据不能证明响应性能</td></tr><tr><td>原始最小值（硬限值）</td><td class="mono">-0.7359741</td><td>≥ -20</td><td><b style="color:#087f68">通过</b></td><td>满足限值</td></tr><tr><td>原始最大值（硬限值）</td><td class="mono">85</td><td>≤ 160</td><td><b style="color:#087f68">通过</b></td><td>满足限值</td></tr></tbody></table>
+        <p class="meta">通道映射：{&#x27;alias&#x27;: &#x27;p&#x27;, &#x27;key&#x27;: &#x27;A1&#x27;, &#x27;name&#x27;: &#x27;PCS有功功率_加噪&#x27;, &#x27;native_unit&#x27;: &#x27;kW&#x27;, &#x27;output_unit&#x27;: &#x27;kW&#x27;, &#x27;side&#x27;: &#x27;native&#x27;, &#x27;scale&#x27;: 1, &#x27;offset&#x27;: 0.0, &#x27;factor_including_ratio&#x27;: 1.0, &#x27;skew_us&#x27;: 0.0}<br>最大局部采样间隔：0.001 s。图形可抽稀显示；断言使用完整采样及显式处理分支，不使用显示抽稀数据。时间指标不是高于采样精度的硬件测量保证。</p>
+        <details><summary>查看完整测量指标与证据元数据</summary><pre>{
+  &quot;metrics&quot;: {
+    &quot;baseline&quot;: -0.014101113319396973,
+    &quot;target&quot;: 100.0,
+    &quot;step_amplitude&quot;: 100.0141011133194,
+    &quot;normalization&quot;: &quot;step&quot;,
+    &quot;denominator&quot;: 100.0141011133194,
+    &quot;overshoot_pct&quot;: 0.0,
+    &quot;peak&quot;: 85.0,
+    &quot;peak_time_s&quot;: 0.17099999999999999,
+    &quot;latency_s&quot;: 0.03811953035737081,
+    &quot;response_s&quot;: null,
+    &quot;rise_s&quot;: null,
+    &quot;settling_s&quot;: null,
+    &quot;steady_mean&quot;: 85.0,
+    &quot;steady_median&quot;: 85.0,
+    &quot;steady_estimator&quot;: &quot;time_weighted_median&quot;,
+    &quot;steady_error_pct&quot;: 14.997885131222134,
+    &quot;steady_ripple_pp&quot;: 0.0,
+    &quot;settle_band_absolute&quot;: 2.000282022266388,
+    &quot;baseline_sigma_mad&quot;: 0.3181919483699798,
+    &quot;steady_sigma_mad&quot;: 0.0,
+    &quot;baseline_drift&quot;: 0.017903527975082396,
+    &quot;steady_drift&quot;: 0.0,
+    &quot;replaced_fraction&quot;: 0.0,
+    &quot;replaced_samples&quot;: 0,
+    &quot;raw_peak&quot;: 85.0,
+    &quot;raw_overshoot_pct&quot;: 0.0,
+    &quot;raw_steady_ripple_pp&quot;: 0.0,
+    &quot;tail_occupancy&quot;: null,
+    &quot;longest_excursion_s&quot;: null,
+    &quot;full_window_occupancy&quot;: 0.0,
+    &quot;full_window_longest_excursion_s&quot;: 1.75,
+    &quot;clip_fraction&quot;: 0.9025714285714285
+  },
+  &quot;evidence&quot;: {
+    &quot;trigger&quot;: {
+      &quot;type&quot;: &quot;time&quot;,
+      &quot;at&quot;: 0.25
+    },
+    &quot;window_absolute_s&quot;: [
+      0.25,
+      2.0
+    ],
+    &quot;mapping&quot;: {
+      &quot;alias&quot;: &quot;p&quot;,
+      &quot;key&quot;: &quot;A1&quot;,
+      &quot;name&quot;: &quot;PCS有功功率_加噪&quot;,
+      &quot;native_unit&quot;: &quot;kW&quot;,
+      &quot;output_unit&quot;: &quot;kW&quot;,
+      &quot;side&quot;: &quot;native&quot;,
+      &quot;scale&quot;: 1,
+      &quot;offset&quot;: 0.0,
+      &quot;factor_including_ratio&quot;: 1.0,
+      &quot;skew_us&quot;: 0.0
+    },
+    &quot;max_sample_interval_s&quot;: 0.001000000000000112,
+    &quot;trace_kind&quot;: &quot;analog&quot;,
+    &quot;unit&quot;: &quot;kW&quot;,
+    &quot;baseline_window_s&quot;: [
+      0.04999999999999999,
+      0.22
+    ],
+    &quot;steady_window_s&quot;: [
+      1.5,
+      2.0
+    ],
+    &quot;settle_hold_s&quot;: 0.15,
+    &quot;target&quot;: 100.0,
+    &quot;band_absolute&quot;: 2.000282022266388,
+    &quot;definitions&quot;: &quot;抗噪分支：离线居中时间窗；稳态使用时间加权中位数；阈值穿越必须持续确认；固定误差带+尾段占用率+最长连续出带；原始硬限值永不滤波。&quot;,
+    &quot;raw_metrics&quot;: {
+      &quot;baseline&quot;: -0.003735843644422596,
+      &quot;target&quot;: 100.0,
+      &quot;step_amplitude&quot;: 100.00373584364442,
+      &quot;normalization&quot;: &quot;step&quot;,
+      &quot;denominator&quot;: 100.00373584364442,
+      &quot;overshoot_pct&quot;: 0.0,
+      &quot;peak&quot;: 85.0,
+      &quot;peak_time_s&quot;: 0.17099999999999999,
+      &quot;latency_s&quot;: 0.03812440263310768,
+      &quot;response_s&quot;: null,
+      &quot;rise_s&quot;: null,
+      &quot;settling_s&quot;: null,
+      &quot;steady_mean&quot;: 85.0,
+      &quot;steady_error_pct&quot;: 14.999439644387348,
+      &quot;steady_ripple_pp&quot;: 0.0,
+      &quot;settle_band_absolute&quot;: 2.0000747168728883
+    },
+    &quot;raw_checks&quot;: [
+      {
+        &quot;metric&quot;: &quot;overshoot_pct&quot;,
+        &quot;value&quot;: 0.0,
+        &quot;min&quot;: null,
+        &quot;max&quot;: 5.0,
+        &quot;status&quot;: &quot;PASS&quot;,
+        &quot;reason&quot;: &quot;满足限值&quot;
+      },
+      {
+        &quot;metric&quot;: &quot;response_s&quot;,
+        &quot;value&quot;: null,
+        &quot;min&quot;: null,
+        &quot;max&quot;: 0.28,
+        &quot;status&quot;: &quot;FAIL&quot;,
+        &quot;reason&quot;: &quot;充分观察时间内未达到要求&quot;
+      },
+      {
+        &quot;metric&quot;: &quot;rise_s&quot;,
+        &quot;value&quot;: null,
+        &quot;min&quot;: null,
+        &quot;max&quot;: 0.23,
+        &quot;status&quot;: &quot;FAIL&quot;,
+        &quot;reason&quot;: &quot;充分观察时间内未达到要求&quot;
+      },
+      {
+        &quot;metric&quot;: &quot;latency_s&quot;,
+        &quot;value&quot;: 0.03812440263310768,
+        &quot;min&quot;: null,
+        &quot;max&quot;: 0.08,
+        &quot;status&quot;: &quot;PASS&quot;,
+        &quot;reason&quot;: &quot;满足限值&quot;
+      },
+      {
+        &quot;metric&quot;: &quot;settling_s&quot;,
+        &quot;value&quot;: null,
+        &quot;min&quot;: null,
+        &quot;max&quot;: 0.6,
+        &quot;status&quot;: &quot;FAIL&quot;,
+        &quot;reason&quot;: &quot;充分观察时间内未达到要求&quot;
+      },
+      {
+        &quot;metric&quot;: &quot;steady_error_pct&quot;,
+        &quot;value&quot;: 14.999439644387348,
+        &quot;min&quot;: null,
+        &quot;max&quot;: 0.8,
+        &quot;status&quot;: &quot;FAIL&quot;,
+        &quot;reason&quot;: &quot;超出限值&quot;
+      },
+      {
+        &quot;metric&quot;: &quot;steady_ripple_pp&quot;,
+        &quot;value&quot;: 0.0,
+        &quot;min&quot;: null,
+        &quot;max&quot;: 3.0,
+        &quot;status&quot;: &quot;PASS&quot;,
+        &quot;reason&quot;: &quot;满足限值&quot;
+      }
+    ],
+    &quot;processing&quot;: {
+      &quot;configuration&quot;: {
+        &quot;hampel_window_s&quot;: 0.012,
+        &quot;hampel_sigma&quot;: 4.5,
+        &quot;hampel_floor&quot;: 0.9,
+        &quot;max_spike_s&quot;: 0.0031,
+        &quot;smooth_window_s&quot;: 0.003,
+        &quot;crossing_hold_s&quot;: 0.008,
+        &quot;crossing_hysteresis_fraction&quot;: 0.004,
+        &quot;settle_occupancy&quot;: 0.995,
+        &quot;max_excursion_s&quot;: 0.003,
+        &quot;max_replaced_fraction&quot;: 0.015,
+        &quot;max_noise_sigma&quot;: 1.0,
+        &quot;max_baseline_drift&quot;: 1.0,
+        &quot;max_steady_drift&quot;: 1.2,
+        &quot;raw_min&quot;: -20.0,
+        &quot;raw_max&quot;: 160.0,
+        &quot;clip_min&quot;: -20.0,
+        &quot;clip_max&quot;: 85.0,
+        &quot;max_clip_fraction&quot;: 0.02
+      },
+      &quot;analysis&quot;: {
+        &quot;median_smoothed_samples&quot;: 45,
+        &quot;total_changed_samples&quot;: 45,
+        &quot;max_smoothing_change&quot;: 0.6742971496582031,
+        &quot;eligible_windows&quot;: 1739,
+        &quot;undersampled_windows&quot;: 0,
+        &quot;candidate_samples&quot;: 0,
+        &quot;replaced_samples&quot;: 0,
+        &quot;replaced_fraction&quot;: 0.0,
+        &quot;replaced_sample_fraction&quot;: 0.0,
+        &quot;island_duration_upper_sum_s&quot;: 0.0,
+        &quot;repairs&quot;: [],
+        &quot;islands&quot;: [],
+        &quot;audit_truncated&quot;: false,
+        &quot;processed_sha256&quot;: &quot;977c740e56f7fbcff7a6b7c1aabcee56cde11004fafbe6d781746dd49eb9b021&quot;,
+        &quot;window_s&quot;: [
+          0.25,
+          2.0
+        ],
+        &quot;mode&quot;: &quot;offline_centered_time_windows&quot;,
+        &quot;timing_support_radius_s&quot;: 0.0075,
+        &quot;note&quot;: &quot;候选异常不是已证明的采集噪声。未覆盖完整窗口、长扰动与缺点不自动修复。&quot;
+      },
+      &quot;baseline&quot;: {
+        &quot;median_smoothed_samples&quot;: 113,
+        &quot;total_changed_samples&quot;: 113,
+        &quot;max_smoothing_change&quot;: 0.7129274597167969,
+        &quot;eligible_windows&quot;: 159,
+        &quot;undersampled_windows&quot;: 0,
+        &quot;candidate_samples&quot;: 0,
+        &quot;replaced_samples&quot;: 0,
+        &quot;replaced_fraction&quot;: 0.0,
+        &quot;replaced_sample_fraction&quot;: 0.0,
+        &quot;island_duration_upper_sum_s&quot;: 0.0,
+        &quot;repairs&quot;: [],
+        &quot;islands&quot;: [],
+        &quot;audit_truncated&quot;: false,
+        &quot;processed_sha256&quot;: &quot;f7555201a1a3f93f61f74cf4224ec0626e94d6e403a1ff2e2ba2df85d76397da&quot;,
+        &quot;window_s&quot;: [
+          0.04999999999999999,
+          0.22
+        ],
+        &quot;mode&quot;: &quot;offline_centered_time_windows&quot;,
+        &quot;timing_support_radius_s&quot;: 0.0075,
+        &quot;note&quot;: &quot;候选异常不是已证明的采集噪声。未覆盖完整窗口、长扰动与缺点不自动修复。&quot;
+      },
+      &quot;quality_checks&quot;: [
+        {
+          &quot;metric&quot;: &quot;repair_fraction&quot;,
+          &quot;value&quot;: 0.0,
+          &quot;min&quot;: null,
+          &quot;max&quot;: 0.015,
+          &quot;status&quot;: &quot;PASS&quot;,
+          &quot;reason&quot;: &quot;满足限值&quot;
+        },
+        {
+          &quot;metric&quot;: &quot;baseline_noise_sigma&quot;,
+          &quot;value&quot;: 0.3181919483699798,
+          &quot;min&quot;: null,
+          &quot;max&quot;: 1.0,
+          &quot;status&quot;: &quot;PASS&quot;,
+          &quot;reason&quot;: &quot;满足限值&quot;
+        },
+        {
+          &quot;metric&quot;: &quot;steady_noise_sigma&quot;,
+          &quot;value&quot;: 0.0,
+          &quot;min&quot;: null,
+          &quot;max&quot;: 1.0,
+          &quot;status&quot;: &quot;PASS&quot;,
+          &quot;reason&quot;: &quot;满足限值&quot;
+        },
+        {
+          &quot;metric&quot;: &quot;baseline_drift&quot;,
+          &quot;value&quot;: 0.017903527975082396,
+          &quot;min&quot;: null,
+          &quot;max&quot;: 1.0,
+          &quot;status&quot;: &quot;PASS&quot;,
+          &quot;reason&quot;: &quot;满足限值&quot;
+        },
+        {
+          &quot;metric&quot;: &quot;steady_drift&quot;,
+          &quot;value&quot;: 0.0,
+          &quot;min&quot;: null,
+          &quot;max&quot;: 1.2,
+          &quot;status&quot;: &quot;PASS&quot;,
+          &quot;reason&quot;: &quot;满足限值&quot;
+        },
+        {
+          &quot;metric&quot;: &quot;clip_fraction&quot;,
+          &quot;value&quot;: 0.9025714285714285,
+          &quot;min&quot;: null,
+          &quot;max&quot;: 0.02,
+          &quot;status&quot;: &quot;INCONCLUSIVE&quot;,
+          &quot;reason&quot;: &quot;到达配置传感器量程边界的时间过多；削顶数据不能证明响应性能&quot;
+        }
+      ],
+      &quot;raw_peak_conflicts&quot;: [],
+      &quot;timing_review_guard_s&quot;: 0.008500000000000112
+    },
+    &quot;baseline_statistics&quot;: {
+      &quot;median&quot;: -0.005525350570678711,
+      &quot;sigma_mad&quot;: 0.3181919483699798,
+      &quot;drift&quot;: 0.017903527975082396,
+      &quot;p01&quot;: -0.5765404052734375,
+      &quot;p99&quot;: 0.561672119140625
+    },
+    &quot;steady_statistics&quot;: {
+      &quot;median&quot;: 85.0,
+      &quot;sigma_mad&quot;: 0.0,
+      &quot;drift&quot;: 0.0,
+      &quot;p01&quot;: 85.0,
+      &quot;p99&quot;: 85.0
+    },
+    &quot;qualified_crossings&quot;: {
+      &quot;low&quot;: {
+        &quot;onset_s&quot;: 0.2881195303573708,
+        &quot;confirmed_s&quot;: 0.2961195303573708,
+        &quot;confirmation_sample_s&quot;: 0.297,
+        &quot;support_s&quot;: [
+          0.288,
+          0.289
+        ],
+        &quot;rejected&quot;: 0,
+        &quot;pending&quot;: false
+      },
+      &quot;high&quot;: {
+        &quot;rejected&quot;: 0,
+        &quot;pending&quot;: false,
+        &quot;candidate_onset_s&quot;: null
+      }
+    }
+  }
+}</pre></details></section><section class="test"><h2>数据质量与可追溯性</h2><p>解析器未发现已覆盖的数据质量异常；这不等同于现场采集质量认证。</p><pre>{
+  &quot;software_version&quot;: &quot;1.2.0&quot;,
+  &quot;hashes&quot;: {
+    &quot;cfg_sha256&quot;: &quot;f3b2a567d8561e079c973da0b6818a2d6ba4c8d2b34e178d57543b60d17d2630&quot;,
+    &quot;dat_sha256&quot;: &quot;9a4c559a10d509a7924fbc616de18f17f080b853a4f558a5d0283acd5282b71f&quot;
+  },
+  &quot;config_sha256&quot;: &quot;13627f6e56a3226290af7534e6f5eca969ec6fdd8f2f0567552664bb87eca763&quot;,
+  &quot;time_source&quot;: &quot;dat_timestamps&quot;,
+  &quot;time_metadata&quot;: [
+    [
+      &quot;+00:00&quot;,
+      &quot;+00:00&quot;
+    ],
+    [
+      &quot;0&quot;,
+      &quot;0&quot;
+    ]
+  ]
+}</pre><details><summary>展开本次完整配置快照</summary><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;name&quot;: &quot;传感器饱和削顶：测量失真待复核&quot;,
+  &quot;description&quot;: &quot;合成噪声工程回归；预期来自注入模型与显式限值，不是厂家现场验证。&quot;,
+  &quot;standard&quot;: {
+    &quot;reference&quot;: &quot;噪声算法工程示例；非国标条款&quot;,
+    &quot;reviewed&quot;: false,
+    &quot;note&quot;: &quot;所有容限必须由项目审核后替换。&quot;
+  },
+  &quot;channels&quot;: {
+    &quot;p&quot;: {
+      &quot;kind&quot;: &quot;analog&quot;,
+      &quot;index&quot;: 1,
+      &quot;unit&quot;: &quot;kW&quot;
+    }
+  },
+  &quot;tests&quot;: [
+    {
+      &quot;id&quot;: &quot;ROBUST_STEP&quot;,
+      &quot;name&quot;: &quot;抗噪性能 + 原始硬限值 + 质量预算&quot;,
+      &quot;type&quot;: &quot;analog_step&quot;,
+      &quot;channel&quot;: &quot;p&quot;,
+      &quot;trigger&quot;: {
+        &quot;type&quot;: &quot;time&quot;,
+        &quot;at&quot;: 0.25
+      },
+      &quot;window&quot;: [
+        0,
+        1.75
+      ],
+      &quot;baseline_window&quot;: [
+        -0.2,
+        -0.03
+      ],
+      &quot;target&quot;: 100.0,
+      &quot;normalization&quot;: &quot;step&quot;,
+      &quot;steady_last_s&quot;: 0.5,
+      &quot;settle_band_pct&quot;: 2.0,
+      &quot;settle_hold_s&quot;: 0.15,
+      &quot;limits&quot;: {
+        &quot;overshoot_pct_max&quot;: 5.0,
+        &quot;response_s_max&quot;: 0.28,
+        &quot;rise_s_max&quot;: 0.23,
+        &quot;latency_s_max&quot;: 0.08,
+        &quot;settling_s_max&quot;: 0.6,
+        &quot;steady_error_pct_max&quot;: 0.8,
+        &quot;steady_ripple_pp_max&quot;: 3.0
+      },
+      &quot;robust&quot;: {
+        &quot;hampel_window_s&quot;: 0.012,
+        &quot;hampel_sigma&quot;: 4.5,
+        &quot;hampel_floor&quot;: 0.9,
+        &quot;max_spike_s&quot;: 0.0031,
+        &quot;smooth_window_s&quot;: 0.003,
+        &quot;crossing_hold_s&quot;: 0.008,
+        &quot;crossing_hysteresis_fraction&quot;: 0.004,
+        &quot;settle_occupancy&quot;: 0.995,
+        &quot;max_excursion_s&quot;: 0.003,
+        &quot;max_replaced_fraction&quot;: 0.015,
+        &quot;max_noise_sigma&quot;: 1.0,
+        &quot;max_baseline_drift&quot;: 1.0,
+        &quot;max_steady_drift&quot;: 1.2,
+        &quot;raw_min&quot;: -20.0,
+        &quot;raw_max&quot;: 160.0,
+        &quot;clip_min&quot;: -20.0,
+        &quot;clip_max&quot;: 85.0,
+        &quot;max_clip_fraction&quot;: 0.02
+      }
+    }
+  ]
+}</pre></details></section><footer>ESS WaveTest 1.2.0 · 离线分析 · SHA-256 用于文件一致性核对，不是数字签名。请结合原始录波、测量系统校准和适用标准审核结论。</footer></main><script type="application/json" id="wave-report-data">{"0":{"raw":[[0.25,0.09879694366455079],[0.251,-0.13212371826171876],[0.252,-0.6811227416992187],[0.253,-0.5611178588867187],[0.254,-0.73597412109375],[0.255,-0.18064712524414062],[0.256,-0.44229931640625003],[0.257,-0.0918413314819336],[0.258,0.31087548828125],[0.259,-0.09084011077880859],[0.26,-0.045032772064208984],[0.261,0.08602692413330078],[0.262,0.28939349365234374],[0.263,-0.14058738708496094],[0.264,0.11831680297851563],[0.265,-0.2835424499511719],[0.266,0.49230108642578124],[0.267,0.10761774444580079],[0.26799999999999996,0.32835943603515627],[0.26899999999999996,-0.000912526786327362],[0.26999999999999996,0.11644194793701172],[0.27099999999999996,0.02640711784362793],[0.27199999999999996,0.4032845458984375],[0.27299999999999996,-0.21840011596679687],[0.27399999999999997,0.4558970336914063],[0.27499999999999997,-0.2861711730957031],[0.27599999999999997,0.05175453186035156],[0.27699999999999997,-0.16546763610839843],[0.27799999999999997,0.060948436737060546],[0.27899999999999997,-0.03395292282104492],[0.27999999999999997,0.29578359985351566],[0.28099999999999997,1.2803759765625],[0.282,3.17179638671875],[0.283,4.3357915039062505],[0.284,5.80403271484375],[0.285,6.8135097656250005],[0.286,7.5618505859375],[0.287,8.9471806640625],[0.288,9.75844921875],[0.289,11.673107421875],[0.29,12.5072314453125],[0.291,13.4701806640625],[0.292,14.445186523437501],[0.293,16.0160234375],[0.294,16.83129296875],[0.295,18.06619921875],[0.296,19.34135546875],[0.297,20.348796875],[0.298,21.203671875],[0.299,22.154189453125],[0.3,23.215412109375002],[0.301,24.732408203125],[0.302,25.170923828125],[0.303,26.618568359375],[0.304,27.49388671875],[0.305,28.370048828125],[0.306,29.05256640625],[0.307,30.04184375],[0.308,31.375328125],[0.309,32.61289453125],[0.31,32.95521875],[0.311,33.878453125],[0.312,34.6996640625],[0.313,35.33316015625],[0.314,36.05019921875],[0.315,36.9804375],[0.316,37.95665625],[0.317,39.33601953125],[0.318,39.52671484375],[0.319,40.211863281250004],[0.32,41.327656250000004],[0.321,42.32853515625],[0.322,42.92961328125],[0.323,44.03389453125],[0.324,44.5576796875],[0.325,45.12884375],[0.326,46.2390859375],[0.327,46.68230859375],[0.32799999999999996,46.987171875],[0.32899999999999996,47.7952421875],[0.32999999999999996,48.854296875],[0.33099999999999996,49.5408359375],[0.33199999999999996,50.097875],[0.33299999999999996,50.6512890625],[0.33399999999999996,51.28384375],[0.33499999999999996,51.515515625],[0.33599999999999997,52.36304296875],[0.33699999999999997,52.938921875],[0.33799999999999997,53.39462890625],[0.33899999999999997,54.142265625],[0.33999999999999997,54.765328125],[0.34099999999999997,55.744671875],[0.34199999999999997,56.31467578125],[0.34299999999999997,57.10007421875],[0.344,57.5814765625],[0.345,58.00002734375],[0.346,59.073992187500004],[0.347,58.88721875],[0.348,59.52137890625],[0.349,60.4542109375],[0.35,61.060734375],[0.351,61.408574218750005],[0.352,61.609152343750004],[0.353,61.999078125000004],[0.354,62.30909765625],[0.355,63.1064453125],[0.356,63.55035546875],[0.357,64.28441796875],[0.358,64.69452734375],[0.359,64.97771875000001],[0.36,65.8084140625],[0.361,66.108125],[0.362,66.5437578125],[0.363,67.1006796875],[0.364,67.5322421875],[0.365,68.2469765625],[0.366,68.4918359375],[0.367,68.6048203125],[0.368,68.8382734375],[0.369,69.585984375],[0.37,70.009078125],[0.371,70.4251875],[0.372,70.91012500000001],[0.373,70.7079921875],[0.374,71.3825546875],[0.375,71.39353125],[0.376,72.06992968750001],[0.377,72.470828125],[0.378,72.743578125],[0.379,73.43059375],[0.38,73.81403125],[0.381,73.67896093750001],[0.382,74.649765625],[0.383,74.7873984375],[0.384,75.2230703125],[0.385,75.41434375],[0.386,75.6998984375],[0.38699999999999996,76.14492187500001],[0.38799999999999996,76.770046875],[0.38899999999999996,76.8668203125],[0.38999999999999996,76.7112890625],[0.39099999999999996,76.82515625],[0.39199999999999996,77.2016796875],[0.39299999999999996,77.8774375],[0.39399999999999996,78.2104140625],[0.39499999999999996,77.7335],[0.39599999999999996,78.475921875],[0.39699999999999996,79.078015625],[0.39799999999999996,79.088828125],[0.39899999999999997,79.858],[0.39999999999999997,80.05758593750001],[0.40099999999999997,79.8521015625],[0.40199999999999997,80.1928671875],[0.40299999999999997,80.5226796875],[0.40399999999999997,80.9259921875],[0.40499999999999997,81.182140625],[0.40599999999999997,81.5411796875],[0.407,81.7464296875],[0.408,81.6904765625],[0.409,82.11878125],[0.41,81.9935703125],[0.411,82.509859375],[0.412,83.1943359375],[0.413,82.99278125000001],[0.414,83.19659375],[0.415,83.6879140625],[0.416,83.6098671875],[0.417,83.9450546875],[0.418,83.995703125],[0.419,84.0378203125],[0.42,84.5171171875],[0.421,85.0],[0.422,85.0],[0.423,85.0],[0.424,85.0],[0.425,85.0],[0.426,85.0],[0.427,85.0],[0.428,85.0],[0.429,85.0],[0.43,85.0],[0.431,85.0],[0.432,85.0],[0.433,85.0],[0.434,85.0],[0.435,85.0],[0.436,85.0],[0.437,85.0],[0.438,85.0],[0.439,85.0],[0.44,85.0],[0.441,85.0],[0.442,85.0],[0.443,85.0],[0.444,85.0],[0.445,85.0],[0.446,85.0],[0.44699999999999995,85.0],[0.44799999999999995,85.0],[0.44899999999999995,85.0],[0.44999999999999996,85.0],[0.45099999999999996,85.0],[0.45199999999999996,85.0],[0.45299999999999996,85.0],[0.45399999999999996,85.0],[0.45499999999999996,85.0],[0.45599999999999996,85.0],[0.45699999999999996,85.0],[0.45799999999999996,85.0],[0.45899999999999996,85.0],[0.45999999999999996,85.0],[0.46099999999999997,85.0],[0.46199999999999997,85.0],[0.46299999999999997,85.0],[0.46399999999999997,85.0],[0.46499999999999997,85.0],[0.46599999999999997,85.0],[0.46699999999999997,85.0],[0.46799999999999997,85.0],[0.469,85.0],[0.47,85.0],[0.471,85.0],[0.472,85.0],[0.473,85.0],[0.474,85.0],[0.475,85.0],[0.476,85.0],[0.477,85.0],[0.478,85.0],[0.479,85.0],[0.48,85.0],[0.481,85.0],[0.482,85.0],[0.483,85.0],[0.484,85.0],[0.485,85.0],[0.486,85.0],[0.487,85.0],[0.488,85.0],[0.489,85.0],[0.49,85.0],[0.491,85.0],[0.492,85.0],[0.493,85.0],[0.494,85.0],[0.495,85.0],[0.496,85.0],[0.497,85.0],[0.498,85.0],[0.499,85.0],[0.5,85.0],[0.501,85.0],[0.502,85.0],[0.503,85.0],[0.504,85.0],[0.505,85.0],[0.506,85.0],[0.507,85.0],[0.508,85.0],[0.509,85.0],[0.51,85.0],[0.511,85.0],[0.512,85.0],[0.513,85.0],[0.514,85.0],[0.515,85.0],[0.516,85.0],[0.517,85.0],[0.518,85.0],[0.519,85.0],[0.52,85.0],[0.521,85.0],[0.522,85.0],[0.523,85.0],[0.524,85.0],[0.525,85.0],[0.526,85.0],[0.527,85.0],[0.528,85.0],[0.529,85.0],[0.53,85.0],[0.531,85.0],[0.532,85.0],[0.533,85.0],[0.534,85.0],[0.535,85.0],[0.5359999999999999,85.0],[0.5369999999999999,85.0],[0.5379999999999999,85.0],[0.5389999999999999,85.0],[0.5399999999999999,85.0],[0.5409999999999999,85.0],[0.5419999999999999,85.0],[0.5429999999999999,85.0],[0.5439999999999999,85.0],[0.5449999999999999,85.0],[0.5459999999999999,85.0],[0.5469999999999999,85.0],[0.5479999999999999,85.0],[0.5489999999999999,85.0],[0.5499999999999999,85.0],[0.5509999999999999,85.0],[0.5519999999999999,85.0],[0.5529999999999999,85.0],[0.5539999999999999,85.0],[0.5549999999999999,85.0],[0.5559999999999999,85.0],[0.5569999999999999,85.0],[0.5579999999999999,85.0],[0.5589999999999999,85.0],[0.5599999999999999,85.0],[0.5609999999999999,85.0],[0.5619999999999999,85.0],[0.563,85.0],[0.564,85.0],[0.565,85.0],[0.566,85.0],[0.567,85.0],[0.568,85.0],[0.569,85.0],[0.57,85.0],[0.571,85.0],[0.572,85.0],[0.573,85.0],[0.574,85.0],[0.575,85.0],[0.576,85.0],[0.577,85.0],[0.578,85.0],[0.579,85.0],[0.58,85.0],[0.581,85.0],[0.582,85.0],[0.583,85.0],[0.584,85.0],[0.585,85.0],[0.586,85.0],[0.587,85.0],[0.588,85.0],[0.589,85.0],[0.59,85.0],[0.591,85.0],[0.592,85.0],[0.593,85.0],[0.594,85.0],[0.595,85.0],[0.596,85.0],[0.597,85.0],[0.598,85.0],[0.599,85.0],[0.6,85.0],[0.601,85.0],[0.602,85.0],[0.603,85.0],[0.604,85.0],[0.605,85.0],[0.606,85.0],[0.607,85.0],[0.608,85.0],[0.609,85.0],[0.61,85.0],[0.611,85.0],[0.612,85.0],[0.613,85.0],[0.614,85.0],[0.615,85.0],[0.616,85.0],[0.617,85.0],[0.618,85.0],[0.619,85.0],[0.62,85.0],[0.621,85.0],[0.622,85.0],[0.623,85.0],[0.624,85.0],[0.625,85.0],[0.626,85.0],[0.627,85.0],[0.628,85.0],[0.629,85.0],[0.63,85.0],[0.631,85.0],[0.632,85.0],[0.633,85.0],[0.634,85.0],[0.635,85.0],[0.636,85.0],[0.637,85.0],[0.638,85.0],[0.639,85.0],[0.64,85.0],[0.641,85.0],[0.642,85.0],[0.643,85.0],[0.644,85.0],[0.645,85.0],[0.646,85.0],[0.647,85.0],[0.648,85.0],[0.649,85.0],[0.65,85.0],[0.651,85.0],[0.652,85.0],[0.653,85.0],[0.654,85.0],[0.6549999999999999,85.0],[0.6559999999999999,85.0],[0.6569999999999999,85.0],[0.6579999999999999,85.0],[0.6589999999999999,85.0],[0.6599999999999999,85.0],[0.6609999999999999,85.0],[0.6619999999999999,85.0],[0.6629999999999999,85.0],[0.6639999999999999,85.0],[0.6649999999999999,85.0],[0.6659999999999999,85.0],[0.6669999999999999,85.0],[0.6679999999999999,85.0],[0.6689999999999999,85.0],[0.6699999999999999,85.0],[0.6709999999999999,85.0],[0.6719999999999999,85.0],[0.6729999999999999,85.0],[0.6739999999999999,85.0],[0.6749999999999999,85.0],[0.6759999999999999,85.0],[0.6769999999999999,85.0],[0.6779999999999999,85.0],[0.6789999999999999,85.0],[0.6799999999999999,85.0],[0.6809999999999999,85.0],[0.6819999999999999,85.0],[0.6829999999999999,85.0],[0.6839999999999999,85.0],[0.6849999999999999,85.0],[0.6859999999999999,85.0],[0.6869999999999999,85.0],[0.688,85.0],[0.689,85.0],[0.69,85.0],[0.691,85.0],[0.692,85.0],[0.693,85.0],[0.694,85.0],[0.695,85.0],[0.696,85.0],[0.697,85.0],[0.698,85.0],[0.699,85.0],[0.7,85.0],[0.701,85.0],[0.702,85.0],[0.703,85.0],[0.704,85.0],[0.705,85.0],[0.706,85.0],[0.707,85.0],[0.708,85.0],[0.709,85.0],[0.71,85.0],[0.711,85.0],[0.712,85.0],[0.713,85.0],[0.714,85.0],[0.715,85.0],[0.716,85.0],[0.717,85.0],[0.718,85.0],[0.719,85.0],[0.72,85.0],[0.721,85.0],[0.722,85.0],[0.723,85.0],[0.724,85.0],[0.725,85.0],[0.726,85.0],[0.727,85.0],[0.728,85.0],[0.729,85.0],[0.73,85.0],[0.731,85.0],[0.732,85.0],[0.733,85.0],[0.734,85.0],[0.735,85.0],[0.736,85.0],[0.737,85.0],[0.738,85.0],[0.739,85.0],[0.74,85.0],[0.741,85.0],[0.742,85.0],[0.743,85.0],[0.744,85.0],[0.745,85.0],[0.746,85.0],[0.747,85.0],[0.748,85.0],[0.749,85.0],[0.75,85.0],[0.751,85.0],[0.752,85.0],[0.753,85.0],[0.754,85.0],[0.755,85.0],[0.756,85.0],[0.757,85.0],[0.758,85.0],[0.759,85.0],[0.76,85.0],[0.761,85.0],[0.762,85.0],[0.763,85.0],[0.764,85.0],[0.765,85.0],[0.766,85.0],[0.767,85.0],[0.768,85.0],[0.769,85.0],[0.77,85.0],[0.771,85.0],[0.772,85.0],[0.773,85.0],[0.7739999999999999,85.0],[0.7749999999999999,85.0],[0.7759999999999999,85.0],[0.7769999999999999,85.0],[0.7779999999999999,85.0],[0.7789999999999999,85.0],[0.7799999999999999,85.0],[0.7809999999999999,85.0],[0.7819999999999999,85.0],[0.7829999999999999,85.0],[0.7839999999999999,85.0],[0.7849999999999999,85.0],[0.7859999999999999,85.0],[0.7869999999999999,85.0],[0.7879999999999999,85.0],[0.7889999999999999,85.0],[0.7899999999999999,85.0],[0.7909999999999999,85.0],[0.7919999999999999,85.0],[0.7929999999999999,85.0],[0.7939999999999999,85.0],[0.7949999999999999,85.0],[0.7959999999999999,85.0],[0.7969999999999999,85.0],[0.7979999999999999,85.0],[0.7989999999999999,85.0],[0.7999999999999999,85.0],[0.8009999999999999,85.0],[0.8019999999999999,85.0],[0.8029999999999999,85.0],[0.8039999999999999,85.0],[0.8049999999999999,85.0],[0.8059999999999999,85.0],[0.8069999999999999,85.0],[0.8079999999999999,85.0],[0.8089999999999999,85.0],[0.8099999999999999,85.0],[0.8109999999999999,85.0],[0.8119999999999999,85.0],[0.813,85.0],[0.814,85.0],[0.815,85.0],[0.816,85.0],[0.817,85.0],[0.818,85.0],[0.819,85.0],[0.82,85.0],[0.821,85.0],[0.822,85.0],[0.823,85.0],[0.824,85.0],[0.825,85.0],[0.826,85.0],[0.827,85.0],[0.828,85.0],[0.829,85.0],[0.83,85.0],[0.831,85.0],[0.832,85.0],[0.833,85.0],[0.834,85.0],[0.835,85.0],[0.836,85.0],[0.837,85.0],[0.838,85.0],[0.839,85.0],[0.84,85.0],[0.841,85.0],[0.842,85.0],[0.843,85.0],[0.844,85.0],[0.845,85.0],[0.846,85.0],[0.847,85.0],[0.848,85.0],[0.849,85.0],[0.85,85.0],[0.851,85.0],[0.852,85.0],[0.853,85.0],[0.854,85.0],[0.855,85.0],[0.856,85.0],[0.857,85.0],[0.858,85.0],[0.859,85.0],[0.86,85.0],[0.861,85.0],[0.862,85.0],[0.863,85.0],[0.864,85.0],[0.865,85.0],[0.866,85.0],[0.867,85.0],[0.868,85.0],[0.869,85.0],[0.87,85.0],[0.871,85.0],[0.872,85.0],[0.873,85.0],[0.874,85.0],[0.875,85.0],[0.876,85.0],[0.877,85.0],[0.878,85.0],[0.879,85.0],[0.88,85.0],[0.881,85.0],[0.882,85.0],[0.883,85.0],[0.884,85.0],[0.885,85.0],[0.886,85.0],[0.887,85.0],[0.888,85.0],[0.889,85.0],[0.89,85.0],[0.891,85.0],[0.892,85.0],[0.8929999999999999,85.0],[0.8939999999999999,85.0],[0.8949999999999999,85.0],[0.8959999999999999,85.0],[0.8969999999999999,85.0],[0.8979999999999999,85.0],[0.8989999999999999,85.0],[0.8999999999999999,85.0],[0.9009999999999999,85.0],[0.9019999999999999,85.0],[0.9029999999999999,85.0],[0.9039999999999999,85.0],[0.9049999999999999,85.0],[0.9059999999999999,85.0],[0.9069999999999999,85.0],[0.9079999999999999,85.0],[0.9089999999999999,85.0],[0.9099999999999999,85.0],[0.9109999999999999,85.0],[0.9119999999999999,85.0],[0.9129999999999999,85.0],[0.9139999999999999,85.0],[0.9149999999999999,85.0],[0.9159999999999999,85.0],[0.9169999999999999,85.0],[0.9179999999999999,85.0],[0.9189999999999999,85.0],[0.9199999999999999,85.0],[0.9209999999999999,85.0],[0.9219999999999999,85.0],[0.9229999999999999,85.0],[0.9239999999999999,85.0],[0.9249999999999999,85.0],[0.9259999999999999,85.0],[0.9269999999999999,85.0],[0.9279999999999999,85.0],[0.9289999999999999,85.0],[0.9299999999999999,85.0],[0.9309999999999999,85.0],[0.9319999999999999,85.0],[0.9329999999999999,85.0],[0.9339999999999999,85.0],[0.9349999999999999,85.0],[0.9359999999999999,85.0],[0.9369999999999999,85.0],[0.938,85.0],[0.939,85.0],[0.94,85.0],[0.941,85.0],[0.942,85.0],[0.943,85.0],[0.944,85.0],[0.945,85.0],[0.946,85.0],[0.947,85.0],[0.948,85.0],[0.949,85.0],[0.95,85.0],[0.951,85.0],[0.952,85.0],[0.953,85.0],[0.954,85.0],[0.955,85.0],[0.956,85.0],[0.957,85.0],[0.958,85.0],[0.959,85.0],[0.96,85.0],[0.961,85.0],[0.962,85.0],[0.963,85.0],[0.964,85.0],[0.965,85.0],[0.966,85.0],[0.967,85.0],[0.968,85.0],[0.969,85.0],[0.97,85.0],[0.971,85.0],[0.972,85.0],[0.973,85.0],[0.974,85.0],[0.975,85.0],[0.976,85.0],[0.977,85.0],[0.978,85.0],[0.979,85.0],[0.98,85.0],[0.981,85.0],[0.982,85.0],[0.983,85.0],[0.984,85.0],[0.985,85.0],[0.986,85.0],[0.987,85.0],[0.988,85.0],[0.989,85.0],[0.99,85.0],[0.991,85.0],[0.992,85.0],[0.993,85.0],[0.994,85.0],[0.995,85.0],[0.996,85.0],[0.997,85.0],[0.998,85.0],[0.999,85.0],[1.0,85.0],[1.001,85.0],[1.002,85.0],[1.003,85.0],[1.004,85.0],[1.005,85.0],[1.006,85.0],[1.007,85.0],[1.008,85.0],[1.009,85.0],[1.01,85.0],[1.011,85.0],[1.012,85.0],[1.013,85.0],[1.014,85.0],[1.015,85.0],[1.016,85.0],[1.017,85.0],[1.018,85.0],[1.019,85.0],[1.02,85.0],[1.021,85.0],[1.022,85.0],[1.023,85.0],[1.024,85.0],[1.025,85.0],[1.026,85.0],[1.027,85.0],[1.028,85.0],[1.029,85.0],[1.03,85.0],[1.031,85.0],[1.032,85.0],[1.033,85.0],[1.034,85.0],[1.035,85.0],[1.036,85.0],[1.037,85.0],[1.038,85.0],[1.039,85.0],[1.04,85.0],[1.041,85.0],[1.042,85.0],[1.043,85.0],[1.044,85.0],[1.045,85.0],[1.046,85.0],[1.047,85.0],[1.048,85.0],[1.049,85.0],[1.05,85.0],[1.051,85.0],[1.052,85.0],[1.053,85.0],[1.054,85.0],[1.055,85.0],[1.056,85.0],[1.057,85.0],[1.058,85.0],[1.059,85.0],[1.06,85.0],[1.061,85.0],[1.062,85.0],[1.063,85.0],[1.064,85.0],[1.065,85.0],[1.066,85.0],[1.067,85.0],[1.068,85.0],[1.069,85.0],[1.07,85.0],[1.071,85.0],[1.0719999999999998,85.0],[1.073,85.0],[1.0739999999999998,85.0],[1.075,85.0],[1.0759999999999998,85.0],[1.077,85.0],[1.0779999999999998,85.0],[1.079,85.0],[1.0799999999999998,85.0],[1.081,85.0],[1.0819999999999999,85.0],[1.083,85.0],[1.0839999999999999,85.0],[1.085,85.0],[1.0859999999999999,85.0],[1.087,85.0],[1.0879999999999999,85.0],[1.089,85.0],[1.0899999999999999,85.0],[1.091,85.0],[1.0919999999999999,85.0],[1.093,85.0],[1.0939999999999999,85.0],[1.095,85.0],[1.0959999999999999,85.0],[1.097,85.0],[1.0979999999999999,85.0],[1.099,85.0],[1.0999999999999999,85.0],[1.101,85.0],[1.1019999999999999,85.0],[1.103,85.0],[1.1039999999999999,85.0],[1.105,85.0],[1.1059999999999999,85.0],[1.107,85.0],[1.1079999999999999,85.0],[1.109,85.0],[1.1099999999999999,85.0],[1.111,85.0],[1.1119999999999999,85.0],[1.113,85.0],[1.1139999999999999,85.0],[1.115,85.0],[1.1159999999999999,85.0],[1.117,85.0],[1.1179999999999999,85.0],[1.119,85.0],[1.1199999999999999,85.0],[1.121,85.0],[1.1219999999999999,85.0],[1.123,85.0],[1.1239999999999999,85.0],[1.125,85.0],[1.126,85.0],[1.127,85.0],[1.128,85.0],[1.129,85.0],[1.13,85.0],[1.131,85.0],[1.132,85.0],[1.133,85.0],[1.134,85.0],[1.135,85.0],[1.136,85.0],[1.137,85.0],[1.138,85.0],[1.139,85.0],[1.14,85.0],[1.141,85.0],[1.142,85.0],[1.143,85.0],[1.144,85.0],[1.145,85.0],[1.146,85.0],[1.147,85.0],[1.148,85.0],[1.149,85.0],[1.15,85.0],[1.151,85.0],[1.152,85.0],[1.153,85.0],[1.154,85.0],[1.155,85.0],[1.156,85.0],[1.157,85.0],[1.158,85.0],[1.159,85.0],[1.16,85.0],[1.161,85.0],[1.162,85.0],[1.163,85.0],[1.164,85.0],[1.165,85.0],[1.166,85.0],[1.167,85.0],[1.168,85.0],[1.169,85.0],[1.17,85.0],[1.171,85.0],[1.172,85.0],[1.173,85.0],[1.174,85.0],[1.175,85.0],[1.176,85.0],[1.177,85.0],[1.178,85.0],[1.179,85.0],[1.18,85.0],[1.181,85.0],[1.182,85.0],[1.183,85.0],[1.184,85.0],[1.185,85.0],[1.186,85.0],[1.187,85.0],[1.188,85.0],[1.189,85.0],[1.19,85.0],[1.1909999999999998,85.0],[1.192,85.0],[1.1929999999999998,85.0],[1.194,85.0],[1.1949999999999998,85.0],[1.196,85.0],[1.1969999999999998,85.0],[1.198,85.0],[1.1989999999999998,85.0],[1.2,85.0],[1.2009999999999998,85.0],[1.202,85.0],[1.2029999999999998,85.0],[1.204,85.0],[1.2049999999999998,85.0],[1.206,85.0],[1.2069999999999999,85.0],[1.208,85.0],[1.2089999999999999,85.0],[1.21,85.0],[1.2109999999999999,85.0],[1.212,85.0],[1.2129999999999999,85.0],[1.214,85.0],[1.2149999999999999,85.0],[1.216,85.0],[1.2169999999999999,85.0],[1.218,85.0],[1.2189999999999999,85.0],[1.22,85.0],[1.2209999999999999,85.0],[1.222,85.0],[1.2229999999999999,85.0],[1.224,85.0],[1.2249999999999999,85.0],[1.226,85.0],[1.2269999999999999,85.0],[1.228,85.0],[1.2289999999999999,85.0],[1.23,85.0],[1.2309999999999999,85.0],[1.232,85.0],[1.2329999999999999,85.0],[1.234,85.0],[1.2349999999999999,85.0],[1.236,85.0],[1.2369999999999999,85.0],[1.238,85.0],[1.2389999999999999,85.0],[1.24,85.0],[1.2409999999999999,85.0],[1.242,85.0],[1.2429999999999999,85.0],[1.244,85.0],[1.2449999999999999,85.0],[1.246,85.0],[1.2469999999999999,85.0],[1.248,85.0],[1.2489999999999999,85.0],[1.25,85.0],[1.251,85.0],[1.252,85.0],[1.253,85.0],[1.254,85.0],[1.255,85.0],[1.256,85.0],[1.257,85.0],[1.258,85.0],[1.259,85.0],[1.26,85.0],[1.261,85.0],[1.262,85.0],[1.263,85.0],[1.264,85.0],[1.265,85.0],[1.266,85.0],[1.267,85.0],[1.268,85.0],[1.269,85.0],[1.27,85.0],[1.271,85.0],[1.272,85.0],[1.273,85.0],[1.274,85.0],[1.275,85.0],[1.276,85.0],[1.277,85.0],[1.278,85.0],[1.279,85.0],[1.28,85.0],[1.281,85.0],[1.282,85.0],[1.283,85.0],[1.284,85.0],[1.285,85.0],[1.286,85.0],[1.287,85.0],[1.288,85.0],[1.289,85.0],[1.29,85.0],[1.291,85.0],[1.292,85.0],[1.293,85.0],[1.294,85.0],[1.295,85.0],[1.296,85.0],[1.297,85.0],[1.298,85.0],[1.299,85.0],[1.3,85.0],[1.301,85.0],[1.302,85.0],[1.303,85.0],[1.304,85.0],[1.305,85.0],[1.306,85.0],[1.307,85.0],[1.308,85.0],[1.309,85.0],[1.3099999999999998,85.0],[1.311,85.0],[1.3119999999999998,85.0],[1.313,85.0],[1.3139999999999998,85.0],[1.315,85.0],[1.3159999999999998,85.0],[1.317,85.0],[1.3179999999999998,85.0],[1.319,85.0],[1.3199999999999998,85.0],[1.321,85.0],[1.3219999999999998,85.0],[1.323,85.0],[1.3239999999999998,85.0],[1.325,85.0],[1.3259999999999998,85.0],[1.327,85.0],[1.3279999999999998,85.0],[1.329,85.0],[1.3299999999999998,85.0],[1.331,85.0],[1.3319999999999999,85.0],[1.333,85.0],[1.3339999999999999,85.0],[1.335,85.0],[1.3359999999999999,85.0],[1.337,85.0],[1.3379999999999999,85.0],[1.339,85.0],[1.3399999999999999,85.0],[1.341,85.0],[1.3419999999999999,85.0],[1.343,85.0],[1.3439999999999999,85.0],[1.345,85.0],[1.3459999999999999,85.0],[1.347,85.0],[1.3479999999999999,85.0],[1.349,85.0],[1.3499999999999999,85.0],[1.351,85.0],[1.3519999999999999,85.0],[1.353,85.0],[1.3539999999999999,85.0],[1.355,85.0],[1.3559999999999999,85.0],[1.357,85.0],[1.3579999999999999,85.0],[1.359,85.0],[1.3599999999999999,85.0],[1.361,85.0],[1.3619999999999999,85.0],[1.363,85.0],[1.3639999999999999,85.0],[1.365,85.0],[1.3659999999999999,85.0],[1.367,85.0],[1.3679999999999999,85.0],[1.369,85.0],[1.3699999999999999,85.0],[1.371,85.0],[1.3719999999999999,85.0],[1.373,85.0],[1.3739999999999999,85.0],[1.375,85.0],[1.376,85.0],[1.377,85.0],[1.378,85.0],[1.379,85.0],[1.38,85.0],[1.381,85.0],[1.382,85.0],[1.383,85.0],[1.384,85.0],[1.385,85.0],[1.386,85.0],[1.387,85.0],[1.388,85.0],[1.389,85.0],[1.39,85.0],[1.391,85.0],[1.392,85.0],[1.393,85.0],[1.394,85.0],[1.395,85.0],[1.396,85.0],[1.397,85.0],[1.398,85.0],[1.399,85.0],[1.4,85.0],[1.401,85.0],[1.402,85.0],[1.403,85.0],[1.404,85.0],[1.405,85.0],[1.406,85.0],[1.407,85.0],[1.408,85.0],[1.409,85.0],[1.41,85.0],[1.411,85.0],[1.412,85.0],[1.413,85.0],[1.414,85.0],[1.415,85.0],[1.416,85.0],[1.417,85.0],[1.418,85.0],[1.419,85.0],[1.42,85.0],[1.421,85.0],[1.422,85.0],[1.423,85.0],[1.424,85.0],[1.425,85.0],[1.426,85.0],[1.427,85.0],[1.428,85.0],[1.4289999999999998,85.0],[1.43,85.0],[1.4309999999999998,85.0],[1.432,85.0],[1.4329999999999998,85.0],[1.434,85.0],[1.4349999999999998,85.0],[1.436,85.0],[1.4369999999999998,85.0],[1.438,85.0],[1.4389999999999998,85.0],[1.44,85.0],[1.4409999999999998,85.0],[1.442,85.0],[1.4429999999999998,85.0],[1.444,85.0],[1.4449999999999998,85.0],[1.446,85.0],[1.4469999999999998,85.0],[1.448,85.0],[1.4489999999999998,85.0],[1.45,85.0],[1.4509999999999998,85.0],[1.452,85.0],[1.4529999999999998,85.0],[1.454,85.0],[1.4549999999999998,85.0],[1.456,85.0],[1.4569999999999999,85.0],[1.458,85.0],[1.4589999999999999,85.0],[1.46,85.0],[1.4609999999999999,85.0],[1.462,85.0],[1.4629999999999999,85.0],[1.464,85.0],[1.4649999999999999,85.0],[1.466,85.0],[1.4669999999999999,85.0],[1.468,85.0],[1.4689999999999999,85.0],[1.47,85.0],[1.4709999999999999,85.0],[1.472,85.0],[1.4729999999999999,85.0],[1.474,85.0],[1.4749999999999999,85.0],[1.476,85.0],[1.4769999999999999,85.0],[1.478,85.0],[1.4789999999999999,85.0],[1.48,85.0],[1.4809999999999999,85.0],[1.482,85.0],[1.4829999999999999,85.0],[1.484,85.0],[1.4849999999999999,85.0],[1.486,85.0],[1.4869999999999999,85.0],[1.488,85.0],[1.4889999999999999,85.0],[1.49,85.0],[1.4909999999999999,85.0],[1.492,85.0],[1.4929999999999999,85.0],[1.494,85.0],[1.4949999999999999,85.0],[1.496,85.0],[1.4969999999999999,85.0],[1.498,85.0],[1.4989999999999999,85.0],[1.5,85.0],[1.501,85.0],[1.502,85.0],[1.503,85.0],[1.504,85.0],[1.505,85.0],[1.506,85.0],[1.507,85.0],[1.508,85.0],[1.509,85.0],[1.51,85.0],[1.511,85.0],[1.512,85.0],[1.513,85.0],[1.514,85.0],[1.515,85.0],[1.516,85.0],[1.517,85.0],[1.518,85.0],[1.519,85.0],[1.52,85.0],[1.521,85.0],[1.522,85.0],[1.523,85.0],[1.524,85.0],[1.525,85.0],[1.526,85.0],[1.527,85.0],[1.528,85.0],[1.529,85.0],[1.53,85.0],[1.531,85.0],[1.532,85.0],[1.533,85.0],[1.534,85.0],[1.535,85.0],[1.536,85.0],[1.537,85.0],[1.538,85.0],[1.539,85.0],[1.54,85.0],[1.541,85.0],[1.542,85.0],[1.543,85.0],[1.544,85.0],[1.545,85.0],[1.546,85.0],[1.547,85.0],[1.5479999999999998,85.0],[1.549,85.0],[1.5499999999999998,85.0],[1.551,85.0],[1.5519999999999998,85.0],[1.553,85.0],[1.5539999999999998,85.0],[1.555,85.0],[1.5559999999999998,85.0],[1.557,85.0],[1.5579999999999998,85.0],[1.559,85.0],[1.5599999999999998,85.0],[1.561,85.0],[1.5619999999999998,85.0],[1.563,85.0],[1.5639999999999998,85.0],[1.565,85.0],[1.5659999999999998,85.0],[1.567,85.0],[1.5679999999999998,85.0],[1.569,85.0],[1.5699999999999998,85.0],[1.571,85.0],[1.5719999999999998,85.0],[1.573,85.0],[1.5739999999999998,85.0],[1.575,85.0],[1.5759999999999998,85.0],[1.577,85.0],[1.5779999999999998,85.0],[1.579,85.0],[1.5799999999999998,85.0],[1.581,85.0],[1.5819999999999999,85.0],[1.583,85.0],[1.5839999999999999,85.0],[1.585,85.0],[1.5859999999999999,85.0],[1.587,85.0],[1.5879999999999999,85.0],[1.589,85.0],[1.5899999999999999,85.0],[1.591,85.0],[1.5919999999999999,85.0],[1.593,85.0],[1.5939999999999999,85.0],[1.595,85.0],[1.5959999999999999,85.0],[1.597,85.0],[1.5979999999999999,85.0],[1.599,85.0],[1.5999999999999999,85.0],[1.601,85.0],[1.6019999999999999,85.0],[1.603,85.0],[1.6039999999999999,85.0],[1.605,85.0],[1.6059999999999999,85.0],[1.607,85.0],[1.6079999999999999,85.0],[1.609,85.0],[1.6099999999999999,85.0],[1.611,85.0],[1.6119999999999999,85.0],[1.613,85.0],[1.6139999999999999,85.0],[1.615,85.0],[1.6159999999999999,85.0],[1.617,85.0],[1.6179999999999999,85.0],[1.619,85.0],[1.6199999999999999,85.0],[1.621,85.0],[1.6219999999999999,85.0],[1.623,85.0],[1.6239999999999999,85.0],[1.625,85.0],[1.626,85.0],[1.627,85.0],[1.628,85.0],[1.629,85.0],[1.63,85.0],[1.631,85.0],[1.632,85.0],[1.633,85.0],[1.634,85.0],[1.635,85.0],[1.636,85.0],[1.637,85.0],[1.638,85.0],[1.639,85.0],[1.64,85.0],[1.641,85.0],[1.642,85.0],[1.643,85.0],[1.644,85.0],[1.645,85.0],[1.646,85.0],[1.647,85.0],[1.648,85.0],[1.649,85.0],[1.65,85.0],[1.651,85.0],[1.652,85.0],[1.653,85.0],[1.654,85.0],[1.655,85.0],[1.656,85.0],[1.657,85.0],[1.658,85.0],[1.659,85.0],[1.66,85.0],[1.661,85.0],[1.662,85.0],[1.663,85.0],[1.664,85.0],[1.665,85.0],[1.666,85.0],[1.6669999999999998,85.0],[1.668,85.0],[1.6689999999999998,85.0],[1.67,85.0],[1.6709999999999998,85.0],[1.672,85.0],[1.6729999999999998,85.0],[1.674,85.0],[1.6749999999999998,85.0],[1.676,85.0],[1.6769999999999998,85.0],[1.678,85.0],[1.6789999999999998,85.0],[1.68,85.0],[1.6809999999999998,85.0],[1.682,85.0],[1.6829999999999998,85.0],[1.684,85.0],[1.6849999999999998,85.0],[1.686,85.0],[1.6869999999999998,85.0],[1.688,85.0],[1.6889999999999998,85.0],[1.69,85.0],[1.6909999999999998,85.0],[1.692,85.0],[1.6929999999999998,85.0],[1.694,85.0],[1.6949999999999998,85.0],[1.696,85.0],[1.6969999999999998,85.0],[1.698,85.0],[1.6989999999999998,85.0],[1.7,85.0],[1.7009999999999998,85.0],[1.702,85.0],[1.7029999999999998,85.0],[1.704,85.0],[1.7049999999999998,85.0],[1.706,85.0],[1.7069999999999999,85.0],[1.708,85.0],[1.7089999999999999,85.0],[1.71,85.0],[1.7109999999999999,85.0],[1.712,85.0],[1.7129999999999999,85.0],[1.714,85.0],[1.7149999999999999,85.0],[1.716,85.0],[1.7169999999999999,85.0],[1.718,85.0],[1.7189999999999999,85.0],[1.72,85.0],[1.7209999999999999,85.0],[1.722,85.0],[1.7229999999999999,85.0],[1.724,85.0],[1.7249999999999999,85.0],[1.726,85.0],[1.7269999999999999,85.0],[1.728,85.0],[1.7289999999999999,85.0],[1.73,85.0],[1.7309999999999999,85.0],[1.732,85.0],[1.7329999999999999,85.0],[1.734,85.0],[1.7349999999999999,85.0],[1.736,85.0],[1.7369999999999999,85.0],[1.738,85.0],[1.7389999999999999,85.0],[1.74,85.0],[1.7409999999999999,85.0],[1.742,85.0],[1.7429999999999999,85.0],[1.744,85.0],[1.7449999999999999,85.0],[1.746,85.0],[1.7469999999999999,85.0],[1.748,85.0],[1.7489999999999999,85.0],[1.75,85.0],[1.751,85.0],[1.752,85.0],[1.753,85.0],[1.754,85.0],[1.755,85.0],[1.756,85.0],[1.757,85.0],[1.758,85.0],[1.759,85.0],[1.76,85.0],[1.761,85.0],[1.762,85.0],[1.763,85.0],[1.764,85.0],[1.765,85.0],[1.766,85.0],[1.767,85.0],[1.768,85.0],[1.769,85.0],[1.77,85.0],[1.771,85.0],[1.772,85.0],[1.773,85.0],[1.774,85.0],[1.775,85.0],[1.776,85.0],[1.777,85.0],[1.778,85.0],[1.779,85.0],[1.78,85.0],[1.781,85.0],[1.782,85.0],[1.783,85.0],[1.784,85.0],[1.785,85.0],[1.7859999999999998,85.0],[1.787,85.0],[1.7879999999999998,85.0],[1.789,85.0],[1.7899999999999998,85.0],[1.791,85.0],[1.7919999999999998,85.0],[1.793,85.0],[1.7939999999999998,85.0],[1.795,85.0],[1.7959999999999998,85.0],[1.797,85.0],[1.7979999999999998,85.0],[1.799,85.0],[1.7999999999999998,85.0],[1.801,85.0],[1.8019999999999998,85.0],[1.803,85.0],[1.8039999999999998,85.0],[1.805,85.0],[1.8059999999999998,85.0],[1.807,85.0],[1.8079999999999998,85.0],[1.809,85.0],[1.8099999999999998,85.0],[1.811,85.0],[1.8119999999999998,85.0],[1.813,85.0],[1.8139999999999998,85.0],[1.815,85.0],[1.8159999999999998,85.0],[1.817,85.0],[1.8179999999999998,85.0],[1.819,85.0],[1.8199999999999998,85.0],[1.821,85.0],[1.8219999999999998,85.0],[1.823,85.0],[1.8239999999999998,85.0],[1.825,85.0],[1.8259999999999998,85.0],[1.827,85.0],[1.8279999999999998,85.0],[1.829,85.0],[1.8299999999999998,85.0],[1.831,85.0],[1.8319999999999999,85.0],[1.833,85.0],[1.8339999999999999,85.0],[1.835,85.0],[1.8359999999999999,85.0],[1.837,85.0],[1.8379999999999999,85.0],[1.839,85.0],[1.8399999999999999,85.0],[1.841,85.0],[1.8419999999999999,85.0],[1.843,85.0],[1.8439999999999999,85.0],[1.845,85.0],[1.8459999999999999,85.0],[1.847,85.0],[1.8479999999999999,85.0],[1.849,85.0],[1.8499999999999999,85.0],[1.851,85.0],[1.8519999999999999,85.0],[1.853,85.0],[1.8539999999999999,85.0],[1.855,85.0],[1.8559999999999999,85.0],[1.857,85.0],[1.8579999999999999,85.0],[1.859,85.0],[1.8599999999999999,85.0],[1.861,85.0],[1.8619999999999999,85.0],[1.863,85.0],[1.8639999999999999,85.0],[1.865,85.0],[1.8659999999999999,85.0],[1.867,85.0],[1.8679999999999999,85.0],[1.869,85.0],[1.8699999999999999,85.0],[1.871,85.0],[1.8719999999999999,85.0],[1.873,85.0],[1.8739999999999999,85.0],[1.875,85.0],[1.876,85.0],[1.877,85.0],[1.878,85.0],[1.879,85.0],[1.88,85.0],[1.881,85.0],[1.882,85.0],[1.883,85.0],[1.884,85.0],[1.885,85.0],[1.886,85.0],[1.887,85.0],[1.888,85.0],[1.889,85.0],[1.89,85.0],[1.891,85.0],[1.892,85.0],[1.893,85.0],[1.894,85.0],[1.895,85.0],[1.896,85.0],[1.897,85.0],[1.898,85.0],[1.899,85.0],[1.9,85.0],[1.901,85.0],[1.902,85.0],[1.903,85.0],[1.904,85.0],[1.9049999999999998,85.0],[1.906,85.0],[1.9069999999999998,85.0],[1.908,85.0],[1.9089999999999998,85.0],[1.91,85.0],[1.9109999999999998,85.0],[1.912,85.0],[1.9129999999999998,85.0],[1.914,85.0],[1.9149999999999998,85.0],[1.916,85.0],[1.9169999999999998,85.0],[1.918,85.0],[1.9189999999999998,85.0],[1.92,85.0],[1.9209999999999998,85.0],[1.922,85.0],[1.9229999999999998,85.0],[1.924,85.0],[1.9249999999999998,85.0],[1.926,85.0],[1.9269999999999998,85.0],[1.928,85.0],[1.9289999999999998,85.0],[1.93,85.0],[1.9309999999999998,85.0],[1.932,85.0],[1.9329999999999998,85.0],[1.934,85.0],[1.9349999999999998,85.0],[1.936,85.0],[1.9369999999999998,85.0],[1.938,85.0],[1.9389999999999998,85.0],[1.94,85.0],[1.9409999999999998,85.0],[1.942,85.0],[1.9429999999999998,85.0],[1.944,85.0],[1.9449999999999998,85.0],[1.946,85.0],[1.9469999999999998,85.0],[1.948,85.0],[1.9489999999999998,85.0],[1.95,85.0],[1.9509999999999998,85.0],[1.952,85.0],[1.9529999999999998,85.0],[1.954,85.0],[1.9549999999999998,85.0],[1.956,85.0],[1.9569999999999999,85.0],[1.958,85.0],[1.9589999999999999,85.0],[1.96,85.0],[1.9609999999999999,85.0],[1.962,85.0],[1.9629999999999999,85.0],[1.964,85.0],[1.9649999999999999,85.0],[1.966,85.0],[1.9669999999999999,85.0],[1.968,85.0],[1.9689999999999999,85.0],[1.97,85.0],[1.9709999999999999,85.0],[1.972,85.0],[1.9729999999999999,85.0],[1.974,85.0],[1.9749999999999999,85.0],[1.976,85.0],[1.9769999999999999,85.0],[1.978,85.0],[1.9789999999999999,85.0],[1.98,85.0],[1.9809999999999999,85.0],[1.982,85.0],[1.9829999999999999,85.0],[1.984,85.0],[1.9849999999999999,85.0],[1.986,85.0],[1.9869999999999999,85.0],[1.988,85.0],[1.9889999999999999,85.0],[1.99,85.0],[1.9909999999999999,85.0],[1.992,85.0],[1.9929999999999999,85.0],[1.994,85.0],[1.9949999999999999,85.0],[1.996,85.0],[1.9969999999999999,85.0],[1.998,85.0],[1.9989999999999999,85.0],[2.0,85.0]],"processed":[[0.25,0.09879694366455079],[0.251,-0.13212371826171876],[0.252,-0.5611178588867187],[0.253,-0.6811227416992187],[0.254,-0.5611178588867187],[0.255,-0.44229931640625003],[0.256,-0.18064712524414062],[0.257,-0.0918413314819336],[0.258,-0.09084011077880859],[0.259,-0.045032772064208984],[0.26,-0.045032772064208984],[0.261,0.08602692413330078],[0.262,0.08602692413330078],[0.263,0.11831680297851563],[0.264,-0.14058738708496094],[0.265,0.11831680297851563],[0.266,0.10761774444580079],[0.267,0.32835943603515627],[0.26799999999999996,0.10761774444580079],[0.26899999999999996,0.11644194793701172],[0.26999999999999996,0.02640711784362793],[0.27099999999999996,0.11644194793701172],[0.27199999999999996,0.02640711784362793],[0.27299999999999996,0.4032845458984375],[0.27399999999999997,-0.21840011596679687],[0.27499999999999997,0.05175453186035156],[0.27599999999999997,-0.16546763610839843],[0.27699999999999997,0.05175453186035156],[0.27799999999999997,-0.03395292282104492],[0.27899999999999997,0.060948436737060546],[0.27999999999999997,0.29578359985351566],[0.28099999999999997,1.2803759765625],[0.282,3.17179638671875],[0.283,4.3357915039062505],[0.284,5.80403271484375],[0.285,6.8135097656250005],[0.286,7.5618505859375],[0.287,8.9471806640625],[0.288,9.75844921875],[0.289,11.673107421875],[0.29,12.5072314453125],[0.291,13.4701806640625],[0.292,14.445186523437501],[0.293,16.0160234375],[0.294,16.83129296875],[0.295,18.06619921875],[0.296,19.34135546875],[0.297,20.348796875],[0.298,21.203671875],[0.299,22.154189453125],[0.3,23.215412109375002],[0.301,24.732408203125],[0.302,25.170923828125],[0.303,26.618568359375],[0.304,27.49388671875],[0.305,28.370048828125],[0.306,29.05256640625],[0.307,30.04184375],[0.308,31.375328125],[0.309,32.61289453125],[0.31,32.95521875],[0.311,33.878453125],[0.312,34.6996640625],[0.313,35.33316015625],[0.314,36.05019921875],[0.315,36.9804375],[0.316,37.95665625],[0.317,39.33601953125],[0.318,39.52671484375],[0.319,40.211863281250004],[0.32,41.327656250000004],[0.321,42.32853515625],[0.322,42.92961328125],[0.323,44.03389453125],[0.324,44.5576796875],[0.325,45.12884375],[0.326,46.2390859375],[0.327,46.68230859375],[0.32799999999999996,46.987171875],[0.32899999999999996,47.7952421875],[0.32999999999999996,48.854296875],[0.33099999999999996,49.5408359375],[0.33199999999999996,50.097875],[0.33299999999999996,50.6512890625],[0.33399999999999996,51.28384375],[0.33499999999999996,51.515515625],[0.33599999999999997,52.36304296875],[0.33699999999999997,52.938921875],[0.33799999999999997,53.39462890625],[0.33899999999999997,54.142265625],[0.33999999999999997,54.765328125],[0.34099999999999997,55.744671875],[0.34199999999999997,56.31467578125],[0.34299999999999997,57.10007421875],[0.344,57.5814765625],[0.345,58.00002734375],[0.346,58.88721875],[0.347,59.073992187500004],[0.348,59.52137890625],[0.349,60.4542109375],[0.35,61.060734375],[0.351,61.408574218750005],[0.352,61.609152343750004],[0.353,61.999078125000004],[0.354,62.30909765625],[0.355,63.1064453125],[0.356,63.55035546875],[0.357,64.28441796875],[0.358,64.69452734375],[0.359,64.97771875000001],[0.36,65.8084140625],[0.361,66.108125],[0.362,66.5437578125],[0.363,67.1006796875],[0.364,67.5322421875],[0.365,68.2469765625],[0.366,68.4918359375],[0.367,68.6048203125],[0.368,68.8382734375],[0.369,69.585984375],[0.37,70.009078125],[0.371,70.4251875],[0.372,70.7079921875],[0.373,70.91012500000001],[0.374,71.3825546875],[0.375,71.39353125],[0.376,72.06992968750001],[0.377,72.470828125],[0.378,72.743578125],[0.379,73.43059375],[0.38,73.67896093750001],[0.381,73.81403125],[0.382,74.649765625],[0.383,74.7873984375],[0.384,75.2230703125],[0.385,75.41434375],[0.386,75.6998984375],[0.38699999999999996,76.14492187500001],[0.38799999999999996,76.770046875],[0.38899999999999996,76.770046875],[0.38999999999999996,76.82515625],[0.39099999999999996,76.82515625],[0.39199999999999996,77.2016796875],[0.39299999999999996,77.8774375],[0.39399999999999996,77.8774375],[0.39499999999999996,78.2104140625],[0.39599999999999996,78.475921875],[0.39699999999999996,79.078015625],[0.39799999999999996,79.088828125],[0.39899999999999997,79.858],[0.39999999999999997,79.858],[0.40099999999999997,80.05758593750001],[0.40199999999999997,80.1928671875],[0.40299999999999997,80.5226796875],[0.40399999999999997,80.9259921875],[0.40499999999999997,81.182140625],[0.40599999999999997,81.5411796875],[0.407,81.6904765625],[0.408,81.7464296875],[0.409,81.9935703125],[0.41,82.11878125],[0.411,82.509859375],[0.412,82.99278125000001],[0.413,83.1943359375],[0.414,83.19659375],[0.415,83.6098671875],[0.416,83.6879140625],[0.417,83.9450546875],[0.418,83.995703125],[0.419,84.0378203125],[0.42,84.5171171875],[0.421,85.0],[0.422,85.0],[0.423,85.0],[0.424,85.0],[0.425,85.0],[0.426,85.0],[0.427,85.0],[0.428,85.0],[0.429,85.0],[0.43,85.0],[0.431,85.0],[0.432,85.0],[0.433,85.0],[0.434,85.0],[0.435,85.0],[0.436,85.0],[0.437,85.0],[0.438,85.0],[0.439,85.0],[0.44,85.0],[0.441,85.0],[0.442,85.0],[0.443,85.0],[0.444,85.0],[0.445,85.0],[0.446,85.0],[0.44699999999999995,85.0],[0.44799999999999995,85.0],[0.44899999999999995,85.0],[0.44999999999999996,85.0],[0.45099999999999996,85.0],[0.45199999999999996,85.0],[0.45299999999999996,85.0],[0.45399999999999996,85.0],[0.45499999999999996,85.0],[0.45599999999999996,85.0],[0.45699999999999996,85.0],[0.45799999999999996,85.0],[0.45899999999999996,85.0],[0.45999999999999996,85.0],[0.46099999999999997,85.0],[0.46199999999999997,85.0],[0.46299999999999997,85.0],[0.46399999999999997,85.0],[0.46499999999999997,85.0],[0.46599999999999997,85.0],[0.46699999999999997,85.0],[0.46799999999999997,85.0],[0.469,85.0],[0.47,85.0],[0.471,85.0],[0.472,85.0],[0.473,85.0],[0.474,85.0],[0.475,85.0],[0.476,85.0],[0.477,85.0],[0.478,85.0],[0.479,85.0],[0.48,85.0],[0.481,85.0],[0.482,85.0],[0.483,85.0],[0.484,85.0],[0.485,85.0],[0.486,85.0],[0.487,85.0],[0.488,85.0],[0.489,85.0],[0.49,85.0],[0.491,85.0],[0.492,85.0],[0.493,85.0],[0.494,85.0],[0.495,85.0],[0.496,85.0],[0.497,85.0],[0.498,85.0],[0.499,85.0],[0.5,85.0],[0.501,85.0],[0.502,85.0],[0.503,85.0],[0.504,85.0],[0.505,85.0],[0.506,85.0],[0.507,85.0],[0.508,85.0],[0.509,85.0],[0.51,85.0],[0.511,85.0],[0.512,85.0],[0.513,85.0],[0.514,85.0],[0.515,85.0],[0.516,85.0],[0.517,85.0],[0.518,85.0],[0.519,85.0],[0.52,85.0],[0.521,85.0],[0.522,85.0],[0.523,85.0],[0.524,85.0],[0.525,85.0],[0.526,85.0],[0.527,85.0],[0.528,85.0],[0.529,85.0],[0.53,85.0],[0.531,85.0],[0.532,85.0],[0.533,85.0],[0.534,85.0],[0.535,85.0],[0.5359999999999999,85.0],[0.5369999999999999,85.0],[0.5379999999999999,85.0],[0.5389999999999999,85.0],[0.5399999999999999,85.0],[0.5409999999999999,85.0],[0.5419999999999999,85.0],[0.5429999999999999,85.0],[0.5439999999999999,85.0],[0.5449999999999999,85.0],[0.5459999999999999,85.0],[0.5469999999999999,85.0],[0.5479999999999999,85.0],[0.5489999999999999,85.0],[0.5499999999999999,85.0],[0.5509999999999999,85.0],[0.5519999999999999,85.0],[0.5529999999999999,85.0],[0.5539999999999999,85.0],[0.5549999999999999,85.0],[0.5559999999999999,85.0],[0.5569999999999999,85.0],[0.5579999999999999,85.0],[0.5589999999999999,85.0],[0.5599999999999999,85.0],[0.5609999999999999,85.0],[0.5619999999999999,85.0],[0.563,85.0],[0.564,85.0],[0.565,85.0],[0.566,85.0],[0.567,85.0],[0.568,85.0],[0.569,85.0],[0.57,85.0],[0.571,85.0],[0.572,85.0],[0.573,85.0],[0.574,85.0],[0.575,85.0],[0.576,85.0],[0.577,85.0],[0.578,85.0],[0.579,85.0],[0.58,85.0],[0.581,85.0],[0.582,85.0],[0.583,85.0],[0.584,85.0],[0.585,85.0],[0.586,85.0],[0.587,85.0],[0.588,85.0],[0.589,85.0],[0.59,85.0],[0.591,85.0],[0.592,85.0],[0.593,85.0],[0.594,85.0],[0.595,85.0],[0.596,85.0],[0.597,85.0],[0.598,85.0],[0.599,85.0],[0.6,85.0],[0.601,85.0],[0.602,85.0],[0.603,85.0],[0.604,85.0],[0.605,85.0],[0.606,85.0],[0.607,85.0],[0.608,85.0],[0.609,85.0],[0.61,85.0],[0.611,85.0],[0.612,85.0],[0.613,85.0],[0.614,85.0],[0.615,85.0],[0.616,85.0],[0.617,85.0],[0.618,85.0],[0.619,85.0],[0.62,85.0],[0.621,85.0],[0.622,85.0],[0.623,85.0],[0.624,85.0],[0.625,85.0],[0.626,85.0],[0.627,85.0],[0.628,85.0],[0.629,85.0],[0.63,85.0],[0.631,85.0],[0.632,85.0],[0.633,85.0],[0.634,85.0],[0.635,85.0],[0.636,85.0],[0.637,85.0],[0.638,85.0],[0.639,85.0],[0.64,85.0],[0.641,85.0],[0.642,85.0],[0.643,85.0],[0.644,85.0],[0.645,85.0],[0.646,85.0],[0.647,85.0],[0.648,85.0],[0.649,85.0],[0.65,85.0],[0.651,85.0],[0.652,85.0],[0.653,85.0],[0.654,85.0],[0.6549999999999999,85.0],[0.6559999999999999,85.0],[0.6569999999999999,85.0],[0.6579999999999999,85.0],[0.6589999999999999,85.0],[0.6599999999999999,85.0],[0.6609999999999999,85.0],[0.6619999999999999,85.0],[0.6629999999999999,85.0],[0.6639999999999999,85.0],[0.6649999999999999,85.0],[0.6659999999999999,85.0],[0.6669999999999999,85.0],[0.6679999999999999,85.0],[0.6689999999999999,85.0],[0.6699999999999999,85.0],[0.6709999999999999,85.0],[0.6719999999999999,85.0],[0.6729999999999999,85.0],[0.6739999999999999,85.0],[0.6749999999999999,85.0],[0.6759999999999999,85.0],[0.6769999999999999,85.0],[0.6779999999999999,85.0],[0.6789999999999999,85.0],[0.6799999999999999,85.0],[0.6809999999999999,85.0],[0.6819999999999999,85.0],[0.6829999999999999,85.0],[0.6839999999999999,85.0],[0.6849999999999999,85.0],[0.6859999999999999,85.0],[0.6869999999999999,85.0],[0.688,85.0],[0.689,85.0],[0.69,85.0],[0.691,85.0],[0.692,85.0],[0.693,85.0],[0.694,85.0],[0.695,85.0],[0.696,85.0],[0.697,85.0],[0.698,85.0],[0.699,85.0],[0.7,85.0],[0.701,85.0],[0.702,85.0],[0.703,85.0],[0.704,85.0],[0.705,85.0],[0.706,85.0],[0.707,85.0],[0.708,85.0],[0.709,85.0],[0.71,85.0],[0.711,85.0],[0.712,85.0],[0.713,85.0],[0.714,85.0],[0.715,85.0],[0.716,85.0],[0.717,85.0],[0.718,85.0],[0.719,85.0],[0.72,85.0],[0.721,85.0],[0.722,85.0],[0.723,85.0],[0.724,85.0],[0.725,85.0],[0.726,85.0],[0.727,85.0],[0.728,85.0],[0.729,85.0],[0.73,85.0],[0.731,85.0],[0.732,85.0],[0.733,85.0],[0.734,85.0],[0.735,85.0],[0.736,85.0],[0.737,85.0],[0.738,85.0],[0.739,85.0],[0.74,85.0],[0.741,85.0],[0.742,85.0],[0.743,85.0],[0.744,85.0],[0.745,85.0],[0.746,85.0],[0.747,85.0],[0.748,85.0],[0.749,85.0],[0.75,85.0],[0.751,85.0],[0.752,85.0],[0.753,85.0],[0.754,85.0],[0.755,85.0],[0.756,85.0],[0.757,85.0],[0.758,85.0],[0.759,85.0],[0.76,85.0],[0.761,85.0],[0.762,85.0],[0.763,85.0],[0.764,85.0],[0.765,85.0],[0.766,85.0],[0.767,85.0],[0.768,85.0],[0.769,85.0],[0.77,85.0],[0.771,85.0],[0.772,85.0],[0.773,85.0],[0.7739999999999999,85.0],[0.7749999999999999,85.0],[0.7759999999999999,85.0],[0.7769999999999999,85.0],[0.7779999999999999,85.0],[0.7789999999999999,85.0],[0.7799999999999999,85.0],[0.7809999999999999,85.0],[0.7819999999999999,85.0],[0.7829999999999999,85.0],[0.7839999999999999,85.0],[0.7849999999999999,85.0],[0.7859999999999999,85.0],[0.7869999999999999,85.0],[0.7879999999999999,85.0],[0.7889999999999999,85.0],[0.7899999999999999,85.0],[0.7909999999999999,85.0],[0.7919999999999999,85.0],[0.7929999999999999,85.0],[0.7939999999999999,85.0],[0.7949999999999999,85.0],[0.7959999999999999,85.0],[0.7969999999999999,85.0],[0.7979999999999999,85.0],[0.7989999999999999,85.0],[0.7999999999999999,85.0],[0.8009999999999999,85.0],[0.8019999999999999,85.0],[0.8029999999999999,85.0],[0.8039999999999999,85.0],[0.8049999999999999,85.0],[0.8059999999999999,85.0],[0.8069999999999999,85.0],[0.8079999999999999,85.0],[0.8089999999999999,85.0],[0.8099999999999999,85.0],[0.8109999999999999,85.0],[0.8119999999999999,85.0],[0.813,85.0],[0.814,85.0],[0.815,85.0],[0.816,85.0],[0.817,85.0],[0.818,85.0],[0.819,85.0],[0.82,85.0],[0.821,85.0],[0.822,85.0],[0.823,85.0],[0.824,85.0],[0.825,85.0],[0.826,85.0],[0.827,85.0],[0.828,85.0],[0.829,85.0],[0.83,85.0],[0.831,85.0],[0.832,85.0],[0.833,85.0],[0.834,85.0],[0.835,85.0],[0.836,85.0],[0.837,85.0],[0.838,85.0],[0.839,85.0],[0.84,85.0],[0.841,85.0],[0.842,85.0],[0.843,85.0],[0.844,85.0],[0.845,85.0],[0.846,85.0],[0.847,85.0],[0.848,85.0],[0.849,85.0],[0.85,85.0],[0.851,85.0],[0.852,85.0],[0.853,85.0],[0.854,85.0],[0.855,85.0],[0.856,85.0],[0.857,85.0],[0.858,85.0],[0.859,85.0],[0.86,85.0],[0.861,85.0],[0.862,85.0],[0.863,85.0],[0.864,85.0],[0.865,85.0],[0.866,85.0],[0.867,85.0],[0.868,85.0],[0.869,85.0],[0.87,85.0],[0.871,85.0],[0.872,85.0],[0.873,85.0],[0.874,85.0],[0.875,85.0],[0.876,85.0],[0.877,85.0],[0.878,85.0],[0.879,85.0],[0.88,85.0],[0.881,85.0],[0.882,85.0],[0.883,85.0],[0.884,85.0],[0.885,85.0],[0.886,85.0],[0.887,85.0],[0.888,85.0],[0.889,85.0],[0.89,85.0],[0.891,85.0],[0.892,85.0],[0.8929999999999999,85.0],[0.8939999999999999,85.0],[0.8949999999999999,85.0],[0.8959999999999999,85.0],[0.8969999999999999,85.0],[0.8979999999999999,85.0],[0.8989999999999999,85.0],[0.8999999999999999,85.0],[0.9009999999999999,85.0],[0.9019999999999999,85.0],[0.9029999999999999,85.0],[0.9039999999999999,85.0],[0.9049999999999999,85.0],[0.9059999999999999,85.0],[0.9069999999999999,85.0],[0.9079999999999999,85.0],[0.9089999999999999,85.0],[0.9099999999999999,85.0],[0.9109999999999999,85.0],[0.9119999999999999,85.0],[0.9129999999999999,85.0],[0.9139999999999999,85.0],[0.9149999999999999,85.0],[0.9159999999999999,85.0],[0.9169999999999999,85.0],[0.9179999999999999,85.0],[0.9189999999999999,85.0],[0.9199999999999999,85.0],[0.9209999999999999,85.0],[0.9219999999999999,85.0],[0.9229999999999999,85.0],[0.9239999999999999,85.0],[0.9249999999999999,85.0],[0.9259999999999999,85.0],[0.9269999999999999,85.0],[0.9279999999999999,85.0],[0.9289999999999999,85.0],[0.9299999999999999,85.0],[0.9309999999999999,85.0],[0.9319999999999999,85.0],[0.9329999999999999,85.0],[0.9339999999999999,85.0],[0.9349999999999999,85.0],[0.9359999999999999,85.0],[0.9369999999999999,85.0],[0.938,85.0],[0.939,85.0],[0.94,85.0],[0.941,85.0],[0.942,85.0],[0.943,85.0],[0.944,85.0],[0.945,85.0],[0.946,85.0],[0.947,85.0],[0.948,85.0],[0.949,85.0],[0.95,85.0],[0.951,85.0],[0.952,85.0],[0.953,85.0],[0.954,85.0],[0.955,85.0],[0.956,85.0],[0.957,85.0],[0.958,85.0],[0.959,85.0],[0.96,85.0],[0.961,85.0],[0.962,85.0],[0.963,85.0],[0.964,85.0],[0.965,85.0],[0.966,85.0],[0.967,85.0],[0.968,85.0],[0.969,85.0],[0.97,85.0],[0.971,85.0],[0.972,85.0],[0.973,85.0],[0.974,85.0],[0.975,85.0],[0.976,85.0],[0.977,85.0],[0.978,85.0],[0.979,85.0],[0.98,85.0],[0.981,85.0],[0.982,85.0],[0.983,85.0],[0.984,85.0],[0.985,85.0],[0.986,85.0],[0.987,85.0],[0.988,85.0],[0.989,85.0],[0.99,85.0],[0.991,85.0],[0.992,85.0],[0.993,85.0],[0.994,85.0],[0.995,85.0],[0.996,85.0],[0.997,85.0],[0.998,85.0],[0.999,85.0],[1.0,85.0],[1.001,85.0],[1.002,85.0],[1.003,85.0],[1.004,85.0],[1.005,85.0],[1.006,85.0],[1.007,85.0],[1.008,85.0],[1.009,85.0],[1.01,85.0],[1.011,85.0],[1.012,85.0],[1.013,85.0],[1.014,85.0],[1.015,85.0],[1.016,85.0],[1.017,85.0],[1.018,85.0],[1.019,85.0],[1.02,85.0],[1.021,85.0],[1.022,85.0],[1.023,85.0],[1.024,85.0],[1.025,85.0],[1.026,85.0],[1.027,85.0],[1.028,85.0],[1.029,85.0],[1.03,85.0],[1.031,85.0],[1.032,85.0],[1.033,85.0],[1.034,85.0],[1.035,85.0],[1.036,85.0],[1.037,85.0],[1.038,85.0],[1.039,85.0],[1.04,85.0],[1.041,85.0],[1.042,85.0],[1.043,85.0],[1.044,85.0],[1.045,85.0],[1.046,85.0],[1.047,85.0],[1.048,85.0],[1.049,85.0],[1.05,85.0],[1.051,85.0],[1.052,85.0],[1.053,85.0],[1.054,85.0],[1.055,85.0],[1.056,85.0],[1.057,85.0],[1.058,85.0],[1.059,85.0],[1.06,85.0],[1.061,85.0],[1.062,85.0],[1.063,85.0],[1.064,85.0],[1.065,85.0],[1.066,85.0],[1.067,85.0],[1.068,85.0],[1.069,85.0],[1.07,85.0],[1.071,85.0],[1.0719999999999998,85.0],[1.073,85.0],[1.0739999999999998,85.0],[1.075,85.0],[1.0759999999999998,85.0],[1.077,85.0],[1.0779999999999998,85.0],[1.079,85.0],[1.0799999999999998,85.0],[1.081,85.0],[1.0819999999999999,85.0],[1.083,85.0],[1.0839999999999999,85.0],[1.085,85.0],[1.0859999999999999,85.0],[1.087,85.0],[1.0879999999999999,85.0],[1.089,85.0],[1.0899999999999999,85.0],[1.091,85.0],[1.0919999999999999,85.0],[1.093,85.0],[1.0939999999999999,85.0],[1.095,85.0],[1.0959999999999999,85.0],[1.097,85.0],[1.0979999999999999,85.0],[1.099,85.0],[1.0999999999999999,85.0],[1.101,85.0],[1.1019999999999999,85.0],[1.103,85.0],[1.1039999999999999,85.0],[1.105,85.0],[1.1059999999999999,85.0],[1.107,85.0],[1.1079999999999999,85.0],[1.109,85.0],[1.1099999999999999,85.0],[1.111,85.0],[1.1119999999999999,85.0],[1.113,85.0],[1.1139999999999999,85.0],[1.115,85.0],[1.1159999999999999,85.0],[1.117,85.0],[1.1179999999999999,85.0],[1.119,85.0],[1.1199999999999999,85.0],[1.121,85.0],[1.1219999999999999,85.0],[1.123,85.0],[1.1239999999999999,85.0],[1.125,85.0],[1.126,85.0],[1.127,85.0],[1.128,85.0],[1.129,85.0],[1.13,85.0],[1.131,85.0],[1.132,85.0],[1.133,85.0],[1.134,85.0],[1.135,85.0],[1.136,85.0],[1.137,85.0],[1.138,85.0],[1.139,85.0],[1.14,85.0],[1.141,85.0],[1.142,85.0],[1.143,85.0],[1.144,85.0],[1.145,85.0],[1.146,85.0],[1.147,85.0],[1.148,85.0],[1.149,85.0],[1.15,85.0],[1.151,85.0],[1.152,85.0],[1.153,85.0],[1.154,85.0],[1.155,85.0],[1.156,85.0],[1.157,85.0],[1.158,85.0],[1.159,85.0],[1.16,85.0],[1.161,85.0],[1.162,85.0],[1.163,85.0],[1.164,85.0],[1.165,85.0],[1.166,85.0],[1.167,85.0],[1.168,85.0],[1.169,85.0],[1.17,85.0],[1.171,85.0],[1.172,85.0],[1.173,85.0],[1.174,85.0],[1.175,85.0],[1.176,85.0],[1.177,85.0],[1.178,85.0],[1.179,85.0],[1.18,85.0],[1.181,85.0],[1.182,85.0],[1.183,85.0],[1.184,85.0],[1.185,85.0],[1.186,85.0],[1.187,85.0],[1.188,85.0],[1.189,85.0],[1.19,85.0],[1.1909999999999998,85.0],[1.192,85.0],[1.1929999999999998,85.0],[1.194,85.0],[1.1949999999999998,85.0],[1.196,85.0],[1.1969999999999998,85.0],[1.198,85.0],[1.1989999999999998,85.0],[1.2,85.0],[1.2009999999999998,85.0],[1.202,85.0],[1.2029999999999998,85.0],[1.204,85.0],[1.2049999999999998,85.0],[1.206,85.0],[1.2069999999999999,85.0],[1.208,85.0],[1.2089999999999999,85.0],[1.21,85.0],[1.2109999999999999,85.0],[1.212,85.0],[1.2129999999999999,85.0],[1.214,85.0],[1.2149999999999999,85.0],[1.216,85.0],[1.2169999999999999,85.0],[1.218,85.0],[1.2189999999999999,85.0],[1.22,85.0],[1.2209999999999999,85.0],[1.222,85.0],[1.2229999999999999,85.0],[1.224,85.0],[1.2249999999999999,85.0],[1.226,85.0],[1.2269999999999999,85.0],[1.228,85.0],[1.2289999999999999,85.0],[1.23,85.0],[1.2309999999999999,85.0],[1.232,85.0],[1.2329999999999999,85.0],[1.234,85.0],[1.2349999999999999,85.0],[1.236,85.0],[1.2369999999999999,85.0],[1.238,85.0],[1.2389999999999999,85.0],[1.24,85.0],[1.2409999999999999,85.0],[1.242,85.0],[1.2429999999999999,85.0],[1.244,85.0],[1.2449999999999999,85.0],[1.246,85.0],[1.2469999999999999,85.0],[1.248,85.0],[1.2489999999999999,85.0],[1.25,85.0],[1.251,85.0],[1.252,85.0],[1.253,85.0],[1.254,85.0],[1.255,85.0],[1.256,85.0],[1.257,85.0],[1.258,85.0],[1.259,85.0],[1.26,85.0],[1.261,85.0],[1.262,85.0],[1.263,85.0],[1.264,85.0],[1.265,85.0],[1.266,85.0],[1.267,85.0],[1.268,85.0],[1.269,85.0],[1.27,85.0],[1.271,85.0],[1.272,85.0],[1.273,85.0],[1.274,85.0],[1.275,85.0],[1.276,85.0],[1.277,85.0],[1.278,85.0],[1.279,85.0],[1.28,85.0],[1.281,85.0],[1.282,85.0],[1.283,85.0],[1.284,85.0],[1.285,85.0],[1.286,85.0],[1.287,85.0],[1.288,85.0],[1.289,85.0],[1.29,85.0],[1.291,85.0],[1.292,85.0],[1.293,85.0],[1.294,85.0],[1.295,85.0],[1.296,85.0],[1.297,85.0],[1.298,85.0],[1.299,85.0],[1.3,85.0],[1.301,85.0],[1.302,85.0],[1.303,85.0],[1.304,85.0],[1.305,85.0],[1.306,85.0],[1.307,85.0],[1.308,85.0],[1.309,85.0],[1.3099999999999998,85.0],[1.311,85.0],[1.3119999999999998,85.0],[1.313,85.0],[1.3139999999999998,85.0],[1.315,85.0],[1.3159999999999998,85.0],[1.317,85.0],[1.3179999999999998,85.0],[1.319,85.0],[1.3199999999999998,85.0],[1.321,85.0],[1.3219999999999998,85.0],[1.323,85.0],[1.3239999999999998,85.0],[1.325,85.0],[1.3259999999999998,85.0],[1.327,85.0],[1.3279999999999998,85.0],[1.329,85.0],[1.3299999999999998,85.0],[1.331,85.0],[1.3319999999999999,85.0],[1.333,85.0],[1.3339999999999999,85.0],[1.335,85.0],[1.3359999999999999,85.0],[1.337,85.0],[1.3379999999999999,85.0],[1.339,85.0],[1.3399999999999999,85.0],[1.341,85.0],[1.3419999999999999,85.0],[1.343,85.0],[1.3439999999999999,85.0],[1.345,85.0],[1.3459999999999999,85.0],[1.347,85.0],[1.3479999999999999,85.0],[1.349,85.0],[1.3499999999999999,85.0],[1.351,85.0],[1.3519999999999999,85.0],[1.353,85.0],[1.3539999999999999,85.0],[1.355,85.0],[1.3559999999999999,85.0],[1.357,85.0],[1.3579999999999999,85.0],[1.359,85.0],[1.3599999999999999,85.0],[1.361,85.0],[1.3619999999999999,85.0],[1.363,85.0],[1.3639999999999999,85.0],[1.365,85.0],[1.3659999999999999,85.0],[1.367,85.0],[1.3679999999999999,85.0],[1.369,85.0],[1.3699999999999999,85.0],[1.371,85.0],[1.3719999999999999,85.0],[1.373,85.0],[1.3739999999999999,85.0],[1.375,85.0],[1.376,85.0],[1.377,85.0],[1.378,85.0],[1.379,85.0],[1.38,85.0],[1.381,85.0],[1.382,85.0],[1.383,85.0],[1.384,85.0],[1.385,85.0],[1.386,85.0],[1.387,85.0],[1.388,85.0],[1.389,85.0],[1.39,85.0],[1.391,85.0],[1.392,85.0],[1.393,85.0],[1.394,85.0],[1.395,85.0],[1.396,85.0],[1.397,85.0],[1.398,85.0],[1.399,85.0],[1.4,85.0],[1.401,85.0],[1.402,85.0],[1.403,85.0],[1.404,85.0],[1.405,85.0],[1.406,85.0],[1.407,85.0],[1.408,85.0],[1.409,85.0],[1.41,85.0],[1.411,85.0],[1.412,85.0],[1.413,85.0],[1.414,85.0],[1.415,85.0],[1.416,85.0],[1.417,85.0],[1.418,85.0],[1.419,85.0],[1.42,85.0],[1.421,85.0],[1.422,85.0],[1.423,85.0],[1.424,85.0],[1.425,85.0],[1.426,85.0],[1.427,85.0],[1.428,85.0],[1.4289999999999998,85.0],[1.43,85.0],[1.4309999999999998,85.0],[1.432,85.0],[1.4329999999999998,85.0],[1.434,85.0],[1.4349999999999998,85.0],[1.436,85.0],[1.4369999999999998,85.0],[1.438,85.0],[1.4389999999999998,85.0],[1.44,85.0],[1.4409999999999998,85.0],[1.442,85.0],[1.4429999999999998,85.0],[1.444,85.0],[1.4449999999999998,85.0],[1.446,85.0],[1.4469999999999998,85.0],[1.448,85.0],[1.4489999999999998,85.0],[1.45,85.0],[1.4509999999999998,85.0],[1.452,85.0],[1.4529999999999998,85.0],[1.454,85.0],[1.4549999999999998,85.0],[1.456,85.0],[1.4569999999999999,85.0],[1.458,85.0],[1.4589999999999999,85.0],[1.46,85.0],[1.4609999999999999,85.0],[1.462,85.0],[1.4629999999999999,85.0],[1.464,85.0],[1.4649999999999999,85.0],[1.466,85.0],[1.4669999999999999,85.0],[1.468,85.0],[1.4689999999999999,85.0],[1.47,85.0],[1.4709999999999999,85.0],[1.472,85.0],[1.4729999999999999,85.0],[1.474,85.0],[1.4749999999999999,85.0],[1.476,85.0],[1.4769999999999999,85.0],[1.478,85.0],[1.4789999999999999,85.0],[1.48,85.0],[1.4809999999999999,85.0],[1.482,85.0],[1.4829999999999999,85.0],[1.484,85.0],[1.4849999999999999,85.0],[1.486,85.0],[1.4869999999999999,85.0],[1.488,85.0],[1.4889999999999999,85.0],[1.49,85.0],[1.4909999999999999,85.0],[1.492,85.0],[1.4929999999999999,85.0],[1.494,85.0],[1.4949999999999999,85.0],[1.496,85.0],[1.4969999999999999,85.0],[1.498,85.0],[1.4989999999999999,85.0],[1.5,85.0],[1.501,85.0],[1.502,85.0],[1.503,85.0],[1.504,85.0],[1.505,85.0],[1.506,85.0],[1.507,85.0],[1.508,85.0],[1.509,85.0],[1.51,85.0],[1.511,85.0],[1.512,85.0],[1.513,85.0],[1.514,85.0],[1.515,85.0],[1.516,85.0],[1.517,85.0],[1.518,85.0],[1.519,85.0],[1.52,85.0],[1.521,85.0],[1.522,85.0],[1.523,85.0],[1.524,85.0],[1.525,85.0],[1.526,85.0],[1.527,85.0],[1.528,85.0],[1.529,85.0],[1.53,85.0],[1.531,85.0],[1.532,85.0],[1.533,85.0],[1.534,85.0],[1.535,85.0],[1.536,85.0],[1.537,85.0],[1.538,85.0],[1.539,85.0],[1.54,85.0],[1.541,85.0],[1.542,85.0],[1.543,85.0],[1.544,85.0],[1.545,85.0],[1.546,85.0],[1.547,85.0],[1.5479999999999998,85.0],[1.549,85.0],[1.5499999999999998,85.0],[1.551,85.0],[1.5519999999999998,85.0],[1.553,85.0],[1.5539999999999998,85.0],[1.555,85.0],[1.5559999999999998,85.0],[1.557,85.0],[1.5579999999999998,85.0],[1.559,85.0],[1.5599999999999998,85.0],[1.561,85.0],[1.5619999999999998,85.0],[1.563,85.0],[1.5639999999999998,85.0],[1.565,85.0],[1.5659999999999998,85.0],[1.567,85.0],[1.5679999999999998,85.0],[1.569,85.0],[1.5699999999999998,85.0],[1.571,85.0],[1.5719999999999998,85.0],[1.573,85.0],[1.5739999999999998,85.0],[1.575,85.0],[1.5759999999999998,85.0],[1.577,85.0],[1.5779999999999998,85.0],[1.579,85.0],[1.5799999999999998,85.0],[1.581,85.0],[1.5819999999999999,85.0],[1.583,85.0],[1.5839999999999999,85.0],[1.585,85.0],[1.5859999999999999,85.0],[1.587,85.0],[1.5879999999999999,85.0],[1.589,85.0],[1.5899999999999999,85.0],[1.591,85.0],[1.5919999999999999,85.0],[1.593,85.0],[1.5939999999999999,85.0],[1.595,85.0],[1.5959999999999999,85.0],[1.597,85.0],[1.5979999999999999,85.0],[1.599,85.0],[1.5999999999999999,85.0],[1.601,85.0],[1.6019999999999999,85.0],[1.603,85.0],[1.6039999999999999,85.0],[1.605,85.0],[1.6059999999999999,85.0],[1.607,85.0],[1.6079999999999999,85.0],[1.609,85.0],[1.6099999999999999,85.0],[1.611,85.0],[1.6119999999999999,85.0],[1.613,85.0],[1.6139999999999999,85.0],[1.615,85.0],[1.6159999999999999,85.0],[1.617,85.0],[1.6179999999999999,85.0],[1.619,85.0],[1.6199999999999999,85.0],[1.621,85.0],[1.6219999999999999,85.0],[1.623,85.0],[1.6239999999999999,85.0],[1.625,85.0],[1.626,85.0],[1.627,85.0],[1.628,85.0],[1.629,85.0],[1.63,85.0],[1.631,85.0],[1.632,85.0],[1.633,85.0],[1.634,85.0],[1.635,85.0],[1.636,85.0],[1.637,85.0],[1.638,85.0],[1.639,85.0],[1.64,85.0],[1.641,85.0],[1.642,85.0],[1.643,85.0],[1.644,85.0],[1.645,85.0],[1.646,85.0],[1.647,85.0],[1.648,85.0],[1.649,85.0],[1.65,85.0],[1.651,85.0],[1.652,85.0],[1.653,85.0],[1.654,85.0],[1.655,85.0],[1.656,85.0],[1.657,85.0],[1.658,85.0],[1.659,85.0],[1.66,85.0],[1.661,85.0],[1.662,85.0],[1.663,85.0],[1.664,85.0],[1.665,85.0],[1.666,85.0],[1.6669999999999998,85.0],[1.668,85.0],[1.6689999999999998,85.0],[1.67,85.0],[1.6709999999999998,85.0],[1.672,85.0],[1.6729999999999998,85.0],[1.674,85.0],[1.6749999999999998,85.0],[1.676,85.0],[1.6769999999999998,85.0],[1.678,85.0],[1.6789999999999998,85.0],[1.68,85.0],[1.6809999999999998,85.0],[1.682,85.0],[1.6829999999999998,85.0],[1.684,85.0],[1.6849999999999998,85.0],[1.686,85.0],[1.6869999999999998,85.0],[1.688,85.0],[1.6889999999999998,85.0],[1.69,85.0],[1.6909999999999998,85.0],[1.692,85.0],[1.6929999999999998,85.0],[1.694,85.0],[1.6949999999999998,85.0],[1.696,85.0],[1.6969999999999998,85.0],[1.698,85.0],[1.6989999999999998,85.0],[1.7,85.0],[1.7009999999999998,85.0],[1.702,85.0],[1.7029999999999998,85.0],[1.704,85.0],[1.7049999999999998,85.0],[1.706,85.0],[1.7069999999999999,85.0],[1.708,85.0],[1.7089999999999999,85.0],[1.71,85.0],[1.7109999999999999,85.0],[1.712,85.0],[1.7129999999999999,85.0],[1.714,85.0],[1.7149999999999999,85.0],[1.716,85.0],[1.7169999999999999,85.0],[1.718,85.0],[1.7189999999999999,85.0],[1.72,85.0],[1.7209999999999999,85.0],[1.722,85.0],[1.7229999999999999,85.0],[1.724,85.0],[1.7249999999999999,85.0],[1.726,85.0],[1.7269999999999999,85.0],[1.728,85.0],[1.7289999999999999,85.0],[1.73,85.0],[1.7309999999999999,85.0],[1.732,85.0],[1.7329999999999999,85.0],[1.734,85.0],[1.7349999999999999,85.0],[1.736,85.0],[1.7369999999999999,85.0],[1.738,85.0],[1.7389999999999999,85.0],[1.74,85.0],[1.7409999999999999,85.0],[1.742,85.0],[1.7429999999999999,85.0],[1.744,85.0],[1.7449999999999999,85.0],[1.746,85.0],[1.7469999999999999,85.0],[1.748,85.0],[1.7489999999999999,85.0],[1.75,85.0],[1.751,85.0],[1.752,85.0],[1.753,85.0],[1.754,85.0],[1.755,85.0],[1.756,85.0],[1.757,85.0],[1.758,85.0],[1.759,85.0],[1.76,85.0],[1.761,85.0],[1.762,85.0],[1.763,85.0],[1.764,85.0],[1.765,85.0],[1.766,85.0],[1.767,85.0],[1.768,85.0],[1.769,85.0],[1.77,85.0],[1.771,85.0],[1.772,85.0],[1.773,85.0],[1.774,85.0],[1.775,85.0],[1.776,85.0],[1.777,85.0],[1.778,85.0],[1.779,85.0],[1.78,85.0],[1.781,85.0],[1.782,85.0],[1.783,85.0],[1.784,85.0],[1.785,85.0],[1.7859999999999998,85.0],[1.787,85.0],[1.7879999999999998,85.0],[1.789,85.0],[1.7899999999999998,85.0],[1.791,85.0],[1.7919999999999998,85.0],[1.793,85.0],[1.7939999999999998,85.0],[1.795,85.0],[1.7959999999999998,85.0],[1.797,85.0],[1.7979999999999998,85.0],[1.799,85.0],[1.7999999999999998,85.0],[1.801,85.0],[1.8019999999999998,85.0],[1.803,85.0],[1.8039999999999998,85.0],[1.805,85.0],[1.8059999999999998,85.0],[1.807,85.0],[1.8079999999999998,85.0],[1.809,85.0],[1.8099999999999998,85.0],[1.811,85.0],[1.8119999999999998,85.0],[1.813,85.0],[1.8139999999999998,85.0],[1.815,85.0],[1.8159999999999998,85.0],[1.817,85.0],[1.8179999999999998,85.0],[1.819,85.0],[1.8199999999999998,85.0],[1.821,85.0],[1.8219999999999998,85.0],[1.823,85.0],[1.8239999999999998,85.0],[1.825,85.0],[1.8259999999999998,85.0],[1.827,85.0],[1.8279999999999998,85.0],[1.829,85.0],[1.8299999999999998,85.0],[1.831,85.0],[1.8319999999999999,85.0],[1.833,85.0],[1.8339999999999999,85.0],[1.835,85.0],[1.8359999999999999,85.0],[1.837,85.0],[1.8379999999999999,85.0],[1.839,85.0],[1.8399999999999999,85.0],[1.841,85.0],[1.8419999999999999,85.0],[1.843,85.0],[1.8439999999999999,85.0],[1.845,85.0],[1.8459999999999999,85.0],[1.847,85.0],[1.8479999999999999,85.0],[1.849,85.0],[1.8499999999999999,85.0],[1.851,85.0],[1.8519999999999999,85.0],[1.853,85.0],[1.8539999999999999,85.0],[1.855,85.0],[1.8559999999999999,85.0],[1.857,85.0],[1.8579999999999999,85.0],[1.859,85.0],[1.8599999999999999,85.0],[1.861,85.0],[1.8619999999999999,85.0],[1.863,85.0],[1.8639999999999999,85.0],[1.865,85.0],[1.8659999999999999,85.0],[1.867,85.0],[1.8679999999999999,85.0],[1.869,85.0],[1.8699999999999999,85.0],[1.871,85.0],[1.8719999999999999,85.0],[1.873,85.0],[1.8739999999999999,85.0],[1.875,85.0],[1.876,85.0],[1.877,85.0],[1.878,85.0],[1.879,85.0],[1.88,85.0],[1.881,85.0],[1.882,85.0],[1.883,85.0],[1.884,85.0],[1.885,85.0],[1.886,85.0],[1.887,85.0],[1.888,85.0],[1.889,85.0],[1.89,85.0],[1.891,85.0],[1.892,85.0],[1.893,85.0],[1.894,85.0],[1.895,85.0],[1.896,85.0],[1.897,85.0],[1.898,85.0],[1.899,85.0],[1.9,85.0],[1.901,85.0],[1.902,85.0],[1.903,85.0],[1.904,85.0],[1.9049999999999998,85.0],[1.906,85.0],[1.9069999999999998,85.0],[1.908,85.0],[1.9089999999999998,85.0],[1.91,85.0],[1.9109999999999998,85.0],[1.912,85.0],[1.9129999999999998,85.0],[1.914,85.0],[1.9149999999999998,85.0],[1.916,85.0],[1.9169999999999998,85.0],[1.918,85.0],[1.9189999999999998,85.0],[1.92,85.0],[1.9209999999999998,85.0],[1.922,85.0],[1.9229999999999998,85.0],[1.924,85.0],[1.9249999999999998,85.0],[1.926,85.0],[1.9269999999999998,85.0],[1.928,85.0],[1.9289999999999998,85.0],[1.93,85.0],[1.9309999999999998,85.0],[1.932,85.0],[1.9329999999999998,85.0],[1.934,85.0],[1.9349999999999998,85.0],[1.936,85.0],[1.9369999999999998,85.0],[1.938,85.0],[1.9389999999999998,85.0],[1.94,85.0],[1.9409999999999998,85.0],[1.942,85.0],[1.9429999999999998,85.0],[1.944,85.0],[1.9449999999999998,85.0],[1.946,85.0],[1.9469999999999998,85.0],[1.948,85.0],[1.9489999999999998,85.0],[1.95,85.0],[1.9509999999999998,85.0],[1.952,85.0],[1.9529999999999998,85.0],[1.954,85.0],[1.9549999999999998,85.0],[1.956,85.0],[1.9569999999999999,85.0],[1.958,85.0],[1.9589999999999999,85.0],[1.96,85.0],[1.9609999999999999,85.0],[1.962,85.0],[1.9629999999999999,85.0],[1.964,85.0],[1.9649999999999999,85.0],[1.966,85.0],[1.9669999999999999,85.0],[1.968,85.0],[1.9689999999999999,85.0],[1.97,85.0],[1.9709999999999999,85.0],[1.972,85.0],[1.9729999999999999,85.0],[1.974,85.0],[1.9749999999999999,85.0],[1.976,85.0],[1.9769999999999999,85.0],[1.978,85.0],[1.9789999999999999,85.0],[1.98,85.0],[1.9809999999999999,85.0],[1.982,85.0],[1.9829999999999999,85.0],[1.984,85.0],[1.9849999999999999,85.0],[1.986,85.0],[1.9869999999999999,85.0],[1.988,85.0],[1.9889999999999999,85.0],[1.99,85.0],[1.9909999999999999,85.0],[1.992,85.0],[1.9929999999999999,85.0],[1.994,85.0],[1.9949999999999999,85.0],[1.996,85.0],[1.9969999999999999,85.0],[1.998,85.0],[1.9989999999999999,85.0],[2.0,85.0]],"gaps":[],"resolution":"full","kind":"analog","unit":"kW","bounds":[0.25,2.0],"target":100.0,"band":2.000282022266388,"trigger":0.25,"repairs":[]}}</script><script>const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+'use strict';
+let plotSerial=0;
+function plot(trace,kind='analog',unit='',target=null,band=0,trigger=null,options={}) {
+  trace=trace||[];const bins=options.digitalBins||[],domain=options.domain;
+  if(!trace.length&&!bins.length)return '<div class="empty">当前窗口没有可显示的采样。</div>';
+  const W=1000,H=245,L=62,R=17,T=23,B=38,id='waveclip'+(++plotSerial);
+  const xmin=domain?domain[0]:trace[0][0],xmax=domain?domain[1]:trace[trace.length-1][0];
+  let ymin=Infinity,ymax=-Infinity;
+  [...trace,...(options.overlayTrace||[])].forEach(p=>{if(p[1]!==null&&Number.isFinite(p[1])&&p[0]>=xmin-(xmax-xmin)*.01&&p[0]<=xmax+(xmax-xmin)*.01){ymin=Math.min(ymin,p[1]);ymax=Math.max(ymax,p[1]);}});
+  if(kind==='digital'){ymin=-.15;ymax=1.15;}else{
+    if(!Number.isFinite(ymin)){const valid=trace.filter(p=>p[1]!==null&&Number.isFinite(p[1]));if(valid.length){ymin=Math.min(valid[0][1],valid[valid.length-1][1]);ymax=Math.max(valid[0][1],valid[valid.length-1][1]);}else{ymin=0;ymax=1;}}
+    if(target!==null){ymin=Math.min(ymin,target-band);ymax=Math.max(ymax,target+band);}const pad=(ymax-ymin)*.12||1;ymin-=pad;ymax+=pad;
+  }
+  if(options.yDomain){[ymin,ymax]=options.yDomain;}
+  const x=v=>L+(v-xmin)/(xmax-xmin||1)*(W-L-R),y=v=>T+(ymax-v)/(ymax-ymin||1)*(H-T-B);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${E(unit)}波形"><defs><clipPath id="${id}"><rect x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}"/></clipPath></defs><rect width="100%" height="100%" rx="9" fill="#f8fafc"/>`;
+  for(let j=0;j<5;j++){const Y=T+j*(H-T-B)/4,V=ymax-j*(ymax-ymin)/4;s+=`<path d="M${L} ${Y}H${W-R}" stroke="#e1e9f0"/><text x="${L-8}" y="${Y+4}" fill="#60758b" font-size="11" text-anchor="end">${E(Number(V.toPrecision(5)))}</text>`;}
+  const precision=Math.max(0,Math.min(10,Math.ceil(-Math.log10((xmax-xmin)/5))+1));
+  for(let j=0;j<6;j++){const X=L+j*(W-L-R)/5,V=xmin+j*(xmax-xmin)/5;s+=`<text x="${X}" y="${H-12}" fill="#60758b" font-size="11" text-anchor="middle">${E(V.toFixed(precision))}s</text>`;}
+  s+=`<g clip-path="url(#${id})">`;
+  if(target!==null)s+=`<rect x="${L}" y="${y(target+band)}" width="${W-L-R}" height="${Math.max(0,y(target-band)-y(target+band))}" fill="#e1f2e9"/><path d="M${L} ${y(target)}H${W-R}" stroke="#319980" stroke-dasharray="5 5"/>`;
+  let d='',pen=false;trace.forEach(p=>{if(p[1]===null||!Number.isFinite(p[1])){pen=false;return;}d+=pen?(kind==='digital'?`H${x(p[0]).toFixed(3)}V${y(p[1]).toFixed(3)}`:`L${x(p[0]).toFixed(3)},${y(p[1]).toFixed(3)}`):`M${x(p[0]).toFixed(3)},${y(p[1]).toFixed(3)}`;pen=true;});
+  if(options.showRaw!==false)s+=`<path class="wave-data" d="${d}" fill="none" stroke="#4a78bf" stroke-width="1.7"/>`;
+  for(const b of (options.showRaw===false?[]:bins)){if(b[2]===b[3])s+=`<path d="M${x(b[0])} ${y(b[2])}H${x(b[1])}" stroke="#4a78bf" stroke-width="2"/>`;else s+=`<rect class="digital-density" x="${x(b[0])}" y="${y(1)}" width="${Math.max(.5,x(b[1])-x(b[0]))}" height="${y(0)-y(1)}" fill="#4a78bf" opacity=".28"/>`;}
+  if(options.overlayTrace?.length && options.showProcessed!==false){
+    let path='',seen=false;for(const p of options.overlayTrace){if(p[1]===null||!Number.isFinite(p[1])){seen=false;continue;}path+=seen?(kind==='digital'?`H${x(p[0]).toFixed(3)}V${y(p[1]).toFixed(3)}`:`L${x(p[0]).toFixed(3)},${y(p[1]).toFixed(3)}`):`M${x(p[0]).toFixed(3)},${y(p[1]).toFixed(3)}`;seen=true;}
+    s+=`<path class="wave-processed" d="${path}" fill="none" stroke="#ca6b16" stroke-width="2"/>`;
+  }
+  if(options.showProcessed!==false)for(const b of options.processedBins||[]){if(b[2]===b[3])s+=`<path d="M${x(b[0])} ${y(b[2])}H${x(b[1])}" stroke="#ca6b16" stroke-width="2"/>`;else s+=`<rect x="${x(b[0])}" y="${y(1)}" width="${Math.max(.5,x(b[1])-x(b[0]))}" height="${y(0)-y(1)}" fill="#ca6b16" opacity=".2"/>`;}
+  if(options.showRepairs!==false){
+    for(const p of options.repairMarkers||[])s+=`<circle class="repair-marker" cx="${x(p.time_s)}" cy="${y(p.raw)}" r="3.5" fill="none" stroke="#c14c62" stroke-width="1.6"><title>${E(p.time_s)}s：原始 ${E(p.raw)} → 替换 ${E(p.replacement)}（待核实候选）</title></circle>`;
+    for(const p of options.rejectedSpans||[])s+=`<rect class="rejected-span" x="${x(p.start_s)}" y="${T}" width="${Math.max(1,x(p.end_s)-x(p.start_s))}" height="${H-T-B}" fill="#c14c62" opacity=".12"><title>被显式去抖抑制的原始脉冲</title></rect>`;
+  }
+  for(const g of options.gaps||[])s+=`<rect class="sampling-gap" x="${x(g[0])}" y="${T}" width="${Math.max(1,x(g[1])-x(g[0]))}" height="${H-T-B}" fill="#8996a7" opacity=".25"/>`;
+  if(trigger!==null&&trigger>=xmin&&trigger<=xmax)s+=`<path d="M${x(trigger)} ${T}V${H-B}" stroke="#b28b42" stroke-dasharray="4 5"/>`;
+  s+=`</g><text x="${L}" y="14" fill="#61758a" font-size="11">${E(unit||'逻辑值')} · 录波起点相对时间${bins.length?' · 变位密度包络':''}</text></svg>`;
+  return s;
+}
+
+'use strict';
+/* A viewport is a display-only operation. Each fetch re-reads its original
+   samples; sequence numbers and abort prevent stale channel/range responses. */
+class WaveTimeline {
+  static instances = new Set();
+  constructor(host, options) {
+    this.host=host;this.options=options;this.full=[options.start,options.end];
+    this.range=this.full.slice();this.data=null;this.overview=null;this.serial=0;
+    this.layers={raw:true,processed:true,repairs:true};this.yRange=null;
+    this.dead=false;this.drag=null;this.timer=null;this.controller=null;
+    WaveTimeline.instances.add(this);
+    host.classList.add('timeline');
+    host.innerHTML=`<div class="timeline-tools"><div class="timeline-buttons">
+      <button type="button" data-action="in" title="以视窗中心放大">＋ 放大</button>
+      <button type="button" data-action="out" title="以视窗中心缩小">－ 缩小</button>
+      <button type="button" data-action="left" title="向前平移四分之一视窗">←</button>
+      <button type="button" data-action="right" title="向后平移四分之一视窗">→</button>
+      <button type="button" data-action="reset">全览 / 复位</button>
+      <button type="button" data-action="yin" title="仅放大幅值轴">幅值 ＋</button>
+      <button type="button" data-action="yout" title="仅缩小幅值轴">幅值 －</button>
+      <button type="button" data-action="yreset">幅值复位</button></div>
+      <form class="timeline-range"><label>开始 <input data-time="start" type="number" step="any" aria-label="视窗开始秒"></label>
+      <label>结束 <input data-time="end" type="number" step="any" aria-label="视窗结束秒"></label><span>s</span>
+      <button type="submit">定位</button></form></div>
+      ${options.compare?`<div class="timeline-layers"><label><input type="checkbox" data-layer="raw" checked> 原始曲线</label><label><input type="checkbox" data-layer="processed" checked> 处理曲线</label><label><input type="checkbox" data-layer="repairs" checked> 修复 / 抑制候选</label><span>蓝：原始　橙：处理　○：候选点</span></div>`:''}
+      <div class="timeline-gesture">滚轮缩放 · 拖动平移 · Shift + 拖动框选 · 双击复位 <span class="timeline-span"></span></div>
+      <div class="timeline-frame" tabindex="0" role="group" aria-label="可缩放波形时间轴：加减键缩放，左右键平移，Home复位">
+        <div class="timeline-svg"></div><div class="timeline-selection" hidden></div><div class="timeline-cursor" hidden></div>
+      </div><div class="timeline-nav" title="点击概览定位；拖动蓝色视窗平移" role="group" aria-label="全录波时间概览">
+        <div class="timeline-nav-bg"></div><div class="timeline-nav-window"></div></div>
+      <div class="timeline-nav-labels"><span></span><span></span></div>
+      <div class="timeline-status" role="status">正在读取波形…</div>`;
+    host.querySelectorAll('[data-layer]').forEach(el=>el.addEventListener('change',()=>{this.layers[el.dataset.layer]=el.checked;this.draw();}));
+    this.frame=host.querySelector('.timeline-frame');this.svg=host.querySelector('.timeline-svg');
+    this.status=host.querySelector('.timeline-status');this.selection=host.querySelector('.timeline-selection');
+    this.cursor=host.querySelector('.timeline-cursor');this.nav=host.querySelector('.timeline-nav');
+    host.querySelector('.timeline-nav-labels span:first-child').textContent=this.format(this.full[0])+' s';
+    host.querySelector('.timeline-nav-labels span:last-child').textContent=this.format(this.full[1])+' s';
+    host.querySelectorAll('[data-action]').forEach(b=>b.addEventListener('click',()=>{
+      const a=b.dataset.action;
+      if(a.startsWith('y')){this.amplitude(a);return;}
+      if(a==='in'||a==='out')this.zoom(a==='in'?.5:2,.5);
+      else if(a==='reset')this.reset();else this.pan(a==='left'?-.25:.25);
+    }));
+    host.querySelector('form').addEventListener('submit',e=>{
+      e.preventDefault();const inputs=host.querySelectorAll('[data-time]');
+      const a=Number(inputs[0].value),b=Number(inputs[1].value);
+      if([...inputs].some(x=>!x.value.trim())||!Number.isFinite(a)||!Number.isFinite(b)||a>=b||a<this.full[0]-1e-9||b>this.full[1]+1e-9){
+        this.status.textContent='时间范围无效：开始须小于结束，且位于当前录波 / 证据窗口内。';this.status.classList.add('is-error');return;
+      }
+      this.setRange(a,b);this.fetchNow();
+    });
+    this.frame.addEventListener('wheel',e=>{
+      if(this.dead||window.essUiBusy)return;e.preventDefault();
+      const delta=e.deltaY*(e.deltaMode===1?16:e.deltaMode===2?200:1);
+      this.zoom(Math.exp(Math.max(-1.3,Math.min(1.3,delta*.002))),this.fraction(e));
+    },{passive:false});
+    this.frame.addEventListener('dblclick',()=>this.reset());
+    this.frame.addEventListener('keydown',e=>{
+      const k=e.key;if(!['+','=','-','ArrowLeft','ArrowRight','Home'].includes(k))return;
+      e.preventDefault();if(k==='Home')this.reset();else if(k.startsWith('Arrow'))this.pan(k==='ArrowLeft'?-.25:.25);else this.zoom(k==='-'?2:.5,.5);
+    });
+    this.frame.addEventListener('pointerdown',e=>{
+      if(e.button!==0||this.dead)return;
+      this.frame.setPointerCapture(e.pointerId);this.frame.focus({preventScroll:true});
+      this.drag={id:e.pointerId,range:this.range.slice(),x:this.fraction(e),select:e.shiftKey};
+      this.cursor.hidden=true;if(e.shiftKey){this.selection.hidden=false;this.selection.style.width='0px';}
+      e.preventDefault();
+    });
+    this.frame.addEventListener('pointermove',e=>{
+      const f=this.fraction(e);
+      if(!this.drag){this.showCursor(e,f);return;}
+      const d=this.drag;if(e.pointerId!==d.id)return;
+      if(d.select){
+        const rect=this.frame.getBoundingClientRect();
+        this.selection.style.left=((62+Math.min(d.x,f)*921)/1000*rect.width)+'px';
+        this.selection.style.width=(Math.abs(f-d.x)*921/1000*rect.width)+'px';
+      }else{const shift=(d.x-f)*(d.range[1]-d.range[0]);this.setRange(d.range[0]+shift,d.range[1]+shift);}
+    });
+    this.frame.addEventListener('pointerup',e=>{
+      if(!this.drag||this.drag.id!==e.pointerId)return;
+      const d=this.drag;this.drag=null;this.selection.hidden=true;
+      if(d.select){const f=this.fraction(e);if(Math.abs(f-d.x)>.004){const w=d.range[1]-d.range[0];this.setRange(d.range[0]+Math.min(f,d.x)*w,d.range[0]+Math.max(f,d.x)*w);}}
+      if(this.frame.hasPointerCapture(e.pointerId))this.frame.releasePointerCapture(e.pointerId);
+      if(this.range[0]!==d.range[0]||this.range[1]!==d.range[1])this.fetchNow();
+    });
+    this.frame.addEventListener('pointercancel',()=>{this.drag=null;this.selection.hidden=true;this.fetchNow();});
+    this.frame.addEventListener('lostpointercapture',()=>{this.drag=null;this.selection.hidden=true;});
+    this.frame.addEventListener('pointerleave',()=>{if(!this.drag)this.cursor.hidden=true;});
+    this.nav.addEventListener('pointerdown',e=>{
+      if(e.button!==0)return;e.preventDefault();this.nav.setPointerCapture(e.pointerId);
+      this.navDrag={id:e.pointerId,x:e.clientX,range:this.range.slice()};
+      if(!e.target.closest('.timeline-nav-window')){
+        const rect=this.nav.getBoundingClientRect(),f=(e.clientX-rect.left)/rect.width;
+        const center=this.full[0]+f*(this.full[1]-this.full[0]),w=this.range[1]-this.range[0];
+        this.setRange(center-w/2,center+w/2);this.navDrag.range=this.range.slice();
+      }
+    });
+    this.nav.addEventListener('pointermove',e=>{
+      const d=this.navDrag;if(!d||d.id!==e.pointerId)return;
+      const shift=(e.clientX-d.x)/this.nav.getBoundingClientRect().width*(this.full[1]-this.full[0]);
+      this.setRange(d.range[0]+shift,d.range[1]+shift);
+    });
+    const endNav=()=>{this.navDrag=null;this.fetchNow();};
+    this.nav.addEventListener('pointerup',endNav);this.nav.addEventListener('pointercancel',endNav);
+    this.updateControls();this.fetchNow();
+  }
+  format(v){return Number(v.toPrecision(12)).toString();}
+  fraction(e){const r=this.frame.getBoundingClientRect();return Math.max(0,Math.min(1,((e.clientX-r.left)/r.width*1000-62)/921));}
+  updateControls(){
+    const [a,b]=this.range;this.host.dataset.start=String(a);this.host.dataset.end=String(b);
+    this.host.querySelector('[data-time=start]').value=this.format(a);this.host.querySelector('[data-time=end]').value=this.format(b);
+    const span=b-a,full=this.full[1]-this.full[0];
+    this.host.querySelector('.timeline-span').textContent=`跨度 ${this.format(span)} s · ${(full/span).toFixed(full/span>100?0:1)}×`;
+    const nav=this.host.querySelector('.timeline-nav-window');nav.style.left=((a-this.full[0])/full*100)+'%';nav.style.width=(span/full*100)+'%';
+  }
+  setRange(a,b){
+    if(this.dead||!Number.isFinite(a)||!Number.isFinite(b)||a>=b)return;
+    const full=this.full[1]-this.full[0],min=Math.max(1e-9,full*1e-10);
+    let width=Math.min(full,Math.max(min,b-a));a=(a+b-width)/2;b=a+width;
+    if(a<this.full[0]){a=this.full[0];b=a+width;}if(b>this.full[1]){b=this.full[1];a=b-width;}
+    this.range=[Math.max(a,this.full[0]),Math.min(b,this.full[1])];
+    this.serial++;this.controller?.abort();clearTimeout(this.timer);this.cursor.hidden=true;
+    this.updateControls();this.draw();this.status.classList.remove('is-error');this.status.textContent='正在读取当前时间窗口的原始采样…';
+    this.timer=setTimeout(()=>this.fetchNow(),100);
+  }
+  zoom(factor,fraction){const [a,b]=this.range,anchor=a+(b-a)*fraction,w=(b-a)*factor;this.setRange(anchor-w*fraction,anchor+w*(1-fraction));}
+  pan(fraction){const [a,b]=this.range,w=b-a;this.setRange(a+w*fraction,b+w*fraction);}
+  reset(){this.yRange=null;this.setRange(...this.full);this.fetchNow();}
+  amplitude(action){
+    if(action==='yreset'){this.yRange=null;this.draw();return;}
+    if(!this.data)return;
+    if(!this.yRange){let lo=Infinity,hi=-Infinity;for(const p of [...this.data.trace,...(this.data.processed_trace||[])]){if(p[0]>=this.range[0]&&p[0]<=this.range[1]&&Number.isFinite(p[1])){lo=Math.min(lo,p[1]);hi=Math.max(hi,p[1]);}}
+      if(!Number.isFinite(lo))return;const pad=(hi-lo)*.12||1;this.yRange=[lo-pad,hi+pad];}
+    const mid=(this.yRange[0]+this.yRange[1])/2,w=(this.yRange[1]-this.yRange[0])*(action==='yin'?.5:2);
+    if(Number.isFinite(w)&&w>1e-12){this.yRange=[mid-w/2,mid+w/2];this.draw();}
+  }
+  draw(){
+    if(!this.data)return;
+    this.svg.innerHTML=plot(this.data.trace,this.data.kind,this.data.unit,this.options.target??null,this.options.band||0,this.options.trigger??null,
+      {domain:this.range,yDomain:this.yRange,gaps:this.data.gaps||[],digitalBins:this.data.digital_bins||[],
+       overlayTrace:this.data.processed_trace||[],processedBins:this.data.processed_bins||[],
+       repairMarkers:this.data.repair_markers||[],rejectedSpans:this.data.rejected_spans||[],
+       showRaw:this.layers.raw,showProcessed:this.layers.processed,showRepairs:this.layers.repairs});
+  }
+  showCursor(e,f){
+    if(!this.data)return;const x=this.range[0]+f*(this.range[1]-this.range[0]);
+    this.cursor.hidden=false;this.cursor.textContent=this.format(x)+' s';
+    this.cursor.style.left=Math.max(0,Math.min(this.frame.clientWidth-110,e.clientX-this.frame.getBoundingClientRect().left+10))+'px';
+  }
+  async fetchNow(){
+    clearTimeout(this.timer);if(this.dead)return;this.controller?.abort();this.controller=new AbortController();
+    const serial=++this.serial,query=new URLSearchParams({...this.options.parameters,start:String(this.range[0]),end:String(this.range[1]),limit:'1800'});
+    this.host.dataset.loading='true';
+    try{
+      let data;
+      if(this.options.loader){data=await this.options.loader(this.range[0],this.range[1],1800);}
+      else{
+        const response=await fetch('/api/trace?'+query.toString(),{headers:{'X-ESS-Token':window.ESS_TOKEN},signal:this.controller.signal});
+        data=await response.json();if(!response.ok)throw Error(data.error||'波形读取失败');
+      }
+      if(this.dead||serial!==this.serial)return;
+      this.data=data;this.host.dataset.mode=data.mode;this.host.dataset.samples=String(data.source_samples);
+      this.host.dataset.loading='false';this.status.classList.remove('is-error');
+      this.status.textContent=`${data.source_samples.toLocaleString()} 个原始样本 · ${data.display_points} 个显示点 · ${data.warning}`;
+      if(!this.overview&&Math.abs(this.range[0]-this.full[0])<1e-9&&Math.abs(this.range[1]-this.full[1])<1e-9){
+        this.overview=data;this.host.querySelector('.timeline-nav-bg').innerHTML=plot(data.trace,data.kind,'',null,0,null,{domain:this.full,gaps:data.gaps||[],digitalBins:data.digital_bins||[]}).replace('<svg ','<svg preserveAspectRatio="none" ');
+      }
+      this.draw();
+    }catch(err){
+      if(this.dead||serial!==this.serial||err.name==='AbortError')return;
+      this.host.dataset.loading='false';this.status.classList.add('is-error');this.status.textContent=err.message;
+      this.data=null;this.svg.innerHTML='<div class="empty">当前窗口读取失败，不显示旧波形。</div>';
+    }
+  }
+  destroy(){this.dead=true;this.serial++;clearTimeout(this.timer);this.controller?.abort();WaveTimeline.instances.delete(this);}
+  static clearWithin(parent){for(const item of [...WaveTimeline.instances])if(parent.contains(item.host))item.destroy();}
+}
+
+'use strict';
+/* Pure local viewport: no fetch, CDN or downsampled-curve magnification.
+   Full embedded samples are sliced first, then sampled for the current screen. */
+function waveLower(points,x){let lo=0,hi=points.length;while(lo<hi){const m=(lo+hi)>>>1;if(points[m][0]<x)lo=m+1;else hi=m;}return lo;}
+function offlineSlice(points,start,end,kind,limit){
+  const lo=Math.max(0,waveLower(points,start)-1),hi=Math.min(points.length,waveLower(points,end)+1),p=points.slice(lo,hi),n=p.length;
+  if(n<=limit)return {trace:p,digital_bins:[],mode:'samples',source_samples:n};
+  if(kind==='digital'){
+    const ids=new Set([0,n-1]);for(let i=1;i<n;i++){if(p[i][1]!==p[i-1][1]){ids.add(i-1);ids.add(i);}if(ids.size>limit)break;}
+    if(ids.size<=limit)return {trace:[...ids].sort((a,b)=>a-b).map(i=>p[i]),digital_bins:[],mode:'edges',source_samples:n};
+    const bins=[],size=Math.ceil(n/(limit/2));
+    for(let i=0;i<n;i+=size){const part=p.slice(i,i+size);if(part.some(v=>v[1]===null))continue;
+      let a=1,b=0;for(const q of part){a=Math.min(a,q[1]);b=Math.max(b,q[1]);}
+      const left=Math.max(start,part[0][0]),right=Math.min(end,p[Math.min(n-1,i+size)][0]);if(right>left)bins.push([left,right,a,b]);
+    }
+    return {trace:[],digital_bins:bins,mode:'digital_envelope',source_samples:n};
+  }
+  const trace=[],size=Math.ceil(n/Math.max(1,Math.floor(limit/4)));
+  for(let i=0;i<n;i+=size){const part=p.slice(i,i+size);if(part.some(v=>v[1]===null)){trace.push([part[0][0],null],[part[part.length-1][0],null]);continue;}
+    let low=0,high=0;for(let j=1;j<part.length;j++){if(part[j][1]<part[low][1])low=j;if(part[j][1]>part[high][1])high=j;}
+    for(const j of [...new Set([0,low,high,part.length-1])].sort((a,b)=>a-b))trace.push(part[j]);
+  }
+  return {trace,digital_bins:[],mode:'minmax',source_samples:n};
+}
+function initOfflineReport(){
+  const store=JSON.parse(document.getElementById('wave-report-data').textContent);
+  document.querySelectorAll('.report-wave').forEach(host=>{
+    const e=store[host.dataset.waveId];if(!e)return;
+    const loader=async(start,end,limit)=>{
+      const raw=offlineSlice(e.raw,start,end,e.kind,limit),p=e.processed?offlineSlice(e.processed,start,end,e.kind,limit):null;
+      const full=e.resolution==='full';
+      return {...raw,kind:e.kind,unit:e.unit,display_points:raw.trace.length,
+        start_s:start,end_s:end,gaps:e.gaps.filter(g=>g[0]<end&&g[1]>start),
+        ...(p?{processed_trace:p.trace,processed_bins:p.digital_bins}:{}),
+        repair_markers:(e.repairs||[]).filter(v=>v.time_s>=start&&v.time_s<=end),
+        warning:(full?'离线内嵌完整证据窗口采样；放大后读取局部采样':'本图仅内嵌证据摘要，放大不能恢复未保存采样；请在工作台打开原始录波')+'；'+(raw.mode==='digital_envelope'?'变位密集包络，请继续放大':raw.mode==='minmax'?'当前显示保峰抽稀':'当前显示窗口内保存的采样')+'；查看不改变测试结论'};
+    };
+    new WaveTimeline(host,{start:e.bounds[0],end:e.bounds[1],target:e.target??null,band:e.band||0,trigger:e.trigger,compare:!!e.processed,parameters:{},loader});
+  });
+}
+initOfflineReport();
+</script><p style="font:12px sans-serif;color:#687b90">交互查看器 v1.3.0；历史判定版本以结果正文为准。图中明确标注完整窗口采样或证据摘要；缩放不是重新验收。</p></body></html>
